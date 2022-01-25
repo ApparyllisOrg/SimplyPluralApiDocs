@@ -1,0 +1,439 @@
+openapi: '3.0.2'
+info:
+  title: Simply Plural API
+  version: '1.0'
+servers:
+  - url: https://api.apparyllis.com:8443
+  - url: https://devapi.apparyllis.com
+
+paths:
+  /v1/member/{systemId}/{docId}:
+    get:
+      description: 'Get a member byId'
+      tags:
+        - Members
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/member/{docId}:
+    parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
+    post:
+      description: 'Add a member by (optionally) an Id'
+      tags:
+        - Members
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a member by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Members
+    delete:
+      description: 'Delete a member by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Members
+  /v1/members/{systemId}:
+    get:
+      description: 'Get members from a system by Id'
+      tags:
+        - Members
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+
+
+  /v1/group/{systemId}/{docId}:
+    parameters:
+        - in: path
+          name: groupId
+          schema:
+            type: string
+          required: true
+          description: String Id of the group
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+    get:
+      description: 'Get a group by Id'
+      tags:
+        - Groups
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/group/{docId}:
+    post:
+      description: 'Add a group by (optionally) an Id'
+      tags:
+        - Groups
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a group by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Groups
+    delete:
+      description: 'Delete a group by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Groups
+  /v1/groups/{systemId}:
+    get:
+      description: 'Get groups of a system by Id'
+      tags:
+        - Groups
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/note/{systemId}/{docId}:
+    get:
+      description: 'Get a note by Id'
+      tags:
+        - Notes
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the note
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/note/{docId}:
+    post:
+      description: 'Add a note by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the note
+      tags:
+        - Notes
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a note by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the note
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Notes
+    delete:
+      description: 'Delete a note by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the note
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Notes
+  /v1/notes/{systemId}:
+    get:
+      description: 'Get notes of a system by Id'
+      tags:
+        - Notes
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+
+  /v1/customFront/{systemId}/{docId}:
+    parameters:
+      - in: path
+        name: docId
+        schema:
+          type: string
+        required: true
+        description: String Id of the Custom Front
+      - in: path
+        name: systemId
+        schema:
+          type: string
+        required: true
+        description: String Id of the system
+    get:
+      description: 'Get a Custom Front by Id'
+      tags:
+        - Custom Fronts
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Custom Front
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/customFront/{docId}:
+    parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Custom Front
+    post:
+      description: 'Add a Custom Front by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Custom Front
+      tags:
+        - Custom Fronts
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a Custom Front by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Custom Front
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Custom Fronts
+    delete:
+      description: 'Delete a Custom Front by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Custom Fronts
+  /v1/customFronts/{systemId}:
+    get:
+      description: 'Get custom fronts of a system by Id'
+      tags:
+        - Custom Fronts
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/comment/{type}/{docId}:
+    get:
+      description: 'Get a Comment by Id'
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the document you wish to get comments from
+        - in: path
+          name: type
+          schema:
+            type: string
+          required: true
+          description: Type of the comment (groups, members, customFronts, etc.)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/comment/{docId}:
+    post:
+      description: 'Add a Comment by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Comment
+      tags:
+        - Comments
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a Comment by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Comment
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Comments
+    delete:
+      description: 'Delete a Comment by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Comment
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Comments
+  /v1/comments/{systemId}/{docId}:
+    get:
+      description: 'Get a specific comment from a system'
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String id of the Comment document
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND

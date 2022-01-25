@@ -836,7 +836,80 @@ paths:
         '404':
           description: NOT FOUND
 
- 
+  /v1/friend/{userId}:
+    patch:
+      description: 'Update your settings for a friend by Id'
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the friend user account
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friend/{userId}/{friendId}:
+    get:
+      description: 'Get a friend from a user (Typically your user)'
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the origin friend (Typically you)
+        - in: path
+          name: friendId
+          schema:
+            type: string
+          required: true
+          description: String Id of the destination friend (Typically your friend)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friend/{userId}/getFront:
+    get:
+      description: 'Get the current fronters of a friend'
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the friend user account
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friend/{userId}/getFrontValue:
+    get:
+      description: 'Get the current fronters (in text form) of a friend'
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the friend user account
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
 
   /v1/integrations/pluralkit/sync/member/{memberId}:
     parameters:

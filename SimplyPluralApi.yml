@@ -836,6 +836,179 @@ paths:
         '404':
           description: NOT FOUND
 
+  /v1/user/{userId}:
+    get:
+      description: 'Get a user'
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the user
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a user (your own)'
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the user
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    delete:
+      description: 'Delete a user account. (App-only)'
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the user
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/user/username/{userId}:
+    patch:
+      description: 'Set username for user'
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the user
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/user/generateReport:
+    post:
+      description: 'Generate a user report for the authenticated user'
+      tags:
+        - Users
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/friends:
+    get:
+      description: 'Get friends of the autheticated user'
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/requests/incoming:
+    get:
+      description: 'Get incoming friend requests of the authenticated user'
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/requests/outgoing:
+    get:
+      description: 'Get outgoing friend requests of the autheticated user'
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/getFrontValues:
+    get:
+      description: "Get front values (text-format) of all the authenticated user's friends"
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/request/add/{username}:
+    post:
+      description: "Add a friend by username (or userId)"
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/request/respond/{username}:
+    post:
+      description: "Respond to a friend request by username (or userId)"
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/request/{username}:
+    delete:
+      description: "Remove a friend request"
+      parameters:
+        - in: path
+          name: username
+          schema:
+            type: string
+          required: true
+          description: Username (or userId) of the friend request you want to delete
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/remove/{username}:
+    delete:
+      description: "Remove a friend by username (or userId)"
+      parameters:
+        - in: path
+          name: username
+          schema:
+            type: string
+          required: true
+          description: Username (or userId) of the friend you want to delete
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+
   /v1/friend/{userId}:
     patch:
       description: 'Update your settings for a friend by Id'
@@ -1003,3 +1176,23 @@ paths:
           description: NOT FOUND
       tags:
         - Tokens (App-Only)
+
+  /v1/private/{userId}:
+    get:
+      description: 'Get the private data of a user'
+      tags:
+        - Private (App-Only)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update the private data of your a user'
+      tags:
+        - Private (App-Only)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND

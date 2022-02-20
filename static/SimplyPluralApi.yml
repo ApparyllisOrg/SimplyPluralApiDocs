@@ -1,0 +1,1198 @@
+openapi: '3.0.2'
+info:
+  title: Simply Plural API
+  description: This is a work-in-progress API definition. If you need to know specifcs, please go to https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts
+  version: '1.0'
+servers:
+  - url: https://api.apparyllis.com:8443
+  - url: https://devapi.apparyllis.com
+
+paths:
+  /v1/member/{systemId}/{docId}:
+    get:
+      description: 'Get a member byId'
+      tags:
+        - Members
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/member/{docId}:
+    parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
+    post:
+      description: 'Add a member by (optionally) an Id'
+      tags:
+        - Members
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a member by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Members
+    delete:
+      description: 'Delete a member by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Members
+  /v1/members/{systemId}:
+    get:
+      description: 'Get members from a system by Id'
+      tags:
+        - Members
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+
+
+  /v1/group/{systemId}/{docId}:
+    parameters:
+        - in: path
+          name: groupId
+          schema:
+            type: string
+          required: true
+          description: String Id of the group
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+    get:
+      description: 'Get a group by Id'
+      tags:
+        - Groups
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/group/{docId}:
+    post:
+      description: 'Add a group by (optionally) an Id'
+      tags:
+        - Groups
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a group by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Groups
+    delete:
+      description: 'Delete a group by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Groups
+  /v1/groups/{systemId}:
+    get:
+      description: 'Get groups of a system by Id'
+      tags:
+        - Groups
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/note/{systemId}/{docId}:
+    get:
+      description: 'Get a note by Id'
+      tags:
+        - Notes
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the note
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/note/{docId}:
+    post:
+      description: 'Add a note by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the note
+      tags:
+        - Notes
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a note by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the note
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Notes
+    delete:
+      description: 'Delete a note by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the note
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Notes
+  /v1/notes/{systemId}:
+    get:
+      description: 'Get notes of a system by Id'
+      tags:
+        - Notes
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+
+  /v1/customFront/{systemId}/{docId}:
+    parameters:
+      - in: path
+        name: docId
+        schema:
+          type: string
+        required: true
+        description: String Id of the Custom Front
+      - in: path
+        name: systemId
+        schema:
+          type: string
+        required: true
+        description: String Id of the system
+    get:
+      description: 'Get a Custom Front by Id'
+      tags:
+        - Custom Fronts
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Custom Front
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/customFront/{docId}:
+    parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Custom Front
+    post:
+      description: 'Add a Custom Front by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Custom Front
+      tags:
+        - Custom Fronts
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a Custom Front by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Custom Front
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Custom Fronts
+    delete:
+      description: 'Delete a Custom Front by Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Custom Fronts
+  /v1/customFronts/{systemId}:
+    get:
+      description: 'Get custom fronts of a system by Id'
+      tags:
+        - Custom Fronts
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/comment/{type}/{docId}:
+    get:
+      description: 'Get comments from a document of type (groups, members, customFronts, etc.)'
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the document you wish to get comments from
+        - in: path
+          name: type
+          schema:
+            type: string
+          required: true
+          description: Type of the comment (groups, members, customFronts, etc.)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/comment/{docId}:
+    post:
+      description: 'Add a Comment by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Comment
+      tags:
+        - Comments
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a Comment by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Comment
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Comments
+    delete:
+      description: 'Delete a Comment by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Comment
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Comments
+  /v1/comments/{systemId}/{docId}:
+    get:
+      description: 'Get a specific comment from a system'
+      tags:
+        - Comments
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String id of the Comment document
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+
+  /v1/poll/{systemId}/{docId}:
+    get:
+      description: 'Get a Poll by id'
+      tags:
+        - Polls
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Poll
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/poll/{docId}:
+    post:
+      description: 'Add a Poll by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Poll
+      tags:
+        - Polls
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a Poll by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Poll
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Polls
+    delete:
+      description: 'Delete a Poll by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Comment
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Polls
+  /v1/polls/{systemId}:
+    get:
+      description: 'Get polls from a system'
+      tags:
+        - Polls
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String id of the Comment document
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/timer/automated/{systemId}/{docId}:
+    get:
+      description: 'Get an Automated Timer by id'
+      tags:
+        - Automated Timers
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Automated Timer
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/timer/automated/{docId}:
+    post:
+      description: 'Add an Automated Timer by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Automated Timer
+      tags:
+        - Automated Timers
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update an Automated Timer by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Automated Timer
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Automated Timers
+    delete:
+      description: 'Delete an Automated Timer by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the timer
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Automated Timers
+
+  /v1/timers/automated/{systemId}:
+    get:
+      description: 'Get Automated Timers from a system'
+      tags:
+        - Automated Timers
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/timer/repeated/{systemId}/{docId}:
+    get:
+      description: 'Get an Repeated Timer by id'
+      tags:
+        - Repeated Timers
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Repeated Timer
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/timer/repeated/{docId}:
+    post:
+      description: 'Add an Repeated Timer by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Repeated Timer
+      tags:
+        - Repeated Timers
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update an Repeated Timer by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the Repeated Timer
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Repeated Timers
+    delete:
+      description: 'Delete an Repeated Timer by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the timer
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Repeated Timers
+
+  /v1/timers/repeated/{systemId}:
+    get:
+      description: 'Get Repeated Timers from a system'
+      tags:
+        - Repeated Timers
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/fronters/:
+    get:
+      description: 'Get fronters from the currently authenticated system'
+      tags:
+        - Fronters
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/frontHistory/{systemId}:
+    get:
+      description: 'Get Front History from a system between 2 timestamps'
+      tags:
+        - Front History
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/frontHistory/member/{memberId}:
+    get:
+      description: 'Get Front History from a member, optionally beteen two timestamps'
+      tags:
+        - Front History
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+        - in: path
+          name: memberId
+          schema:
+            type: string
+          required: true
+          description: Member you wish to get the history from
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/frontHistory/{systemId}/{docId}:
+    get:
+      description: 'Get a single Front History document by Id'
+      tags:
+        - Front History
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/frontHistory/{docId}:
+    post:
+      description: 'Add a Front history entry by (optionally) an Id'
+      tags:
+        - Front History
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the document
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a Front History entry by an Id'
+      tags:
+        - Front History
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the document
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    delete:
+      description: 'Delete a Front History Entry by an Id'
+      tags:
+        - Front History
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the document
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/user/{userId}:
+    get:
+      description: 'Get a user'
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the user
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update a user (your own)'
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the user
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    delete:
+      description: 'Delete a user account. (App-only)'
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the user
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/user/username/{userId}:
+    patch:
+      description: 'Set username for user'
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the user
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/user/generateReport:
+    post:
+      description: 'Generate a user report for the authenticated user'
+      tags:
+        - Users
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/friends:
+    get:
+      description: 'Get friends of the autheticated user'
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/requests/incoming:
+    get:
+      description: 'Get incoming friend requests of the authenticated user'
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/requests/outgoing:
+    get:
+      description: 'Get outgoing friend requests of the autheticated user'
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/getFrontValues:
+    get:
+      description: "Get front values (text-format) of all the authenticated user's friends"
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/request/add/{username}:
+    post:
+      description: "Add a friend by username (or userId)"
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/request/respond/{username}:
+    post:
+      description: "Respond to a friend request by username (or userId)"
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/request/{username}:
+    delete:
+      description: "Remove a friend request"
+      parameters:
+        - in: path
+          name: username
+          schema:
+            type: string
+          required: true
+          description: Username (or userId) of the friend request you want to delete
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friends/remove/{username}:
+    delete:
+      description: "Remove a friend by username (or userId)"
+      parameters:
+        - in: path
+          name: username
+          schema:
+            type: string
+          required: true
+          description: Username (or userId) of the friend you want to delete
+      tags:
+        - Friends
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+
+  /v1/friend/{userId}:
+    patch:
+      description: 'Update your settings for a friend by Id'
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the friend user account
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friend/{userId}/{friendId}:
+    get:
+      description: 'Get a friend from a user (Typically your user)'
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the origin friend (Typically you)
+        - in: path
+          name: friendId
+          schema:
+            type: string
+          required: true
+          description: String Id of the destination friend (Typically your friend)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friend/{userId}/getFront:
+    get:
+      description: 'Get the current fronters of a friend'
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the friend user account
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/friend/{userId}/getFrontValue:
+    get:
+      description: 'Get the current fronters (in text form) of a friend'
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: String Id of the friend user account
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/integrations/pluralkit/sync/member/{memberId}:
+    parameters:
+        - in: path
+          name: memberId
+          schema:
+            type: string
+          required: true
+          description: The member id to sync
+    get:
+      description: 'Sync a specific member to or from PluralKit'
+      tags:
+        - PluralKit
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/integrations/pluralkit/sync/members:
+    get:
+      description: 'Sync all system members to or from PluralKit'
+      tags:
+        - PluralKit
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+
+  /v1/avatar/{id}:
+    parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Id of the avatar
+    post:
+      description: 'Store an avatar with the supplied Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Avatars (App-Only)
+    delete:
+      description: 'Delete an avatar with the supplied Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Avatars (App-Only)
+
+  /v1/tokens:
+    get:
+      description: 'Get all tokens belonging to the App JWT logged-in user'
+      tags:
+        - Tokens (App-Only)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/token:
+    post:
+      description: 'Request the generation of a new token'
+      tags:
+        - Tokens (App-Only)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /v1/token/{docId}:
+    parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the token
+    delete:
+      description: 'Delete a token by document Id'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+      tags:
+        - Tokens (App-Only)
+
+  /v1/private/{userId}:
+    get:
+      description: 'Get the private data of a user'
+      tags:
+        - Private (App-Only)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    patch:
+      description: 'Update the private data of your a user'
+      tags:
+        - Private (App-Only)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND

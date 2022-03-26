@@ -10,7 +10,8 @@ servers:
 paths:
   /v1/member/{systemId}/{docId}:
     get:
-      description: 'Get a member byId'
+      summary: 'Get a member'
+      description: 'Get a member by Id'
       tags:
         - Members
       parameters:
@@ -40,6 +41,7 @@ paths:
           required: true
           description: String Id of the member
     post:
+      summary: 'Add a member'
       description: 'Add a member by (optionally) an Id'
       tags:
         - Members
@@ -49,6 +51,7 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update a member'
       description: 'Update a member by Id'
       responses:
         '200':
@@ -58,6 +61,7 @@ paths:
       tags:
         - Members
     delete:
+      summary: 'Delete a member'
       description: 'Delete a member by Id'
       responses:
         '200':
@@ -68,7 +72,10 @@ paths:
         - Members
   /v1/members/{systemId}:
     get:
-      description: 'Get members from a system by Id'
+      summary: 'Get members from a system'
+      description: 'Get members from a system by system id. This can be the system of the authenticated user, or from a friend of the authenticated user.'
+      security:
+        - APITokenAuth: []
       tags:
         - Members
       parameters:
@@ -81,6 +88,26 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    exists:
+                      type: boolean
+                    id:
+                      type: string
+                      description: Unique id for this member
+                    content:
+                      allOf:  # combine MemberModel with inline model shown below; result: extended MemberModel with immutable `uid` added by response
+                        - $ref: '#/components/schemas/MemberModel'
+                        - type: object
+                          properties:
+                            uid:
+                              type: string
+                              description: uid of the system this member belongs to
         '404':
           description: NOT FOUND
 
@@ -748,7 +775,7 @@ paths:
           description: NOT FOUND
   /v1/frontHistory/member/{memberId}:
     get:
-      description: 'Get Front History from a member, optionally beteen two timestamps'
+      description: 'Get Front History from a member, optionally between two timestamps'
       tags:
         - Front History
       parameters:
@@ -915,7 +942,7 @@ paths:
 
   /v1/friends:
     get:
-      description: 'Get friends of the autheticated user'
+      description: 'Get friends of the authenticated user'
       tags:
         - Friends
       responses:
@@ -935,7 +962,7 @@ paths:
           description: NOT FOUND
   /v1/friends/requests/outgoing:
     get:
-      description: 'Get outgoing friend requests of the autheticated user'
+      description: 'Get outgoing friend requests of the authenticated user'
       tags:
         - Friends
       responses:
@@ -1196,3 +1223,41 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
+
+components:
+  securitySchemes:
+    APITokenAuth:  # Authentication with token (as opposed to JWT)
+      type: apiKey
+      in: header
+      name: Authorization  # name of the header used for the token
+  schemas:
+    MemberModel:
+      type: object
+      properties:
+        name:
+          type: string
+        desc:
+          type: string
+        pronouns:
+          type: string
+        pkId:
+          type: string
+        color:
+          type: string
+        avatarUuid:
+          type: string
+        avatarUrl:
+          type: string
+        private:
+          type: boolean
+        preventTrusted:
+          type: boolean
+        preventsFrontNotifs:
+          type: boolean
+        info:
+          type: object
+          description: Collection of custom fields key/value pairs. Keys match the `content.fields` of User model on /v1/user/:id endpoint, with values the value of the field. # TODO edit this with link to other model/API call when specification has been added
+          # TODO: add example response?
+          # uses OAS 3.0 format for dictionary string-to-string
+          additionalProperties:
+            type: string

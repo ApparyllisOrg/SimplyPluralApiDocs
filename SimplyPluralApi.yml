@@ -33,16 +33,16 @@ paths:
         '404':
           description: NOT FOUND
   /v1/member/{docId}:
-    parameters:
+    post:
+      summary: 'Add a member'
+      description: 'Add a member by (optionally) an Id'
+      parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the member
-    post:
-      summary: 'Add a member'
-      description: 'Add a member by (optionally) an Id'
       tags:
         - Members
       responses:
@@ -53,6 +53,13 @@ paths:
     patch:
       summary: 'Update a member'
       description: 'Update a member by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
       responses:
         '200':
           description: OK
@@ -63,6 +70,13 @@ paths:
     delete:
       summary: 'Delete a member'
       description: 'Delete a member by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
       responses:
         '200':
           description: OK
@@ -114,7 +128,10 @@ paths:
 
 
   /v1/group/{systemId}/{docId}:
-    parameters:
+    get:
+      summary: 'Get a group'
+      description: 'Get a group by Id'
+      parameters:
         - in: path
           name: groupId
           schema:
@@ -127,8 +144,6 @@ paths:
             type: string
           required: true
           description: String Id of the system
-    get:
-      description: 'Get a group by Id'
       tags:
         - Groups
       responses:
@@ -138,7 +153,15 @@ paths:
           description: NOT FOUND
   /v1/group/{docId}:
     post:
+      summary: 'Add a group'
       description: 'Add a group by (optionally) an Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: false
+          description: String Id of the member
       tags:
         - Groups
       responses:
@@ -147,7 +170,15 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update a group'
       description: 'Update a group by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
       responses:
         '200':
           description: OK
@@ -156,7 +187,15 @@ paths:
       tags:
         - Groups
     delete:
+      summary: 'Delete a group'
       description: 'Delete a group by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
       responses:
         '200':
           description: OK
@@ -166,6 +205,7 @@ paths:
         - Groups
   /v1/groups/{systemId}:
     get:
+      summary: 'Get all groups'
       description: 'Get groups of a system by Id'
       tags:
         - Groups
@@ -184,7 +224,8 @@ paths:
 
   /v1/note/{systemId}/{docId}:
     get:
-      description: 'Get a note by Id'
+      summary: 'Get a note'
+      description: 'Get a note by Id'  # TODO: verify if systemId is just for consistency
       tags:
         - Notes
       parameters:
@@ -207,13 +248,14 @@ paths:
           description: NOT FOUND
   /v1/note/{docId}:
     post:
+      summary: 'Add a note'
       description: 'Add a note by (optionally) an Id'
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the note
       tags:
         - Notes
@@ -223,6 +265,7 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update a note'
       description: 'Update a note by Id'
       parameters:
         - in: path
@@ -239,6 +282,7 @@ paths:
       tags:
         - Notes
     delete:
+      summary: 'Delete a note'
       description: 'Delete a note by Id'
       parameters:
         - in: path
@@ -256,7 +300,8 @@ paths:
         - Notes
   /v1/notes/{systemId}:
     get:
-      description: 'Get notes of a system by Id'
+      summary: 'Get all notes'
+      description: 'Get notes of a system by Id'  # TODO: verify if systemId is just for consistency
       tags:
         - Notes
       parameters:
@@ -288,6 +333,7 @@ paths:
         required: true
         description: String Id of the system
     get:
+      summary: 'Get a Custom Front'
       description: 'Get a Custom Front by Id'
       tags:
         - Custom Fronts
@@ -304,21 +350,15 @@ paths:
         '404':
           description: NOT FOUND
   /v1/customFront/{docId}:
-    parameters:
-        - in: path
-          name: docId
-          schema:
-            type: string
-          required: true
-          description: String Id of the Custom Front
     post:
+      summary: 'Add a Custom Front'
       description: 'Add a Custom Front by (optionally) an Id'
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the Custom Front
       tags:
         - Custom Fronts
@@ -328,6 +368,7 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update a Custom Front'
       description: 'Update a Custom Front by Id'
       parameters:
         - in: path
@@ -344,7 +385,15 @@ paths:
       tags:
         - Custom Fronts
     delete:
+      summary: 'Delete a Custom Front'
       description: 'Delete a Custom Front by Id'
+      parameters:
+        - in: path
+          name: docId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
       responses:
         '200':
           description: OK
@@ -354,6 +403,7 @@ paths:
         - Custom Fronts
   /v1/customFronts/{systemId}:
     get:
+      summary: 'Get Custom Fronts'
       description: 'Get custom fronts of a system by Id'
       tags:
         - Custom Fronts
@@ -370,8 +420,9 @@ paths:
         '404':
           description: NOT FOUND
 
-  /v1/comment/{type}/{docId}:
+  /v1/comments/{type}/{docId}:
     get:
+      summary: 'Get comments from an entity by type'
       description: 'Get comments from a document of type (groups, members, customFronts, etc.)'
       tags:
         - Comments
@@ -387,7 +438,7 @@ paths:
           schema:
             type: string
           required: true
-          description: Type of the comment (groups, members, customFronts, etc.)
+          description: Type of the comment (groups, members, customFronts, etc.)  # TODO: check what valid types are, and add it as oneOf schema instead. "frontHistory" is one, what others are there?
       responses:
         '200':
           description: OK
@@ -395,13 +446,14 @@ paths:
           description: NOT FOUND
   /v1/comment/{docId}:
     post:
+      summary: 'Add a comment'
       description: 'Add a Comment by (optionally) an Id'
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the Comment
       tags:
         - Comments
@@ -411,6 +463,7 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update a Comment'
       description: 'Update a Comment by Id'
       parameters:
         - in: path
@@ -427,6 +480,7 @@ paths:
       tags:
         - Comments
     delete:
+      summary: 'Delete a comment'
       description: 'Delete a Comment by Id'
       parameters:
         - in: path
@@ -442,9 +496,10 @@ paths:
           description: NOT FOUND
       tags:
         - Comments
-  /v1/comments/{systemId}/{docId}:
+  /v1/comment/{systemId}/{docId}:
     get:
-      description: 'Get a specific comment from a system'
+      summary: 'Get a comment'
+      description: 'Get a specific comment from a system'  # TODO: verify if systemId is just for consistency, as comments are always private.
       tags:
         - Comments
       parameters:
@@ -469,7 +524,8 @@ paths:
 
   /v1/poll/{systemId}/{docId}:
     get:
-      description: 'Get a Poll by id'
+      summary: 'Get a Poll'
+      description: 'Get a Poll by id'  # TODO: verify if systemId is just for consistency
       tags:
         - Polls
       parameters:
@@ -492,13 +548,14 @@ paths:
           description: NOT FOUND
   /v1/poll/{docId}:
     post:
+      summary: 'Add a Poll'
       description: 'Add a Poll by (optionally) an Id'
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the Poll
       tags:
         - Polls
@@ -508,6 +565,7 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update a Poll'
       description: 'Update a Poll by Id'
       parameters:
         - in: path
@@ -524,6 +582,7 @@ paths:
       tags:
         - Polls
     delete:
+      summary: 'Delete a Poll'
       description: 'Delete a Poll by Id'
       parameters:
         - in: path
@@ -531,7 +590,7 @@ paths:
           schema:
             type: string
           required: true
-          description: String Id of the Comment
+          description: String Id of the Comment  # TODO: check what collection it corresponds to, likely not comment.
       responses:
         '200':
           description: OK
@@ -541,7 +600,8 @@ paths:
         - Polls
   /v1/polls/{systemId}:
     get:
-      description: 'Get polls from a system'
+      summary: 'Get all polls'
+      description: 'Get polls from a system'  # TODO: verify if systemId is just for consistency
       tags:
         - Polls
       parameters:
@@ -556,7 +616,7 @@ paths:
           schema:
             type: string
           required: true
-          description: String id of the Comment document
+          description: String id of the Comment document  # TODO: check what collection is used, likely not the comment document but something else.
       responses:
         '200':
           description: OK
@@ -565,7 +625,8 @@ paths:
 
   /v1/timer/automated/{systemId}/{docId}:
     get:
-      description: 'Get an Automated Timer by id'
+      summary: 'Get an Automated Timer'
+      description: 'Get an Automated Timer by id'  # TODO: verify if systemId is just for consistency
       tags:
         - Automated Timers
       parameters:
@@ -588,13 +649,14 @@ paths:
           description: NOT FOUND
   /v1/timer/automated/{docId}:
     post:
+      summary: 'Add an Automated Timer'
       description: 'Add an Automated Timer by (optionally) an Id'
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the Automated Timer
       tags:
         - Automated Timers
@@ -604,6 +666,7 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update an Automated Timer'
       description: 'Update an Automated Timer by Id'
       parameters:
         - in: path
@@ -620,6 +683,7 @@ paths:
       tags:
         - Automated Timers
     delete:
+      summary: 'Delete an Automated Timer'
       description: 'Delete an Automated Timer by Id'
       parameters:
         - in: path
@@ -638,7 +702,8 @@ paths:
 
   /v1/timers/automated/{systemId}:
     get:
-      description: 'Get Automated Timers from a system'
+      summary: 'Get all Automated Timers'
+      description: 'Get Automated Timers from a system'  # TODO: verify if systemId is just for consistency
       tags:
         - Automated Timers
       parameters:
@@ -656,7 +721,8 @@ paths:
 
   /v1/timer/repeated/{systemId}/{docId}:
     get:
-      description: 'Get an Repeated Timer by id'
+      summary: 'Get a Repeated Timer'
+      description: 'Get a Repeated Timer by id of a specific system'  # TODO verify if systemId is just for consistency
       tags:
         - Repeated Timers
       parameters:
@@ -679,13 +745,14 @@ paths:
           description: NOT FOUND
   /v1/timer/repeated/{docId}:
     post:
-      description: 'Add an Repeated Timer by (optionally) an Id'
+      summary: 'Add a Repeated Timer'
+      description: 'Add a Repeated Timer by (optionally) an Id'
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the Repeated Timer
       tags:
         - Repeated Timers
@@ -695,7 +762,8 @@ paths:
         '404':
           description: NOT FOUND
     patch:
-      description: 'Update an Repeated Timer by Id'
+      summary: 'Update a Repeated Timer'
+      description: 'Update a Repeated Timer by Id'
       parameters:
         - in: path
           name: docId
@@ -711,7 +779,8 @@ paths:
       tags:
         - Repeated Timers
     delete:
-      description: 'Delete an Repeated Timer by Id'
+      summary: 'Delete a Repeated Timer'
+      description: 'Delete a Repeated Timer by Id'
       parameters:
         - in: path
           name: docId
@@ -729,7 +798,8 @@ paths:
 
   /v1/timers/repeated/{systemId}:
     get:
-      description: 'Get Repeated Timers from a system'
+      summary: 'Get all Repeated Timers'
+      description: 'Get Repeated Timers from a system'  # TODO: verify if systemId is just for consistency
       tags:
         - Repeated Timers
       parameters:
@@ -747,6 +817,7 @@ paths:
 
   /v1/fronters/:
     get:
+      summary: 'Get current fronters'
       description: 'Get fronters from the currently authenticated system'
       tags:
         - Fronters
@@ -758,6 +829,7 @@ paths:
 
   /v1/frontHistory/{systemId}:
     get:
+      summary: 'Get Front History from entire system'
       description: 'Get Front History from a system between 2 timestamps'
       tags:
         - Front History
@@ -775,16 +847,11 @@ paths:
           description: NOT FOUND
   /v1/frontHistory/member/{memberId}:
     get:
+      summary: 'Get Front History from a single member'
       description: 'Get Front History from a member, optionally between two timestamps'
       tags:
         - Front History
       parameters:
-        - in: path
-          name: systemId
-          schema:
-            type: string
-          required: true
-          description: String Id of the system
         - in: path
           name: memberId
           schema:
@@ -798,7 +865,8 @@ paths:
           description: NOT FOUND
   /v1/frontHistory/{systemId}/{docId}:
     get:
-      description: 'Get a single Front History document by Id'
+      summary: 'Get a single Front History entry'
+      description: 'Get a single Front History document by Id'  # TODO: verify if systemId is just for consistency as front history isn't shared
       tags:
         - Front History
       parameters:
@@ -815,6 +883,7 @@ paths:
           description: NOT FOUND
   /v1/frontHistory/{docId}:
     post:
+      summary: 'Add a Front History entry'
       description: 'Add a Front history entry by (optionally) an Id'
       tags:
         - Front History
@@ -823,7 +892,7 @@ paths:
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the document
       responses:
         '200':
@@ -831,6 +900,7 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update a Front History entry'
       description: 'Update a Front History entry by an Id'
       tags:
         - Front History
@@ -847,6 +917,7 @@ paths:
         '404':
           description: NOT FOUND
     delete:
+      summary: 'Delete a Front History entry'
       description: 'Delete a Front History Entry by an Id'
       tags:
         - Front History
@@ -865,7 +936,8 @@ paths:
 
   /v1/user/{userId}:
     get:
-      description: 'Get a user'
+      summary: 'Get a user'
+      description: 'Get a user by id'
       tags:
         - Users
       parameters:
@@ -881,6 +953,7 @@ paths:
         '404':
           description: NOT FOUND
     patch:
+      summary: 'Update your own account'
       description: 'Update a user (your own)'
       tags:
         - Users
@@ -897,7 +970,8 @@ paths:
         '404':
           description: NOT FOUND
     delete:
-      description: 'Delete a user account. (App-only)'
+      summary: 'Delete your account (app-only)'
+      description: 'Delete a user account. (App-only)'  # TODO: verify if JWT endpoints are to be added to API docs.
       tags:
         - Users
       parameters:
@@ -914,6 +988,7 @@ paths:
           description: NOT FOUND
   /v1/user/username/{userId}:
     patch:
+      summary: 'Set username'
       description: 'Set username for user'
       tags:
         - Users
@@ -931,6 +1006,7 @@ paths:
           description: NOT FOUND
   /v1/user/generateReport:
     post:
+      summary: 'Generate a user report'
       description: 'Generate a user report for the authenticated user'
       tags:
         - Users
@@ -942,6 +1018,7 @@ paths:
 
   /v1/friends:
     get:
+      summary: 'Get friends'
       description: 'Get friends of the authenticated user'
       tags:
         - Friends
@@ -952,6 +1029,7 @@ paths:
           description: NOT FOUND
   /v1/friends/requests/incoming:
     get:
+      summary: 'Get incoming friend requests'
       description: 'Get incoming friend requests of the authenticated user'
       tags:
         - Friends
@@ -962,6 +1040,7 @@ paths:
           description: NOT FOUND
   /v1/friends/requests/outgoing:
     get:
+      summary: 'Get outgoing friend requests'
       description: 'Get outgoing friend requests of the authenticated user'
       tags:
         - Friends
@@ -972,6 +1051,7 @@ paths:
           description: NOT FOUND
   /v1/friends/getFrontValues:
     get:
+      summary: 'Get fronters (text-format) of all friends'
       description: "Get front values (text-format) of all the authenticated user's friends"
       tags:
         - Friends
@@ -982,6 +1062,7 @@ paths:
           description: NOT FOUND
   /v1/friends/request/add/{username}:
     post:
+      summary: 'Add a friend'
       description: "Add a friend by username (or userId)"
       tags:
         - Friends
@@ -992,7 +1073,9 @@ paths:
           description: NOT FOUND
   /v1/friends/request/respond/{username}:
     post:
+      summary: 'Respond to a friend request'
       description: "Respond to a friend request by username (or userId)"
+      # TODO check and add missing parameter in path
       tags:
         - Friends
       responses:
@@ -1002,6 +1085,7 @@ paths:
           description: NOT FOUND
   /v1/friends/request/{username}:
     delete:
+      summary: 'Remove a friend request'
       description: "Remove a friend request"
       parameters:
         - in: path
@@ -1019,6 +1103,7 @@ paths:
           description: NOT FOUND
   /v1/friends/remove/{username}:
     delete:
+      summary: 'Remove a friend'
       description: "Remove a friend by username (or userId)"
       parameters:
         - in: path
@@ -1038,6 +1123,7 @@ paths:
 
   /v1/friend/{userId}:
     patch:
+      summary: 'Update your settings for a friend'
       description: 'Update your settings for a friend by Id'
       tags:
         - Friend
@@ -1055,7 +1141,8 @@ paths:
           description: NOT FOUND
   /v1/friend/{userId}/{friendId}:
     get:
-      description: 'Get a friend from a user (Typically your user)'
+      summary: 'Get a friend from a user'
+      description: 'Get a friend from a user (Typically your user)'  # TODO: check if this can even be another user.
       tags:
         - Friend
       parameters:
@@ -1064,7 +1151,7 @@ paths:
           schema:
             type: string
           required: true
-          description: String Id of the origin friend (Typically you)
+          description: String Id of the origin friend (Typically you)  # TODO: verify if userId is the same as a systemId, but renamed as it can function on non-system accounts too.
         - in: path
           name: friendId
           schema:
@@ -1078,6 +1165,7 @@ paths:
           description: NOT FOUND
   /v1/friend/{userId}/getFront:
     get:
+      summary: 'Get the current fronters of a friend'
       description: 'Get the current fronters of a friend'
       tags:
         - Friend
@@ -1095,6 +1183,7 @@ paths:
           description: NOT FOUND
   /v1/friend/{userId}/getFrontValue:
     get:
+      summary: 'Get current fronters (text-format) of a friend'
       description: 'Get the current fronters (in text form) of a friend'
       tags:
         - Friend
@@ -1112,15 +1201,16 @@ paths:
           description: NOT FOUND
 
   /v1/integrations/pluralkit/sync/member/{memberId}:
-    parameters:
+    patch:
+      summary: 'Sync a specific member to/from PluralKit'
+      description: 'Sync a specific member to or from PluralKit'
+      parameters:
         - in: path
           name: memberId
           schema:
             type: string
           required: true
           description: The member id to sync
-    get:
-      description: 'Sync a specific member to or from PluralKit'
       tags:
         - PluralKit
       responses:
@@ -1130,6 +1220,7 @@ paths:
           description: NOT FOUND
   /v1/integrations/pluralkit/sync/members:
     get:
+      summary: 'Sync all members to/from PluralKit'
       description: 'Sync all system members to or from PluralKit'
       tags:
         - PluralKit
@@ -1148,6 +1239,7 @@ paths:
           required: true
           description: Id of the avatar
     post:
+      summary: 'Store avatar'
       description: 'Store an avatar with the supplied Id'
       responses:
         '200':
@@ -1157,6 +1249,7 @@ paths:
       tags:
         - Avatars (App-Only)
     delete:
+      summary: 'Delete avatar'
       description: 'Delete an avatar with the supplied Id'
       responses:
         '200':
@@ -1168,17 +1261,8 @@ paths:
 
   /v1/tokens:
     get:
+      summary: 'Get all tokens'
       description: 'Get all tokens belonging to the App JWT logged-in user'
-      tags:
-        - Tokens (App-Only)
-      responses:
-        '200':
-          description: OK
-        '404':
-          description: NOT FOUND
-  /v1/token:
-    post:
-      description: 'Request the generation of a new token'
       tags:
         - Tokens (App-Only)
       responses:
@@ -1188,13 +1272,34 @@ paths:
           description: NOT FOUND
   /v1/token/{docId}:
     parameters:
-        - in: path
-          name: docId
-          schema:
-            type: string
-          required: true
-          description: String Id of the token
+      - in: path
+        name: docId
+        schema:
+          type: string
+        required: true
+        description: String Id of the token
+    get:
+      summary: 'Get a specific token'
+      description: 'Get a specific token by id'
+      tags:
+        - Tokens (App-Only)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+    post:
+      summary: 'Generate a new token'
+      description: 'Request the generation of a new token'
+      tags:
+        - Tokens (App-Only)
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
     delete:
+      summary: 'Delete a token'
       description: 'Delete a token by document Id'
       responses:
         '200':
@@ -1206,6 +1311,7 @@ paths:
 
   /v1/private/{userId}:
     get:
+      summary: 'Get the private data of your account'
       description: 'Get the private data of a user'
       tags:
         - Private (App-Only)
@@ -1215,7 +1321,8 @@ paths:
         '404':
           description: NOT FOUND
     patch:
-      description: 'Update the private data of your a user'
+      summary: 'Update the private data of your account'
+      description: 'Update the private data of your user'
       tags:
         - Private (App-Only)
       responses:

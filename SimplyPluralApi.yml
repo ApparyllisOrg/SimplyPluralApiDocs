@@ -1,89 +1,142 @@
 openapi: '3.0.2'
 info:
   title: Simply Plural API
-  description: This is a work-in-progress API definition. If you need to know specifcs, please go to https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts
+  description: This is a work-in-progress API definition. If you need to know specifics, please go to https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts
   version: '1.0'
 servers:
   - url: https://api.apparyllis.com:8443
   - url: https://devapi.apparyllis.com
 
 paths:
-  /v1/member/{systemId}/{docId}:
+  /v1/member/{systemId}/{entityId}:
     get:
       summary: 'Get a member'
       description: 'Get a member by Id'
+      security:
+        - APITokenAuth: []
       tags:
         - Members
       parameters:
-        - in: path
-          name: docId
-          schema:
-            type: string
-          required: true
-          description: String Id of the member
         - in: path
           name: systemId
           schema:
             type: string
           required: true
           description: String Id of the system
+        - in: path
+          name: entityId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exists:
+                    type: boolean
+                  id:
+                    type: string
+                    description: Unique id for this member
+                  content:
+                    allOf:  # combine MemberModel with inline model shown below; result: extended MemberModel with immutable `uid` added by response
+                      - $ref: '#/components/schemas/MemberModel'
+                      - type: object
+                        properties:
+                          uid:
+                            type: string
+                            description: uid of the system this member belongs to
+        '401':
+          description: UNAUTHORISED - You don't have permissions to view this  # TODO: Fix this on API, #69
         '404':
-          description: NOT FOUND
-  /v1/member/{docId}:
+          description: NOT FOUND  # TODO: fix this on API, #69
+          
+  /v1/member/{entityId}:
     post:
       summary: 'Add a member'
       description: 'Add a member by (optionally) an Id'
+      security:
+        - APITokenAuth: []
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
           description: String Id of the member
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MemberModel'
       tags:
         - Members
       responses:
         '200':
           description: OK
-        '404':
-          description: NOT FOUND
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: String Id of the newly added member
+        '400':
+          description: BAD REQUEST - Validation of request body failed
+        '500':  
+          description: SERVER ERROR - Adding member failed
+    
     patch:
       summary: 'Update a member'
       description: 'Update a member by Id'
+      security:
+        - APITokenAuth: []
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
           description: String Id of the member
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MemberModel'
       responses:
         '200':
-          description: OK
+          description: OK - Empty response body
+        '400':
+          description: BAD REQUEST - Validation of request body failed
         '404':
-          description: NOT FOUND
+          description: NOT FOUND  # TODO: fix this on API, #69
       tags:
         - Members
+
     delete:
       summary: 'Delete a member'
       description: 'Delete a member by Id'
+      security:
+        - APITokenAuth: []
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
           description: String Id of the member
       responses:
         '200':
-          description: OK
+          description: OK - Empty response body
         '404':
-          description: NOT FOUND
+          description: NOT FOUND - Empty response body
       tags:
         - Members
+
   /v1/members/{systemId}:
     get:
       summary: 'Get members from a system'
@@ -101,7 +154,7 @@ paths:
           description: String Id of the system
       responses:
         '200':
-          description: OK
+          description: 'OK - Will return empty array if no members exist or no members are visible to you'
           content:
             application/json:
               schema:
@@ -122,12 +175,14 @@ paths:
                             uid:
                               type: string
                               description: uid of the system this member belongs to
+        '403':
+          description: 'FORBIDDEN - Not authorised to view members of this user'
         '404':
-          description: NOT FOUND
+          description: 'NOT FOUND - System not found'
 
 
 
-  /v1/group/{systemId}/{docId}:
+  /v1/group/{systemId}/{entityId}:
     get:
       summary: 'Get a group'
       description: 'Get a group by Id'
@@ -151,13 +206,13 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/group/{docId}:
+  /v1/group/{entityId}:
     post:
       summary: 'Add a group'
       description: 'Add a group by (optionally) an Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
@@ -174,7 +229,7 @@ paths:
       description: 'Update a group by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -191,7 +246,7 @@ paths:
       description: 'Delete a group by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -222,7 +277,7 @@ paths:
         '404':
           description: NOT FOUND
 
-  /v1/note/{systemId}/{docId}:
+  /v1/note/{systemId}/{entityId}:
     get:
       summary: 'Get a note'
       description: 'Get a note by Id'  # TODO: verify if systemId is just for consistency
@@ -230,7 +285,7 @@ paths:
         - Notes
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -246,13 +301,13 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/note/{docId}:
+  /v1/note/{entityId}:
     post:
       summary: 'Add a note'
       description: 'Add a note by (optionally) an Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
@@ -269,7 +324,7 @@ paths:
       description: 'Update a note by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -286,7 +341,7 @@ paths:
       description: 'Delete a note by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -318,10 +373,10 @@ paths:
           description: NOT FOUND
 
 
-  /v1/customFront/{systemId}/{docId}:
+  /v1/customFront/{systemId}/{entityId}:
     parameters:
       - in: path
-        name: docId
+        name: entityId
         schema:
           type: string
         required: true
@@ -339,7 +394,7 @@ paths:
         - Custom Fronts
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -349,13 +404,13 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/customFront/{docId}:
+  /v1/customFront/{entityId}:
     post:
       summary: 'Add a Custom Front'
       description: 'Add a Custom Front by (optionally) an Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
@@ -372,7 +427,7 @@ paths:
       description: 'Update a Custom Front by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -389,7 +444,7 @@ paths:
       description: 'Delete a Custom Front by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -420,7 +475,7 @@ paths:
         '404':
           description: NOT FOUND
 
-  /v1/comments/{type}/{docId}:
+  /v1/comments/{type}/{entityId}:
     get:
       summary: 'Get comments from an entity by type'
       description: 'Get comments from a document of type (groups, members, customFronts, etc.)'
@@ -428,7 +483,7 @@ paths:
         - Comments
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -444,13 +499,13 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/comment/{docId}:
+  /v1/comment/{entityId}:
     post:
       summary: 'Add a comment'
       description: 'Add a Comment by (optionally) an Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
@@ -467,7 +522,7 @@ paths:
       description: 'Update a Comment by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -484,7 +539,7 @@ paths:
       description: 'Delete a Comment by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -496,7 +551,7 @@ paths:
           description: NOT FOUND
       tags:
         - Comments
-  /v1/comment/{systemId}/{docId}:
+  /v1/comment/{systemId}/{entityId}:
     get:
       summary: 'Get a comment'
       description: 'Get a specific comment from a system'  # TODO: verify if systemId is just for consistency, as comments are always private.
@@ -510,7 +565,7 @@ paths:
           required: true
           description: String Id of the system
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -522,7 +577,7 @@ paths:
           description: NOT FOUND
 
 
-  /v1/poll/{systemId}/{docId}:
+  /v1/poll/{systemId}/{entityId}:
     get:
       summary: 'Get a Poll'
       description: 'Get a Poll by id'  # TODO: verify if systemId is just for consistency
@@ -530,7 +585,7 @@ paths:
         - Polls
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -546,13 +601,13 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/poll/{docId}:
+  /v1/poll/{entityId}:
     post:
       summary: 'Add a Poll'
       description: 'Add a Poll by (optionally) an Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
@@ -569,7 +624,7 @@ paths:
       description: 'Update a Poll by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -586,7 +641,7 @@ paths:
       description: 'Delete a Poll by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -612,7 +667,7 @@ paths:
           required: true
           description: String Id of the system
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -623,7 +678,7 @@ paths:
         '404':
           description: NOT FOUND
 
-  /v1/timer/automated/{systemId}/{docId}:
+  /v1/timer/automated/{systemId}/{entityId}:
     get:
       summary: 'Get an Automated Timer'
       description: 'Get an Automated Timer by id'  # TODO: verify if systemId is just for consistency
@@ -631,7 +686,7 @@ paths:
         - Automated Timers
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -647,13 +702,13 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/timer/automated/{docId}:
+  /v1/timer/automated/{entityId}:
     post:
       summary: 'Add an Automated Timer'
       description: 'Add an Automated Timer by (optionally) an Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
@@ -670,7 +725,7 @@ paths:
       description: 'Update an Automated Timer by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -687,7 +742,7 @@ paths:
       description: 'Delete an Automated Timer by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -719,7 +774,7 @@ paths:
         '404':
           description: NOT FOUND
 
-  /v1/timer/repeated/{systemId}/{docId}:
+  /v1/timer/repeated/{systemId}/{entityId}:
     get:
       summary: 'Get a Repeated Timer'
       description: 'Get a Repeated Timer by id of a specific system'  # TODO verify if systemId is just for consistency
@@ -727,7 +782,7 @@ paths:
         - Repeated Timers
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -743,13 +798,13 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/timer/repeated/{docId}:
+  /v1/timer/repeated/{entityId}:
     post:
       summary: 'Add a Repeated Timer'
       description: 'Add a Repeated Timer by (optionally) an Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
@@ -766,7 +821,7 @@ paths:
       description: 'Update a Repeated Timer by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -783,7 +838,7 @@ paths:
       description: 'Delete a Repeated Timer by Id'
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -863,7 +918,7 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/frontHistory/{systemId}/{docId}:
+  /v1/frontHistory/{systemId}/{entityId}:
     get:
       summary: 'Get a single Front History entry'
       description: 'Get a single Front History document by Id'  # TODO: verify if systemId is just for consistency as front history isn't shared
@@ -881,7 +936,7 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/frontHistory/{docId}:
+  /v1/frontHistory/{entityId}:
     post:
       summary: 'Add a Front History entry'
       description: 'Add a Front history entry by (optionally) an Id'
@@ -889,7 +944,7 @@ paths:
         - Front History
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: false
@@ -906,7 +961,7 @@ paths:
         - Front History
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -923,7 +978,7 @@ paths:
         - Front History
       parameters:
         - in: path
-          name: docId
+          name: entityId
           schema:
             type: string
           required: true
@@ -1270,10 +1325,10 @@ paths:
           description: OK
         '404':
           description: NOT FOUND
-  /v1/token/{docId}:
+  /v1/token/{entityId}:
     parameters:
       - in: path
-        name: docId
+        name: entityId
         schema:
           type: string
         required: true

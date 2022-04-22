@@ -8,10 +8,10 @@ servers:
   - url: https://devapi.apparyllis.com
 
 paths:
-  /v1/member/{systemId}/{entityId}:
+  /v1/members/{systemId}:
     get:
-      summary: 'Get a member'
-      description: 'Get a member by Id'
+      summary: 'Get All Members'
+      description: 'Get members from a system by system id. This can be the system of the authenticated user, or from a friend of the authenticated user.'
       security:
         - APITokenAuth: []
       tags:
@@ -22,13 +22,56 @@ paths:
           schema:
             type: string
           required: true
-          description: String Id of the system
+          description: String Id of the system (12 byte BSON ObjectId as string)
+      responses:
+        '200':
+          description: 'OK - Will return empty array if no members exist or no members are visible to you'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    exists:
+                      type: boolean
+                    id:
+                      type: string
+                      description: Unique id for this member (12 byte BSON ObjectId as string)
+                    content:
+                      allOf:  # combine MemberModel with inline model shown below; result: extended MemberModel with immutable `uid` added by response
+                        - $ref: '#/components/schemas/MemberModel'
+                        - type: object
+                          properties:
+                            uid:
+                              type: string
+                              description: uid of the system this member belongs to (12 byte BSON ObjectId as string)
+        '403':
+          description: 'FORBIDDEN - Not authorised to view members of this user'
+        '404':
+          description: 'NOT FOUND - System not found'
+
+  /v1/member/{systemId}/{entityId}:
+    get:
+      summary: 'Get Member'
+      description: 'Get a member from a system by unique Ids of both system and member. This can be the system of the authenticated user, or from a friend of the authenticated user.'
+      security:
+        - APITokenAuth: []
+      tags:
+        - Members
+      parameters:
+        - in: path
+          name: systemId
+          schema:
+            type: string
+          required: true
+          description: String Id of the system (12 byte BSON ObjectId as string)
         - in: path
           name: entityId
           schema:
             type: string
           required: true
-          description: String Id of the member
+          description: String Id of the member (12 byte BSON ObjectId as string)
       responses:
         '200':
           description: OK
@@ -41,7 +84,7 @@ paths:
                     type: boolean
                   id:
                     type: string
-                    description: Unique id for this member
+                    description: Unique Id for this member (12 byte BSON ObjectId as string)
                   content:
                     allOf:  # combine MemberModel with inline model shown below; result: extended MemberModel with immutable `uid` added by response
                       - $ref: '#/components/schemas/MemberModel'
@@ -49,7 +92,7 @@ paths:
                         properties:
                           uid:
                             type: string
-                            description: uid of the system this member belongs to
+                            description: uid of the system this member belongs to (12 byte BSON ObjectId as string)
         '401':
           description: UNAUTHORISED - You don't have permissions to view this  # TODO: Fix this on API, #69
         '404':
@@ -57,7 +100,7 @@ paths:
           
   /v1/member/{entityId}:
     post:
-      summary: 'Add a member'
+      summary: 'Add Member'
       description: 'Add a member by (optionally) an Id'
       security:
         - APITokenAuth: []
@@ -67,7 +110,7 @@ paths:
           schema:
             type: string
           required: false
-          description: String Id of the member
+          description: String Id of the member (12 byte BSON ObjectId as string)
       requestBody:
         required: true
         content:
@@ -83,14 +126,14 @@ paths:
             text/plain:
               schema:
                 type: string
-                description: String Id of the newly added member
+                description: String Id of the newly added member (12 byte BSON ObjectId as string)
         '400':
           description: BAD REQUEST - Validation of request body failed
         '500':  
           description: SERVER ERROR - Adding member failed
     
     patch:
-      summary: 'Update a member'
+      summary: 'Update Member'
       description: 'Update a member by Id'
       security:
         - APITokenAuth: []
@@ -100,7 +143,7 @@ paths:
           schema:
             type: string
           required: true
-          description: String Id of the member
+          description: String Id of the member (12 byte BSON ObjectId as string)
       requestBody:
         required: true
         content:
@@ -118,7 +161,7 @@ paths:
         - Members
 
     delete:
-      summary: 'Delete a member'
+      summary: 'Delete Member'
       description: 'Delete a member by Id'
       security:
         - APITokenAuth: []
@@ -128,7 +171,7 @@ paths:
           schema:
             type: string
           required: true
-          description: String Id of the member
+          description: String Id of the member (12 byte BSON ObjectId as string)
       responses:
         '200':
           description: OK - Empty response body
@@ -137,50 +180,6 @@ paths:
       tags:
         - Members
 
-  /v1/members/{systemId}:
-    get:
-      summary: 'Get members from a system'
-      description: 'Get members from a system by system id. This can be the system of the authenticated user, or from a friend of the authenticated user.'
-      security:
-        - APITokenAuth: []
-      tags:
-        - Members
-      parameters:
-        - in: path
-          name: systemId
-          schema:
-            type: string
-          required: true
-          description: String Id of the system
-      responses:
-        '200':
-          description: 'OK - Will return empty array if no members exist or no members are visible to you'
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    exists:
-                      type: boolean
-                    id:
-                      type: string
-                      description: Unique id for this member
-                    content:
-                      allOf:  # combine MemberModel with inline model shown below; result: extended MemberModel with immutable `uid` added by response
-                        - $ref: '#/components/schemas/MemberModel'
-                        - type: object
-                          properties:
-                            uid:
-                              type: string
-                              description: uid of the system this member belongs to
-        '403':
-          description: 'FORBIDDEN - Not authorised to view members of this user'
-        '404':
-          description: 'NOT FOUND - System not found'
-
-
 
   /v1/group/{systemId}/{entityId}:
     get:
@@ -188,17 +187,17 @@ paths:
       description: 'Get a group by Id'
       parameters:
         - in: path
-          name: groupId
-          schema:
-            type: string
-          required: true
-          description: String Id of the group
-        - in: path
           name: systemId
           schema:
             type: string
           required: true
-          description: String Id of the system
+          description: String Id of the system (12 byte BSON ObjectId as string)
+        - in: path
+          name: groupId
+          schema:
+            type: string
+          required: true
+          description: String Id of the group (12 byte BSON ObjectId as string)
       tags:
         - Groups
       responses:
@@ -279,8 +278,8 @@ paths:
 
   /v1/note/{systemId}/{entityId}:
     get:
-      summary: 'Get a note'
-      description: 'Get a note by Id'  # TODO: verify if systemId is just for consistency
+      summary: 'Get Note'
+      description: 'Get a note by system and Id'  # TODO: verify if systemId is just for consistency
       tags:
         - Notes
       parameters:
@@ -353,10 +352,10 @@ paths:
           description: NOT FOUND
       tags:
         - Notes
-  /v1/notes/{systemId}:
+  /v1/notes/{systemId}/{entityId}:
     get:
       summary: 'Get all notes'
-      description: 'Get notes of a system by Id'  # TODO: verify if systemId is just for consistency
+      description: 'Get all notes of a member from a system by Id'  # TODO: verify if systemId is just for consistency
       tags:
         - Notes
       parameters:
@@ -366,6 +365,12 @@ paths:
             type: string
           required: true
           description: String Id of the system
+        - in: path
+          name: entityId
+          schema:
+            type: string
+          required: true
+          description: String Id of the member whose notes are requested
       responses:
         '200':
           description: OK
@@ -1423,3 +1428,16 @@ components:
           # uses OAS 3.0 format for dictionary string-to-string
           additionalProperties:
             type: string
+    NoteModel:
+      type: object
+      properties:
+        title:
+          type: string
+        note:
+          type: string
+        color:
+          type: string
+        member:
+          type: string
+        date:
+          type: number

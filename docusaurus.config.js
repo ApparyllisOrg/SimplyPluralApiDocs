@@ -69,5 +69,5 @@ module.exports = {
 		}
 	]
   ],
-
+  plugins: [require.resolve('./Webpack5PolyfillPlugin.js')],
 };

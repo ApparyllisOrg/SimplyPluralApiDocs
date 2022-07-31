@@ -1,7 +1,7 @@
 openapi: '3.0.2'
 info:
   title: Simply Plural API
-  description: This is a work-in-progress API definition. If you need to know specifics, please go to https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts
+  description: This is a work-in-progress API definition. If you need to know specifics, please go to https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts
   version: '1.0'
 servers:
   - url: https://api.apparyllis.com:8443
@@ -20,9 +20,9 @@ paths:
         - in: path
           name: systemId
           schema:
-            type: string
+            $ref: '#/components/schemas/SystemID'
           required: true
-          description: String Id of the system (12 byte BSON ObjectId as string)
+          description: String Id of the system 
       responses:
         '200':
           description: 'OK - Will return empty array if no members exist or no members are visible to you'
@@ -36,18 +36,16 @@ paths:
                     exists:
                       type: boolean
                     id:
-                      type: string
-                      description: Unique id for this member (12 byte BSON ObjectId as string)
+                      $ref: '#/components/schemas/MemberID'
                     content:
                       allOf:  # combine MemberModel with inline model shown below; result: extended MemberModel with immutable `uid` added by response
                         - $ref: '#/components/schemas/MemberModel'
                         - type: object
                           properties:
                             uid:
-                              type: string
-                              description: uid of the system this member belongs to (12 byte BSON ObjectId as string)
+                              $ref: '#/components/schemas/SystemID'
         '403':
-          description: 'FORBIDDEN - Not authorised to view members of this user'
+          description: 'FORBIDDEN - Not authorized to view members of this user'
         '404':
           description: 'NOT FOUND - System not found'
 
@@ -63,9 +61,9 @@ paths:
         - in: path
           name: systemId
           schema:
-            type: string
+            $ref: '#/components/schemas/SystemID'
           required: true
-          description: String Id of the system (12 byte BSON ObjectId as string)
+          description: String Id of the system 
         - in: path
           name: entityId
           schema:
@@ -91,10 +89,9 @@ paths:
                       - type: object
                         properties:
                           uid:
-                            type: string
-                            description: uid of the system this member belongs to (12 byte BSON ObjectId as string)
+                            $ref: '#/components/schemas/SystemID'
         '401':
-          description: UNAUTHORISED - You don't have permissions to view this  # TODO: Fix this on API, #69
+          description: UNAUTHORIZED - You don't have permissions to view this  # TODO: Fix this on API, #69
         '404':
           description: NOT FOUND  # TODO: fix this on API, #69
           
@@ -1297,6 +1294,20 @@ components:
       in: header
       name: Authorization  # name of the header used for the token
   schemas:
+    # COMMON TYPES
+    SystemID:
+      type: string
+      pattern: '^[A-Za-z0-9]{1,50}$'  # Firebase User ID, though as the length can grow they're not particularly limited
+      description: 'ID used to reference a registered account on the app and the system connected to it. It uses a Firebase User ID format.'
+    MemberID:
+      type: string
+      oneOf:
+      - pattern: '^[a-z]{5}$' # PK member id
+      - pattern: '^[a-zA-Z0-9]{20}$'
+      - pattern: '^[0-9a-fA-F]{24}$' # 12 byte BSON ObjectID, regex taken from js-bson implementation
+      description: 'Unique ID for a member, format can differ due to old implementations using different formats.'
+
+      # MODELS
     MemberModel:
       type: object
       properties:
@@ -1308,6 +1319,7 @@ components:
           type: string
         pkId:
           type: string
+          pattern: '^[a-z]{5}$' # PK member id
         color:
           type: string
         avatarUuid:

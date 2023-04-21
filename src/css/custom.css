@@ -7,7 +7,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #5C6A79;
+  --ifm-color-primary: rgb(203, 169, 251);
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -17,6 +17,10 @@
   --ifm-code-font-size: 95%;
 }
 
+[data-theme='light'] {
+  --ifm-color-primary: rgb(110, 27, 245);
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
@@ -24,14 +28,14 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-.aboutCreator
-{
+.aboutCreator {
   margin: 20px;
 }
 
-.justify-center
-{
+.justify-center {
   justify-content: center;
 }
 
-.spacer{width: 20px;}
+.spacer {
+  width: 20px;
+}

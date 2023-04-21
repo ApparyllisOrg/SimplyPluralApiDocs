@@ -22,13 +22,7 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {
-          to: 'about/',
-          activeBasePath: 'about',
-          label: 'About the creator',
-          position: 'left',
-        },
-		{ to: "/api", label: "API", position: "left" },
+        { to: "/docs/docs/api", label: "API", position: "left" },
       ],
     },
     footer: {
@@ -53,21 +47,52 @@ module.exports = {
     },
   },
 
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "simplyPluralApi",
+        docsPluginId: "classic",
+        config: {
+          simplyPlural: {
+            specPath: "SimplyPluralApi.yml",
+            outputDir: "docs/api",
+            sidebarOptions: {
+              categoryLinkSource: "tag",
+              groupPathsBy: "tag",
+            },
+          }
+        }
+      },
+    ]
+  ],
+
+
   presets: [
     [
-      'docusaurus-preset-openapi',
-      {
+      "classic",
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        googleTagManager: false,
+        googleAnalytics: false,
         docs: {
-          	sidebarPath: require.resolve('./sidebars.js')
+          sidebarPath: require.resolve("./sidebars.js"),
+          editUrl:
+            "https://github.com/ApparyllisOrg/SimplyPluralApiDocs",
+          docLayoutComponent: "@theme/DocPage",
+          docItemComponent: "@theme/ApiItem"
+        },
+        blog: {
+          showReadingTime: true,
+          editUrl:
+            "https://github.com/ApparyllisOrg/SimplyPluralApiDocs"
         },
         theme: {
-          	customCss: require.resolve('./src/css/custom.css'),
-        },
-		api: {
-			path: "SimplyPluralApi.yml",
-		}
-		}
-	]
+          customCss: require.resolve("./src/css/custom.css")
+        }
+      })
+    ]
   ],
+  themes: ["docusaurus-theme-openapi-docs"],
 
 };

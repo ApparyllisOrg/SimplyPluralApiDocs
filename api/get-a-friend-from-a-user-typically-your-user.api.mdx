@@ -1,0 +1,38 @@
+---
+id: get-a-friend-from-a-user-typically-your-user
+title: "Get a friend from a user (Typically your user)"
+description: "Get a friend from a user (Typically your user)"
+sidebar_label: "Get a friend from a user (Typically your user)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Friend"],"parameters":[{"in":"path","name":"userId","schema":{"type":"string"},"required":true,"description":"String Id of the origin friend (Typically you)"},{"in":"path","name":"friendId","schema":{"type":"string"},"required":true,"description":"String Id of the destination friend (Typically your friend)"}],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"description":"Get a friend from a user (Typically your user)","method":"get","path":"/v1/friend/{userId}/{friendId}","servers":[{"url":"https://api.apparyllis.com:8443"},{"url":"https://devapi.apparyllis.com"}],"info":{"title":"Simply Plural API","description":"This is a work-in-progress API definition. If you need to know specifcs, please go to https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Get a friend from a user (Typically your user)","description":{"type":"text/plain"},"url":{"path":["v1","friend",":userId",":friendId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the origin friend (Typically you)","type":"text/plain"},"type":"any","value":"","key":"userId"},{"disabled":false,"description":{"content":"(Required) String Id of the destination friend (Typically your friend)","type":"text/plain"},"type":"any","value":"","key":"friendId"}]},"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: api/simply-plural-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Get a friend from a user (Typically your user)
+
+
+
+Get a friend from a user (Typically your user)
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"userId","schema":{"type":"string"},"required":true,"description":"String Id of the origin friend (Typically you)"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"in":"path","name":"friendId","schema":{"type":"string"},"required":true,"description":"String Id of the destination friend (Typically your friend)"}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+NOT FOUND
+
+</div><div></div></TabItem></ApiTabs></div>
+      

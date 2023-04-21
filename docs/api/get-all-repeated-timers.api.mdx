@@ -1,0 +1,41 @@
+---
+id: get-all-repeated-timers
+title: "Get all repeated timers"
+description: "Get Repeated Timers from a system"
+sidebar_label: "Get all repeated timers"
+hide_title: true
+hide_table_of_contents: true
+api: {"description":"Get Repeated Timers from a system","tags":["Repeated Timers"],"parameters":[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"get","path":"/v1/timers/repeated/{systemId}","servers":[{"url":"https://api.apparyllis.com:8443"},{"url":"https://devapi.apparyllis.com"}],"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Get all repeated timers","description":{"content":"Get Repeated Timers from a system","type":"text/plain"},"url":{"path":["v1","timers","repeated",":systemId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the system","type":"text/plain"},"type":"any","value":"","key":"systemId"}]},"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get all repeated timers</h1>
+
+<MethodEndpoint method={"get"} path={"/v1/timers/repeated/{systemId}"}></MethodEndpoint>
+
+
+
+Get Repeated Timers from a system
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+NOT FOUND
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

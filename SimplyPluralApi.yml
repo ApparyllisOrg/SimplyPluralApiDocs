@@ -20,6 +20,111 @@ components:
           description: Wheter trusted friends are prevented from seeing this private object
         supportDescMarkdown:
           description: Whether the description supports markdown
+        timestamp:
+          description: Milliseconds since epoch for this timestamp/date
+
+    automatedReminder:
+      type: object
+      properties:
+        name:
+          description: Name of the reminder
+          type: string
+        message:
+          description: Message the reminder sends
+          type: string
+        type:
+          description: When this reminder should trigger.\n0 -> Member front change\n0 -> Custom front change\m0 -> Any front change
+          type: integer
+        delayInHours:
+          description: Delay in hours since the action (front change)
+          type: integer
+
+    chatMessagePost:
+      type: object
+      properties:
+        message:
+          description: Message
+          type: string
+        channel:
+          description: ID of the channel this message should go to
+          type: string
+        writer:
+          description: ID of the member that wrote this message
+          type: string
+        writtenAt:
+          description:
+            $ref: "#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        replyTo:
+          description: "Message ID this message is in reply to"
+          type: string
+
+    chatMessagePatch:
+      type: object
+      properties:
+        message:
+          description: Message
+          type: string
+        updatedAt:
+          description:
+            $ref: "#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+
+    chatChannel:
+      type: object
+      properties:
+        name:
+          description: Channel name
+          type: string
+        desc:
+          description: Description of the channel
+          type: string
+
+    chatCategory:
+      type: object
+      properties:
+        name:
+          description: Category name
+          type: string
+        desc:
+          description: Description of the category
+          type: string
+        channels:
+          items:
+            type: string
+          description: "List of channel IDs this category contains"
+
+    commentsPost:
+      type: object
+      properties:
+        time:
+          description:
+            $ref: "#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        text:
+          description: Comment text/message
+          type: string
+        supporMarkdown:
+          description: Whether this comment supports markdown
+          type: boolean
+        documentId:
+          description: Id of the object this comment belongs to
+          type: string
+        collection:
+          description: Id of the collection this comments belongs to (Only accepted collection is "frontHistory")
+          type: string
+
+    commentsPatch:
+      type: object
+      properties:
+        text:
+          description:
+            $ref: "#/components/schemas/commentsPost/properties/text/description"
+          type: string
+        supporMarkdown:
+          description:
+            $ref: "#/components/schemas/commentsPost/properties/supporMarkdown/description"
+          type: boolean
 
     customFront:
       type: object
@@ -33,7 +138,7 @@ components:
         avatarUrl:
           description: URL for the avatar
           type: string
-        Color:
+        color:
           description:
             $ref: "#/components/schemas/commons/properties/color/description"
           type: string
@@ -59,7 +164,7 @@ components:
         desc:
           description: Description of the group
           type: string
-        Color:
+        color:
           description:
             $ref: "#/components/schemas/commons/properties/color/description"
           type: string
@@ -132,6 +237,161 @@ components:
             "*":
               type: string
               description: Info object entry, id/key has to match an id/key from the user object, value is the value string
+
+    notesPost:
+      type: object
+      properties:
+        note:
+          description: Note text
+          type: string
+        title:
+          description: Name of the note
+          type: string
+        color:
+          description:
+            $ref: "#/components/schemas/commons/properties/color/description"
+          type: string
+        member:
+          description: Id of the member this note belongs to
+          type: boolean
+        date:
+          description:
+            $ref: "#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        supportDescMarkdown:
+          description:
+            $ref: "#/components/schemas/commons/properties/supportDescMarkdown/description"
+
+    notesPatch:
+      type: object
+      properties:
+        note:
+          description:
+            $ref: "#/components/schemas/notesPost/properties/note/description"
+          type: string
+        title:
+          description:
+            $ref: "#/components/schemas/notesPost/properties/title/description"
+          type: string
+        color:
+          description:
+            $ref: "#/components/schemas/commons/properties/color/description"
+          type: string
+        member:
+          description:
+            $ref: "#/components/schemas/notesPost/properties/member/description"
+          type: boolean
+        date:
+          description:
+            $ref: "#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        supportDescMarkdown:
+          description:
+            $ref: "#/components/schemas/commons/properties/supportDescMarkdown/description"
+
+    frontHistory:
+      type: object
+      properties:
+        customStatus:
+          description: Custom status of the front entry
+          type: string
+        custom:
+          description: Whether this front history entry tracks a custom front or member
+          type: boolean
+        live:
+          description: Whether this front history entry is live
+          type: boolean
+        startTime:
+          description:
+            $ref: "#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        endTime:
+          description:
+            $ref: "#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        member:
+          description: ID of the member or custom front this entry belongs to
+
+    repeatedReminder:
+      type: object
+      properties:
+        name:
+          description: Name of the reminder
+          type: string
+        message:
+          description: Message the reminder sends
+          type: string
+        dayInterval:
+          description: Day interval between the reminders are sent
+          type: integer
+        time:
+          description: Time of day this reminder should go off
+          type: object
+          properties:
+            hour:
+              type: integer
+            minute:
+              type: integer
+        startTime:
+          description: First day of this reminder (used for day intervals)
+          type: object
+          properties:
+            year:
+              type: integer
+            month:
+              type: integer
+            day:
+              type: integer
+
+    polls:
+      type: object
+      properties:
+        name:
+          description: Name of the poll
+          type: string
+        desc:
+          description: Description of the poll
+          type: string
+        allowAbstain:
+          description: Whether this poll allows abstained votes
+          type: boolean
+        allowVeto:
+          description: Whether this poll allows veto votes
+          type: boolean
+        custom:
+          description: Whether this poll is a custom vote with custom answers
+          type: boolean
+        endTime:
+          description:
+            $ref: "#/components/schemas/commons/properties/timestamp/description"
+        supportDescMarkdown:
+          description:
+            $ref: "#/components/schemas/commons/properties/supportDescMarkdown/description"
+        options:
+          description: The options of this poll (if custom poll)
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              color:
+                type: string
+        votes:
+          description: Votes on the poll
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                description: ID of the member who votes
+                type: string
+              comment:
+                description: Comment on the vote
+                type: string
+              vote:
+                description: Option name that was voted (if not-custom, "yes", "no", "veto" or "abstain")
+                type: string
 
   parameters:
     objectId:
@@ -435,6 +695,12 @@ paths:
     post:
       summary: "Add note"
       description: "Add a note by (optionally) an Id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/notesPost"
       parameters:
         - in: path
           name: docId
@@ -452,6 +718,12 @@ paths:
     patch:
       summary: "Update note"
       description: "Update a note by Id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/notesPatch"
       parameters:
         - in: path
           name: docId
@@ -651,6 +923,12 @@ paths:
             type: string
           required: true
           description: String Id of the Comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/commentsPost"
       tags:
         - Comments
       responses:
@@ -668,6 +946,12 @@ paths:
             type: string
           required: true
           description: String Id of the Comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/commentsPatch"
       responses:
         "200":
           description: OK
@@ -752,6 +1036,12 @@ paths:
             type: string
           required: true
           description: String Id of the Poll
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/polls"
       tags:
         - Polls
       responses:
@@ -769,6 +1059,12 @@ paths:
             type: string
           required: true
           description: String Id of the Poll
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/polls"
       responses:
         "200":
           description: OK
@@ -853,6 +1149,12 @@ paths:
             type: string
           required: true
           description: String Id of the Automated Timer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/automatedReminder"
       tags:
         - Automated Timers
       responses:
@@ -870,6 +1172,12 @@ paths:
             type: string
           required: true
           description: String Id of the Automated Timer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/automatedReminder"
       responses:
         "200":
           description: OK
@@ -949,6 +1257,12 @@ paths:
             type: string
           required: true
           description: String Id of the Repeated Timer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/repeatedReminder"
       tags:
         - Repeated Timers
       responses:
@@ -966,6 +1280,12 @@ paths:
             type: string
           required: true
           description: String Id of the Repeated Timer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/repeatedReminder"
       responses:
         "200":
           description: OK
@@ -1088,6 +1408,12 @@ paths:
       description: "Add a Front history entry by (optionally) an Id"
       tags:
         - Front History
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/frontHistory"
       parameters:
         - in: path
           name: docId
@@ -1105,6 +1431,12 @@ paths:
       description: "Update a Front History entry by an Id"
       tags:
         - Front History
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/frontHistory"
       parameters:
         - in: path
           name: docId
@@ -1469,6 +1801,12 @@ paths:
           required: true
           description:
             $ref: "#/components/parameters/objectId/description"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/chatMessagePost"
       responses:
         "200":
           description: OK
@@ -1487,6 +1825,12 @@ paths:
           required: true
           description:
             $ref: "#/components/parameters/objectId/description"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/chatMessagePatch"
       responses:
         "200":
           description: OK
@@ -1560,6 +1904,12 @@ paths:
           required: true
           description:
             $ref: "#/components/parameters/objectId/description"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/chatCategory"
       tags:
         - Chat Categories
       responses:
@@ -1580,6 +1930,12 @@ paths:
           required: true
           description:
             $ref: "#/components/parameters/objectId/description"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/chatCategory"
       responses:
         "200":
           description: OK
@@ -1646,6 +2002,12 @@ paths:
           required: true
           description:
             $ref: "#/components/parameters/objectId/description"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/chatChannel"
       tags:
         - Chat Channels
       responses:
@@ -1664,6 +2026,12 @@ paths:
           required: true
           description:
             $ref: "#/components/parameters/objectId/description"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/chatChannel"
       tags:
         - Chat Channels
       responses:

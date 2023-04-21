@@ -1,8 +1,7 @@
 module.exports = {
   Sidebar: {
-    Welcome: ['intro', 'discord', 'faq'],
-    Features: ['features/members', 'features/fronting', 'features/polls', 'features/frontingHistory', 'features/friends'],
-    Integrations: ['integrations/pluralkit',],
+    Welcome: ['intro', 'discord',],
+    "API": ['api-getting-started/intro', 'api-getting-started/socket'],
     "API Reference": [
       {
         type: "category",

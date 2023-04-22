@@ -8,6 +8,9 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: rgb(203, 169, 251);
+  --ifm-complementary-color: 85;
+  --ifm-saturation: 90.4%;
+  --ifm-color-secondary: hsl(var(--ifm-complementary-color) var(90%));
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -15,10 +18,48 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+
+}
+
+[data-theme='dark'] {
+  --ifm-background-surface-color: #4C4753 !important;
+  --ifm-background-color: #1E1C21 !important;
+  --ifm-hero-background-color: #131613 !important;
 }
 
 [data-theme='light'] {
   --ifm-color-primary: rgb(110, 27, 245);
+  --ifm-button-background-color: white;
+}
+
+[data-theme='light'] .button--outline {
+  --ifm-button-background-color: white;
+}
+
+.footer {
+  background-color: #141316;
+}
+
+.hero {
+  background-color: #1E1C21;
+}
+
+.hero__title {
+  -webkit-margin-after: 1rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(45deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+  font-family: var(--heading-typeface);
+}
+
+.hero__subtitle {
+  -webkit-margin-after: 1rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(45deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+  font-family: var(--heading-typeface);
 }
 
 .docusaurus-highlight-code-line {
@@ -38,4 +79,29 @@
 
 .spacer {
   width: 20px;
+}
+
+.feature {
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 5px;
+  transition-duration: 3s;
+}
+
+[data-theme='dark'] .feature:hover {
+  text-decoration: none;
+  background-color: #3d3b42;
+  border-radius: 5px;
+  transition-duration: 3s;
+  transition: all 300ms linear;
+  color: white
+}
+
+[data-theme='light'] .feature:hover {
+  text-decoration: none;
+  background-color: #584185;
+  border-radius: 5px;
+  transition-duration: 3s;
+  transition: all 300ms linear;
+  color: white
 }

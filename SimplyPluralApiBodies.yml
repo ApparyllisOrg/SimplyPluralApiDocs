@@ -1,0 +1,397 @@
+openapi: "3.0.2"
+info:
+  title: Simply Plural API Bodies
+  version: "1.0"
+
+paths:
+  /path:
+    get:
+      responses:
+        200:
+          description: "OK"
+
+components:
+  schemas:
+    commons:
+      type: object
+      properties:
+        color:
+          description: Color of the object (\#ffffff, \#ffffffff or ffffff)
+        private:
+          description: Whether this object is private
+        preventTrusted:
+          description: Wheter trusted friends are prevented from seeing this private object
+        supportDescMarkdown:
+          description: Whether the description supports markdown
+        timestamp:
+          description: Milliseconds since epoch for this timestamp/date
+
+    automatedReminder:
+      type: object
+      properties:
+        name:
+          description: Name of the reminder
+          type: string
+        message:
+          description: Message the reminder sends
+          type: string
+        type:
+          description: When this reminder should trigger.\n0 -> Member front change\n0 -> Custom front change\m0 -> Any front change
+          type: integer
+        delayInHours:
+          description: Delay in hours since the action (front change)
+          type: integer
+
+    chatMessagePost:
+      type: object
+      properties:
+        message:
+          description: Message
+          type: string
+        channel:
+          description: ID of the channel this message should go to
+          type: string
+        writer:
+          description: ID of the member that wrote this message
+          type: string
+        writtenAt:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        replyTo:
+          description: "Message ID this message is in reply to"
+          type: string
+
+    chatMessagePatch:
+      type: object
+      properties:
+        message:
+          description: Message
+          type: string
+        updatedAt:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+
+    chatChannel:
+      type: object
+      properties:
+        name:
+          description: Channel name
+          type: string
+        desc:
+          description: Description of the channel
+          type: string
+
+    chatCategory:
+      type: object
+      properties:
+        name:
+          description: Category name
+          type: string
+        desc:
+          description: Description of the category
+          type: string
+        channels:
+          items:
+            type: string
+          description: "List of channel IDs this category contains"
+
+    commentsPost:
+      type: object
+      properties:
+        time:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        text:
+          description: Comment text/message
+          type: string
+        supporMarkdown:
+          description: Whether this comment supports markdown
+          type: boolean
+        documentId:
+          description: Id of the object this comment belongs to
+          type: string
+        collection:
+          description: Id of the collection this comments belongs to (Only accepted collection is "frontHistory")
+          type: string
+
+    commentsPatch:
+      type: object
+      properties:
+        text:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commentsPost/properties/text/description"
+          type: string
+        supporMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commentsPost/properties/supporMarkdown/description"
+          type: boolean
+
+    customFront:
+      type: object
+      properties:
+        name:
+          description: Name of the custom front
+          type: string
+        desc:
+          description: Description of the custom front
+          type: string
+        avatarUrl:
+          description: URL for the avatar
+          type: string
+        color:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
+          type: string
+        private:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          type: boolean
+        preventTrusted:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          type: boolean
+        supportDescMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+          type: boolean
+
+    groups:
+      type: object
+      properties:
+        name:
+          description: Name of the group
+          type: string
+        desc:
+          description: Description of the group
+          type: string
+        color:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
+          type: string
+        private:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          type: boolean
+        preventTrusted:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          type: boolean
+        supportDescMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+          type: boolean
+        emoji:
+          description: Emoji of the group
+          type: string
+        parent:
+          description: Parent group ID, if no parent use "root".
+          type: string
+        members:
+          description: Members of this group
+          type: array
+          items:
+            type: "string"
+            description: "ID of the member"
+
+    member:
+      type: object
+      properties:
+        name:
+          description: Name of the member
+          type: string
+        desc:
+          description: Description of the member
+          type: string
+        color:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
+          type: string
+        pronouns:
+          description: Pronouns of the member
+          type: string
+        pkId:
+          description: PluralKit ID of the member, 5-letter string
+          type: string
+        avatarUrl:
+          description: URL for the avatar
+          type: string
+        private:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          type: boolean
+        preventTrusted:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          type: boolean
+        supportDescMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+          type: boolean
+        preventsFrontNotifs:
+          description: Whether to prefer front notification changes
+          type: boolean
+        info:
+          description: Info object
+          type: object
+          properties:
+            "*":
+              type: string
+              description: Info object entry, id/key has to match an id/key from the user object, value is the value string
+
+    notesPost:
+      type: object
+      properties:
+        note:
+          description: Note text
+          type: string
+        title:
+          description: Name of the note
+          type: string
+        color:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
+          type: string
+        member:
+          description: Id of the member this note belongs to
+          type: boolean
+        date:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        supportDescMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+
+    notesPatch:
+      type: object
+      properties:
+        note:
+          description:
+            $ref: "#/components/schemas/notesPost/properties/note/description"
+          type: string
+        title:
+          description:
+            $ref: "#/components/schemas/notesPost/properties/title/description"
+          type: string
+        color:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
+          type: string
+        member:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/notesPost/properties/member/description"
+          type: boolean
+        date:
+          description:
+            $ref: ./SimplyPluralApiCommons.yml"#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        supportDescMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+
+    frontHistory:
+      type: object
+      properties:
+        customStatus:
+          description: Custom status of the front entry
+          type: string
+        custom:
+          description: Whether this front history entry tracks a custom front or member
+          type: boolean
+        live:
+          description: Whether this front history entry is live
+          type: boolean
+        startTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        endTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        member:
+          description: ID of the member or custom front this entry belongs to
+
+    repeatedReminder:
+      type: object
+      properties:
+        name:
+          description: Name of the reminder
+          type: string
+        message:
+          description: Message the reminder sends
+          type: string
+        dayInterval:
+          description: Day interval between the reminders are sent
+          type: integer
+        time:
+          description: Time of day this reminder should go off
+          type: object
+          properties:
+            hour:
+              type: integer
+            minute:
+              type: integer
+        startTime:
+          description: First day of this reminder (used for day intervals)
+          type: object
+          properties:
+            year:
+              type: integer
+            month:
+              type: integer
+            day:
+              type: integer
+
+    polls:
+      type: object
+      properties:
+        name:
+          description: Name of the poll
+          type: string
+        desc:
+          description: Description of the poll
+          type: string
+        allowAbstain:
+          description: Whether this poll allows abstained votes
+          type: boolean
+        allowVeto:
+          description: Whether this poll allows veto votes
+          type: boolean
+        custom:
+          description: Whether this poll is a custom vote with custom answers
+          type: boolean
+        endTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+        supportDescMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+        options:
+          description: The options of this poll (if custom poll)
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              color:
+                type: string
+        votes:
+          description: Votes on the poll
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                description: ID of the member who votes
+                type: string
+              comment:
+                description: Comment on the vote
+                type: string
+              vote:
+                description: Option name that was voted (if not-custom, "yes", "no", "veto" or "abstain")
+                type: string

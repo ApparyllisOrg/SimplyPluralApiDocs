@@ -1,19 +1,19 @@
 module.exports = {
-  title: 'Simply Plural',
-  tagline: 'For Systems and Friends',
+  title: 'Apparyllis',
+  tagline: 'Creating apps, for you.',
   url: 'https://simplyplural.apparyllis.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  favicon: 'img/logo.png',
+  organizationName: 'apparyllis', // Usually your GitHub org/user name.
+  projectName: 'SimplyPluralDocs', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Simply Plural',
+      title: 'Apparyllis',
       logo: {
         alt: 'Simply Plural Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -22,7 +22,7 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        { to: "/docs/docs/api", label: "API", position: "left" },
+        { to: "docs/getting-started/intro", label: "API", position: "left" },
       ],
     },
     footer: {

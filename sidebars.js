@@ -1,7 +1,7 @@
 module.exports = {
   Sidebar: {
     Welcome: ['intro', 'discord',],
-    "API": ['api-getting-started/intro', 'api-getting-started/socket'],
+    "API": ['api-getting-started/intro', 'api-getting-started/authentication', 'api-getting-started/socket', 'api-getting-started/collections'],
     "API Reference": [
       {
         type: "category",

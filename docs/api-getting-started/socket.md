@@ -31,14 +31,33 @@ or
 
 `Successfully authenticated`
 
-If you receive the violation make sure your token is valid and that there's no extra characters or white space at the front or end of the token. 
+If you receive the violation make sure your token is valid and that there's no extra characters or white space at the front or end of the token. Create a new connection and re-authenticate. You can't try to authenticate more than once on the same connection.
 
-Otherwise you are fully authenticated and you will receive updates when your authenticated user has updates.
+Otherwise if there's no violation you are fully authenticated and you will receive updates when your authenticated user has updates.
 
 ## Keeping alive
 
 You will need to keep the connection alive to make sure it doesn't drop.  
-To do so simply send the following string to the socket:
+To do so simply send the following string to the socket every 10 seconds:
 ```js title"payload"
 ping
 ```
+
+## Data format
+
+When an insert, update or delete happens on one of your authenticated users' data you will be notified in the following format:
+
+```js title="payload"
+{
+    "msg" : "Update",
+    "target" : "collection (members, frontHistory, etc.)",
+    "results" : [
+        {
+            "operationType" : "delete/insert/update",
+            "id" : "Id of the object that changed",
+            "content" : { ... }
+        }
+    ]
+}
+```
+

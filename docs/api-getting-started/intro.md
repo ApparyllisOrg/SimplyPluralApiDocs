@@ -9,10 +9,10 @@ Hello and welcome to the API documentation!
 
 ## Quick start
 
-We have two servers that you can connect to, pretesting and production.
+We have two servers that you can connect to, Pretesting and Production.
 
-If you want to test out your integration we recommend you use pretesting as that doesn't affect production.
-If you want to run your integration on your actual account, use production.
+If you want to test out your integration we recommend you use Pretesting as that doesn't affect Production.
+If you want to run your integration on your actual account, use Production.
 
 ** Production **  
 `https://api.apparyllis.com`  
@@ -22,7 +22,14 @@ If you want to run your integration on your actual account, use production.
 `https://devapi.apparyllis.com`  
 `wss://devapi.apparyllis.com/v1/socket`  
 
-The most common used endpoints for integrations can be found here:
+:::info
+
+If you want to use the Pretesting endpoints you will need to make an account on Pretesting and generate an API key for Pretesting. Pretesting is available on [https://devapp.apparyllis.com](https://devapp.apparyllis.com) and on [Discord](/docs/discord.md) in the Pretesting channels.
+
+:::
+
+
+The most commonly used endpoints for integrations can be found here:
 
 [Members](../api/members)  
 [Groups](../api/groups)  

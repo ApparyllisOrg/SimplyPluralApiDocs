@@ -1,0 +1,36 @@
+openapi: "3.0.2"
+info:
+  title: Simply Plural API Commons
+  version: "1.0"
+
+paths:
+  /path:
+    get:
+      responses:
+        200:
+          description: "OK"
+
+components:
+  schemas:
+    commons:
+      type: object
+      properties:
+        color:
+          description: Color of the object (\#ffffff, \#ffffffff or ffffff)
+        private:
+          description: Whether this object is private
+        preventTrusted:
+          description: Wheter trusted friends are prevented from seeing this private object
+        supportDescMarkdown:
+          description: Whether the description supports markdown
+        timestamp:
+          description: Milliseconds since epoch for this timestamp/date
+
+  parameters:
+    objectId:
+      schema:
+        type: string
+      name: objectId
+      in: path
+      required: true
+      description: Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.

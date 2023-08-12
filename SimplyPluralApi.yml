@@ -1677,10 +1677,10 @@ paths:
 
   /v1/user/analytics:
     get:
-      summary: "Get anylitics"
+      summary: "Get analytics"
       description: "Get analytics of authenticated user"
       tags:
-        - Anayltics
+        - Analytics
       responses:
         "200":
           description: OK

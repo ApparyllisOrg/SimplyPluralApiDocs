@@ -4,7 +4,7 @@ info:
   description: This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts
   version: "1.0"
 servers:
-  - url: https://api.apparyllis.com:8443
+  - url: https://api.apparyllis.com
   - url: https://devapi.apparyllis.com
 
 tags:
@@ -92,9 +92,18 @@ x-tagGroups:
     tags:
       - PluralKit
 
+components:
+  securitySchemes:
+    APITokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+
 paths:
   /v1/member/{systemId}/{docId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get Member"
       description: "Get a member by Id"
       tags:
@@ -126,6 +135,8 @@ paths:
         required: true
         description: String Id of the member
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add member"
       description: "Add a member by (optionally) an Id"
       tags:
@@ -143,6 +154,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update member"
       requestBody:
         required: true
@@ -158,6 +171,8 @@ paths:
       tags:
         - Members
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete member"
       description: "Delete a member by Id"
       responses:
@@ -169,6 +184,8 @@ paths:
         - Members
   /v1/members/{systemId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get all members"
       description: "Get members from a system by Id"
       tags:
@@ -201,6 +218,8 @@ paths:
         required: true
         description: String Id of the system
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get group"
       description: "Get a group by Id"
       tags:
@@ -212,6 +231,8 @@ paths:
           description: NOT FOUND
   /v1/group/{docId}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add group"
       description: "Add a group by (optionally) an Id"
       tags:
@@ -228,6 +249,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update group"
       description: "Update a group by Id"
       requestBody:
@@ -255,6 +278,8 @@ paths:
         - Groups
   /v1/groups/{systemId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get all groups"
       description: "Get groups of a system by Id"
       tags:
@@ -274,6 +299,8 @@ paths:
 
   /v1/note/{systemId}/{docId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get note"
       description: "Get a note by Id"
       tags:
@@ -298,6 +325,8 @@ paths:
           description: NOT FOUND
   /v1/note/{docId}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add note"
       description: "Add a note by (optionally) an Id"
       requestBody:
@@ -321,6 +350,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update note"
       description: "Update a note by Id"
       requestBody:
@@ -344,6 +375,8 @@ paths:
       tags:
         - Notes
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete note"
       description: "Delete a note by Id"
       parameters:
@@ -362,6 +395,8 @@ paths:
         - Notes
   /v1/notes/{systemId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get all notes"
       description: "Get notes of a system by Id"
       tags:
@@ -394,6 +429,8 @@ paths:
         required: true
         description: String Id of the system
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get custom front"
       description: "Get a Custom Front by Id"
       tags:
@@ -419,6 +456,8 @@ paths:
         required: true
         description: String Id of the Custom Front
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add custom front"
       description: "Add a Custom Front by (optionally) an Id"
       requestBody:
@@ -442,6 +481,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update custom front"
       description: "Update a Custom Front by Id"
       requestBody:
@@ -465,6 +506,8 @@ paths:
       tags:
         - Custom Fronts
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete custom front"
       description: "Delete a Custom Front by Id"
       responses:
@@ -495,6 +538,8 @@ paths:
 
   /v1/comment/{type}/{docId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get comments"
       description: "Get comments from a document of type (groups, members, customFronts, etc.)"
       tags:
@@ -519,6 +564,8 @@ paths:
           description: NOT FOUND
   /v1/comment/{docId}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add comment"
       description: "Add a Comment by (optionally) an Id"
       parameters:
@@ -542,6 +589,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update comment"
       description: "Update a Comment by Id"
       parameters:
@@ -565,6 +614,8 @@ paths:
       tags:
         - Comments
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete comment"
       description: "Delete a Comment by Id"
       parameters:
@@ -583,6 +634,8 @@ paths:
         - Comments
   /v1/comments/{systemId}/{docId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get specific comment"
       description: "Get a specific comment from a system"
       tags:
@@ -608,6 +661,8 @@ paths:
 
   /v1/poll/{systemId}/{docId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get poll"
       description: "Get a Poll by id"
       tags:
@@ -632,6 +687,8 @@ paths:
           description: NOT FOUND
   /v1/poll/{docId}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add poll"
       description: "Add a Poll by (optionally) an Id"
       parameters:
@@ -655,6 +712,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update poll"
       description: "Update a Poll by Id"
       parameters:
@@ -678,6 +737,8 @@ paths:
       tags:
         - Polls
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete poll"
       description: "Delete a Poll by Id"
       parameters:
@@ -696,6 +757,8 @@ paths:
         - Polls
   /v1/polls/{systemId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get all polls"
       description: "Get polls from a system"
       tags:
@@ -721,6 +784,8 @@ paths:
 
   /v1/timer/automated/{systemId}/{docId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get automated timer"
       description: "Get an Automated Timer by id"
       tags:
@@ -745,6 +810,8 @@ paths:
           description: NOT FOUND
   /v1/timer/automated/{docId}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add automated timer"
       description: "Add an Automated Timer by (optionally) an Id"
       parameters:
@@ -768,6 +835,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update automated timer"
       description: "Update an Automated Timer by Id"
       parameters:
@@ -791,6 +860,8 @@ paths:
       tags:
         - Automated Timers
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete automated timer"
       description: "Delete an Automated Timer by Id"
       parameters:
@@ -810,6 +881,8 @@ paths:
 
   /v1/timers/automated/{systemId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get all automated timers"
       description: "Get Automated Timers from a system"
       tags:
@@ -829,6 +902,8 @@ paths:
 
   /v1/timer/repeated/{systemId}/{docId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get repeated timer"
       description: "Get an Repeated Timer by id"
       tags:
@@ -853,6 +928,8 @@ paths:
           description: NOT FOUND
   /v1/timer/repeated/{docId}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add repeated timer"
       description: "Add an Repeated Timer by (optionally) an Id"
       parameters:
@@ -876,6 +953,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update repeated timer"
       description: "Update an Repeated Timer by Id"
       parameters:
@@ -899,6 +978,8 @@ paths:
       tags:
         - Repeated Timers
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete repeated timer"
       description: "Delete an Repeated Timer by Id"
       parameters:
@@ -918,6 +999,8 @@ paths:
 
   /v1/timers/repeated/{systemId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get all repeated timers"
       description: "Get Repeated Timers from a system"
       tags:
@@ -937,6 +1020,8 @@ paths:
 
   /v1/fronters/:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get current fronters (self)"
       description: "Get fronters from the currently authenticated system"
       tags:
@@ -949,6 +1034,8 @@ paths:
 
   /v1/frontHistory/{systemId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get front history"
       description: "Get Front History from a system between 2 timestamps"
       tags:
@@ -967,6 +1054,8 @@ paths:
           description: NOT FOUND
   /v1/frontHistory/member/{memberId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get front history from member"
       description: "Get Front History from a member, optionally beteen two timestamps"
       tags:
@@ -991,6 +1080,8 @@ paths:
           description: NOT FOUND
   /v1/frontHistory/{systemId}/{docId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get specific front history entry"
       description: "Get a single Front History document by Id"
       tags:
@@ -1009,6 +1100,8 @@ paths:
           description: NOT FOUND
   /v1/frontHistory/{docId}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add front history entry"
       description: "Add a Front history entry by (optionally) an Id"
       tags:
@@ -1032,6 +1125,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update front history entry"
       description: "Update a Front History entry by an Id"
       tags:
@@ -1055,6 +1150,8 @@ paths:
         "404":
           description: NOT FOUND
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete front history entry"
       description: "Delete a Front History Entry by an Id"
       tags:
@@ -1072,8 +1169,24 @@ paths:
         "404":
           description: NOT FOUND
 
+  /v1/me:
+    get:
+      security:
+        - APITokenAuth: []
+      summary: "Get your authed user Id"
+      description: "Get the user Id associated with your currently authed token"
+      tags:
+        - Users
+      responses:
+        "200":
+          description: "{Your user id}"
+        "404":
+          description: NOT FOUND
+
   /v1/user/{userId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get user"
       description: "Get a user"
       tags:
@@ -1091,6 +1204,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update user"
       description: "Update a user (your own)"
       tags:
@@ -1109,6 +1224,8 @@ paths:
           description: NOT FOUND
   /v1/user/username/{userId}:
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Set username"
       description: "Set username for user"
       tags:
@@ -1128,6 +1245,8 @@ paths:
 
   /v1/user/generateReport:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Generate report"
       description: "Generate a user report for the authenticated user"
       tags:
@@ -1140,6 +1259,8 @@ paths:
 
   /v1/user/id:/reports:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get all reports"
       description: "Get all reports of the authenticated user"
       tags:
@@ -1152,6 +1273,8 @@ paths:
 
   /v1/user/:id/report/:reportid:
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete report"
       description: "Delete a specific report"
       tags:
@@ -1164,6 +1287,8 @@ paths:
 
   /v1/friends:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get friends"
       description: "Get friends of the authenticated user"
       tags:
@@ -1175,6 +1300,8 @@ paths:
           description: NOT FOUND
   /v1/friends/requests/incoming:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get received friend requests"
       description: "Get incoming friend requests of the authenticated user"
       tags:
@@ -1186,6 +1313,8 @@ paths:
           description: NOT FOUND
   /v1/friends/requests/outgoing:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get sent friend requests"
       description: "Get outgoing friend requests of the autheticated user"
       tags:
@@ -1197,6 +1326,8 @@ paths:
           description: NOT FOUND
   /v1/friends/getFrontValues:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get current fronters of system (text-format)"
       description: "Get front values (text-format) of all the authenticated user's friends"
       tags:
@@ -1208,6 +1339,8 @@ paths:
           description: NOT FOUND
   /v1/friends/request/add/{username}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add friend"
       description: "Add a friend by username (or userId)"
       tags:
@@ -1219,6 +1352,8 @@ paths:
           description: NOT FOUND
   /v1/friends/request/respond/{username}:
     post:
+      security:
+        - APITokenAuth: []
       summary: "Respond to friend request"
       description: "Respond to a friend request by username (or userId)"
       tags:
@@ -1230,6 +1365,8 @@ paths:
           description: NOT FOUND
   /v1/friends/request/{username}:
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete friend request"
       description: "Remove a friend request"
       parameters:
@@ -1248,6 +1385,8 @@ paths:
           description: NOT FOUND
   /v1/friends/remove/{username}:
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Remove friend"
       description: "Remove a friend by username (or userId)"
       parameters:
@@ -1267,6 +1406,8 @@ paths:
 
   /v1/friend/{userId}:
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update friend settings"
       description: "Update your settings for a friend by Id"
       tags:
@@ -1285,6 +1426,8 @@ paths:
           description: NOT FOUND
   /v1/friend/{userId}/{friendId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get friend settings"
       description: "Get a friend from a user (Typically your user)"
       tags:
@@ -1309,6 +1452,8 @@ paths:
           description: NOT FOUND
   /v1/friend/{userId}/getFront:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Update friend settings"
       description: "Get the current fronters of a friend"
       tags:
@@ -1327,6 +1472,8 @@ paths:
           description: NOT FOUND
   /v1/friend/{userId}/getFrontValue:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get current fronters of system"
       description: "Get the current fronters (in text form) of a friend"
       tags:
@@ -1353,6 +1500,8 @@ paths:
         required: true
         description: The member id to sync
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Sync member to or from pluralkit"
       description: "Sync a specific member to or from PluralKit"
       tags:
@@ -1364,6 +1513,8 @@ paths:
           description: NOT FOUND
   /v1/integrations/pluralkit/sync/members:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Sync members to or from pluralkit"
       description: "Sync all system members to or from PluralKit"
       tags:
@@ -1376,6 +1527,8 @@ paths:
 
   /v1/chat/message/:id:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get message"
       description: "Get a specific message"
       tags:
@@ -1394,6 +1547,8 @@ paths:
         "404":
           description: NOT FOUND
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add message"
       description: "Add a new message"
       tags:
@@ -1418,6 +1573,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update message"
       description: "Update a message"
       tags:
@@ -1442,6 +1599,8 @@ paths:
         "404":
           description: NOT FOUND
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete message"
       description: "Delete a message"
       tags:
@@ -1462,6 +1621,8 @@ paths:
 
   /v1/chat/messages/:id:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get messages"
       description: "Get messages of a specific channel"
       parameters:
@@ -1481,6 +1642,8 @@ paths:
 
   /v1/chat/category/:id:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get category"
       description: "Get a specific category"
       tags:
@@ -1492,13 +1655,15 @@ paths:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
           required: true
           description:
-            $ref: ./SimplyPluralApiCommons.yml"#/components/parameters/objectId/description"
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add category"
       description: "Add a new category"
       parameters:
@@ -1523,6 +1688,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update category"
       description: "Update a category"
       tags:
@@ -1547,6 +1714,8 @@ paths:
         "404":
           description: NOT FOUND
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete category"
       description: "Delete a category"
       tags:
@@ -1567,6 +1736,8 @@ paths:
 
   /v1/chat/categories:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get chat categories"
       description: "Get all chat categories"
       tags:
@@ -1579,6 +1750,8 @@ paths:
 
   /v1/chat/channel/:id:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get channel"
       description: "Get a specific channel"
       parameters:
@@ -1597,6 +1770,8 @@ paths:
         "404":
           description: NOT FOUND
     post:
+      security:
+        - APITokenAuth: []
       summary: "Add channel"
       description: "Add a new channel"
       parameters:
@@ -1621,6 +1796,8 @@ paths:
         "404":
           description: NOT FOUND
     patch:
+      security:
+        - APITokenAuth: []
       summary: "Update channel"
       description: "Update a channel"
       parameters:
@@ -1645,6 +1822,8 @@ paths:
         "404":
           description: NOT FOUND
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete channel"
       parameters:
         - in: path
@@ -1665,6 +1844,8 @@ paths:
 
   /v1/chat/channels:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get chat channels"
       description: "Get all chat channels"
       tags:
@@ -1677,6 +1858,8 @@ paths:
 
   /v1/user/analytics:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get analytics"
       description: "Get analytics of authenticated user"
       tags:

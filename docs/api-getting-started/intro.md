@@ -29,6 +29,8 @@ If you want to use the Pretesting endpoints you will need to make an account on 
 :::
 
 
+You may need to get the user id associated with a authentication token, to do this you can [GET /v1/me](../api/get-your-authed-user-id)
+
 The most commonly used endpoints for integrations can be found here:
 
 [Members](../api/members)  

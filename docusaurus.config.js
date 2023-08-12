@@ -57,6 +57,7 @@ module.exports = {
           simplyPlural: {
             specPath: "SimplyPluralApi.yml",
             outputDir: "docs/api",
+            template: "api.mustache",
             sidebarOptions: {
               categoryLinkSource: "tag",
               groupPathsBy: "tag",
@@ -94,5 +95,10 @@ module.exports = {
     ]
   ],
   themes: ["docusaurus-theme-openapi-docs"],
-
+  stylesheets: [
+    {
+      href: "https://use.fontawesome.com/releases/v5.11.0/css/all.css",
+      type: "text/css",
+    },
+  ],
 };

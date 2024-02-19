@@ -16,6 +16,10 @@ tags:
     description: Everything related to Automated Timers
     x-displayName: Automated Timers
 
+  - name: Board Messages
+    description: Everything related to board messages
+    x-displayName: Board Messages
+
   - name: Chat
     description: Everything related to chat messages
     x-displayName: Chat Messages
@@ -83,6 +87,7 @@ x-tagGroups:
     tags:
       - User
       - Automated Timers
+      - Board Messages
       - Repeated Timers
       - Friends
       - Polls
@@ -1850,6 +1855,128 @@ paths:
       description: "Get all chat channels"
       tags:
         - Chat Channels
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: NOT FOUND
+
+  /v1/board/:id:
+    get:
+      security:
+        - APITokenAuth: []
+      summary: "Get specific board message"
+      description: "Get specific board message by id"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+          required: true
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
+      tags:
+        - Board Messages
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: NOT FOUND
+    post:
+      security:
+        - APITokenAuth: []
+      summary: "Write board message"
+      description: "Write a new board message for a member"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+          required: true
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessagePost"
+      tags:
+        - Board Messages
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: NOT FOUND
+    patch:
+      security:
+        - APITokenAuth: []
+      summary: "Update board message"
+      description: "Update a board message for a member"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+          required: true
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessagePatch"
+      tags:
+        - Board Messages
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: NOT FOUND
+    delete:
+      security:
+        - APITokenAuth: []
+      summary: "Delete board message"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+          required: true
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
+      description: "Delete a channel"
+      tags:
+        - Board Messages
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: NOT FOUND
+
+  /v1/board/member/id:
+    get:
+      security:
+        - APITokenAuth: []
+      summary: "Get all board messages for member"
+      description: "Get all board messages for member"
+      tags:
+        - Board Messages
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: NOT FOUND
+
+  /v1/board/unread:
+    get:
+      security:
+        - APITokenAuth: []
+      summary: "Get unread board messages"
+      description: "Get all unread board messages for this system"
+      tags:
+        - Board Messages
       responses:
         "200":
           description: OK

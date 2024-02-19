@@ -1,0 +1,40 @@
+---
+id: set-username
+title: "Set username"
+description: "Set username for user"
+sidebar_label: "Set username"
+hide_title: true
+hide_table_of_contents: true
+api: {"security":[{"APITokenAuth":[]}],"description":"Set username for user","tags":["Users"],"parameters":[{"in":"path","name":"userId","schema":{"type":"string"},"required":true,"description":"String Id of the user"}],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"patch","path":"/v1/user/username/{userId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Set username","description":{"content":"Set username for user","type":"text/plain"},"url":{"path":["v1","user","username",":userId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the user","type":"text/plain"},"type":"any","value":"","key":"userId"}]},"method":"PATCH","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Set username</h1>
+
+<MethodEndpoint method={"patch"} path={"/v1/user/username/{userId}"}></MethodEndpoint>
+
+
+
+Set username for user
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"userId","schema":{"type":"string"},"required":true,"description":"String Id of the user"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+NOT FOUND
+
+</div><div></div></TabItem></ApiTabs></div></div>

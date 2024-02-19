@@ -1,0 +1,40 @@
+---
+id: get-all-reports
+title: "Get all reports"
+description: "Get all reports of the authenticated user"
+sidebar_label: "Get all reports"
+hide_title: true
+hide_table_of_contents: true
+api: {"security":[{"APITokenAuth":[]}],"description":"Get all reports of the authenticated user","tags":["Users"],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"get","path":"/v1/user/id:/reports","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Get all reports","description":{"content":"Get all reports of the authenticated user","type":"text/plain"},"url":{"path":["v1","user","id:","reports"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get all reports</h1>
+
+<MethodEndpoint method={"get"} path={"/v1/user/id:/reports"}></MethodEndpoint>
+
+
+
+Get all reports of the authenticated user
+
+<div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+NOT FOUND
+
+</div><div></div></TabItem></ApiTabs></div></div>

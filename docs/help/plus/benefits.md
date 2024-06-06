@@ -6,7 +6,7 @@ slug: /help/plus/benefits
 ---
 
 :::info
-This page explains how to use the benefits granted by Simply Plus. You need to have an active subscription to have access to these benefits. Check out our [Subscription management portal](https://plus.apparyllis.com) to see your current subscription state.
+This page explains how to use the benefits granted by Simply Plus. You need to have an active subscription to have access to these benefits.
 :::
 
 Instructions on how to use each of your In-App benefits can be found below.

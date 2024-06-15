@@ -1991,6 +1991,18 @@ paths:
       description: "Get analytics of authenticated user"
       tags:
         - Analytics
+      parameters:
+        - name: Start and End Times
+          in: query
+          description: 'Start and End times in '
+          required: true
+          schema:
+            type: object
+            properties:
+              startTime:
+                type: integer
+              endTime:
+                type: integer
       responses:
         "200":
           description: OK

@@ -89,7 +89,7 @@ module.exports = {
             },
           ],
         },
-        {
+       /* {
           type: 'category',
           label: 'Simply Plus',
           link: {
@@ -104,7 +104,7 @@ module.exports = {
               dirName: 'help/plus', 
             },
           ],
-        },
+        },*/
         {
           type: 'category',
           label: 'Third Party Integrations',

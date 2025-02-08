@@ -1,7 +1,7 @@
 openapi: "3.0.2"
 info:
   title: Simply Plural API
-  description: This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/main/src/api/v1/routes.ts
+  description: This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts
   version: "1.0"
 servers:
   - url: https://api.apparyllis.com

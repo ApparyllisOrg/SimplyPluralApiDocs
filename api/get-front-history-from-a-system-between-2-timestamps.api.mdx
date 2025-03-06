@@ -26,7 +26,13 @@ import TabItem from "@theme/TabItem";
 
 Get Front History from a system between 2 timestamps
 
-<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul>
+<ParamsItem className={"paramsItem"} param={{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}}></ParamsItem>
+<ParamsItem className={"paramsItem"} param={{"in":"path","name":"startTime","schema":{"type":"string"},"required":true,"description":"Unix timestamp of the start time for the returned front history (millisecond accuracy)"}}></ParamsItem>
+<ParamsItem className={"paramsItem"} param={{"in":"path","name":"endTime","schema":{"type":"string"},"required":true,"description":"Unix timestamp of the end time for the returned front history (millisecond accuracy)"}}></ParamsItem>
+</ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+
 
 OK
 

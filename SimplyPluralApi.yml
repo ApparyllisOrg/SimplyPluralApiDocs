@@ -1052,6 +1052,17 @@ paths:
             type: string
           required: true
           description: String Id of the system
+        - in: query
+          name: Start and End Times
+          description: 'Start and End times for the returned front history in Unix timestamp format (millisecond accuracy)'
+          required: true
+          schema:
+            type: object
+            properties:
+              startTime:
+                type: integer
+              endTime:
+                type: integer
       responses:
         "200":
           description: OK

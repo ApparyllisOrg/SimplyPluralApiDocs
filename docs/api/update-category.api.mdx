@@ -5,36 +5,65 @@ description: "Update a category"
 sidebar_label: "Update category"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Update a category","tags":["Chat Categories"],"parameters":[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"items":{"type":"string"},"description":"List of channel IDs this category contains"}},"title":"chatCategory"}}}},"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"patch","path":"/v1/chat/category/:id","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"jsonRequestBodyExample":{"name":"string","desc":"string","channels":["string"]},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"}}
+api: eJzVVMtu2zAQ/JXFnlpAtZwiJ93cuAWMFHHQpCiKwIcVtbGYUCRLrtKqhv69oGTZiZMf6E0U9zU7M9xhZNUGLR0WdztcXK9u3SPbRSs1FnebfpNhxVEF7UU7iwV+9xUJA4Ei4a0LHWYotI1Y3OFFTQIX43/NETcZegrUsHCIQ32dSniSGjO01DAWqCvMMKqaG8Ji9+xLOp/uowRtt9gfElz5wEpWKe15ucC/Wh24wkJCy6djr4ckWC3B3YPUDGOVDKTWERRZKBOoxtmtS1FlK0AmOiDwhrSFcQx4V5J6/E2hih+UazyJLrXR0r2fwY+aLbQxRV2vb27BBaCqgsX1ChQZE/e9fHCeg3SgI7hhPDKztEQt5gW8/n/HlMSTEHCUT67qEqengJSzwlbSFXlvtKKUnD/EBPANMYwIMcN9x6SyYrdXxu5kP3sldjBcZ68FlcJfpy2Pp2mxz7V+WkTVZC2bYQ4t3MQ3tfuyxVcdJdXe58JqGSfS9iOnxZC2Efv+KA1Vk0ygsO/7QSHROxvHNXycz1/DWV+m/ufz89dXV+tb+LL+frUcujQstatGQ6nkqMFYBeZPZ3nqnE/D5cXoWQ5Pk6/bYLDAWsTHIs/J6xl5T6EzRseZcg322WlQxU9vxW2yw4t0k9gfkb18lw77Ja8vuZsegpqp4nB8WVKwC/rvoKkBYtLVt6MiP/+hxhs+KmgibJLG8Xxk+W76uelT33s3zLNn6EY33nRwbdpAJtkET6m/TTQn/wS+58BWMVROtQ1biYPWfFsarYC8BraVd9pKnMFP1w6Ojpwsbfb6IWOm+EMs1BwYpi1vtdRtmVabLw6bXodtPk46DrrwOi+NK/PAhilyHoNKJCbmg2uF40wiZpjoHlGczebY9/8Aubopjw==
 sidebar_class_name: "patch api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Update category</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update category"}
+>
+</Heading>
 
-<MethodEndpoint method={"patch"} path={"/v1/chat/category/:id"}></MethodEndpoint>
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/chat/category/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Update a category
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Category name","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"desc"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Description of the category","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"channels"} required={false} schemaName={"string[]"} qualifierMessage={undefined} schema={{"items":{"type":"string"},"description":"List of channel IDs this category contains"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"items":{"type":"string"},"description":"List of channel IDs this category contains"}},"title":"chatCategory"}}}}}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

@@ -1,4 +1,9 @@
-module.exports = {
+import type * as Preset from "@docusaurus/preset-classic";
+import type { Config } from "@docusaurus/types";
+import type * as Plugin from "@docusaurus/types/src/plugin";
+import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+
+const config: Config = {
   title: 'Apparyllis',
   tagline: 'Creating apps, for you.',
   url: 'https://simplyplural.apparyllis.com',
@@ -51,8 +56,8 @@ module.exports = {
     [
       'docusaurus-plugin-openapi-docs',
       {
-        id: "simplyPluralApi",
-        docsPluginId: "classic",
+        id: "simplyPluralApi", // plugin id
+        docsPluginId: "classic", // configured for preset-classic
         config: {
           simplyPlural: {
             specPath: "SimplyPluralApi.yml",
@@ -62,26 +67,22 @@ module.exports = {
               categoryLinkSource: "tag",
               groupPathsBy: "tag",
             },
-          }
+          } satisfies OpenApiPlugin.Options,
+        
         }
       },
     ]
   ],
 
-
   presets: [
     [
       "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        googleTagManager: false,
-        googleAnalytics: false,
+      {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
             "https://github.com/ApparyllisOrg/SimplyPluralApiDocs",
-          docLayoutComponent: "@theme/DocPage",
-          docItemComponent: "@theme/ApiItem"
+          sidebarPath: "./sidebar.ts",
+          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: {
           showReadingTime: true,
@@ -89,9 +90,9 @@ module.exports = {
             "https://github.com/ApparyllisOrg/SimplyPluralApiDocs"
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css")
-        }
-      })
+          customCss: "./src/css/custom.css",
+        },
+      } satisfies Preset.Options,
     ]
   ],
   themes: ["docusaurus-theme-openapi-docs"],
@@ -102,3 +103,7 @@ module.exports = {
     },
   ],
 };
+
+export default async function createConfig() {
+  return config;
+}

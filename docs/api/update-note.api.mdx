@@ -5,36 +5,65 @@ description: "Update a note by Id"
 sidebar_label: "Update note"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Update a note by Id","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"note":{"description":"Note text","type":"string"},"title":{"description":"Name of the note","type":"string"},"color":{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"},"member":{"description":"Id of the member this note belongs to","type":"boolean"},"date":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"supportDescMarkdown":{"description":"Whether the description supports markdown"}},"title":"notesPatch"}}}},"parameters":[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the note"}],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"tags":["Notes"],"method":"patch","path":"/v1/note/{docId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"jsonRequestBodyExample":{"note":"string","title":"string","color":"string","member":true,"date":0},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Update note","description":{"content":"Update a note by Id","type":"text/plain"},"url":{"path":["v1","note",":docId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the note","type":"text/plain"},"type":"any","value":"","key":"docId"}]},"header":[{"key":"Content-Type","value":"application/json"}],"method":"PATCH","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}},"auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJx1VU1v2zgQ/SvE7KUFtJaz6Ek3b7qLNYo2RuNgsUh9oKixxYYiWZJy6hX034sh9RHHjg82Tc4MZ+a9N+zAo2idDCcoHjtYbdZb84R61YYaisddv8ugQi+ctEEaDQU82IoHZJxpE5CVJ7auIAOHP1r04U9TnaDo4l/psIIiuBYzEEYH1IGOuLVKCk7R8u+eQnbgRY0Np1U4WYQCTPkdRYAMrDMWXZDo6ZSupN/zjL5QIgF/kv3g74OT+gB9BkEGdc2HN8jMnoUaYyHXXIVRxl263tL26JsSZe++ffttHz8Zm5b7PTOOpdX7axc02JR45YZ1NYZPFizU0g/9RmX0wbNg5oClMQq5pogEzWW8z1Ip6VEYXXnmpRbI0BpRs70ZYgfZoA+8sXmMMIWWOuABHYX2rbXGhY/oxWfunirzrC9v+rfGUMeEkb04YYOzZ83o2s/YRFj9hgdRQ9/TgeWONxjQ+UhKSaEtDzVkoHlDLpURkXcXzJm7+5qD55neRzs2tzqygOju0FujfWLcH8vlZZV3nyj+h+WHK7y627K/7x6+fEwF8gNVEBnqYUeIh9pUqRpB5cSqCsiPNzklkHexsJ4qQ3ccG9A6BQXUIVhf5Dm3csGt5e5EsC6EaaDPXhtVeLxmt8smvd9T61KV56qfesmt/IQnyBIANfIK3QwBGRsn/49SjuWSnL/Og+Cvn7yxSXxJuCM4M/LTxqC1eWPUxoBd5PWyp1T2JqY4RLiXjVUntlGt44qtNmt4jfSWCL7arJnDPTok9ldGtA3q4CPyti2VFIxbyVBX1kgd/IL9Z1omuGYeadgp6QMxhSs12k+2rEaHbGz8QYa6Lanb+Wpq/p075CnTlOjKyrxUpswdKuQec+8E4Uo8cKYN6BfBQwbEgFTFzWJJpLPGh4ZH5Q0wDPN4GGJnpXfz3H1jbA9A0/DMreIyDpFIpG6g5iMcbwjzFL5IuttlUBsf6LTrSu7xwam+p+0fLTp6SXYZHLmTvCSQHjuopKd1BcWeK/9ajS8Tffd10O17dl2jb2Q9clYTYY9ctfQPMnjC0zQv+l2fjTymrNLZbbr79y1FmH0vHqr+pYA3q+3tP5BBObx4janIyfFneg35c7rcxAKjxuJeB4rrQ8sPZJuCknD4he6eou6GBaV6tbxzCY610jcNhKsuXZdU3feTfTp602PSfbKmbu/6vv8F8snQ3g==
 sidebar_class_name: "patch api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Update note</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update note"}
+>
+</Heading>
 
-<MethodEndpoint method={"patch"} path={"/v1/note/{docId}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/note/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Update a note by Id
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the note"}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"note"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Note text","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"title"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Name of the note","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"color"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"member"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"description":"Id of the member this note belongs to","type":"boolean"}}></SchemaItem><SchemaItem collapsible={false} name={"date"} required={false} schemaName={"integer"} qualifierMessage={undefined} schema={{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"}}></SchemaItem><SchemaItem collapsible={false} name={"supportDescMarkdown"} required={false} schemaName={""} qualifierMessage={undefined} schema={{"description":"Whether the description supports markdown"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the note"}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"note":{"description":"Note text","type":"string"},"title":{"description":"Name of the note","type":"string"},"color":{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"},"member":{"description":"Id of the member this note belongs to","type":"boolean"},"date":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"supportDescMarkdown":{"description":"Whether the description supports markdown"}},"title":"notesPatch"}}}}}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

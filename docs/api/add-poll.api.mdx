@@ -5,44 +5,65 @@ description: "Add a Poll by (optionally) an Id"
 sidebar_label: "Add poll"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Add a Poll by (optionally) an Id","parameters":[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Poll"}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the poll","type":"string"},"desc":{"description":"Description of the poll","type":"string"},"allowAbstain":{"description":"Whether this poll allows abstained votes","type":"boolean"},"allowVeto":{"description":"Whether this poll allows veto votes","type":"boolean"},"custom":{"description":"Whether this poll is a custom vote with custom answers","type":"boolean"},"endTime":{"description":"Milliseconds since epoch for this timestamp/date"},"supportDescMarkdown":{"description":"Whether the description supports markdown"},"options":{"description":"The options of this poll (if custom poll)","type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"color":{"type":"string"}}}},"votes":{"description":"Votes on the poll","type":"array","items":{"type":"object","properties":{"id":{"description":"ID of the member who votes","type":"string"},"comment":{"description":"Comment on the vote","type":"string"},"vote":{"description":"Option name that was voted (if not-custom, \"yes\", \"no\", \"veto\" or \"abstain\")","type":"string"}}}}},"title":"polls"}}}},"tags":["Polls"],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"post","path":"/v1/poll/{docId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"jsonRequestBodyExample":{"name":"string","desc":"string","allowAbstain":true,"allowVeto":true,"custom":true,"options":[{"name":"string","color":"string"}],"votes":[{"id":"string","comment":"string","vote":"string"}]},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Add poll","description":{"content":"Add a Poll by (optionally) an Id","type":"text/plain"},"url":{"path":["v1","poll",":docId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the Poll","type":"text/plain"},"type":"any","value":"","key":"docId"}]},"header":[{"key":"Content-Type","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}},"auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJyVVsFu2zgQ/RWCpwRQo2TRk27eZhcwijZG43axcHwYSWOLDUWyJGXXK+jfiyEl2bHcbnqxRXLmcYbz5pEtd1g0VvgDz1Ytny3mS/2Matb4imerdbdOeImusMJ4oRXP+KwsGbCFlpLlB3alwzxIebhmoNi85Ak3YKFGj9YFTEFuBnzFE66gRp7xUhfB0hUV1sCzlvuDoQXnrVBb3iXc4rdGWCx55m2D51E8Bjs2L5neMF9hCIhTtOSHzv+pywPhnsMUWnlUnpbAGCkKIMT0qyPYdhqQzr9i4Skpqw1aL9DRasyjPYvqI9Q4BGQooGSaF3lMPe+Po/8DACn1fpY7D0JNgf6p0Fdoma+ECxAs2DsG0QNLttMe3RE511oiqBH6C3r9G7g79PoXkEXjvK5fgyccAxbNAx7bC18NE6Dcnvh0aQtU5VJcKscHIaVwWGhVOuaEKpCh0UXFNrrf2IsanYfapCV4JDDXGKOtp3p8APtc6v0vDxnZyQrrnR2rB9cu4bFD3BRlWSHrF2PNh5O4EpshbxpfH7MGa+HAEy481u71LJ1wqNBS2wsrXdclPBZzEu4XmmZaXSDnb4Ylyin6/H7gfY11jpbtqwmtTuOv676LX8K8iwtDmARwyT/MT5wfYhXp1JivwLM9uABRhpIo7d/EsiTsiR/QPXH6UDr+UyM8caYte+J9sz3x6+nu8ZC98JJm6SBdf/AetqSYfBHmgpY5o5WLp/bH7e2FkN9TOm9v314Qo4cl+/vh88d7Ttg1+kqXYUMXKkJ6nPF0d5dSCGkbJLkjTUa7G6S7sZJnvPLeuCxNwYgbMAbsgfrqptA175JzoxJ3l+zWyXjRPJLGxpxeXjcjb8CI9xgIRYlUCCXa4+VBxtqK/4Jyh+RIvT8ddf+v71AbiccOGM5+UN/j+KWYxiviRAX7O6PXsDga+3k1he/7aqz1euymVaT9qWlP4eNUZOXRuaMD2AQxHujyKGojD2whGwuSzRZzfn4zLklGZos5s7hBiyR6pS4a2svF1m1yKQoGRjBUpdFCeXfD/tUNK0Axh8iASeE89SNIOdiPtqxCi2wo91b4qsmpxulsLPmD3aYx0hjozIg0lzpPLUoEh6mzBbGJ2Gd149HdeOpz4l3M4u7mlohNZK1BnVSSnh+9+LzIuz3e7K95ovRE8/jdp0ZS8bskErntW2PFd3fUJ3GvLL5Y1gmvqH+yFW/bHBx+trLraPpbg5aeUFRxsAJyKteq5aVw9F3ybAPSnb9jTqO++tQ/Va7Z5dfNT6IeekZRw+xANjTiCX/Gw/jSClzq+4iiimvv4t5vloRw9J28i4jGo34sHh6XPOF5/76qdUk+FvY8Cb9h75M7L8y1XILaNrAl24hJfQuTtn8Obd9/UKQXs3upAEOq9Et6dNGlbaOodN1oH5d+6jHKTrSmw153XfcDUXfadA==
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Add poll</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add poll"}
+>
+</Heading>
 
-<MethodEndpoint method={"post"} path={"/v1/poll/{docId}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/poll/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Add a Poll by (optionally) an Id
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Poll"}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Name of the poll","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"desc"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Description of the poll","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"allowAbstain"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"description":"Whether this poll allows abstained votes","type":"boolean"}}></SchemaItem><SchemaItem collapsible={false} name={"allowVeto"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"description":"Whether this poll allows veto votes","type":"boolean"}}></SchemaItem><SchemaItem collapsible={false} name={"custom"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"description":"Whether this poll is a custom vote with custom answers","type":"boolean"}}></SchemaItem><SchemaItem collapsible={false} name={"endTime"} required={false} schemaName={""} qualifierMessage={undefined} schema={{"description":"Milliseconds since epoch for this timestamp/date"}}></SchemaItem><SchemaItem collapsible={false} name={"supportDescMarkdown"} required={false} schemaName={""} qualifierMessage={undefined} schema={{"description":"Whether the description supports markdown"}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><strong>options</strong><span style={{"opacity":"0.6"}}> object[]</span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-The options of this poll (if custom poll)
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Poll"}]}
+>
+  
+</ParamsDetails>
 
-</div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"color"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><strong>votes</strong><span style={{"opacity":"0.6"}}> object[]</span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the poll","type":"string"},"desc":{"description":"Description of the poll","type":"string"},"allowAbstain":{"description":"Whether this poll allows abstained votes","type":"boolean"},"allowVeto":{"description":"Whether this poll allows veto votes","type":"boolean"},"custom":{"description":"Whether this poll is a custom vote with custom answers","type":"boolean"},"endTime":{"description":"Milliseconds since epoch for this timestamp/date"},"supportDescMarkdown":{"description":"Whether the description supports markdown"},"options":{"description":"The options of this poll (if custom poll)","type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"color":{"type":"string"}}}},"votes":{"description":"Votes on the poll","type":"array","items":{"type":"object","properties":{"id":{"description":"ID of the member who votes","type":"string"},"comment":{"description":"Comment on the vote","type":"string"},"vote":{"description":"Option name that was voted (if not-custom, \"yes\", \"no\", \"veto\" or \"abstain\")","type":"string"}}}}},"title":"polls"}}}}}
+>
+  
+</RequestSchema>
 
-Votes on the poll
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"id"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"ID of the member who votes","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"comment"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Comment on the vote","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"vote"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Option name that was voted (if not-custom, \"yes\", \"no\", \"veto\" or \"abstain\")","type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
-
-OK
-
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
-
-NOT FOUND
-
-</div><div></div></TabItem></ApiTabs></div></div>

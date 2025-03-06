@@ -5,36 +5,65 @@ description: "Update a Comment by Id"
 sidebar_label: "Update comment"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Update a Comment by Id","parameters":[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Comment"}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"text":{"description":"Comment text/message","type":"string"},"supporMarkdown":{"description":"Whether this comment supports markdown","type":"boolean"}},"title":"commentsPatch"}}}},"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"tags":["Comments"],"method":"patch","path":"/v1/comment/{docId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"jsonRequestBodyExample":{"text":"string","supporMarkdown":true},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Update comment","description":{"content":"Update a Comment by Id","type":"text/plain"},"url":{"path":["v1","comment",":docId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the Comment","type":"text/plain"},"type":"any","value":"","key":"docId"}]},"header":[{"key":"Content-Type","value":"application/json"}],"method":"PATCH","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}},"auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJx1VE1v2zAM/SsCTxugxe3Qk29Zt2HBsDVoUwxDkQNts7FW2dIkOW1m6L8PlO2kTdqLYZvffO+xB09l51TYQX7Xw3y5WJkHauddqCG/W8e1hIp86ZQNyrSQw62tMJBAcWmahtogip1YVCDBosOGAjmfMil2thhqkNBiQ5BDZcrk6cuaGoS8h7CzbPDBqXYDUYKjv51yVEEeXEfHtW+Sn1hUwtyLUNPUA3CbHEo+fDLVjlMfZypNG9g17wGt1apETpr98Zy5P+3JFH+oDDyXM5ZcUOSTlZ5SjpeNTbtga9aQ97ghkKfj+c5a436ge6jMY3ua51dNoSYnQq28KMekQ1Dwopni9pkLYzRhCzFKCCpo/jeG+SWGsoYYY1qrt6b1wwgfz85OK1995/4uzi5OTT+vVuLr1e3Pz0MZ3DDA08ge1hIaCrWpBrzLOnGB6QPZ9jwb28n6hH5k+MltJ5Z0TkMOdQjW51mGVs3QWnQ7rZWflaaBKI+dKtq+5reWeybfMJbDrC/5vAcXrfpOO5ADS2vCityBp+xsnPqXGJKGZpZcH/j15Qkby8ue+DBBfIowky9ynXuT3EeQblRj9U4sdedQi/lyAcdcXzEF5suFcHRPjtqSRGXKLu08cd92hValQKsEtZU1qg1+Jn6bTpTYCk+sUa18YK2g1pP/3lfU5EhMW92oUHcFrzKb7zd75TbZ0OnQ6NyqrNCmyBxpQk+ZdyWDxjg70wXys+BBAsM7THE+O2NeWeNDg4nw447HMzKy43j6/iDXtw/OiGXSnNWoWq6UuNKPBLyD7TlIOBTJhxO0llAbH9ih7wv0dOt0jPz7b0eOL+FawhadwoLRuuuhUp7fK8jvUfvjw/S83XfX4+F5L948V2/0PpGzZWZuUXf8BRIeaLe/nnEd5URYbmywXQ7lP6w4wyH25NDF52JdzleX30BCMV7MxlQc5PARZHqm4ibNmMSU/vWgsd10fOByGJKyQvBEYA9JYOMLt/rqeC+1Ns3KT1b+qyF9P8g3xr3/YHozYi/wwZu3vY4x/gc5B2YR
 sidebar_class_name: "patch api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Update comment</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update comment"}
+>
+</Heading>
 
-<MethodEndpoint method={"patch"} path={"/v1/comment/{docId}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/comment/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Update a Comment by Id
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Comment"}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"text"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Comment text/message","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"supporMarkdown"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"description":"Whether this comment supports markdown","type":"boolean"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Comment"}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"text":{"description":"Comment text/message","type":"string"},"supporMarkdown":{"description":"Whether this comment supports markdown","type":"boolean"}},"title":"commentsPatch"}}}}}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

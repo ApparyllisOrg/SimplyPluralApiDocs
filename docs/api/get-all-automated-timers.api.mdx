@@ -5,36 +5,65 @@ description: "Get Automated Timers from a system"
 sidebar_label: "Get all automated timers"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Get Automated Timers from a system","tags":["Automated Timers"],"parameters":[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"get","path":"/v1/timers/automated/{systemId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Get all automated timers","description":{"content":"Get Automated Timers from a system","type":"text/plain"},"url":{"path":["v1","timers","automated",":systemId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the system","type":"text/plain"},"type":"any","value":"","key":"systemId"}]},"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJyNU0Fu2zAQ/AqxpxYgLKfISTcDbQMjQBw0zqEwdKCltUWEIhlyZdQV+PdiJUuN1QToRRLFIXdnZqeDiGUbNJ0h33Wwelxv3QvaVUs15LsiFRIqjGXQnrSzkMMdkli15BpFWImtbjBEcQiuEUrEcyRsQAKpY4R8B3MgFBK8CqpB4hVX1HypV1SDBKsahByGa9YVSIhljY2CvAM6+36PgrZHSBICvrY6YAU5hRbnbT71OLGuhDsIqnHsjQkFjN7ZiJHv/bJc8uv69OaeK9wub//dethsxffN88NXSElCg1S7CnI4IoEceOSQnW4y6glnalQg60ZaiXlhOI0KtMFADjWRj3mWKa8XynsVzsbouChdA0nOQRWe3sMVcnLziYUbGF57OimpvL7HM8jBgRpVheGvBwx2Qf9WPW2mqu3B9cc1GUY86cabs3g0bVBGrB7XMPdgW+vIGyLgAQPaEkXlyrZBS7H3xLd7o0uhvBZoK++0pbgQP10rSmVFRBRKGB2JPVTGjPgJK2oMKEZRjprqds9KZKtJmE04ZkOnQ6Mrr7O9cfssoEEVMYuhZM3ZsuBawrigCBLYnYHFzWLJw+BdpEZZVuAiESeBu5osFoPncx06KJ0ltPTf6RkMIvxFmTdKW67fD0B3mbAdnG4YONabWgAJ+RSfQkLtIjG86/Yq4nMwKfHv1xYDB76QcFJBqz07uuug0pG/K8gPysR5qN4S+fTjEr/P4qOofUBkHD/Ls3dSpuUVSHjB89vsp+JtvO6+bQeaswl+6Sf48sEM3r39epjHUvzkaL17pOuGfKQ04YetD09MCRrQTLZIKf0BHZDXmA==
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Get all automated timers</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all automated timers"}
+>
+</Heading>
 
-<MethodEndpoint method={"get"} path={"/v1/timers/automated/{systemId}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/timers/automated/{systemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Get Automated Timers from a system
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

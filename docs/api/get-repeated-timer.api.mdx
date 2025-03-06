@@ -5,36 +5,65 @@ description: "Get an Repeated Timer by id"
 sidebar_label: "Get repeated timer"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Get an Repeated Timer by id","tags":["Repeated Timers"],"parameters":[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Repeated Timer"},{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"get","path":"/v1/timer/repeated/{systemId}/{docId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Get repeated timer","description":{"content":"Get an Repeated Timer by id","type":"text/plain"},"url":{"path":["v1","timer","repeated",":systemId",":docId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the Repeated Timer","type":"text/plain"},"type":"any","value":"","key":"docId"},{"disabled":false,"description":{"content":"(Required) String Id of the system","type":"text/plain"},"type":"any","value":"","key":"systemId"}]},"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJytVE1r20AQ/SvLnFpYLKfkpJuhbTCBOCTOoRgd1tLYWrLa3eyOTFWh/15GstTYcQiUXPS18/Xem6cWIuZ10NRAumlhcb9cu2e0i5pKSDdZl0koMOZBe9LOQgo3SEJZ8YAeFWEh1rrCILaN0AVIILWPkG7g9DhCJsGroCokfuNOmot5RSVIsKpCSKFw+ZKLxLzESkHaAjWeDyIFbffQSQj4UuuABaQUajyf7bGPE8tCuJ2gEs+mhE5e7BubSFh9cuuhKDCBAaN3NmLkut/mc76dZq9uucP1/Prt0d1qLX6unu6+Q9dJqJBKV0AKeySQA44UksNVQowwCUfASTuC6pK257VjdBgOI/91MJBCSeRjmiTK65nyXoXGGB1nuat6sk6DCjxcisvktEOPTN+A83STJj6V17fYgBx0KFEVGP4pwcEu6D+qB8+Atd25Pl2T4YhHXXnTiHtTB2XE4n4J50qsSx35QATcYUCboyhcXldoKfbK+HprdC6U1wJt4Z22FGfil6tFrqyIiEIJoyOxksqYMX6KFSUGFCMpe01lvWUmksVEzCrsk2HSYdCF18nWuG0S0KCKmMSQM+csXHA1YZxRBAmszoDiajbnlfAuUqUsM3CkiP03qix60c8ZaCF3ltDSx24dNCH8TYk3Sltu2WveHldrA4crDjz2GRuDhPSVa9LBuZmE0kXirLbdqohPwXQdf36pMfAPJpNwUEGrLWu5aaHQkZ8LSHfKxHNTvQby5eFov6/iI5e/g2tcQMvbd1Cm5jeQ8IzN9O/hnf+cmY72/69ZJma77LXlb36sQYJ646fn3k/HB2b1YvVTa42t+MqgL6a07eDWrpvih6N3MyY/D9EMNuu67i/bFSwk
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Get repeated timer</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get repeated timer"}
+>
+</Heading>
 
-<MethodEndpoint method={"get"} path={"/v1/timer/repeated/{systemId}/{docId}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/timer/repeated/{systemId}/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Get an Repeated Timer by id
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Repeated Timer"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Repeated Timer"},{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

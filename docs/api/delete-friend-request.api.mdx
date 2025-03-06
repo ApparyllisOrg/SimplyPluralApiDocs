@@ -5,36 +5,65 @@ description: "Remove a friend request"
 sidebar_label: "Delete friend request"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Remove a friend request","parameters":[{"in":"path","name":"username","schema":{"type":"string"},"required":true,"description":"Username (or userId) of the friend request you want to delete"}],"tags":["Friends"],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"delete","path":"/v1/friends/request/{username}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Delete friend request","description":{"content":"Remove a friend request","type":"text/plain"},"url":{"path":["v1","friends","request",":username"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) Username (or userId) of the friend request you want to delete","type":"text/plain"},"type":"any","value":"","key":"username"}]},"method":"DELETE","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJylVMFO4zAQ/RVrTiBZTVlxyq0SICFWFEE5rKoc3GTaWDi2scfd7Ub599UkaZeWspe9JG797Hnz3ry0ELFMQdMO8mULs6f7hXtDO0tUQ74sukJChbEM2pN2FnJ4xsZtUSixDhptJQK+J4wEErwKqkHCEPurNKO9ohokWNUg5JAihn4pIZY1NgryFmjneS9S0HYDnQS+UQesIKeQ8LT+63iHuHBB8IX31aVwa0E1nlASO5fET2VJkBMVGiQE7ofUhhnCXY+OUHDJ6J2NGJnQt+mUX8dl5w9M7Xp6/Xnrcb4Qd/PXxxvoOgkNUu0qyGGsKAcNcsi2V9lAMGYjw6zdK9KxJBi2e/FSMJBDTeRjnmXK64nyXoWdMTpOStdAJ09BFW7P4Qp5cPiFNR96PPb5YILy+gF3IAfzalQVhr/2MdgF/Vv1jXOz2q5df1yTYcSLbrzZiSeTgjJi9nQPp/Ytah15QwRcY0BboqhcmRq0FHsPfVoZXQrltUBbeactxYn44ZIolRURefSMjsSeK2P2+ANW1BhQ7EXZaKrTipXIZgdh5mGTDUwHojOvs5VxqyygQRUxi6Fkzdmx4BJhnFAECezO0MXVZMrj4F2kRllWYJTopjf9czaORGihdJbQ0j/jNFpC+Isyb5S2XLG3vB1HagnbK5AwDhUMyRkO54eoFRJqF4nRbbtSEV+D6Tr++z1h4NQXErYqaLViC5ctVDryuoJ8rUw8DeBH8hfPY1Qvxf/F8otu91NpeSS3yiT+BRLecPfxa9IVH3N3c/v9dnELEtSn2X7rZ3tccKtnCxyP+b4aPzl0Z4+07ZCcrjvgh60vTxyyNaC536Lruj/NfOhm
 sidebar_class_name: "delete api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Delete friend request</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete friend request"}
+>
+</Heading>
 
-<MethodEndpoint method={"delete"} path={"/v1/friends/request/{username}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/friends/request/{username}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Remove a friend request
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"username","schema":{"type":"string"},"required":true,"description":"Username (or userId) of the friend request you want to delete"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"username","schema":{"type":"string"},"required":true,"description":"Username (or userId) of the friend request you want to delete"}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

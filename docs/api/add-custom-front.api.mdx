@@ -5,36 +5,65 @@ description: "Add a Custom Front by (optionally) an Id"
 sidebar_label: "Add custom front"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Add a Custom Front by (optionally) an Id","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the custom front","type":"string"},"desc":{"description":"Description of the custom front","type":"string"},"avatarUrl":{"description":"URL for the avatar","type":"string"},"color":{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"},"private":{"description":"Whether this object is private","type":"boolean"},"preventTrusted":{"description":"Wheter trusted friends are prevented from seeing this private object","type":"boolean"},"supportDescMarkdown":{"description":"Whether the description supports markdown","type":"boolean"}},"title":"customFront"}}}},"parameters":[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Custom Front"}],"tags":["Custom Fronts"],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"post","path":"/v1/customFront/{docId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"jsonRequestBodyExample":{"name":"string","desc":"string","avatarUrl":"string","color":"string","private":true,"preventTrusted":true,"supportDescMarkdown":true},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Add custom front","description":{"content":"Add a Custom Front by (optionally) an Id","type":"text/plain"},"url":{"path":["v1","customFront",":docId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the Custom Front","type":"text/plain"},"type":"any","value":"","key":"docId"}]},"header":[{"key":"Content-Type","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}},"auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJyVVt9v2zYQ/leI20sCaFYy9ElvXroCRrc6SBwMQ+qHs3S22FAkS1JOPUH/e3GkJTu2W2x+sEne8X5/H92Bp7J1MuygeO5gej9bmBfS0zbUUDwv+2UGFfnSSRuk0VDAtKoEirvWB9OID87oIFY7cWWiHJXaXQvUYlZBBo6+tuTD76baQdHFrXRUQRFcSxmURgfSgUVorZIlson8i2c/HfiypgZ5FXaWoACz+kJlgAysM5ZckORZqrEh/n0b5idsSJi1CDWJMgW75mAhG8z54KTeQJ8SPLfw/rD7r4ZwiwHdk1Pn1p4e/hRr46KZpHbJQGmUceeX7/h4CCKVQVx9/vzLOn4yMS7Xa2GcSKvrSw6sk1sMF+r1d02hJo5P+sGF9GLQH02tjFGEOtmiLemwcK0P3NVLJtlikou1k6QrL9CR2F+Np6YRnkjqTfK99yjGbp879q21xgVu0F/oXirzqn+WEIkjidhf9qIZrp676DMIMig+Sy2Pcw59zxKLDhvOzEfESHZmMdSQ7UcRKlPG+T+b4EMfTrHwNvbHqCdm1dDzY7gBYzLght3DscDDkg17a7RP0Pjt5ua8MPOPHMC7m3cXQDNfiA/zp0/vYwkaCrWpODvjI+w4yQLy7W1+VJW8i+n2nC+57VCWlkEAdQjWF3mOVk7QWnQ7paSflKaBPjtVqmh7SW+ZjRT1yAVNqb0lqrHCaOVH2kGW2lITVuQOjWFl4+S/kWhijkw2Dwea+uMbNlbRgVaGlg0kcdgfYf1wuMfv4WDEW2rzKWTS6cV5ZlHPeaxNzG8/j4+ysWon7lXrUInp/QxOh2fBKJrez4SjNTnSJYnKlG1DOvg4TLZdKVkKtFKQrqyROviJ+Me0okTNWBQolPSBhw+VGvRHXVGTIzF0bSND3a64Vfl07NzcbfIUaQp0amW+UmaVO1KEnnLvSh4KniVn2kB+EjxkwOOTsrid3ESOMT40qI8awu/PCQ+/yb87vCv/563az0+gbyG3CmUkmjYxeRr8Z9jecouPCCGDImF9mUHNICmeoetW6OnJqb7n468tOX5alxls0UlccRefO6ik53UFxRqVP2WA4ySuHvZccS1+zgs/SGJAhmZYbFG1vIMMXmg3clW/7LMBLRxdkt2lGH5dsIXD3bPHmiE6ksX9/HEBGaz2j35jKr7j8JX/EOBr8p06EIEczzpQqDctblg32WR04hm4XyK49wuO9GJ2b3E+pMrfzDoXr3Rdoo6+H/WT6Ic3RnJJ2lzsZd/33wHj6zi1
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Add custom front</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add custom front"}
+>
+</Heading>
 
-<MethodEndpoint method={"post"} path={"/v1/customFront/{docId}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/customFront/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Add a Custom Front by (optionally) an Id
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Custom Front"}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Name of the custom front","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"desc"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Description of the custom front","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"avatarUrl"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"URL for the avatar","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"color"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"private"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"description":"Whether this object is private","type":"boolean"}}></SchemaItem><SchemaItem collapsible={false} name={"preventTrusted"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"description":"Wheter trusted friends are prevented from seeing this private object","type":"boolean"}}></SchemaItem><SchemaItem collapsible={false} name={"supportDescMarkdown"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"description":"Whether the description supports markdown","type":"boolean"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Custom Front"}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the custom front","type":"string"},"desc":{"description":"Description of the custom front","type":"string"},"avatarUrl":{"description":"URL for the avatar","type":"string"},"color":{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"},"private":{"description":"Whether this object is private","type":"boolean"},"preventTrusted":{"description":"Wheter trusted friends are prevented from seeing this private object","type":"boolean"},"supportDescMarkdown":{"description":"Whether the description supports markdown","type":"boolean"}},"title":"customFront"}}}}}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

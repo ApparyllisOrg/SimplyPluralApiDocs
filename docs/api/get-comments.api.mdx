@@ -5,36 +5,65 @@ description: "Get comments from a document of type (groups, members, customFront
 sidebar_label: "Get comments"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Get comments from a document of type (groups, members, customFronts, etc.)","tags":["Comments"],"parameters":[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the document you wish to get comments from"},{"in":"path","name":"type","schema":{"type":"string"},"required":true,"description":"Type of the comment (groups, members, customFronts, etc.)"}],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"get","path":"/v1/comment/{type}/{docId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Get comments","description":{"content":"Get comments from a document of type (groups, members, customFronts, etc.)","type":"text/plain"},"url":{"path":["v1","comment",":type",":docId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the document you wish to get comments from","type":"text/plain"},"type":"any","value":"","key":"docId"},{"disabled":false,"description":{"content":"(Required) Type of the comment (groups, members, customFronts, etc.)","type":"text/plain"},"type":"any","value":"","key":"type"}]},"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJytVN9v2jAQ/lese1oli9CpT3lD21qhSqVa24cJ8WCSg1h1bNdns7Eo//t0SaCFUmlie4EkvuS+H/ddA4RFCjpuIZ83MLmfPrpntJMUK8jni3YhoUQqgvZROws53GAUhatrtJHEKrhaKFG6IvED4VYibj2KT+vgkicpaqyXGEiKIlF09XVwNpIUGIvRBUiIak2Qz+HL8EFYSPAqqBojBuoQaW7qVaxAglU1Qg6lK6YlSKCiwlpB3gA3hRwoBm3X0EoI+JJ0wBLyGBIec3jo6sS07ABX+Epg65L4qakS0Yn1MVNo5Uk8Xfd/gPPIkg1IhoZ/qSDbE5C8s4TEnT+Px/x3+P3ZLWO4Gl+9P7qbPYrr2dPdV2hbCTXGypWQwxojyJ5lDtnmMhtgZQ1Ta7Oms6Bl0hg2O6tSMJBDFaOnPMuU1yPlvQpbYzSNikG/w6ISN6fqFnI/lg+sak/ucDj3Miuvb3ELsremQlVieDWHi13Qv1XHmFlqu3Ld6zoarnjQtTdbcW9SUEZM7qfwzqBKEx+IgCsMaIvXiaHONZ+WRhdCeS3Qlt5pG2kkfrgkCmUFIQoljKYuIMqYXf2+VlQYUOxEWetYpSUrkU32wszCOuuR9kAnXmdL45ZZQIOKMKNQsObsVnApIo0igQR2p2dxORrzHHhHsVaWFRgkehvpY+4NFM5GtPG/R783L+KvmHmjtGVs3XA0w+DNYXMJEoaOICEfgpb3C2AhoXIUubBplorwKZi25ccvCQPvs4WEjQpaLdnneQOlJr4uIV8pQ8c5fEv10/chsRfi3GXxAcXd0Fqe2I0yie9AwjNu96uNc3IW1vM3yVlou9N28XZz3Hx7BAnqXUKfu4QOF+zFyS8fhnXXhn9ZkpOvNE2f/7bd1/dHH76x3xB9NRNdtG37B20UaMQ=
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Get comments</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get comments"}
+>
+</Heading>
 
-<MethodEndpoint method={"get"} path={"/v1/comment/{type}/{docId}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/comment/{type}/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Get comments from a document of type (groups, members, customFronts, etc.)
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the document you wish to get comments from"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"in":"path","name":"type","schema":{"type":"string"},"required":true,"description":"Type of the comment (groups, members, customFronts, etc.)"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the document you wish to get comments from"},{"in":"path","name":"type","schema":{"type":"string"},"required":true,"description":"Type of the comment (groups, members, customFronts, etc.)"}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

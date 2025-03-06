@@ -5,36 +5,57 @@ description: "Get all unread board messages for this system"
 sidebar_label: "Get unread board messages"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Get all unread board messages for this system","tags":["Board Messages"],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"get","path":"/v1/board/unread","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Get unread board messages","description":{"content":"Get all unread board messages for this system","type":"text/plain"},"url":{"path":["v1","board","unread"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJydk0GPmzAQhf+KNWcrJNWeuKVqu4pW3UTa7KGKOAwwCdYa2/UMUVPEf68M2aibpJdeAHnewMx7Hz0wVV00coJ818Nys9r6N3LLThrId8VQaKiJq2iCGO8gh0cShdaqzkXCWpUeY61aYsYDsdr7qKQxrPjEQi1oEDww5Dv4PAq/n4VQaIjEwTsmhryHT/N5un381voJBg0P84fb0vN6q76tX5+/wDBoaEkaX0MOBxLQEDBND9lxkY3zZdOwoIEpHinyuGsXLeTQiATOswyDmWEIGE/WGp5VvoVBX4tqOt7TFfri4kvVUDut9NHLHuQUCHLAYJ7oBBpM2qMhrCmCBodtqiaxj+Y3jnum3Yzb+7HdiE2KF9MGe1Ib20W0arlZwXVE2xTAcrNSkfYUyVWkal91LTlhJQ2p0JXWVAqDUeTq4I0TnqkfvlMVOsVECpU1LMrvx6zP+otWNRRJvZtyMNJ0ZXIiW16MWcdDNk06DboMJiutL7NIlpAp41glz1NG0XdCPBMGDSmdaYvFbJ7SD56lRZccOFuUCLxL37URPVTeCTn5H2ynsIR+SRYsGpdmGWHoz3jt4LgADeObQMMZsUJD41lSue9LZHqNdhjS8c+OYvrJCg1HjAbLlOau+Jvex69b0IA3vLyNvJwfErrvJZfOj2i7W3Q0jOLxmkC+29L3E43DcNFPpX92XHid1MmXYhiGP+R8dns=
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Get unread board messages</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get unread board messages"}
+>
+</Heading>
 
-<MethodEndpoint method={"get"} path={"/v1/board/unread"}></MethodEndpoint>
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/board/unread"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Get all unread board messages for this system
 
-<div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
 
-OK
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-NOT FOUND
-
-</div><div></div></TabItem></ApiTabs></div></div>

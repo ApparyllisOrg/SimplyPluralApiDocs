@@ -5,36 +5,65 @@ description: "Delete a note by Id"
 sidebar_label: "Delete note"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Delete a note by Id","parameters":[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the note"}],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"tags":["Notes"],"method":"delete","path":"/v1/note/{docId}","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Delete note","description":{"content":"Delete a note by Id","type":"text/plain"},"url":{"path":["v1","note",":docId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) String Id of the note","type":"text/plain"},"type":"any","value":"","key":"docId"}]},"method":"DELETE","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJx1U8Fu2zAM/RWBpw0Q4nToybcA7YCgQ1Os2WEIfJBtJhYqS6pEB/MM/ftAO/HaNL3YTvhE8fG9N0DEqguaesh3A6ye1lv3gnbVUQP5rkiFhBpjFbQn7SzkcIcGCYUS1hGKshfrGiR4FVSLhCGObTQjvaIGJFjVIuRQu2pExqrBVkE+APWeC5GCtgdIEgK+djpgDTmFDi8vfh5xYl0LtxfU4DgA8IABo3c2YuSu35ZLfr0/u3ng/rfL24+lx81WfN/8eryDlCSQOjADeHSEEQoJLVLjap5/5D1S5dVAdrzJeIJsGJklpobheN5AFwzk0BD5mGeZ8nqhvFehN0bHReVaSPISVOPxGq6Qs0TPvLuJ5nuh5mUqrx+wBzkp0KCqMfzXgMEu6L9q5M58td278bgmw4hn3XrTiyfTBWXE6mkNlzJsGx25IALuMaCtUNSu6lq0FEdZfFcaXQnltUBbe6ctxYX47TpRKSsisneMjsQyKmPO+BkrGgwozks5aGq6kjeRrebFbMIhmyadBl15nZXGlVlAgypiFkPFO2eNgusI44IiSGB1JhY3iyU7wrtIrbK8gdOKTvYevXVBfYDKWUJLn6bgJALhH8q8UdryHaPIw8k2OzjesB5T+3wKRSGhcZG4OgylivgrmJT479cOAwezkHBUQauSRdoNUOvI3zXke2XiZVTeDvrl5ylUX8X1AH0y9dlPls10VKbjXyDhBfs5zKlIbwJyd//jfnsPEtQHS76Mljx98PxXu7935/kqfnJWrh4ZhsnwKc34qfTpiTkSE5rJFimlf5eQsso=
 sidebar_class_name: "delete api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Delete note</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete note"}
+>
+</Heading>
 
-<MethodEndpoint method={"delete"} path={"/v1/note/{docId}"}></MethodEndpoint>
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/note/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Delete a note by Id
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the note"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the note"}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

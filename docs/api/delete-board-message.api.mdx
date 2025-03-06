@@ -5,36 +5,65 @@ description: "Delete a channel"
 sidebar_label: "Delete board message"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"parameters":[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}],"description":"Delete a channel","tags":["Board Messages"],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"delete","path":"/v1/board/:id","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"}}
+api: eJzVU81q3DAQfpVhTi249qbk5NuWUFhCswvZUkrYw1ierNXIkqoZp7jB715kd7dJ2hfoyQZ9I31/84TCZkhWR6zvnnC92+zDA/v1oB3Wd4fpUGCkRD0rJ5kh1mONkbTDAj31jDXaFgsU03FPWD89+9Mx5nPRZP0Rp/NAaL6x0U0ee35d4u+DTdxirWngAlsWk2xUGzJoOw/B5grCPWjHsNxSgHZWwJCHhoGgD/4YMqoZFMhJAILoyHpYaMCbhszDD0qtvDOhj6S2sc7q+LaELx17GCSjdtvbPYQE1Law3m3AkHPy+62YQuSkI1iBMNMjV2KBatW9kDf975py/i8ZX7FjzZxMR96zy7LpmKuBHwKlFj6xCB1Z8JDFSwxeWHIZ3q9W+fPKgOts0uXq8u+jm+0ePm4/31zhNBXYs3ahxRrbmQAWS2lqrB4vqia/XNVLDzk9nro6JIc1dqpR6qqiaEuKkdLonJXShB6n4jWo5cd/4Q7FeVFuc70XSS/X5dx3ivaax1O5O6aW059tyeCQ7E+adWZt1t+Hefx3f25tH90IOzckcjkpfJ3CPkeWI0x8z4m9YWiDGXr2KnOP4tA4a4CiBfZtDNarlPA1DHOphHOCzorm3pFzJ/wZCx0nhpMpR6vd0GQnqvXZmG06VgvTheg62qpxoakSOybhSpLJnueAUhiUpVTBAnM6i4qLcoXT9AswBYyb
 sidebar_class_name: "delete api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Delete board message</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete board message"}
+>
+</Heading>
 
-<MethodEndpoint method={"delete"} path={"/v1/board/:id"}></MethodEndpoint>
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/board/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Delete a channel
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
-OK
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}]}
+>
+  
+</ParamsDetails>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
 
-NOT FOUND
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-</div><div></div></TabItem></ApiTabs></div></div>

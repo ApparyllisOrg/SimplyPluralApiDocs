@@ -5,36 +5,57 @@ description: "Get all reports of the authenticated user"
 sidebar_label: "Get all reports"
 hide_title: true
 hide_table_of_contents: true
-api: {"security":[{"APITokenAuth":[]}],"description":"Get all reports of the authenticated user","tags":["Users"],"responses":{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}},"method":"get","path":"/v1/user/id:/reports","servers":[{"url":"https://api.apparyllis.com"},{"url":"https://devapi.apparyllis.com"}],"securitySchemes":{"APITokenAuth":{"type":"apiKey","in":"header","name":"Authorization"}},"info":{"title":"Simply Plural API","description":"This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts","version":"1.0"},"postman":{"name":"Get all reports","description":{"content":"Get all reports of the authenticated user","type":"text/plain"},"url":{"path":["v1","user","id:","reports"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+api: eJyVU02L2zAQ/StiziJOyp58C7RdloVNYJNDCT4o9iQWK0uqNDJNjf57Gdsbusn20IttNE/S+/IAEesUNF2gPAyw3j7t3BvadaIWykOVKwkNxjpoT9pZKOERSShjREDvAkXhToJaFCpRi5Z0rQgbkSIGkEDqHKE8wD5iiFBJCBi9sxEjlAN8WS759fH4zTNkCQ/Lh/vRy2Ynvm/2L18hZwkdUusaKOGMBBK8YsJQ9KuCLy90UxYzRZAQMfRMgSWmYKCElsjHsiiU1wvlvQoXY3Rc1K6DLG9BDfaf4Sp5Ne+1brGbZH20cAC6eIQSlNfPeAEJmrW0qJrRIqs6njLYBf1bjVpZn7YnN27XZBjxqjtvLmJrUlBGrLdPcJvMrtWRByLgCQPaGkXj6tShpThm5NPR6FoorwXaxjttKS7ED5dErayIiEIJoyNxphzxjL9iRYsBxbspZ01tOrITxfpqzCaci4npRHTtdXE07lgENKgiFjHU7DnnFFwijIsxIE5nUrFaLLkB3kXqlGUHZotuincrf4DaWUJL/9vRKR7CX1R4o7Tl28f4h7lUB+hXIGHG66YELvJEopLQukgMGoajirgPJmde/pkw8D9VSehV0OrIKR6qv5v7+G0HEtRdT97GnswfXNn3keX1Xpl0XxkJI3h8coE/3TIMUwtzvuKn0T93XHs6odmdKuf8B1QWcBk=
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
 ---
 
-import ApiTabs from "@theme/ApiTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
-import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
-import MimeTabs from "@theme/MimeTabs";
-import ParamsItem from "@theme/ParamsItem";
-import ResponseSamples from "@theme/ResponseSamples";
-import SchemaItem from "@theme/SchemaItem";
-import SchemaTabs from "@theme/SchemaTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
 
-<h1 className={"openapi__heading"}>Get all reports</h1>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all reports"}
+>
+</Heading>
 
-<MethodEndpoint method={"get"} path={"/v1/user/id:/reports"}></MethodEndpoint>
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/user/id:/reports"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
 
 
 
 Get all reports of the authenticated user
 
-<div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
 
-OK
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
 
-</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
 
-NOT FOUND
-
-</div><div></div></TabItem></ApiTabs></div></div>

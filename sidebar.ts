@@ -1,4 +1,8 @@
-module.exports = {
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
+
+import apiSidebar from "./docs/api/sidebar";
+
+const sidebars: SidebarsConfig = {
 
   Sidebar: {
     Welcome: ['intro', 'discord',],
@@ -15,7 +19,7 @@ module.exports = {
           slug: "/docs/api"
         },
         // @ts-ignore
-        items: require("./docs/api/sidebar.js")
+        items: apiSidebar
       }
     ],
     "Docs":
@@ -65,7 +69,7 @@ module.exports = {
                 type: 'generated-index',
                 title: 'Archive Help',
                 description: 'General help for archiving members',
-                slug: '/help/features/buckets',
+                slug: '/help/features/archive',
               },
               items: [
                 "help/features/archive/archive"
@@ -125,3 +129,5 @@ module.exports = {
     ]
   }
 };
+
+export default sidebars;

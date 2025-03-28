@@ -27,6 +27,17 @@ components:
         timestamp:
           description: Milliseconds since epoch for this timestamp/date
 
+    analyticsIdValuePair:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the member
+        value:
+          type: long
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+
     analytics:
       type: object
       properties:
@@ -50,7 +61,6 @@ components:
               type: array
               items:
                 type: string
-
         values:
           description: Values for the timeframe
           type: object
@@ -58,48 +68,24 @@ components:
             sums:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  value:
-                    type: long
+                $ref: "#/components/schemas/analyticsIdValuePair"
             averages:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  value:
-                    type: long
+                $ref: "#/components/schemas/analyticsIdValuePair"
             maxes:
-              type: array
+              type: array              
               items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  value:
-                    type: long
+                $ref: "#/components/schemas/analyticsIdValuePair"
             mins:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  value:
-                    type: long
+                $ref: "#/components/schemas/analyticsIdValuePair"
             nums:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  value:
-                    type: long
+                $ref: "#/components/schemas/analyticsIdValuePair"
+
 
     automatedReminder:
       type: object

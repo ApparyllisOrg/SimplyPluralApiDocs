@@ -5,7 +5,7 @@ description: "Get analytics of authenticated user"
 sidebar_label: "Get analytics"
 hide_title: true
 hide_table_of_contents: true
-api: eJyNVE1r20AQ/SvLnFoQllNy0s3QJIRAHBrnUIwPY2lsbbPa3ezOmqpC/72MZBs7iUsvsvC8+XpvnjqIVKaguYVi2cHs6X7hXsnOEtdQLFf9KoOKYhm0Z+0sFHBHrNCiaVmXUbmNwsQ1WdYlMlUqRQqQAeM2QrGE2QEJqww8BmyIKcShl8WGoIBnxiAlK3VjK7XQDUXIQEuvt0ShhfcTnCewJChtFWQQ6C3pQBUUHBJlEMuaGoSiA2699HLrX1QyZOCD8xRYU5RolIrS+QSqLdOWAvQZkK0uBfteGAoUvbNxLPZtOpWf85nnD1Loenr9MfQ4X6jb+cvjd+j7DBri2lVQwJaGOVF0gHx3lQuz+ZF5yCBS2B24TMFAATWzj0Weo9cT9B5Da4yOk9I10GfvQRXtPsOtsuNFPAt941Lnd3HkAb1+oPYgV01YDervlRWwC/oPDpvKdtpu3JCu2Qza68abVj2ZFNCo2dP9B7EXtY4SUIE2FMiWpCpXpoYsR8U1KZ/WRpcKvVZkK++05ThRP11SJVoViRQqoyMPp2rMAX/EqpoCqQMpW811WgsT+exIzDxs83HScdCZ1/nauHUeyBBGymMohXNRKbjEFCcsAok64xZXk6no713kBq0wsKfozE3vl++gdJbJ8v/bbpSF6Tfn3qC20nWQvduf0hJ2V5DBHo+n9qxdZAF03RojvQTT9/L3aEI5skpHXBux1wZNpH9M++XH3olf1WW3fjrsK7UXvwk7NEkyhiPdYdAyzfCVOvHN3c1CFvtwp6/Dne5fZJtDyLYnpc9P9jCOPMVAn6Z03eiCvj/ix9DFjKNPRrQsvur7/i/5x+VV
+api: eJy9Vt1r2zAQ/1eEnjoIcTv6lLfA1jIGa1nTwRh5UOxLrFWWVOkc6pn+77uT7Xws2Vo6SB6S2Prd3e++1coIeR00NnLyo5XT208z9wB2WmNJL+bP85EsIOZBe9TOyom8BhTKKtOgzqNwS6EICpaeFEIh6ghBjiSqVSR5OR2QkhR5FVQFCCEmW5YeSGFEFXCm6f9IarbwWENo5J927xgmkHBCW3Fv9VN6IOnKi6ULlUJxVmljNDnkbCFUTn6pvHlHqgI81jpAIScYahjJmJdQKTlpJTaeSbjFT8iRkD44DwE1RD7dcttCtUVYkZPP9BltvABbvOzDR6J1Yg8GXsf5z1lx9M7GDv3+/Jx/9lnffCatRAgpy3yqvDecbTrNfkaGtK+mQw5ru4qHRq6Dq32qp2VgUyGKhYpUUM6KQWj0gvLKBUvAq17BDhsVguJ0aIRq933EQAIUCsqUat4mCGt4u1WrVyW+RZSF18rUcCSW39J7LilBrZmKbMmd92IAY129hsRfpHVxhGjPcufEuI0Dag1BreCkNiv1dGKD2p7Unj1pEpNJ1GiSrc20795fnl8eVueXm5m4urn/8iE1AO2D0pFNuYJERvHekdn6IuNNkm010siDsB52Rx0MwUpEHydZprwe01RSoeHhOc5dJXk074MKWB/DzUebDXjHQ6wLw/4e3AbT68/QDEO+BFWkbdfvAAa7oH+l0Zi803bpurHXBehOV9404tbQXDeCjBysiFmpIx+IAEsIYHMQhcvrimZvTN3s6wVNX0FMBM1272icx7H47mqRKysigFCCnMO0mo0Z8BusKEmtGIKy0ljWC45ENt0E5iasso5pR3TqdbYwbpEFMEBDOYsh55hzlmhsI8QxcoI4O50XF+NzrhrvIlYqLYg+RHu3hz+db7db5rXXjC4tCE+YeaMoK2Q1pb3tS+mHXF8QsMer3etISewY0La8ae6DeX7m193q5iIrdFQLwzt3qUyEf7A9+9qv53fiv+4pR/15oIrbvyb13ShTlb+J5X/cRP7BcXsJ2jKc80PQTDFdKEdD23CEO7FpnoPHHamDGwZr2UyK648zTuVBZz6kzuz/sPbhyDY7uvebdGDO3xzMoyJt2/U91ceA747+KrGZDB2aYzSnifgbgInzmA==
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -47,7 +47,7 @@ Get analytics of authenticated user
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"Start and End Times","in":"query","description":"Start and End times in ","required":true,"schema":{"type":"object","properties":{"startTime":{"type":"integer"},"endTime":{"type":"integer"}}}}]}
+  parameters={[{"name":"startTime","in":"query","description":"Start time in Unix timestamp format (millisecond accuracy)","required":true,"schema":{"type":"object","properties":{"startTime":{"type":"integer"}}}},{"name":"endTime","in":"query","description":"End time in Unix timestamp format (millisecond accuracy)","required":true,"schema":{"type":"object","properties":{"endTime":{"type":"integer"}}}}]}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Get analytics of authenticated user
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"timings":{"description":"Groups of fronters based on timings","type":"object","properties":{"morningFronters":{"type":"array","items":{"type":"string"}},"dayFronters":{"type":"array","items":{"type":"string"}},"eveningFronters":{"type":"array","items":{"type":"string"}},"nightFronters":{"type":"array","items":{"type":"string"}}}},"values":{"description":"Values for the timeframe","type":"object","properties":{"sums":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"value":{"type":"long"}}}},"averages":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"value":{"type":"long"}}}},"maxes":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"value":{"type":"long"}}}},"mins":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"value":{"type":"long"}}}},"nums":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"value":{"type":"long"}}}}}}},"title":"analytics"}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

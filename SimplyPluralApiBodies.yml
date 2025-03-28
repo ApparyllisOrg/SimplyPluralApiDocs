@@ -27,6 +27,80 @@ components:
         timestamp:
           description: Milliseconds since epoch for this timestamp/date
 
+    analytics:
+      type: object
+      properties:
+        timings:
+          description: Groups of fronters based on timings
+          type: object
+          properties:
+            morningFronters:
+              type: array
+              items:
+                type: string
+            dayFronters:
+              type: array
+              items:
+                type: string
+            eveningFronters:
+              type: array
+              items:
+                type: string
+            nightFronters:
+              type: array
+              items:
+                type: string
+
+        values:
+          description: Values for the timeframe
+          type: object
+          properties:
+            sums:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  value:
+                    type: long
+            averages:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  value:
+                    type: long
+            maxes:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  value:
+                    type: long
+            mins:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  value:
+                    type: long
+            nums:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  value:
+                    type: long
+
     automatedReminder:
       type: object
       properties:

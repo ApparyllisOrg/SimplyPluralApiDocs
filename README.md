@@ -5,8 +5,14 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 ## Installation
 
 ```console
+brew install npm # skip if you have node installed already
+corepack enabled
 yarn install
 ```
+
+## Local Environment
+
+No local environment variables are needed for setup
 
 ## Local Development
 

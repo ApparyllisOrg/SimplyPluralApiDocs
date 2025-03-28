@@ -1994,7 +1994,7 @@ paths:
       parameters:
         - name: Start and End Times
           in: query
-          description: 'Start and End times in '
+          description: 'Start and End times in Unix timestamp format (millisecond accuracy)'
           required: true
           schema:
             type: object

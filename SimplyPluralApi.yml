@@ -1600,7 +1600,7 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/chat/messages/:id:
+  /v1/chat/messages/{id}:
     get:
       security:
         - APITokenAuth: []
@@ -1621,7 +1621,7 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/chat/category/:id:
+  /v1/chat/category/{id}:
     get:
       security:
         - APITokenAuth: []
@@ -1681,10 +1681,10 @@ paths:
         - APITokenAuth: []
       summary: "Delete category"
       description: "Delete a category"
-      tags:
-        - Chat Categories
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Chat Categories
       responses:
         "200":
           description: OK

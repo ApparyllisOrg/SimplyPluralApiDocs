@@ -1621,6 +1621,35 @@ paths:
         "404":
           description: NOT FOUND
 
+  /v1/chat/category:
+    post:
+      security:
+        - APITokenAuth: []
+      summary: "Add category"
+      description: "Add a new category"
+      parameters:
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatCategory"
+      tags:
+        - Chat Categories
+      responses:
+        "200":
+          description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67d63acba3e170d9b68cb7f9\""
+        "400":
+          description: BAD REQUEST
+        "404":
+          description: NOT FOUND
+
   /v1/chat/category/{id}:
     get:
       security:
@@ -1643,8 +1672,8 @@ paths:
     post:
       security:
         - APITokenAuth: []
-      summary: "Add category"
-      description: "Add a new category"
+      summary: "Add category by Id"
+      description: "Add a new category by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
@@ -1658,6 +1687,13 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67d63acba3e170d9b68cb7f9\""
+        "400":
+          description: BAD REQUEST
         "404":
           description: NOT FOUND
     patch:

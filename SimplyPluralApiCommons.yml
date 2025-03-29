@@ -26,10 +26,7 @@ components:
           description: Whether the description supports markdown
         timestamp:
           description: Milliseconds since epoch for this timestamp/date
-    objectId:
-      type: string
-      description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
-
+          
   parameters:        
       objectId:
         - in: path

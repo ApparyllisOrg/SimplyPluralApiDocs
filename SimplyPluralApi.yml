@@ -1806,9 +1806,11 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: BAD REQEST
         "404":
           description: NOT FOUND
-  /v1/board/:id:
+  /v1/board/{id}:
     get:
       security:
         - APITokenAuth: []
@@ -1841,6 +1843,8 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: BAD REQEST
         "404":
           description: NOT FOUND
     patch:
@@ -1861,6 +1865,8 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: BAD REQEST
         "404":
           description: NOT FOUND
     delete:

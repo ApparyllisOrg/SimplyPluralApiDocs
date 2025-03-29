@@ -5,7 +5,7 @@ description: "Update a board message for a member"
 sidebar_label: "Update board message"
 hide_title: true
 hide_table_of_contents: true
-api: eJxtU81uGjEQfhXLp1aiLKly4kaUVoqiBtQQVVXFwesdWCdej+vx0lKUd++MF6gCPa3XMx5/f95rAtsnl3d6+mOvZ4u7Jb5AmPW55Y3V62qkGyCbXMwOg57qp9iYDMqoGk1qVAdEZgNqjYn3OuhqSHqko0mmgwyJylgnJ6PhmSMduMB/ruF1gp+9S9DoaU49nF911yhcq9yCwvoZbB7x2pGyJqhaEHQYNqi4q+6zMp6Q96I3LijKyYWNelcb+/KLYdIHix3f72rnmer7Md9NtoXO6Ole510URMMh/SqcBRhQvsFmJx3nOC2GDCFLycTonTUCuXomwb2/HD3gF10SRkjZAQ1jTSPft7S/tcCc00D2qC8vpVuxzAFl0mFyjejBBEbNWy77YY8pfxkOLky2LVdL3WzEDn1TnDs0kC50KWKgAdXHyeQS1Pxe84TryfVl6WG+VJ/nTw+3BQS73mIz2G3bEgWJkq62V1UBVk2L9QRpe4xHnzx3tDlHmlaViW7Mqpq0897RmJ3jq8+bGtj+r281OuX5UUwYGL1N9ckVHnAPO8ZS4tmyvCW7h4BKMyb3p1hbqIm9X/8F49Nv00UR/GikZONVpq2x3HKw49Fx204tfJ+MV4xFnwd9KU5zgS1eQ4JgQTVo+44jRiX/sa85ZIoBKwhNRMeFsfqOfXkMBPIaWIMs78V4f+w/9SrOE6ijdhuX274WwarZSb952lQD0gHoLLqq9lhXCThgBBUlK9aIjwn7DDTOxEzExIHF1XjCMv0FiQJ//w==
+api: eJy1VE1PGzEQ/SuWTyCFLFSccgsfVREqSSGoqlAO3t1J1uC1XdsbSFf73ztjb0JJUqmXXhKv58Nv5r2ZlnsoGifDmo+eWj6e3szMC+hxEyq8mHfzAS/BF07aII3mI/5oSxGACZYb4UpWg/diCWxhHN7VUOfg+IBb4UQNAZyPaSVFWoE5B1yjAb9kiWcHPxvpoOSj4BrYfeqmZGbBQgXM5M9QhAGepWeF0CwnBLXRS8PQK28CE8obvLNKSM18cFIv2VEuipdXhOlPClPj+zKXCks9HuLbvqigFnzU8rC2hCgF8Y5qJmDgw4Up1+Sxi7MwOoAOZBLWKlkIgpw9e8Ld7qdO+KkvzlhwQYJPaUVJ/x/L/l4B1uxSsZv+VsJj0aBZjBlsEufGKBAaQeOVDCrdYcVfU9xUhKJCa7SLJbHBLyJxvYPnsVpvjfYJ1KfT031Mk1uOGc4PmS7GV+z++tv1wyy5nO+73E1m7PPk8e4q4kRdVKZMgiiqKBYSG89WZ1nEnrWy7IghcKuNghqn0KUKwfpRlgkrh9h44dZKST9EcvHtXacSVof85oOt5B+Ip1T1R+FvicMEt7BGLFHBFfY+yrvXMDkbJ39F9mNtpID7d+1cv4naEikbrkk+HWVbmPhKT9mDRLc1m6rGCcUQC9+dhRmJAQ3I/wIc6AJYaYqmRhX6OCK2yVGHDAEz0KU1Eg1D9sM0cV480MBgDwKNlFBq47/1ZSg5lFnfu6UMVZNTw7Lxtn8Tt8wS0gR0bGWWK5NnDlCEHjLvCqKGiHSmCeCHwWMlRGKq4mx4SiKxxodaxFHpO9lvlQ87ZbcH7fvY/eMW6kkM8BayuBjo8SiSthfdE1+doWPMgv8j3Eqojwrxka1tcyzr0amuo2uk1dGaxONKOCly4g61WUpPZ6R3gVtod439Cfvovl8kx+z/LreDlW80rUnQK6Ea+sLjCyo8LuRujl69yKmwZLhM8E9mFP4euLf4aLK2sz0dzy6/xM6mDVqbkoKceKW1j7/xZRN7lHYh3bVcCb1siPwRT0lpqsTeUL7EoewPBPVgbR/nc1Mo/dK2OBjStmnku27rn0x/jdguhb6N1AhE/Rug74JM
 sidebar_class_name: "patch api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"patch"}
-  path={"/v1/board/:id"}
+  path={"/v1/board/{id}"}
   context={"endpoint"}
 >
   
@@ -54,7 +54,7 @@ Update a board message for a member
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"read":{"description":"Whether this message is read or not","type":"boolean"}},"title":"boardMessagePatch"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"read":{"description":"Whether this message has been read","type":"boolean"}},"title":"boardMessagePatch"}}}}}
 >
   
 </RequestSchema>
@@ -62,7 +62,7 @@ Update a board message for a member
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK"},"400":{"description":"BAD REQEST"},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

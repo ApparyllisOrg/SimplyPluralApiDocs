@@ -1,11 +1,11 @@
 ---
 id: delete-board-message
 title: "Delete board message"
-description: "Delete a channel"
+description: "Delete a board message"
 sidebar_label: "Delete board message"
 hide_title: true
 hide_table_of_contents: true
-api: eJxtUk1v2zAM/SuETivg2enQk28ZigFFsaZAs8Mw5CDLjM1WljRRypAF+e+jHCRDs50si4/k+9BBMZocKe1V++Ogls8Pa/+GbpnTKBeb46ZSPbKJFBJ5p1p1jxYTggYzaufQqkoFHfUkl5HnGVRgQcuASjkpyB/1co74M1PEXrUpZrye+9CD30IaEXz3iiZVciYGox10Zd3k3eBBUF1OoC17uQtWkwNOkdwAHzpt3n7p2PNH4yfZTx1Z0XVTy242I05atQeV9qEwOjWpYxGY9FCYq89euuErMusBWW0KZQ7esfxI56fFonze0149qmOl7hZ3/5aeVmv4svr2dC9bKiUGjV60C6gYONtWPFbN7rbpyuamnW1ijLuzlTlaQYwpBW6bRgeqdRC399YS16JSdl+Detz9D7epLkG/FC9Okt7HfTFHBjziXrjMUY6oe4x/wyxgH+m3nnUWbeS2fm6nZAvihaZg9/Bsc9QWZIm6TntdspUCRNxiRGcQem/yhC7x/AhC7iwZECaArg+epFDDd5/nF8FYnoSIS+XRaGvP+AsWRhkLZ1MGSmPuihPN8mLMKg7NiemJ6DJQ01nfNVES0owNR1M8LwFFnxNynViUlHROKm7rhej/AzJqHzk=
+api: eJy1VEtv2zAM/iuCTi3gxenQU24Z0gFFt6ZY08NQ5CDbTKxFllQ9smWG//tI2UmbNNttl1gSKZHfg2m5hzI6GXZ88tzy6cPtwmxAT2Oo8WDZLTNegS+dtEEazSd8BgoCMMEKI1zFGvBerIFn3AonGgw5n16SlGwFPpNxjQHcyQrXDl6idFDxSXARTl+/rZhZsVADM8UPKEOGa+lZKTQrqGhj9NowzCpiYEJ5g2dWCamZD07qNbsoRLn5iZ35D6VpsL4spEJ0lyOs7csaGsEnLQ87Sx31l3hHMINYU+f8U8L1tcfl+ZJa9tZojxu8+XE8ps9x2/M73mX8enz9PnQ/X7DP86f7GVbJOBJUG8SOSURjoo2Y5vn2Kk+M5q2sOuoV3HbPZXQKU+oQrJ/kubByJCzSvVNK+hHCxOKnSRVsz+Uts4Pej0RGj+lY9QM7+MAd7LCXpGUNogL3qiYlGyd/iwSUwEm9Mum6DIoyHmVj1Y49qOiEYliEn8q9IHExwByswIEugVWmjA3o4JMLbCyULBl2wkBX1kgMjNh3E5MlPJAnEFwg1wil9vmHXFbjs2xPylqGOhbERD49EDN367zvtG90amVeKFPkDiUSHnLvSuKcFHImBvCj4BEJqdOjuBqNSX5rfGiEJgYGioZZOZ2UIw5aXhodEPC/ZmsQJMCvkCe7U70keDsY6JlvrzAxXcTvBGcNta6xJYq1bYFInpzqOjp+ieBo3nG5FU6KguRCn1XS0xr9ucLZOh3Ot51efBvG+JL935E9i3zvT03m3AoVaYfLDbo1/c10y7ezNrv5crO4wbh45+9N8vewIArOPn1s9X0d+qXBO3ulbfvp6bpDfh/6643DfA0oNKHouj8TGOno
 sidebar_class_name: "delete api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"delete"}
-  path={"/v1/board/:id"}
+  path={"/v1/board/{id}"}
   context={"endpoint"}
 >
   
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Delete a channel
+Delete a board message
 
 <Heading
   id={"request"}

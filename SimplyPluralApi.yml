@@ -1634,6 +1634,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatContainer"
         "404":
           description: NOT FOUND
     post:
@@ -1663,14 +1667,14 @@ paths:
       description: "Update a category"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-      tags:
-        - Chat Categories
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatCategory"
+      tags:
+        - Chat Categories
       responses:
         "200":
           description: OK
@@ -1702,6 +1706,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatContainer"
         "404":
           description: NOT FOUND
 

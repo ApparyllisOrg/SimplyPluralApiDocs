@@ -1636,7 +1636,7 @@ paths:
         - in: path
           name: id
           required: true
-          description: Id of the chnanel, this can be a mongo Id but also a plain string (backwards-compatibility).
+          description: Id of the channel, this can be a mongo Id but also a plain string (backwards-compatibility).
           schema:
             type: string
         - in: query
@@ -1652,6 +1652,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessageContainer"
         "400":
           description: BAD REQUEST
         "404":

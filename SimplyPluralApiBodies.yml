@@ -72,20 +72,20 @@ components:
           description: Message
           type: string
         channel:
-          description: ID of the channel this message should go to
+          description: Id of the channel this message should go to
           type: string
         writer:
-          description: ID of the member that wrote this message
+          description: Id of the member that wrote this message
           type: string
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         replyTo:
-          description: "Message ID this message is in reply to"
+          description: Message Id this message is in reply to
           type: string
         uID:
-          description: "User ID this message is in is from"
+          description: User Id this message is in is from
           type: string
         lastOperationTime:
           description:
@@ -122,17 +122,17 @@ components:
           description: Message
           type: string
         channel:
-          description: ID of the channel this message should go to
+          description: Id of the channel this message should go to
           type: string
         writer:
-          description: ID of the member that wrote this message
+          description: Id of the member that wrote this message
           type: string
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         replyTo:
-          description: "Message ID this message is in reply to"
+          description: Message Id this message is in reply to
           type: string
 
     chatChannel:

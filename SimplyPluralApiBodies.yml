@@ -56,10 +56,10 @@ components:
           description: The message of the message
           type: string
         writtenBy:
-          description: ID of the member that wrote this message
+          description: Id of the member that wrote this message
           type: string
         writtenFor:
-          description: ID of the member that this message is for
+          description: Id of the member that this message is for
           type: string
         writtenAt:
           description:

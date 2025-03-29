@@ -1569,6 +1569,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessageContainer"
         "404":
           description: NOT FOUND
     post:

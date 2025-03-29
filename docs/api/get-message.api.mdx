@@ -5,7 +5,7 @@ description: "Get a specific message"
 sidebar_label: "Get message"
 hide_title: true
 hide_table_of_contents: true
-api: eJy1VE1v2zAM/SuCTi3gxenQU27BPoqiQFOs6WEocpBlxtYiS6o+smWG//tI20mbNNttl0Q2KZLv8T23PIBMXsUdnz23fP5wu7QbMPMUa3yx6lYZLyFIr1xU1vAZv4HIBAsOpForyRoIQVTAM+6EFw1E8KGvpCjZCSyTcYMBfFIlnj28JOWh5LPoE5xWvy2ZXbNYA7PFD5Axw7MKTArDCsC+jTWVZZhVJBxDB4vvnBbKsBC9MhW7KITc/BS+DB+kbbC/KpRGdJcT7B1kDY3gs5bHnaOJhku8I5hRVDQ5/1SLyFc0aHDWBAiU/3E6pb/jYRd3vMv49fT6feh+sWRfF0/3n7F2xpGW2iJiXkHsmSJyeb69yiU2y0cO81aVHU0JfrtnMXmNmXWMLszyXDg1EQ6J3mmtwgQB4gCnSSVsz+WtssOmH4mGAdfxvg+8YIE72OEs/RZrECX41z1SsvXqt+jBEkBl1ra/rqKmjEfVOL1jDzp5oRk24aeLXtJaMcA8rMGDkcBKK1MDJoZ+/y4VGvWFkzAwpbMKAxP23aZeDAFIDQgukl6E1vv8Qy6rsSzbk1KpWKeCmMjnB2IWvsqHSYdB507lhbZF7kGDCJAHL4lzWpS3KUKYxIBIaDsDiqvJlCTgbIiNMMTASBG55NUaR9BbLq2JiPNfZhr3EOFXzHt9U5t+z+0on2e+vcJEEhAnhe1vztBluOsaR6Kkti0QyZPXXUevXxJ4cjoet8IrUdC6UGelCnRGja7RVae2fDvyxbfRwJfs/5r1LAV7fRoS51boRE943KBa+w9Mt3rrt5svSwyKd+Le9OIeD4T/bN1jne+b0C+57uyVth2s03WH/CH01xsHc40QDEHouj8xNOZ2
+api: eJy1VU1v2zgQ/SsETy3gtZKiJ9+MtlsEReuidQ6LwgdKGltsKJIlR069gv77zlCSHdtybwsEDkUO5+PNm8dWRiiaoPEgFz9aufz6sHZPYJcNVrSx6TYzWUIsgvaonZUL+RFQKBE9FHqrC1FDjGoHcia9CqoGhBCTJ83GXpGbmbR0QF+6pHWAX40OUMoFhgYuvT+Uwm0FViBc/hMKnNFaR1EoK3KguLWzOyfIKm8oDRMd7XmjtBURg7Y78SpXxdOzCmX8q3A1xde5NlTd6znFjkUFtZKLVuLBc0b9Jdlxmah2nLl8VymUG040emcjRLZ/c3fH/86TXX0in4WzCBb5VHlvdKH4NPsZ2aS9DtnXxXgF5yGg7gPAbx0xvrDLnTOgrOxmjNtV7M897gQFubqo5iyp82trQnZomdAYwWxP129kNnb4VgqT8StlLZjrO6f+DiZ9f8eUYuUaUwpqMbopv89EVAh/cltDnUOgpULxHBzCWYBbPgms5QRan7UxmubD2TKKqG0BArwrKrF1ofeLmjyjqn1WKnzhXhP+O8q0Yx55c1i7P7XwHARaEp/TtRswNA/vr909Rqp72hf9boOrp1wZFXFF3U6sXet6os+8y17qW2gM0LMr4UZfgv5SKkdaDbGNSxNH3xoNbxATcOTSjf13xGcacga0Y5O3d2+v8/yyWou/V49f3icvJEWVo8GRO0icZiVayGx/n7HfbAAoa3XZsTJA2I/K1QQirqwQfVxkmfJ6ToOtwoGrn5OoEGyXRiXsp+w2s6O6fmcd6AfqXGOPA08OPsGBcknKWYEqqdyjdrKxC/rfhG0qUNttItUI13ddM2O+miYoIyiIvBTXNbeDDohbWwjADSxd0dSkFDF10Dc5CZigTATY0jticZyLf1yTBDgCKzAVh9xxZcxof7QVFbkVIyg7jVWTMxLZ8gjMKuyyPtM+0aXXWW5cngUguYuQxVAw5tyo4BqEOCdZnEnuTl/F/fyOietdxFoljR0g4pfpNOdnpbcnRbz9gA19QPiNWXpT0qiFpGI9fX7I/b1M6saUOt1ckEJTrytKiY3aNqdKHoPpOt7+1UDg15WWexW0yrldxLNSR14TR7f0kl0+hS9TfvVteDRfi//3gZyEYOSnZXLulWn4i5ZPxNb0qHcbshoIy4X1B8uiAI8vrlw9jzwfxzH9+GFNtupqJp7STAwL9j6Zzvl4jLnxLw/r5JW27Seu6472/dHNG8eZHCrnCkiO/gMxOjAd
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -62,7 +62,7 @@ Get a specific message
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"message":{"description":"Message","type":"string"},"channel":{"description":"Id of the channel this message should go to","type":"string"},"writer":{"description":"Id of the member that wrote this message","type":"string"},"writtenAt":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"replyTo":{"description":"Message Id this message is in reply to","type":"string"},"uID":{"description":"User Id this message is in is from","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"long"}},"title":"chatMessage"}},"title":"chatMessageContainer"}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

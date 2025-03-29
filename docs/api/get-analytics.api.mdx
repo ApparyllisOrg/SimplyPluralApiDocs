@@ -1,0 +1,69 @@
+---
+id: get-analytics
+title: "Get analytics"
+description: "Get analytics of authenticated user"
+sidebar_label: "Get analytics"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE2L2zAQ/StCpxZCnJQ95RbodikLm6WbPZQlB9mexOrKklYahbom/70zdhzyWRpIHHnefL03o1ZGKFLQ2MjZWyvnz9+X7h3sPGFFL1a71UiWEIugPWpn5Uw+AApllWlQF1G4tVAEBUsnhVCKFCHIkUS1ieQv5wNSUiCvgqoBIcQul6UDBXxBFThkKe7pu9Q1RAqgOddHgtDI8wpOHZAdhLaCcAE+kg5QyhmGBCMZiwpqJWetxMZzLpf/ggIJ6YPzEFBTLrJGjsiZj6DaImyol91Igi1vGemz4rzROxv7YF8mE36c1rx45EB3k7tL09NiKb4tXp++UrSRJH4qRw3IDXR1KtZBZttpxsxmB+bJRuftwGUKhmAVoo+zLFNej5UnuhtjdBwXrqbs56ASttdwq9FhIl6Yvr6p07k48EABHqEZ5KpAlZ36e2UZ7IL+o7pOuTtt165z12g67XXtTSOeTQrKCEpyIfay0pENIsAaAtgCROmKVNPERUGDJ3zKjS4EVSJIJ+9ImjgWP10ShbIiAgglqDnsRtWYAX/AiorCioGUjcYq5cxENj8QswibrK+0L3TudZYbl2cBDKgIWQwFc84qBZcQ4hhZIFan72I6nrD+3kWslWUG9hSdbNN5860sHA2axf9fu14WhN+YeaNIFcrayd7uR+lNbqcE3OPV8XpWVB0D2janpl6D2e34db+EPGSljio3vF5rZSL8o9pPP/ab+Fnc3tarxb7TON26E7bKJPbohnSrguZqulvqaG8e7pfc2MWcvndzuv/D3Qwm2xyFPh3ZoRz+5QW66tK2/RYQWwO+N930OOxJj+bGV3SR/AX5x+VV
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get analytics"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/user/analytics"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get analytics of authenticated user
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Start and End Times","in":"query","description":"Start and End times in ","required":true,"schema":{"type":"object","properties":{"startTime":{"type":"integer"},"endTime":{"type":"integer"}}}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

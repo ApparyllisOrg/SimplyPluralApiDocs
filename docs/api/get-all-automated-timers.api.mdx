@@ -1,0 +1,69 @@
+---
+id: get-all-automated-timers
+title: "Get all automated timers"
+description: "Get Automated Timers for a system"
+sidebar_label: "Get all automated timers"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVU2P2zYQ/SsETy3gWt4gJx8KGEmbLoLEQdZBUQQ+UNLY4i5FMiTlxhX03ztDWrIty0EuNsX5nnnz2HIPReNkOPLl15avPj1uzAvoVRMqvNh22xkvwRdO2iCN5kv+DgJDqalFgJJtZA3Os51xTDB/9AFqPuNB7D1a87EeR29WOFFDoC8KKMmnFRhtxjUK8Cu5eSzxxhcV1IIvWx6ONsqCk3rPuxl38K2RDkq+DK6BcZZPUY89lszsWKigz43qceCt0R48+X21WNDftfX6PcYujA6gA0mFtUoWgqTZsyeV9jY14Zw4op3EOP7i3uTPUAQUWGcsuCBTYPgufbjUy41RIDTVJsvbnD5DLXUJjsXG3LTjIttruw0W73pbGTyo3dn+Tm5pEGNPH/G2b2fvcSqVGrwX+wkHH5LgZ3yIItmMXTT6RZt/9dlEYtl79NERApQ4Puq/TOP8reVbkjKpWUVytnOmZikKC+aHuaSLsb+/K0DLSvpzdz26ViVDwz2mNGcL9tvv7APUOcowng6sqITew4w9kORN43E9RpJXJFnp49X1ZLnNFEo2A9Tv4EQJH9Y46ghm2soJH3hLjaqlUhLZwejSMy91AQysKap+fuSKmd4XM6d2mByeI6ZGsamTMqi4Kj0vRFr4gegN9kBIHXU6Unu9eD0BzPWG/bn+8vFt9ITkUhlsDd9DRDZxy5Jnh4csRBLKhhBZ21NNR1wD7tCzUuMU2lQhWL/MMmHlHClAuCM1ZF4Y5JHZWKmEw5TedjYQ7BMxRlqwa5o9U4iV7yFyCJVVgUiIPPEiKRsn/4vtjqVKvTPR/NS8J1lbdWSfVOOEYhiEj3lxQxNCAYJ2Bw5opqUpmhqpw8eh2iZHqmOYCQNdWoOA83P2j2lYITTzAMjzWFwgEAilev1Bl1XolvVN2ctQNTl1IlsNjVm7fZYyTYmurMxyZfLMARKgh8y7gnpOI3OmCeDnSJQzTtNJVTzMF4Rla3yohT4zVnycKKthxCzNfNyH9syXP/egpfkE+B4yqxCRcQFp/u0JYF/54YEU+3BDBnheDi8aoqHCpEm9bXOs9YtTXUfX3xpw9ATj8SCcFDkNFJFYSk9nxPNOKD9+5y7r+OXz6UX8ld17/e4U0qNPE/QOQjX0hccXxOLFc9xtUfcESkotiVdFATZcGN48lrQDw1K++2OTujPC/UvE/elA3ieTul6BPkP6pYWcNGnbtFVdN+gn0V2LYe+SNvVoi+TzPwC7KeE=
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all automated timers"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/timers/automated/{systemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Automated Timers for a system
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Reminder Id","type":"string"},"content":{"description":"The reminder itself","type":"object","properties":{"name":{"description":"Name of the reminder","type":"string"},"message":{"description":"Message of the reminder","type":"string"},"action":{"description":"unknown","type":"integer"},"delayInHours":{"description":"Delay in hours from action to reminder","type":"string"},"type":{"description":"When this reminder should trigger. 0 -> Member front change, 1 -> Custom front change, 2 -> Any front change","type":"integer"},"uid":{"description":"The system Id","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this obejct","type":"string"}},"title":"automatedTimer"}},"title":"automatedTimerContainer"}}}}},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

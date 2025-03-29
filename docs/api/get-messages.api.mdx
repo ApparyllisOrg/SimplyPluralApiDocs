@@ -1,0 +1,69 @@
+---
+id: get-messages
+title: "Get messages"
+description: "Get messages of a specific channel"
+sidebar_label: "Get messages"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtUk2LGzEM/StG5yHOlj3NLbS0lIXNQtJDKTk4HmVs6rFdSw6kIf+98oSk3e2exmM9S+9DZyC0tXg+Qf/jDKuXr9v0E+OqspOL3WXXwYBki8/sU4QeviCrCYnMiKTSQRlFGa0/eKusMzFigA6yKWZCxkJzV98eZiMtO4hSkD8/yJmsw8lAfwY+5XZLXHwc4dJBwV/VFxyg51LxLYnNjFN+aAzY4W204qTGfwkeSpqgiWAzNi7w0RmGXetPOUVCatM/LJft83rG+qnxeFw+/l96Xm/V5/W3509wEYgIdUmIgkyetTfrQB8ftLBifeOi+6tmLMebL7UEQTrmTL3WJvuFyWLdKQRPC9uYd29BAx7fw+26e46bZupV1+s07y5Lgyc8CZc5F4dmwPI3mQZOxf82s9gm0MdDmp97Dg2x8VMOJ/USajFByRB4m8/WeWoFVfCABaNFNSRbJ4xMc1657oNsjDBRGIecvBQW6nuqypqoCFH2SsTxvGEh3PB3rHLSVt1MGT27um9O6NXdmHUZ9ZXplegqe70Paa8LBjSEmoptnregSqqMtGASJS2dq4qHxVL0/wE83xRk
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get messages"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/chat/messages/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get messages of a specific channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"type":"string"},"required":true,"description":"String id of the channel to get messages from"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

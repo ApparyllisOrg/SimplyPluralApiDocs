@@ -1,0 +1,69 @@
+---
+id: get-all-notes
+title: "Get all notes"
+description: "Get notes of a system by Id"
+sidebar_label: "Get all notes"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFU0tv2zAM/iuCThtgxMnQk28BthVFgaRY08NQ5CDbTCxUllQ9gnmG//tIOXGTtMUuiW19pL4H2XMPVXQydLx47vny4W5jXkAvY2jww3bYZrwGXzlpgzSaF/wWAtMmgGdmxwTznQ/QsrJjdzXPeBB7j3V8RQiOxVY40UIA51N/SS2swOYZ13iAb2OHVO2rBlrBi56Hzqaz4KTe8yHjDl6jdFDzIrgI16QeEw4pEKnQwJEWJ/oOvDXaIx3s+20+p7/L6vU93XAzv3l/tFpv2M/10+o7HxCCQhqDFPgeAs9GHQXPD4s8OZL3Jy0DiQF3OMmOTiGwCcH6Is+FlTNh0ZlOKelnlUGi2TWohsNHuG02BfZIbo2yLmOb7MMG99Ahl2R7A6IG92Y8gY2Tf0XSSvqk3plULoMixKNsrerYg4pOKIaX8GvjN430dMAc7MCBroDVpoot6OBTEDaWSlYMmTDQtTUSD2bst4msEpp5AJwhFBfSNCl1wk9Y1mBbdjJlL0MTS3IiX07GrN0+H5mORJdW5qUyZe5AgfCQe1eR55STMxGDmgWPSiidUcViNqcJsMaHVmhy4GgRDTuxSvFei+95ZXRApf/fijGOAH9CbpXANPC2FHd/HKJnflhQMsd7imkpMO8GaRGi70tU8+TUMNDn1wiOlhYfD8JJUVJkOGu19PSMY7oTyl+vyjnpL7+OS/WVfbZAn3A/zZem4ToIFekNH19w2s42etieL83tjw1CxLsRfUkjenwgBR92v5zW01X0S7vzYUnfjwswDBN+PPq0YlqREU1it8Mw/APVN7/R
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all notes"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/notes/{systemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get notes of a system by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

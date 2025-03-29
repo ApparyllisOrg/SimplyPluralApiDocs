@@ -1,0 +1,69 @@
+---
+id: add-automated-timer
+title: "Add automated timer"
+description: "Add an Automated Timer, optionally by an Id"
+sidebar_label: "Add automated timer"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVU1v2zAM/SuCThuQxumwUw4Dsi+sKLYUbYphGHKQbSZWK0ueJGf1DP/3kVLsNE62YRdDJmnqkXyPbrmDrLbSN3z+veWLm6uVeQS9qH2BhnW3nvAcXGZl5aXRfM4Xec6EZhhgSuEhZytZgp0wEwKEUg1LG4q4yvmEV8KKEjxYF9JLylAJzD3hGh34lpssRLqsgFLwect9U5HDeSv1lndjAHfBjumZ2TBfwBgKJ8wWftTg/FuTN5SSXqWFnM+9rWHCM6M9aE8uUVVKZoKSJw+ObmhPsZj0ATJP9VhTgfUSHHljCe0I4Be09tgslFLnCGpyWlYJzontmQSfo+MoAXOgc3cuTTSMc3wtQGMC6Z5lKEytcoYfbrdgp2zGLt6wz1Cm6NtY7AjLCqHx3ktyvKsdtvXY8YocC90cWQ+YJDZ1SwOgkSnRXOlPprbuFNx78jKpWUF+5qTOYrUiowj24nn+l2cuoLKlV2QT/fRv+1Z3XfCLLXGOj9jheGCHq4x2cYivZrNThMtrquL17PWZ8S5X7OPy/sv7AAPJXZicWG1cIAiRe86T3WXi6b5kwJe0geodcR3srpdEbRXGF95Xbp4kopJTZKSwjVLSTTNTIo5xUA67c3HryaDlOyJwLO9Y0QOjMcE1NIglSLIAEUm6FyUFGyt/BVmEOkkatwdRfXgSZaXgIIKekM9ofTDFO2djWsw6un5jAqz9OO8k5m3YjaqtUAzB87H+V0RqdCCxN2CBqIONrUvUswskquoUFc2wQoaaqQyyxk3ZN1OzDNeSA6QZw6Z50ijuqz5+iGUFpmV9s7fSF3VKHU4WQ8OXdptEpBHoopJJqkyaWFAgHCTOZjRLooE1tQc39SRemnqs4nI6I4YRa0qhn/Ux7NeBs4FD4xa0h/31n+t4P3wPTz6plMDZI4ZArnbP3O98d0mB+3sHJHiex1WNNCuI6xjatikWe29V15EZ2WHpN4LHnbBSpDRRpHguHZ1RJRuhHPylmn/u9j+U0JNaE6N3QtX0hsdHpHj/i+nWGLgnOqGKvnfx7osVZTh8e/JXIHUNWr9Z3q0wON3/XUqT0zdW/EQjPcPdcQJBg8HWcoXrrI7SiDlJWOJEl49Bl/sDIT1b3bFE+1LpSQvj7CdtG1XfdUN8dP3xi2EvxGhq9hpR/wbGss+1
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add automated timer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/timer/automated/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add an Automated Timer, optionally by an Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"description":"String Id of the Automated Timer"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the reminder","type":"string"},"message":{"description":"Message the reminder sends","type":"string"},"type":{"description":"When this reminder should trigger. 0 -> Member front change 1 -> Custom front change 2 -> Any front change","type":"integer"},"delayInHours":{"description":"Delay in hours since the action (front change)","type":"integer"}},"title":"automatedReminder"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

@@ -1,0 +1,69 @@
+---
+id: get-channel
+title: "Get channel"
+description: "Get a specific channel"
+sidebar_label: "Get channel"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U8Fu2zAM/RVBpw3IrHToybegRYugQFOg2WEYcpBlxuYqS5pEZciC/Psou8madeedLJtP5Ht8zweZwOSItJf1t4NcPC3X/gXcIlPPHzbHzUy2kEzEQOidrOU9kNAiBTC4RSNMr50DK2cy6KgHIIhp7IQFHDS3mUnHBX7Dls/J9DBoWR/enGgfSj1RRNfJ4/mCb76DoWW59rbdJaHlrfBbQT2ICT7jMyZhtBMNMNXBu84LRjWZmdvk+VuwGp2Y5okPjTYvP3Vs0yfjB56BDVpeyMeKZxGSvaDC7CL8yBihlTXFDP+TT7GDdFc2LG96TeJmWn+Sm0IrBe8SpLLSz/N5eVxSWz0U+tfz6/elx9Va3K2+PN7KI0PYx96zPtkBjdaWNEi1u1LsN6lX01U9OQpxd3I9R8vAniikWikdsNKBg7G3FlPFanj+36AWdv/CbWbnZD6XoEyyLvN5Tg43eID9KSY96Bbin9wVsI/4S49aiz50Wz9ef3X3GYdg9+LJ5qit4CHvUrYuHnJBRNhCBGdAtN7kARyl0eyQG8v/AzMR4NrgkQuV+Orz6HyCYj2LoxIObe0Jf8aKntuK01I6pD43ZRNqcV7MKnZqYjoRXQRUjfWNimBBJ1ApmrLz4lP0mSBVlFhJcWdScVXNWf9v4E1aug==
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get channel"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/chat/channel/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a specific channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","description":"ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility).","title":"objectId"},"required":true,"description":"ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

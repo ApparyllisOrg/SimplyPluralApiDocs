@@ -46,7 +46,7 @@ components:
           type: integer
         delayInHours:
           description: Delay in hours from action to reminder
-          type: string
+          type: integer
         type:
           description: "When this reminder should trigger.
             0 -> Member front change,
@@ -60,7 +60,7 @@ components:
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: string
+          type: long
 
     automatedTimerContainer:
       type: object

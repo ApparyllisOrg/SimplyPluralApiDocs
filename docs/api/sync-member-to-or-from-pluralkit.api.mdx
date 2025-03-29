@@ -1,0 +1,69 @@
+---
+id: sync-member-to-or-from-pluralkit
+title: "Sync member to or from pluralkit"
+description: "Sync a specific member to or from PluralKit"
+sidebar_label: "Sync member to or from pluralkit"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVMFu2zAM/RVBpw0IonToKbdgQ7GiQFOs6WEocpBtJhYiSyolB8sM//tIO3bTJD3skigiRfI9vpdGRshrNOkg56+NXDzdr/wO3KJOJV2s2/VEFhBzNCEZ7+RcPh9cLrSIAXKzMbmooMoARfLCo9igr8STrVHbB5PkRCa9jVRHvt9RQYQYvItAkUZ+m83462OT5YNsJ/J2dnsZelyuxN3y5fGHbCklaNQVJMDYjW84I2iafSIdBehXP999QTcxL6HSXDIdAsdiQuO23ArhrTYIhZwnrOEc86qEAacpGGokEiRzQ71LX/RNc+7aNZ9Ltb9RxiXYouYaUYWOgJ1Jit+qvppqhulaHg9wPwCp0VKVMqUQ50rpYKY6ENaDtSZOc1/RzOdJBeyv5a0n44afGX/P+sc9j4RQgQc40CwdkSXoAvCdSk72aP52kDr6jdv47rlJljOeTRXs4agAQU3kJZUmckAgbADB5SAKn9cVuBRFIp5DnVmSFU0iwBXBE4txKn77WuTaiQhA4iNwSfiN0NYO+WOuKKmsGEjZmlTWGTOhFiMxS9yqftJ+0EUwKrM+UwgWdAQVMWfOeYno6wRxmiIh4e30KG6mM1ZN8DFV2jEDR4o6d1xaYtz+OR+NzD3JxKX/d1a/sQR/EolL08JooE4RzVGEr3J/063yXYYs0JNROhlPjhahw3w0C6mmJHBcpGky4uQFbdvy9VsNyP8VdNxrNDrjxZNiCxP5TF7YaBvPLXSK88uvo9m+iuvG+gTcoFHHAt1rW/MvOu5IsSc+b9ftiS+fFqvvPylJXwh91wn9eGAEV+t/1PzQjD/ZgVefNE1vo7Yd8/vQpy9Go/XZDHfdtu0/HRzr8A==
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sync member to or from pluralkit"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/integrations/pluralkit/sync/member/{memberId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Sync a specific member to or from PluralKit
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"memberId","schema":{"type":"string"},"required":true,"description":"The member id to sync"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

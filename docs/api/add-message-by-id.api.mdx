@@ -1,11 +1,11 @@
 ---
-id: add-message
-title: "Add message"
-description: "Add a new message"
-sidebar_label: "Add message"
+id: add-message-by-id
+title: "Add message by Id"
+description: "Add a new message by Id"
+sidebar_label: "Add message by Id"
 hide_title: true
 hide_table_of_contents: true
-api: eJx9lE1v2zAMhv+KoHMWp0NPuWXtBhTFmmBND0ORg2yzsVpZ0iQ6aWbkv4/0RxI36S6BItIUyfchaxkhq4LGnZw+13K2uFu6N7CzCgu6WO1XI5lDzIL2qJ2VUznLc6GEha0oIUa1BjmSAf5UEPGbyylK3fzVAXI5xVDBSGbOIlhkk/Le6ExxrOQ1csBaxqyAUvEJdx7oCZe+QoYU1wfnIaCGyNb+PToOU/p5SKQLEDFou5Z7erpQ1oI5/+buVrgXgQWIzoXOOvY1iVi4yuRi7QS6S3G31DEI/wtbQplCoKNCsQ0OYfDAZzGpTzO8UKE2RpNQzuZRRG0zEOBdVogXF9q4qCkyqtInucKT8Jpav6ZM96ySN7ul+7R/gpIfNIGO2orms4ttoJio0fAVNRG7MAsXkWyNVa1JuWd5Q1a54gyidza2cn6dTM5Tmd9zpteT63PTw3wpfsyfHm6bh0vAwhFh0vNzhIpiYGWyuUo4l+TY5whhAyE2eFeBUJAFoo/TJFFejwlIFXbc3XHmSnr8o1MOm0t+q9FhcB6Z37am4fgcgKYA97CjXDQXUoDKSZGRtKpkKzu7oP82U9EUx5Px6zhT399JVwODGehFOEH8eNXTObzp2JqckHBCn7YvDRq9oo+6ZN0XpgrKCCpMftwES2aFDETICwRgKHOXVSWNemxGwFcpDbug6gXY3DtiMY7Fb1eJTFkRAWiRUEORR0YZ0/sffEVBYUUvxFpjUaXc/WR2EGMe1kmbaZvozOskNS5NAhhQEZIYMtaZuQiuQohjjFQJE9FWcTWecPmMUamafdTLQovuSNGg9Pq40i7uw052hHdMvFGkOr3QYFV3oD7LzVWrHcPbf0lQFYwzmes6pfSfgtnv+ZpYCLyh6bhRQauUNaL1POppYrrfiLGpvGlT+7LkJNjdVC2DHzYvI3yYosX8cUnOabfBS5fzN0FtebvT71TSwTXlN6A3d7U0yq6rlsc2JtOrzuB/a+DvDpxpb7K7kwyHczDqyuFfnsqLn9R1O1rUpN6/NX36xWH4Wm+WZkVZ/wM+jmo9
+api: eJx9VE1v2zAM/SuCThuQxenQk2/ZugFBsaZYs8Mw5CBbTKxWljSJbuYF/e8j7TjNV3eTRZp8fHxPW5mgbKLBVua/tnJ6P1v4J3DTBiu6WL4sR1JDKqMJaLyTuZxqLZRwsBE1pKTWIIpWzLQcyaCiqgEhpq6U4eygqM5IOgrQl+G0CL8bE0HLHGMDp+VnWviVwAqELx6hxBGdTRKlcqIAalx7t/bUTxQNCmWTp7tglXEiYTRuLd4VqnzaqKjTh9LX1N8UxtJ478fUO5UV1ErmW4ltYET9T/KF52RgkPCT1y1nnOIsvUNwyCEVgjWlYsjZY2Lc2/PSPX7mJfoAEQ0kju5Y4+Px5N92gdEpNmpdKefAnv8zuxnY2qX0bA2bSZVvrBZEGPpLdTe0d4j/K1tDXUCko0KxiR7hqMFbNYmnKV6Y0FhrSG7e6SSScSUICL6sxMrHvi4aqoyqDplWeFDeEPVrQvrCWwq2Xfg3+RME/ogEOpI6ut8u0kA10aDlKyIRd2XufUKKdVG1ZkXLzxSVnU5S8C716/w4mZxDmd8y0uvJ9Xnobr4QX+c/7m66xmSXymv2Cbcb9XbJZfZ8lTGWbDdDlnfOSRCfB3c1keQgK8SQ8ixTwYxJlCq2zPCYhE8ATpM0PF/KW472T8ADa7if6/gh2IuaCtxCS1g6d1egNG1l729O9tH87ZzRDcju+P7qqy9/aLcWjnwwLOJA5q9Xg0KPb3b6mhyo4UCBxq06eQxbfTA17/7eNlFZQYPJ00dnwXqhAKlkBRFYmNqXTU12T50NQlOQ4QVNL8Dp4EmPaSx++qZ7mBLwy0SEIttGWTvk73NFRWXFsIi1waopmP1sul/GPK6zHmkPdBpMVlhfZBEsqARZiiXvmbURfYOQxphoElZEP8XVeEKc/wP3PwV2
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -22,13 +22,13 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Add message"}
+  children={"Add message by Id"}
 >
 </Heading>
 
 <MethodEndpoint
   method={"post"}
-  path={"/v1/chat/message"}
+  path={"/v1/chat/message/:id"}
   context={"endpoint"}
 >
   
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Add a new message
+Add a new message by Id
 
 <Heading
   id={"request"}
@@ -47,7 +47,7 @@ Add a new message
 </Heading>
 
 <ParamsDetails
-  parameters={undefined}
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>

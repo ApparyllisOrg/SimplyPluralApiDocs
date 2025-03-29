@@ -118,14 +118,20 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/add-message",
+          label: "Add message",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/get-message",
           label: "Get message",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/add-message",
-          label: "Add message",
+          id: "api/add-message-by-id",
+          label: "Add message by Id",
           className: "api-method post",
         },
         {

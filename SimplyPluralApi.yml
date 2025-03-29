@@ -1530,16 +1530,35 @@ paths:
         "404":
           description: NOT FOUND
 
+  /v1/chat/message:
+    post:
+      security:
+        - APITokenAuth: []
+      summary: "Add message"
+      description: "Add a new message"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePost"
+      tags:
+        - Chat
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: NOT FOUND
   /v1/chat/message/:id:
     get:
       security:
         - APITokenAuth: []
       summary: "Get message"
       description: "Get a specific message"
-      tags:
-        - Chat
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Chat
       responses:
         "200":
           description: OK
@@ -1548,10 +1567,8 @@ paths:
     post:
       security:
         - APITokenAuth: []
-      summary: "Add message"
-      description: "Add a new message"
-      tags:
-        - Chat
+      summary: "Add message by Id"
+      description: "Add a new message by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
@@ -1560,6 +1577,8 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePost"
+      tags:
+        - Chat
       responses:
         "200":
           description: OK
@@ -1570,8 +1589,6 @@ paths:
         - APITokenAuth: []
       summary: "Update message"
       description: "Update a message"
-      tags:
-        - Chat
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
@@ -1580,6 +1597,8 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePatch"
+      tags:
+        - Chat
       responses:
         "200":
           description: OK

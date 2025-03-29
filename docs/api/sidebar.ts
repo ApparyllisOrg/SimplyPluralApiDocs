@@ -146,6 +146,12 @@ const sidebar: SidebarsConfig = {
           label: "Delete message",
           className: "api-method delete",
         },
+        {
+          type: "doc",
+          id: "api/get-messages",
+          label: "Get messages",
+          className: "api-method get",
+        },
       ],
     },
     {

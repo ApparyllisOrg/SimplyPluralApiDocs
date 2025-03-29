@@ -65,6 +65,56 @@ components:
           description: Whether this message is read or not
           type: boolean
 
+    chatMessage:
+      type: object
+      properties:
+        message:
+          description: Message
+          type: string
+        channel:
+          description: ID of the channel this message should go to
+          type: string
+        writer:
+          description: ID of the member that wrote this message
+          type: string
+        writtenAt:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        replyTo:
+          description: "Message ID this message is in reply to"
+          type: string
+        uID:
+          description: "User ID this message is in is from"
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
+
+    chatMessageContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Message Id
+          type: string
+        content:
+          description: The message itself
+          $ref: "#/components/schemas/chatMessage"
+
+    chatMessagePatch:
+      type: object
+      properties:
+        message:
+          description: Message
+          type: string
+        updatedAt:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+
     chatMessagePost:
       type: object
       properties:
@@ -84,17 +134,6 @@ components:
         replyTo:
           description: "Message ID this message is in reply to"
           type: string
-
-    chatMessagePatch:
-      type: object
-      properties:
-        message:
-          description: Message
-          type: string
-        updatedAt:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
 
     chatChannel:
       type: object

@@ -1,0 +1,69 @@
+---
+id: get-messages
+title: "Get messages"
+description: "Get messages of a specific channel"
+sidebar_label: "Get messages"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VMtu2zAQ/BWCpwRwLbvIyTe3SYMgQJwmzqEIfKCktUSYIhk+3LiC/r27kuzYjvtAgV5silzuzuzMsuYesuhk2PDJc82n9zdzswI9jaHEjUWzGPAcfOakDdJoPuHXEFgF3osCPDNLJpi3kMmlzFhWCq1B8QG3wokKAjjfZpV00QpMOeAaD/BL5rh28BKlg5xPgotwXOkmp/yhBEysBSYe4If0LBOapYCFK6MLwzAsjYEJ5Q3uWSWkZj44qQt2lops9V243H/ITIUAZCoVUj0fYnGflVAJPql52FiC1F3iTTPoEb9EcJs3yEpWMvwR9bQyUQdCvutSMGwJIStPFZU6QAEOjyqpZRUrPhnjWrz269GoIQ2CKKiV/HMpAl8QBm+N9uAp1cfRiP4OccxueTPgF6eOPk0v2cPV16erx3kXc/E+5m42Z19mT3eX1A+OWpYGCfMCQisvuYMn63GCmodkyzSpZd4QS3DrrfbRKQwtQ7B+kiTCyqGwaI+NUtIPURVO7T4MymF9Km4x2Hn1kdrYkT907K6vmOAWSLxWyRJE3ja5l5KCjZM/RMuWGEq9NO11GRRFPMrKqg27V9EJxbAIPxZ6Tl7EA+ZgCQ50Biw3WaxAB9+61sZU4VQgEgY6twal9kP2zcTWwR7Iwkiu9YpQahu/i2UlpmXbphQylDGlTiTTXWNmrkg6pB3QqZVJqkyaOFAgPCTeZdRzUsqZGMAPg0cmpE7HYjwckQes8aESmjrQt2h/zo+51zwz6Fsd/vY96EUJ8BqSdkKpZit63Zvpma/HGEh2oll4KzzBlwKVLxEgRdV1iryenGoa2u5GlHyWSy9SRVO5xKfgeCz3EZ899AN8zn4/rCdRr9BVb2/BWqhIMa0718JJwvDveP7zk3eS0HZg9Gafz5Yodr9Z7L8A11dzPBTvpm3VTlu/oAaczHs4eNsi9EvPwMkrdd3NctPs4rujX97YTXtPQROFpvkJTRdZRg==
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get messages"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/chat/messages/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get messages of a specific channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the chnanel, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}},{"in":"query","name":"limit","required":true,"description":"Amount of messages to fetch","schema":{"type":"integer","minimum":1,"maximum":100}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"400":{"description":"BAD REQUEST"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

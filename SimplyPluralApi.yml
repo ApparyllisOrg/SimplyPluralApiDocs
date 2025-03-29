@@ -1561,7 +1561,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get message"
-      description: "Get a specific message or messages from a specific channel"
+      description: "Get a specific message"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
@@ -1623,6 +1623,37 @@ paths:
       responses:
         "200":
           description: OK
+        "404":
+          description: NOT FOUND
+
+  /v1/chat/messages/{id}:
+    get:
+      security:
+        - APITokenAuth: []
+      summary: "Get messages"
+      description: "Get messages of a specific channel"
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Id of the chnanel, this can be a mongo Id but also a plain string (backwards-compatibility).
+          schema:
+            type: string
+        - in: query
+          name: limit
+          required: true
+          description: Amount of messages to fetch
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+      tags:
+        - Chat
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: BAD REQUEST
         "404":
           description: NOT FOUND
 

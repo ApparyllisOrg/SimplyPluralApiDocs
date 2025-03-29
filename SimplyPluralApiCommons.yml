@@ -36,5 +36,6 @@ components:
         - in: path
           name: id
           required: true
-          type: string
           description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
+          schema:
+            type: string

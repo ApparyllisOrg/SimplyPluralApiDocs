@@ -13,6 +13,7 @@ paths:
 
 components:
   schemas:
+    
     automatedReminder:
       type: object
       properties:

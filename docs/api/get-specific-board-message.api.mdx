@@ -1,0 +1,69 @@
+---
+id: get-specific-board-message
+title: "Get specific board message"
+description: "Get specific board message by id"
+sidebar_label: "Get specific board message"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U8tu2zAQ/JUFTw2gSk6Rk24uigZG0DhA3ENR+EBRa2kbimT5cKEa/vcupdqJm5x7kqgd7s7sjA4ioEqe4ijq7wexfFht7BOaZYo9f9get4VoMShPLpI1oha3GCE4VLQjBY2VvoUBQ5AdQjMCtaIQTno5YEQfpp6UrznJDQthuMCnCRZUj4MU9eHFWxxdrofoyXTiWAiPPxN5bEUdfcJzA9v8QBVXuc3L9pdUVy3YHcQeYYYX/E4BlDTQIEgYrOksMKpJEaQOlr85LcnAPB/eNVI9/WKJ4b2yA8+ghjSv6qrkWZGivqDyBtv/xycbFWWXNy4+Tq58mV0JYpt5BWdN4APv+MNikR+X3NZ3mf/N4uZ16X69gc/rr/efxJEhbGxvWaDoME5e56CIan9dTWGo6tlb9PuT/8lrRvQxulBXlXRUSscRGbWmULIOHvwvqMX9W7htcU7rY47MrOcys+cMcYM7HE8B6VG26J8TmMHW0285iczCyOzsdP2vr480OD3Cg05eauAhr/K1ye5xATzu0KNRCK1VaUATw2SzS43mv4SZAJrWWeJCCd9smjwPmE1ncTHHQmp9wp+x0HNbOC2lo9inJm+iWp4Xs/ZdNTOdiS4dVY22TeVRowxYBa/yzrNB3qaIoYyBlWR3ZhXX5YL1/wFb7mJ0
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get specific board message"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/board/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get specific board message by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

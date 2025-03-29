@@ -1,0 +1,69 @@
+---
+id: delete-channel
+title: "Delete channel"
+description: "Delete a channel"
+sidebar_label: "Delete channel"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Uk1v2zAM/SuETivgWenQk29BiwFBgaZAs8Mw5CDLjM1WljR9ZMiC/PdRcZM1a887RSGfyff43l5E1DlQ2onmx17MHxcr94J2ntPAhfVhXQmvghoxYYhHCFnRcI37lbDc4H/U8TvqAUclmv2bV9r50o8pkO3FoRIBf2YK2IkmhYznAa59Rp0WZczb8R1GHcgncqW46MBtIA0IE7ziN0XQykKLoGB0tnfAqDYnUCY6rnmjyMK0Hz61Sr/8UqGLn7UbeQe1ZFj5Vc27EiVzQeUDtv+PT7n75bY7NOwBj9CDshZNoaz6Yom4HVSC26kcxbrwjt7ZiLF48GU2Kz+X05b3Rd/N7OZ962G5gq/Lbw934sAQNn5wfAAGlf2imrxphNxeS6aS5Csf2UwpwLA9JSUHw8AhJR8bKZWnWnkO084YijUrZgr/gjrcfoRbV+eYPpVwTcouw3pOGw+4x90pSgOqDsPfrBawC/RbHeUWiWQ37vj5awKeaPRmB48mB2WAl7xL4qr4zA0IuMGAViN0TucRbYrHQPjcGtLATABt5x1xo4bvLh/TEbH4yOJSCZAy5oQ/Y2HgsXA6Sk9pyG25hJyfD7MMvZyYTkTnnmRrXCsDG6Uiyhh0uXnxKbicMNYpspLizqTiup6x/j+h9WAF
+sidebar_class_name: "delete api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete channel"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/chat/channel/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

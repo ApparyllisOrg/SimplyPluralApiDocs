@@ -1,0 +1,69 @@
+---
+id: update-category
+title: "Update category"
+description: "Update a category"
+sidebar_label: "Update category"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U01v2zAM/SuCThvgxenQk29ZuwFBh6ZY28NQ5CDbbKxWljSJ7uYF/u8j7TjOR887WRYp8vG9x62MUDRBYyuzp61c3C0f3CvYRYMVXay7dSJLiEXQHrWzMpOPvlQIQomCPhsXWplIVJtI2fKqUiiuhnsNUdJjr4KqASHEvr7mEl5R8URaCtCfLukciwpqJbPtwQlbz/GIQduN7BIZ4FejA5Qyw9DAvoDLX6DAJZc5LH8Me1kK9yywAjGkJ3TWkYawIudpamc3TlBW3qBQJjq680ZpK4b+4kOuitffKpTxU+Fq6qFzbYi2jzMmQKM5gtL9z/4sEnMDEb+4smXuTqkqnEWwyCHlvdEkHuFKXyKDe4f0ASRN5oPzEJDVpOjA+PZktp3irejDyblwnH7+7Hr6G7k59NRpkaJS1oLpcWiEOr7rkeMW33VErr17K5bXceR9B5mJIZaj7LpJRkrHcSgKdL33onc2DjR8ns/Px1ndcP/L+eV56Hb1IL6tHm+v+y60DpUrB6MW7NTesJlM3y5S7pyO4NJs2A0Ib+P+NMFQZoXoY5amyusZyalCa4yOM/IFQThNKuHtvbx1st/8e1Z/mOx4//f8UoEbaMcFq0CVEKYN5mRa+L+9p/oR2Vc/Jkd+/aNqb2By0CjYaI3pf1L5abxcd9z32fV4dgrdayrYijvTBGUEoT5b+AeWmQIiwDMEsAWI0hVNTVsQe6/5Jqc9EDSaAFt6pykwEz9d0y9lBN5Ks/OPMmbM3+eKisqKkeWNxqrJmdp0sWd6FTbpgHQAuvA6zY3L0wAGVIQ0hoJFZOWDaxDiDCNNwnIPU1zM5kToP8PJ9PM=
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update category"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/chat/category/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a category
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"items":{"type":"string"},"description":"List of channel IDs this category contains"}},"title":"chatCategory"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

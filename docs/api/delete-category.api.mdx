@@ -1,0 +1,69 @@
+---
+id: delete-category
+title: "Delete category"
+description: "Delete a category"
+sidebar_label: "Delete category"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9UsFu2zAM/RVCpw3wrHToybegxYCgQFOg2WEYepBlxtYqSxolZfCC/PuoeEmbteedLItP5Ht8by8i6kwmTaL5vhfLh9XGP6Nb5jTwxdPhqRIdRk0mJOOdaMQtWkwICrRK2HuaRCWS6iOjxc2gEtzM9waj4MdBkRr5AcVjf1NaBMXNK+G4wH+m43PUA45KNPtXpzSFUo+JjOvFoRKEP7Mh7ESTKOO5gW9/oE6r0uZ1+0vaqw78FtKAMMMrPpvIIhy0Rc3oXe+BUW1OoGz0fBesMg7m+fChVfr5l6IuftJ+5BmmNZbX9rEuCzDJXlB5h+3/41NMI4zBu8gm8CY/Lxblc8lgfVdYXi+u35bu1xv4sv56fysODGH7Bs8yGFSsF9W84UbI3ZXUbLk8RUE2s5lIu5PhmSwjh5RCbKRUwdQqcCYma02smThz+BfU4e493FN1jupjycgs7TKw59BwgzucTokYUHVIL5ErYE7ob3XUWzQat/XH53+NfDRjsBM82EzKAg95E6hNsYsLQLhFQqcROq/ziC7Fo68ht9ZoYCaArgvecKGGbz4fTY5YXGZxqeRAWXvCn7EwcFs4LaU3acht2YRcnhezpl7OTGeiy2Bka30riZ1SEWUkXXZejCKfE8Y6RVZS3JlVXNUL1v8HRGRh6Q==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete category"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/chat/category/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a category
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

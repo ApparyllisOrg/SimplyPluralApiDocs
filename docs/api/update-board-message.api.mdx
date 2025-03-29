@@ -1,0 +1,69 @@
+---
+id: update-board-message
+title: "Update board message"
+description: "Update a board message for a member"
+sidebar_label: "Update board message"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U8FuGjEQ/RXLp1aiLKly4kbUVkJRA2qIqqri4PUOrBOvx7W9tBTx752xgYSQc08Yz9uZN+8972QE3QeTtnL8cycn8+kCn8BN+tTSxXK/HMgGog7GJ4NOjuWDb1QCoUSNKjSigxjVGsQKA9110NUQ5EB6FVQHCULMbQ1/6RX1HEhHBfpnGjpH3UKn5Hj34pS2nusxBePWcj+QAX71JkAjxyn0cGqA9SPoNOU2L9ufs502AlcitSAKfEBnE4VWTtS8RIdujYJQdZ+EshHpzltlnCjzxbta6afftGn8oLGjGaY2ltR6P6RZySR7RmX/P+ezN6wNxHSDzZa1ey2VRpfAJS4p763RinlVj5HJvSF6Icn+BfQQkoFY2qqGf893+94CLRbKRscc0JHRguLgkDsdOteIFpST+/2zbDlBX8uHc5V0S9VcV2uOjbzJCTsAoszrRo8uFlYfR6NLUrNbNuF6dH1ZupstxJfZw92nTILS2WJTcqPbHFmOvKw2V1UmVo1LRCFsjjHugyVEm5KP46pS3gxJVRW21po4JHto9GtQA5u3cMvB6d3dswllo/PXd3KFGtzC9pjzluTNb+zwDhiMwfzN1ubV2N5vz8H4/Ed1ngU/GsnZ2HO3FeYpBzvuDcG2Ym77oKwgLhevacFOU4EsXkEAp0E0qPuOIhZzyH1fU8gEERbgGo+GCkPxA/uc+AgcedIg8aNQ1h7xJ6ygPIE4arc2qe1rFqyanPSbhXVVmBaiE2+q2mJdBaCARahi0GwN+xiwTxCHKdImbGLZ4mo4Ipn+AZdiuNQ=
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update board message"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/board/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a board message for a member
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"read":{"description":"Whether this message is read or not","type":"boolean"}},"title":"boardMessagePatch"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

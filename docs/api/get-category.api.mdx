@@ -1,0 +1,69 @@
+---
+id: get-category
+title: "Get category"
+description: "Get a specific category"
+sidebar_label: "Get category"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U8Fu2zAM/RVBpw3wrHToybegw4agQFOg2WEYepBlxuYqS5pEZfCC/PuoeEmbteedLIvP5Ht8z3uZwOSINMnm+14u71cb/wRumWngi8fDYyU7SCZiIPRONvILkNAiBTC4RSOMJuh9nGQlSfeJv5E3gyZxM98jJMktgo56BIKYjlOwNAqaR1TScYHfsONzMgOMWjb7FyeaQqkniuh6eahkhJ8ZI3SyoZjh3MC3P8DQqrR52f6S/KoTfitoADHDKz5jYhFOtMCyRu96LxjVZlZpk+e7YDU6Mc8X71ptnn7p2KUPxo88A1u0vLz3dVkAkr2g8gbb/8enWBchBe8Sm8Cb/LhYlMclg/VtYXm9uH5dultvxOf117tP8sAQtm/wLEP2QLKa19tItbtShv1WpxyoZnYS4u7kdo6WkQNRSI1SOmCtAwdishZTzayZwL+gDnZv4R6rc1ofSkBmXZeZPSeGG9zCdIrDALqD+Jy3AuZ4/tZHsUUguq0/fv7XxQccg53Evc1RW8FDXqVpU7zigoiwhQjOgOi8ySM4SkdTQ24t/yPMRIDrgkcu1OKbz0eHExSLWRyVEGhrT/gzVgzcVpyW0iMNuS2bUMvzYtaxVzPTmegyoGqtb1UECzqBStGUnRejos8EqabESoo7s4qresH6/wCrd2Lp
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get category"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/chat/category/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a specific category
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

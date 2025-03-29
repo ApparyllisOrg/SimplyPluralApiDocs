@@ -1,0 +1,69 @@
+---
+id: add-channel
+title: "Add channel"
+description: "Add a new channel"
+sidebar_label: "Add channel"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U8tu2zAQ/BWCpxZQLafISTc3aQEjQBw07qEofKDItcWEIlmScqoa/vfuSpblR869UdzR7nBmdscjyCbo1PLi147PnuZL9wp21qQKL1b7VcYVRBm0T9pZXvCZUkwwC29MVsJaMDzjXgRRQ4IQuyaacF5gh4xbLOCXVniOsoJa8GJ3ckqtp3pMQdsN32c8wO9GB1C8SKGBYwNXvoBMc2pz2v6c21wxt2apAtbDMzzryKSwrARkXTu7cQxRZZOYMNHhnTdCW9bPZx9KIV/fRFDxk3Q1ztClNqjNxwnOSjqZMyr7/zmfnCBtIKYvTrWk3aVU0tkENlFJeG+0FMQrf4lE7h3Re5LkX3AeQtIQqdorvrt4213vNuuq2bVvhL7+6378GqQZY3PRYz9KjJh0GIj3XUVsKFxEI7FDKfJOk+idjT31z9PpNYfFA/G7nd5elx4XS/Zt8ePxvpuOEa6conC52MlCGSt4vr3JiVB+YJ4XfZohbIfEN8EgsErJxyLPhdcTNECE1hgdJ+gkErgEKdi+h1tlx4V8Jr/6d52v5dFAbPAA7bASFQgFYdw5Arug/3Yp6B5ISfg+ZujrH1F7A6PngxWDmyf2art23eSDQ88af23Zk2mCMAz5XS3jkqKPBRZgDQGsBKacbGpMaOyC4JsSM8rwEQys8k5jYcJ+uqZbmAi0MahLouAIYwb8EcsqbMsGPTc6VU1JIuazo6aLsMl7pj3Rmdd5aVyZBzAgIuQxSLKLLA6uSRAnKeJLyNj+FTeTKUr3D2Uexws=
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add channel"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/chat/channel/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add a new channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"}},"title":"chatChannel"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

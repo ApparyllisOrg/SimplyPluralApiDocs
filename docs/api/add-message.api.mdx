@@ -1,0 +1,69 @@
+---
+id: add-message
+title: "Add message"
+description: "Add a new message"
+sidebar_label: "Add message"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VMFu2zAM/RVBpw3w4nToybes3YCgWFOs2WEYepAlxlYrS5pEN8uK/PsoO07iJt1xN9qkHsnHR77wCLINGje8+PnCZ3fzpXsCO2uxph8P24eMK4gyaI/aWV7wmVJMMAtr1kCMogKecRRVpGh+VQvk9MKLIBpACLED1emdF4SYcUsO+tKK7ChraAQvXo4s3Pjkjxi0rfg24wF+tTqA4gWGFvYArnwEifMEcww/rnWumFsxrIH14RnZOjIpLCuBumicrRyjqLJFJkx09M8boS3r87N3pZBPaxFU/CBdQzl0qQ1x9X6SutZoRqVs/2f+NJnEDUT85NQmcfeaKuksgsXkEt4bLUWqK3+MqbgzpPdFUmc+OA8BNcTkHeZM5ri9rwcBvJ6arIW1YE7fzK8HSnYhPSW7HCzWrjWKESvozuGuSakQ/gXbQFNCIFMgWweHMErwFibxNMMzHWpjNC2IsyqyqK0EBt7Jmq1c6HFREzKKxudK4BG8JuorqrRTsDebpXuTP0bFj0ggkyTQPTtLw/agPSIRdzB3LiL5tl3G6J2N/fg+TqenqRc3qbLL6eWp63axZF8W32+vu0S0xrVTacESfNbvWcHz54s85c53NedFv9EQnoetbwONn9eIPhZ5LryekAhF2CRGJ6RmKuB1kILnc3EP2f5I3SfN9n2NT9VexARwA5vhLNQgFE1hfzZSsAv6T7cJXYNpG74d9ujzb5qlgZHuB+KPZH34NShy/Genp+nR9I8Up+2qk8MwxXvdpFnfmTYIw6ixk0u2TPogB6liBQGSEJWTbUPrHTvZ+7akBWfUPQOrvCP9xQn74dru2kRI54YIxbQmwpghfh/LaoJlwyAqjXVbJvbz2X4Yi1DlfaV9oTOv89K4Mg9gQETIY5BpzkkbwbUIcYKROkmK6Lu4mEyJ87+Z9DyD
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add message"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/chat/message/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add a new message
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"message":{"description":"Message","type":"string"},"channel":{"description":"ID of the channel this message should go to","type":"string"},"writer":{"description":"ID of the member that wrote this message","type":"string"},"writtenAt":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"replyTo":{"description":"Message ID this message is in reply to","type":"string"}},"title":"chatMessagePost"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

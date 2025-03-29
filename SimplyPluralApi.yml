@@ -1589,7 +1589,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1615,7 +1614,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       responses:
@@ -1658,7 +1656,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       responses:
@@ -1676,7 +1673,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1704,7 +1700,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1730,7 +1725,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       responses:
@@ -1764,7 +1758,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       tags:
@@ -1784,7 +1777,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1810,7 +1802,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1835,7 +1826,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       description: "Delete a channel"
@@ -1872,7 +1862,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       tags:
@@ -1892,7 +1881,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1918,7 +1906,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1943,7 +1930,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       description: "Delete a channel"

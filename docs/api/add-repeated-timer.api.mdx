@@ -1,0 +1,69 @@
+---
+id: add-repeated-timer
+title: "Add repeated timer"
+description: "Add an Repeated Timer by (optionally) an Id"
+sidebar_label: "Add repeated timer"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVU2PmzAQ/SuWT7tSGtiqp9zSL2lVtVkl2UNV5WBgEtwFTG2TLkX8987YEBJCVPUSOZ5h/GbmvZmGG4grLW3NFz8avnx63KoXKJaVTfFi1+5mPAETa1laqQq+4MskYaJgayhBWEjYVuagWVSzO+VcRJbV9+TxmPAZL4UWOVjQxoWXFKEUGHvGCzTgv0TFztPEKeSCLxpu65IMxmpZHHg74xp+VVJDwhdWVzAGtHF++BxTe2ZTGEHjlAJFAGPfq6SmF8YBY1VYKCyZRFlmMhYUO/hp6IHmGpqKfkJsKT2tStBWgiGrz6gZ4fuGtz00DbksEgQ1u84yB2PEYSLAV2+4CMAMFImZCpOI+hGz0UeRXYf6KGomOyuLwP4GKC7iGiY0UHA7xKYPDlRIvJFTGVKdKUN8GoNJc4YyVVWWsINC836IeKN+6KzPqnz2LoarLEzZWrQaK7TdTkL7LLWxDpjrwDm2u8ogR/ZKO3NfFXP/T5g1iFswkUfptAnfmIbvqmozutUdcdc9SzqzOJB6+CWvDXe8NqUqjMf1NgyvC7D6Qq+/C99NEHO1ZZ9Xz98+8tbRz6YqIXkq43ImlS54cHwIqOs66NEFjZNsS5rFkvXSrjTyjafWlmYRBKKUc5SS0HWWSTOPVY4wxk4JHKf8drPTTNqQ8nx2l5PpVEkM8AVqxOJGSwrCq6sbLuSstPzj9OzSJE2vh2nw6VXkZQaDenslnelxuLrQVjjIwRM3HHgajlnpOROeKBJ2jAgJkyz2yqXU8WAjEVPNnrJKo0wxcT6eeVtiMhqQzXvQUMTAsClVjro1Ts9lFeEYY1gdhoOiVEg4M2ffVcViHM0GgAmGBbckC5zYvf/Jl6UYlvWNOkibVhF1J1iemrXSh8Aj9UCXpQyiTEVIlAyEgcDomHhADNIKy2LmliYWMcZn8TAPiZxEuFwUZz2gHdPTjTn2jSvQDDP7PzdSxxsLrzYoM4G0QQiOl03H+R/8+MB9c+ndHggeF35ZIUFTEgl6Nk2EqT7rrG3pGnmlaZHi8Si0FBH1E8WRSENnlNceR8x4hZ0nc7fudtM9+9diu5FLL4yCVIFMregfHl9QJv26bXfo2ImF8HnbB4/izZYiDN9erURS6GlcPK02W3SOutWaq8SNMvGbSoe/7m3fCKdjd9fwTBSHysvLxyQhiCttvzhtdwdCOpndpcz7VOmXhs7kJ03jJ0fbnvy96eYXp9nivanYO0T9F7yrK9k=
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add repeated timer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/timer/repeated/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add an Repeated Timer by (optionally) an Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Repeated Timer"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the reminder","type":"string"},"message":{"description":"Message the reminder sends","type":"string"},"dayInterval":{"description":"Day interval between the reminders are sent","type":"integer"},"time":{"description":"Time of day this reminder should go off","type":"object","properties":{"hour":{"type":"integer"},"minute":{"type":"integer"}}},"startTime":{"description":"First day of this reminder (used for day intervals)","type":"object","properties":{"year":{"type":"integer"},"month":{"type":"integer"},"day":{"type":"integer"}}}},"title":"repeatedReminder"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

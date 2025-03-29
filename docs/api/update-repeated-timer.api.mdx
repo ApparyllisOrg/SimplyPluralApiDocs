@@ -1,0 +1,69 @@
+---
+id: update-repeated-timer
+title: "Update repeated timer"
+description: "Update an Repeated Timer by Id"
+sidebar_label: "Update repeated timer"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVU1v2zAM/SuCTiuQxe6wU27ZF1YMW4s2PQxDDrLNxGptS5PkbJ7h/z5SsuPEcdFLoIg0+Ui9R7bcQlob6Rq++tXy9d3NRj1Dta5djhfbbrvgGdjUSO2kqviKP+pMOGCiYvegAY8Z28gSDEsadpPxBdfCiBIcGOsjSvpICwy34BUa8F+mUu9p0xxKwVctd40mg3VGVnveLbiB37U0kPGVMzVMMTx4P0zH1I65HCZQOKGmCGDdB5U1lGEaMFWVg8qRSWhdyFRQ7OjJUoL2EppKniB1VJ5RGoyTYMkaKmon+H7g7QDNQCmrDEEtLqsswVqxnwnwPRjOAjALVWbnwmSiucFqzEEUl6E+iYbJ3soScH8AqrO4lgkDFNyNsemDPTUSb+RchdRnqhBTYzBpT1Dmqi4ytldo3o0RX+gfOpuTLp/kxXC1gzlbh1brhHGbWWhfpLHOA/MvcIrtTW2RIztlvHnoir16FWYD4iWYyKN83oQ55uH7rrqCbk1P3PuBJcFswGpV2ZD8XRxfVnn7jVK8j9/PsO92w77cPv74xH0msSch8nOJWL4l+rlcZUGeae6lS7Xw6HAd0bObaIAXtV6zHYkWezZouzZIOJ47p+0qioSWS9SSME1RSLtMVYkQp04ZHOb8tovjHHog6YXKz6fRsZUY4Bs0iMXPlhxEkFc/XchZGfnPC9q3gER9P46Dz39FqQsY5TtI6USQ49WZuOJRD4G58UjUeErLQJr4yJG4p0RMmGS1U76knggPEjE17K6oDeoUC+fTobchKqMB6bwDA1UKDB+lLlG41gta1wnOMYbdYTgptELG2SX7qWqW4rS2gEObYcMd6UIUxeB/9GU5hmXDQ+2ly+uEXidaHx/r1uyjgDQAXWsZJYVKkCgFCAuRNSnxgBhkFLbFLh2NLGJMqOJ6GRNxtbKuFNXJG/R7ZWAc8wScNqEd5/bri6hni4O/LtKFQLJgYs/Gtmf6L3645uFJKdWQG4+rsKOQljkiJc+2TbDAR1N0HV0jmwytTDwehJEioVdESWTS0hlVtcPJMt1cp/jf3Pcr6Yq9ts9eqGWQQ0VaQH7W9A+PzyiOYct2W3TsJUL4gu1jQPF2QxHGby82YXc6Je7Wm49f0TvpV2qpMj/CxB/qHf765MqX6uXr71peiGpfB1WFoMR/cSHpZy/p/kBQZ8s7V/dQK/3SrJn9pG3DwOi6o38wvfjFcaQEb+r2FlH/B/neJQU=
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update repeated timer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/timer/repeated/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update an Repeated Timer by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Repeated Timer"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the reminder","type":"string"},"message":{"description":"Message the reminder sends","type":"string"},"dayInterval":{"description":"Day interval between the reminders are sent","type":"integer"},"time":{"description":"Time of day this reminder should go off","type":"object","properties":{"hour":{"type":"integer"},"minute":{"type":"integer"}}},"startTime":{"description":"First day of this reminder (used for day intervals)","type":"object","properties":{"year":{"type":"integer"},"month":{"type":"integer"},"day":{"type":"integer"}}}},"title":"repeatedReminder"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

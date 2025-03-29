@@ -1,0 +1,69 @@
+---
+id: get-group
+title: "Get group"
+description: "Get a group by Id"
+sidebar_label: "Get group"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMtu2zAQ/BWCpxYwLKfISTcDbYMgQBw0zqEIfKCktUWEIhk+jKoC/727kqXEjn0pcrEkcricmZ11xz2U0cnQ8vy548uH27V5Ab2MocaFTdrMeAW+dNIGaTTP+Q0EJtjOmWhZ0bLbis94EDuPaH5Dq57jGQfeGu0Blzv+bbGgx3Gd1R1PM369uP64db9as5+rp/vvPCHECicaCOB8z1ASwgqkN+MaN/CrJ9MT8WUNjaCKobW05YOTekc3OXiN0kHF8+AinKp67HGohpktCzUMAvHc2Qt96wM0n3zjUJST4yi3NhUpg8Bnw+U5z/ZXWU8r60YCKesqU+KTmIDbjyZFp/BAHYL1eZYJK+fCoo+tUtLPS9P0wo5BFezP4TazKSCPJHXo6HFMJu1Y4A5a5NJ7VoOowL25RmDj5F/RO0CtlXpr+uMyKEI8ysaqlj2o6IRieAk/dW1dS08bzMEWHOgSGBoQG9DB9y7aWChZMmTCQFfWSNyYs98mslJo5gEwvCgukOtCqRE/YVmNZdloyk6GOhbkRLacjFm5XTYwHYgurcwKZYrMgQLhIfOuJM+pX9iuAH4ePCqh7gwqruYLCog1PjRCkwMHi2i4huSdCO94aXRAlZcmcGhAgD8hs0qg/1i/b3B3iM8z318hcKyev8tw3meIxrZGRgTtugKFPDmVEi2/RnD0/4Cve+GkKKhbGLNKenrHpG6F8qcRf8/5y6/DMHxlF0btgoYxWZpitRcq0he+vmDO3iaf4vw5ZA5T+F9sJkvTJr0b4psfa4SID6Py0o/K4YXsPFv9eGrGq+iXRJ890nXDIKY04YetiyemUR3QJHaTUvoHY2YSxw==
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get group"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/group/{systemId}/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a group by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"groupId","schema":{"type":"string"},"required":true,"description":"String Id of the group"},{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

@@ -817,7 +817,6 @@ paths:
                 $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimerContainer"
         "404":
           description: NOT FOUND
-
   /v1/timer/automated:
     post:
       security:
@@ -842,7 +841,6 @@ paths:
           description: NOT FOUND
       tags:
         - Automated Timers
-
   /v1/timer/automated/{docId}:
     post:
       security:
@@ -852,9 +850,9 @@ paths:
       parameters:
         - in: path
           name: docId
-          required: true
           schema:
             type: string
+          required: true
           description: String Id of the Automated Timer
       requestBody:
         required: true
@@ -882,9 +880,9 @@ paths:
       parameters:
         - in: path
           name: docId
-          required: true
           schema:
             type: string
+          required: true
           description: String Id of the Automated Timer
       requestBody:
         required: true
@@ -918,7 +916,6 @@ paths:
           description: NOT FOUND
       tags:
         - Automated Timers
-
   /v1/timers/automated/{systemId}:
     get:
       security:

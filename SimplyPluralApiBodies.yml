@@ -13,19 +13,6 @@ paths:
 
 components:
   schemas:
-    commons:
-      type: object
-      properties:
-        color:
-          description: Color of the object (\#ffffff, \#ffffffff or ffffff)
-        private:
-          description: Whether this object is private
-        preventTrusted:
-          description: Wheter trusted friends are prevented from seeing this private object
-        supportDescMarkdown:
-          description: Whether the description supports markdown
-        timestamp:
-          description: Milliseconds since epoch for this timestamp/date
 
     automatedReminder:
       type: object

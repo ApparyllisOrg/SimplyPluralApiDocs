@@ -1,11 +1,11 @@
 ---
-id: write-board-message
-title: "Write board message"
+id: write-board-message-by-id
+title: "Write board message by Id"
 description: "Write a new board message for a member"
-sidebar_label: "Write board message"
+sidebar_label: "Write board message by Id"
 hide_title: true
 hide_table_of_contents: true
-api: eJyNVMFu2zAM/RVBpw3w4nToKbcUbYGiaFOsGYph6EG2mFitLWqS3CwL8u8j5ThJ62HtzRapp0fyPW5kgLL1Jq7l5OdGTu+u5vgMdtrGig4et4+Z1BBKb1w0aOVEPlAuCCUsrESBymvRQAhqCWKBns4baArwMpNOedVABB8SsuHLThFsJi0F6M9o+vbwqzUetJxE30Im49pxLERv7FK+ff1KC1yIWIHA4gnKmNG3CaJUVhTMqkG7REFZRRuFqgPSmauVsaIDFJ8KVT6viHb4UmJDfExhaqr+80hyrcwGQjxDTf3YDMiVaCPYyCHlXG1Kxbzyp8DkNjKUFTSKv3ZVdCS5GR4d+GggpKiJNfDH6+LmfNzXt+uqfNuRbSb70BDgcO8DMCuaJFVzth4CXZ0f7vM46VNFsfJIo08Nfx/2Ev1HcY8RBX2SkP4DPI1D3BtT14aEjFYHEYwtQYDDskqaTPDR0ANRNS7XKh7xNjTQJel1y7NXegj9UAHx9QOSnC0I3WI8oBWINSjLaKF1Dn28Uf5Z48q+A/zaSbu79F5/e/gCPbGTkUyXb7q7dxgiBVNYLdl68ixh7+JBJpUHhzZ0Yvw6Hg/Jza65htPx6TB0O5uLy9n32/PEgRxeoWZr88NZ5/CJzF9O8kQrnySXB/Av/SZofU0ZVYwuTPJcOTMiLym/5hGOyJT08tskDS//ynvM9tvrnq3XFfR6h+29SADXsCYuaRNVNL60pna7iJPRmz/J0KkyNvW3wzq4+E3i6Vzb932/o/aGPBwdmWtwmKwxOGVdj3sVdutmoCE+3nIFCzwmcm+I2lrc1a1XtaD6B3tzziKjAMl2AR7YIBrLtqFlFpIfXVvQOhPUJAFWOyRfhJH4gW3arQF4uVLfI/tX1XWfv88VJGUQ/byWJlZtwUPKp/uZzfwy75h2RKfO5EWNRe6BJB0gD75kObB2PLYRwigGqoSF01VxMhrTaP4CKQtX+w==
+api: eJy9VMtu2zAQ/BWCpxZwLafIyTcFbgAjSBw0LoqiyIGS1hYTicuSVFzX8L93l7L8UtDk1JvEXQ73MTMb6SFvnA5rOf65ken9dI7PYNImlHTwuH0cyAJ87rQNGo0cy++UC0IJAyuRoXKFqMF7tQSxQEfnNdQZODmQVjlVQwDnI7Lmy1YR7EAaCtCfLujb5yXUSo43R19hbTnug9NmKbcD6eBXox0UchxcA3sAzJ4gD1OGOYY/LXhaCFyIUIJo0wf0rb3IlREZN1KjWaKgrKwJQlUe6cxWShvRvi8+ZCp/XlGn/lOONb2hM13RwD4O6a2gQ3VSyvZ/vs/r4dmAD1dYrHl256PK0QQwgUPK2krniutKnjwX98rQ2yJ5fw4tuKDBx2jb5+asuTkfd/3tiMBTOV9gF+oDHO69A2ZF5KNurtZ9oOnkcJ8ZSJ8qiJVDYmsc+Nuw1+jei3uMKOiTuP8P4DT0cW91VWnSHprCC69NDgIs5mWUUYQPmh4IqrZJocJR3ZoWuiSJRV2oog/9vQSq1/WK5GxB6AbDAS1DrEAZRvONtejCrXLPBa7MG8Cn4t/dpfe62/0Xtge5xMu37d179IGCMayW7BbyKmLv4l5GlnuLxrdk/Dwa9Yub3XAPl6+FrtKJmKTztE247CfczebievbtbhKLJNcqsWA/4coGra2MZfJykcS6k3HrXOBeOndrXEUZZQjWj5NEWT0ksSm35h0PSbX08nlSAS+v5T0O9o78wNpsOz715b1YCeAG1p39lbTfaL07e+RkdPpPVHzsjFX/9eAXX34Tu1pZd4vZcfdIsYejI/X1DqN2eqdM/FFH09aPeiTj4y13sMDjQh40lbYW91XjVCWo/56xz5mFFCBeL8ABK6jAvKnJ7XwUrG0y8jtBQxJgCoskHD8UP7CJ5uuB3ZfmHljgqqq6/H2uIK6D6Pa11KFsMl5Sku53NnPLpK20LTS1OskqzBIHxHkPiXc504G547AJ4IfBUydMnLaLi+GIVvMXWqeeVA==
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -22,13 +22,13 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Write board message"}
+  children={"Write board message by Id"}
 >
 </Heading>
 
 <MethodEndpoint
   method={"post"}
-  path={"/v1/board/"}
+  path={"/v1/board/:id"}
   context={"endpoint"}
 >
   
@@ -47,7 +47,7 @@ Write a new board message for a member
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"id","required":true,"type":"string","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"required":true,"name":"objectId","in":"path","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","title":"objectId"},"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
 >
   
 </ParamsDetails>

@@ -822,13 +822,12 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Add automated timer"
-      description: "Add an Automated Timer by (optionally) an Id"
+      description: "Add an Automated Timer, optionally by an Id"
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
           description: String Id of the Automated Timer
       requestBody:
         required: true
@@ -847,13 +846,12 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Update automated timer"
-      description: "Update an Automated Timer by Id"
+      description: "Update an Automated Timer, optionally by an Id"
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
           description: String Id of the Automated Timer
       requestBody:
         required: true
@@ -893,7 +891,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get all automated timers"
-      description: "Get Automated Timers from a system"
+      description: "Get Automated Timers for a system"
       tags:
         - Automated Timers
       parameters:

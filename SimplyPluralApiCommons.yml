@@ -16,6 +16,8 @@ components:
     commons:
       type: object
       properties:
+        systemId:
+          description: The system Id
         color:
           description: Color of the object (\#ffffff, \#ffffffff or ffffff)
         private:

@@ -42,10 +42,10 @@ components:
           description: Message of the reminder
           type: string
         action:
-          description: unknwon # todo: what is this?
+          description: unknown # todo: what is this?
           type: integer
         delayInHours:
-          description: Delay In Hours from action to reminder
+          description: Delay in hours from action to reminder
           type: string
         type:
           description: "When this reminder should trigger.
@@ -54,7 +54,8 @@ components:
             2 -> Any front change"
           type: integer
         uid:
-          description: The system ID
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/systemId/description"
           type: string
         lastOperationTime:
           description:

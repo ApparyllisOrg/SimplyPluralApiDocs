@@ -1825,7 +1825,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            application/json:
               schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
         "404":

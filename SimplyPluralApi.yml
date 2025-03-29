@@ -1556,12 +1556,12 @@ paths:
           description: BAD REQUEST
         "404":
           description: NOT FOUND
-  /v1/chat/message/:id:
+  /v1/chat/message/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get message"
-      description: "Get a specific message"
+      description: "Get a specific message or messages from a specific channel"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
@@ -1620,27 +1620,6 @@ paths:
         - Chat
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-      responses:
-        "200":
-          description: OK
-        "404":
-          description: NOT FOUND
-
-  /v1/chat/messages/:id:
-    get:
-      security:
-        - APITokenAuth: []
-      summary: "Get messages"
-      description: "Get messages of a specific channel"
-      parameters:
-        - in: path
-          name: id
-          schema:
-            type: string
-          required: true
-          description: String id of the channel to get messages from
-      tags:
-        - Chat
       responses:
         "200":
           description: OK

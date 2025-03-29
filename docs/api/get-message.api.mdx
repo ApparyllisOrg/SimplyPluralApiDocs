@@ -1,11 +1,11 @@
 ---
 id: get-message
 title: "Get message"
-description: "Get a specific message"
+description: "Get a specific message or messages from a specific channel"
 sidebar_label: "Get message"
 hide_title: true
 hide_table_of_contents: true
-api: eJxtUk1v2zAM/SuCThvgWenQk2/BhhZFgaZAs8Mw5CDLjM1VljRRyuAF+e+j7CVDs50si0/k++BREpgcMU2y+XaU6+eHrX8Ft85p4IvdaVfJDshEDAm9k428hyS0oAAG92jECES6B1nJoKMeIUGkuRMWcNDcppKOC/yHHZ8j/MgYoZNNihmuuz90wu9FGkD49juYVPEZSRjtRAs8d/Su94JRbWYaljzfBavRCUoRXS/etdq8/tSxow/GjzwfW7Ss7n3Ns8kMMGrZHGWaQmG0PJKnIjPpvjCXnwad5K4QpeAdARX8x9WqfN6S3TzKUyVvV7f/lp42W3G3+fL0mXtXkm0ZPCuWPaTZqWKuVIcbZXiY+uOhamaDCOLhbGKOloFDSoEapXTAWgf2ebIWqWZ9PP8a1MHhf7hddQn6pbiwyHob98UWbvAIE3OZQxxAdxD/xljAPuIvPWst+tDt/fwcky2IFxyDncSzzVFbwUPkdc7bkioXRIQ9RHAGROdNHsElmuMPubW8XsxEgOuCRy7U4qvP8y4QlGVgcamsi7b2jL9gxcBtxdmUHtOQ2+KEWl+M2cReLUwXouuAqrW+VREsaAJF0RTPS07R5wRUJ2IlJZ1FxU29Yv2/AS2IHzE=
+api: eJy1VMtu2zAQ/BWCpwZQLafIyTejjyAIEAeNcygCHyhqLbGmSIYPt66gf++uHm7iuKeiF5sSl9yZ2Rm1PIBMXsUDXzy1fHl/s7Y7MMsUa3yx6TYZLyFIr1xU1vAFv4bIBAsOpNoqyRoIQVTArJ+WgW29bV7WyFoYA5pn3AkvGojgQ99N0YVOYKuMG9zAJ1Xi2sNzUh5Kvog+wSmCm5LZLYs1Ni2+g4wZrlVgUhhWAPZtrKksw6oiIVQdLL5zWijDQvTKVOxdIeTuh/BleC9tg/1VoTQqcDHD3kHW0Ai+aHk8OEI0HOIdSRFFRcj5x1pEviGgwVkTIFD9h/mc/l6DXd3yLuNX86u3W3erNfuyerz7hHdnHGWpLTLmFcReKRoAz/eXOcoX81HcvFVlRyjB7ycVk9dYWcfowiLPhVMz4VDog9YqzJAgAjgtKmF/rm6THd3wQDIMvF574qgLXnALB8TST7EGUYL/M0cqtl79Ej1ZIqjM1vbHVdRU8aAapw/sXicvNMMm/HTQaxorbjAPW/BgJLDSytSAiaGfv0uFRn8hEgamdFbhxox9s6k3QwByA5KL5Beh9VR/rGU1XssmUSoV61SQEvnyKMzKV/mAdAC6dCovtC1yDxpEgDx4SZrToLxNEcIsBmRC0xlYXM7mZAFnQ2yEIQVGiShJ41hPqbdcWhOR578GbpxVhJ8x7zNAUHovtKPFnvj+EgvJZJxcOOFZYBLRDzXCpqK2LZDto9ddR6+fE3j6YuByL7wSBY0UvViqQGv08RaTdxrdl7TefR1DfsH+b6DPSjB52JCB90InesLlDh3df4S6zctMXn9e46Z4E4BdH4BxQfzP3vs6C1MT+qVknj3StkO8uu5YP2z99cQxgCMFQxS67jd3yQDf
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"get"}
-  path={"/v1/chat/message/:id"}
+  path={"/v1/chat/message/{id}"}
   context={"endpoint"}
 >
   
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Get a specific message
+Get a specific message or messages from a specific channel
 
 <Heading
   id={"request"}

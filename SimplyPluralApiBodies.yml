@@ -52,7 +52,7 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         read:
-          description: Whether this message has been read
+          description: Whether this message has been read, this must start as false
           type: boolean
         supportMarkdown:
           description: Whether this board message supports markdown

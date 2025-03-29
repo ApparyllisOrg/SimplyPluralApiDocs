@@ -5,7 +5,7 @@ description: "Write a new board message for a member"
 sidebar_label: "Write board message"
 hide_title: true
 hide_table_of_contents: true
-api: eJzVVU2P2zYQ/SsDnlpAtZwiJ928SAIsgo2NroNFEexhJI0tZimSJUfrqAv992JEy/ZaQZJrbwI58zgf7z29qEhVFzT3qvjyolab2617IrvquFHFl8fhMVM1xSpoz9pZVaiHoJkAwdIBSoehhpZixD3BzgVAaKktKahMeQzYElOII7KWZI/cqExZbEkVStcqU7FqqEVVvFx8ce/lPnLQdq+GU4Irv1LFt5J2CRfon04HqlXBoaPrgtdjEty+A7cDbggSSgbc6AgVWiiln9bZvZOosmNAEx0geIPaQioDfiuxejpgqOMflWs9si610dz/voCHhix0UaI26/styCDqGlabW6jQmHh8ywfnKXAPOoIby0OzUJlizeZVe8P/vSehjXRAkW9c3ctOrxuqnGWyLFfovdEVSnL+NUqD3yFD6lB4lV7UFMfbNLuXqwFt5XgazpGgMulrYk1Xc4Bz3i/AHIJmJnvTz4HOO0rKAG6Q4RAcU5rgz2E/uPCruJeIspKdCz8AXvEc904boyNVztYRorYVAXlXNaO8R3jWLUXG1uc18kXd2jLtKST2Yj2HfmiIGwqzIiVa+GUdn9FK5wyhFbTYee8C32F4qt3B/gT4tSkdcyO0U/b8heEswTH5LuVuXGQ1DOM17sXF1M2IfbyPamR59M7GRMY/l8t5ceuP0sPb5dv51af1Fj6sP396N9bQEjeuFluTh7PkboXKn9/kY1l5kQyTwvNkql0wqlANs49FnqPXC/QeQy8rXFSuVUN2HVTT8/fiHrPTj+BepJcaev07OGkRvf5I/eTCDWE9Ov7RpSXYBf3vKOixMxH1X2c7eP8NW59UO839SM0LQZ6PLsQ1OxylMTsVXi8nFia7mXFIjgfpYOcuC7nXrTc9bEwX0IjbqWvv3QrJxAYD7SiQCKR2VdeS5Tjq0Xel0RWg10C29k5bjgv423WjMUcSZzY6sugXjZniT7HQUCCY9rXX3HSlLClfnXa2Dvs8VZoKXXmdl8aVeSBDGCmPoRI6CHeC65jigqPKlBAndfFmsVTD8B++0MlE
+api: eJyNVMFu2zAM/RVBpw3w4nToKbcUbYGiaFOsGYph6EG2mFitLWqS3CwL8u8j5ThJ62HtzRapp0fyPW5kgLL1Jq7l5OdGTu+u5vgMdtrGig4et4+Z1BBKb1w0aOVEPlAuCCUsrESBymvRQAhqCWKBns4baArwMpNOedVABB8SsuHLThFsJi0F6M9o+vbwqzUetJxE30Im49pxLERv7FK+ff1KC1yIWIHA4gnKmNG3CaJUVhTMqkG7REFZRRuFqgPSmauVsaIDFJ8KVT6viHb4UmJDfExhaqr+80hyrcwGQjxDTf3YDMiVaCPYyCHlXG1Kxbzyp8DkNjKUFTSKv3ZVdCS5GR4d+GggpKiJNfDH6+LmfNzXt+uqfNuRbSb70BDgcO8DMCuaJFVzth4CXZ0f7vM46VNFsfJIo08Nfx/2Ev1HcY8RBX2SkP4DPI1D3BtT14aEjFYHEYwtQYDDskqaTPDR0ANRNS7XKh7xNjTQJel1y7NXegj9UAHx9QOSnC0I3WI8oBWINSjLaKF1Dn28Uf5Z48q+A/zaSbu79F5/e/gCPbGTkUyXb7q7dxgiBVNYLdl68ixh7+JBJpUHhzZ0Yvw6Hg/Jza65htPx6TB0O5uLy9n32/PEgRxeoWZr88NZ5/CJzF9O8kQrnySXB/Av/SZofU0ZVYwuTPJcOTMiLym/5hGOyJT08tskDS//ynvM9tvrnq3XFfR6h+29SADXsCYuaRNVNL60pna7iJPRmz/J0KkyNvW3wzq4+E3i6Vzb932/o/aGPBwdmWtwmKwxOGVdj3sVdutmoCE+3nIFCzwmcm+I2lrc1a1XtaD6B3tzziKjAMl2AR7YIBrLtqFlFpIfXVvQOhPUJAFWOyRfhJH4gW3arQF4uVLfI/tX1XWfv88VJGUQ/byWJlZtwUPKp/uZzfwy75h2RKfO5EWNRe6BJB0gD75kObB2PLYRwigGqoSF01VxMhrTaP4CKQtX+w==
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -47,7 +47,7 @@ Write a new board message for a member
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}]}
+  parameters={[{"in":"path","name":"id","required":true,"type":"string","description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility)."}]}
 >
   
 </ParamsDetails>

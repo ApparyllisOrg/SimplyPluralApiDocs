@@ -31,11 +31,10 @@ components:
         lastOperationTime:
           description: Time in milliseconds since epoch of the last operation on this obejct
 
-  parameters:
-    objectId:
-      schema:
-        type: string
-      required: true
-      name: objectId
-      in: path
-      description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
+  parameters:        
+      objectId:
+        - in: path
+          name: id
+          required: true
+          type: string
+          description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).

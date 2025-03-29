@@ -13,20 +13,6 @@ paths:
 
 components:
   schemas:
-    commons:
-      type: object
-      properties:
-        color:
-          description: Color of the object (\#ffffff, \#ffffffff or ffffff)
-        private:
-          description: Whether this object is private
-        preventTrusted:
-          description: Wheter trusted friends are prevented from seeing this private object
-        supportDescMarkdown:
-          description: Whether the description supports markdown
-        timestamp:
-          description: Milliseconds since epoch for this timestamp/date
-
     automatedReminder:
       type: object
       properties:
@@ -46,6 +32,48 @@ components:
           description: Delay in hours since the action (front change)
           type: integer
 
+    automatedTimer:
+      type: object
+      properties:
+        name:
+          description: Name of the reminder
+          type: string
+        message:
+          description: Message of the reminder
+          type: string
+        action:
+          description: unknwon # todo: what is this?
+          type: integer
+        delayInHours:
+          description: Delay In Hours from action to reminder
+          type: string
+        type:
+          description: "When this reminder should trigger.
+            0 -> Member front change,
+            1 -> Custom front change,
+            2 -> Any front change"
+          type: integer
+        uid:
+          description: The system ID
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: string
+
+    automatedTimerContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Reminder Id
+          type: string
+        content:
+          description: The reminder itself
+          $ref: "#/components/schemas/automatedTimer"
+
+          
     boardMessagePost:
       type: object
       properties:

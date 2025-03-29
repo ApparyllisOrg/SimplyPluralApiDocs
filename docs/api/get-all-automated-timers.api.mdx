@@ -5,7 +5,7 @@ description: "Get Automated Timers from a system"
 sidebar_label: "Get all automated timers"
 hide_title: true
 hide_table_of_contents: true
-api: eJyNU0Fu2zAQ/AqxpxYgLKfISTcDbQMjQBw0zqEwdKCltUWEIhlyZdQV+PdiJUuN1QToRRLFIXdnZqeDiGUbNJ0h33Wwelxv3QvaVUs15LsiFRIqjGXQnrSzkMMdkli15BpFWImtbjBEcQiuEUrEcyRsQAKpY4R8B3MgFBK8CqpB4hVX1HypV1SDBKsahByGa9YVSIhljY2CvAM6+36PgrZHSBICvrY6YAU5hRbnbT71OLGuhDsIqnHsjQkFjN7ZiJHv/bJc8uv69OaeK9wub//dethsxffN88NXSElCg1S7CnI4IoEceOSQnW4y6glnalQg60ZaiXlhOI0KtMFADjWRj3mWKa8XynsVzsbouChdA0nOQRWe3sMVcnLziYUbGF57OimpvL7HM8jBgRpVheGvBwx2Qf9WPW2mqu3B9cc1GUY86cabs3g0bVBGrB7XMPdgW+vIGyLgAQPaEkXlyrZBS7H3xLd7o0uhvBZoK++0pbgQP10rSmVFRBRKGB2JPVTGjPgJK2oMKEZRjprqds9KZKtJmE04ZkOnQ6Mrr7O9cfssoEEVMYuhZM3ZsuBawrigCBLYnYHFzWLJw+BdpEZZVuAiESeBu5osFoPncx06KJ0ltPTf6RkMIvxFmTdKW67fD0B3mbAdnG4YONabWgAJ+RSfQkLtIjG86/Yq4nMwKfHv1xYDB76QcFJBqz07uuug0pG/K8gPysR5qN4S+fTjEr/P4qOofUBkHD/Ls3dSpuUVSHjB89vsp+JtvO6+bQeaswl+6Sf48sEM3r39epjHUvzkaL17pOuGfKQ04YetD09MCRrQTLZIKf0BHZDXmA==
+api: eJyNVd+P0zgQ/lcsPx1Sr+kinvqAVLEHVyEoYovQCfXBSaaJdx3b2E6hF+V/Z8Zp0jbNIl5ax/N75pvPDfeQ1U6GI19+a/jq03prnkCv6lDixa7dzXgOPnPSBmk0X/J3EBhKTSUC5GwrK3Ce7Z2pmGD+6ANUfMaDKDya87EiR3dWOFFBoC+KKMmpFRhuxjUK8Ktzs87xxmclVIIvGx6ONsqCk7rg7Yw7+F5LBzlfBlfDOM2HqMfWOTN7Fkroc6OCHHhrtAdPfl8uFvR3bb15j7EzowPoQFJhrZKZIGny6EmluU1NOCeOaCcxjr+4N+kjZAEF1hkLLsguMPyUPlzqpcYoEJpqk/ltTp+hkjoHx2Jjbtpxke213RaLd72tDB7U/mz/TG7dIMaePuJt387e41QqFXgvigkHHzrBn/gQWWczdlHrJ/0DT4OJxLIL9NESApQ4rvW/pnb+1vKepGytWZSfIBujsGB+m0t3Mfb3tQS0LKU/d9eXplY5Q8MCU5qzBfv7NfsAVYoyjKcDy0qhC5ixO5K8qT2ux0jykiQrfby6niy3nkLJdoA6W99PFaOEDxscdQQzbeWED7xlUrNKKiWRHozOPfNSZ8DAmqzs50eumOl9MXNqh0nhMWJqFJs6KYOKq9LzQqSF34jeYA+E1FGnJbVXi1cTwNxs2dvNl4/30ROSS2mwNbyAiGziliVPDndJiCSUDCGSpqealrgG3KFnpdoptClDsH6ZJMLKOVKAcEdqyDwzyCOzsVIOhym93Wxg2AdijG7Brnn2TCFWvofIIVRWCaJD5IkXSdk4+X9sdyxV6r2J5qfmPcjKqiP7pGonFMMgfMyLW5oQChC0e3BAM81NVldIHT4O1dYpUh3DTBjo3BoEnJ+z/0zNMqGZB0Cex+ICgUAo1esPuqxEt6xvSiFDWafUiWQ1NGbjiqTLtEt0ZWWSKpMmDpAAPSTeZdRzGpkzdQA/R6KccZpOV8XdfEFYtsaHSugzY8XXibIaRsy6mY/70Jz58g9ftG5AAX6GxCqEZNxAAkBzQtg3frgjxT7ekAKel8OThnAoMWtSb5oUi/3iVNvS9fcaHD3CeDwIJ0VKE0Uo5tLTGQG9F8qPH7rLQv76fHoSX7Dnnr9nCunhpwl7B6Fq+sLjE4Lx4j1ud6h7QiWl1olXWQY2XBjevJa0BMNWvvtn23VnBPynCPzTgbxPJnW9A32G9EsbOWnSNN1ate2g34metRgWr9OmHu2QfX4BBhYqWw==
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -62,7 +62,7 @@ Get Automated Timers from a system
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Reminder Id","type":"string"},"content":{"description":"The reminder itself","type":"object","properties":{"name":{"description":"Name of the reminder","type":"string"},"message":{"description":"Message of the reminder","type":"string"},"action":{"description":"unknwon","type":"integer"},"delayInHours":{"description":"Delay In Hours from action to reminder","type":"string"},"type":{"description":"When this reminder should trigger. 0 -> Member front change, 1 -> Custom front change, 2 -> Any front change","type":"integer"},"uid":{"description":"The system ID","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this obejct","type":"string"}},"title":"automatedTimer"}},"title":"automatedTimerContainer"}}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

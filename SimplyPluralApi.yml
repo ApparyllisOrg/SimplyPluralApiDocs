@@ -792,7 +792,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get automated timer"
-      description: "Get an Automated Timer by id"
+      description: "Get an Automated Timer by Id"
       tags:
         - Automated Timers
       parameters:
@@ -811,6 +811,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimerContainer"
         "404":
           description: NOT FOUND
   /v1/timer/automated/{docId}:
@@ -902,6 +906,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimerContainer"
         "404":
           description: NOT FOUND
 
@@ -1543,7 +1553,7 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
+            required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       responses:
@@ -1563,7 +1573,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1589,7 +1598,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1615,7 +1623,7 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
+            required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       responses:
@@ -1676,7 +1684,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1704,7 +1711,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1784,7 +1790,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1810,7 +1815,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1892,7 +1896,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:
@@ -1918,7 +1921,6 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       requestBody:

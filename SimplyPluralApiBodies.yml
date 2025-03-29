@@ -32,7 +32,7 @@ components:
           description: Delay in hours since the action (front change)
           type: integer
 
-    boardMessagePost:
+    boardMessage:
       type: object
       properties:
         title:
@@ -58,12 +58,58 @@ components:
         supportMarkdown:
           description: Whether this board message supports markdown
           type: boolean
+        uId:
+          description: The user associated with the message
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: string
+
+    boardMessageContatiner:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Message Id
+          type: string
+        content:
+          description: The message itself
+          $ref: "#/components/schemas/boardMessage"
 
     boardMessagePatch:
       type: object
       properties:
         read:
           description: Whether this message has been read
+          type: boolean
+
+    boardMessagePost:
+      type: object
+      properties:
+        title:
+          description: The title of the message
+          type: string
+        message:
+          description: The contents of the message
+          type: string
+        writtenBy:
+          description: Id of the member that sent the message
+          type: string
+        writtenFor:
+          description: Id of the member that recieved the message
+          type: string
+        writtenAt:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        read:
+          description: Whether this message has been read, this must start as false
+          type: boolean
+          example: false
+        supportMarkdown:
+          description: Whether this board message supports markdown
           type: boolean
 
     chatMessagePost:

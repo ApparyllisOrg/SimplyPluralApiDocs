@@ -874,6 +874,8 @@ paths:
           description: BAD REQUEST
         "404":
           description: NOT FOUND
+        "500":
+          description: RECORD NOT ENTERED INTO DATABASE
       tags:
         - Automated Timers
     patch:

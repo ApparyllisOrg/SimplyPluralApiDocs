@@ -1824,6 +1824,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            text/csv:
+              schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
         "404":
           description: NOT FOUND
     post:
@@ -1853,6 +1857,8 @@ paths:
           description: BAD REQEST
         "404":
           description: NOT FOUND
+        "500":
+          description: RECORD NOT ENTERED INTO DATABASE
     patch:
       security:
         - APITokenAuth: []

@@ -1627,8 +1627,6 @@ paths:
         - APITokenAuth: []
       summary: "Add category"
       description: "Add a new category"
-      parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
         required: true
         content:

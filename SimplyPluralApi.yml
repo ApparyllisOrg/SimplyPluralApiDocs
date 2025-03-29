@@ -1851,12 +1851,33 @@ paths:
         "404":
           description: NOT FOUND
 
+  /v1/board/:
+    post:
+      security:
+        - APITokenAuth: []
+      summary: "Write board message"
+      description: "Write a new board message for a member"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessagePost"
+      tags:
+        - Board Messages
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: BAD DATA
+        "404":
+          description: NOT FOUND
   /v1/board/:id:
     get:
       security:
         - APITokenAuth: []
       summary: "Get specific board message"
-      description: "Get specific board message by id"
+      description: "Get specific board message by Id"
       parameters:
         - in: path
           name: id
@@ -1874,7 +1895,7 @@ paths:
     post:
       security:
         - APITokenAuth: []
-      summary: "Write board message"
+      summary: "Write board message by Id"
       description: "Write a new board message for a member"
       parameters:
         - in: path
@@ -1894,6 +1915,8 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: BAD DATA
         "404":
           description: NOT FOUND
     patch:
@@ -1919,6 +1942,8 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: BAD DATA
         "404":
           description: NOT FOUND
     delete:

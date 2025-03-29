@@ -34,4 +34,4 @@ components:
       name: objectId
       in: path
       required: true
-      description: Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.
+      description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).

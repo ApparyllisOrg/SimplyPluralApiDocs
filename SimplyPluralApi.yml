@@ -834,27 +834,10 @@ paths:
         "200":
           description: OK
           content:
-            text:
-            schema:
-              "{\"Id of the new automated timer\"}"
-        "404":
-          description: NOT FOUND
-      tags:
-        - Automated Timers
-    patch:
-      security:
-        - APITokenAuth: []
-      summary: "Update automated timer"
-      description: "Update an Automated Timer"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedReminder"
-      responses:
-        "200":
-          description: OK
+            text/csv:
+              schema:
+                type: string
+              example: "\"67e78b964cfb3eed32ef8848\""
         "404":
           description: NOT FOUND
       tags:
@@ -883,7 +866,10 @@ paths:
         "200":
           description: OK
           content:
-            type: string
+            text/csv:
+              schema:
+                type: string
+              example: "\"67e78b964cfb3eed32ef8848\""
         "404":
           description: NOT FOUND
       tags:

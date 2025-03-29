@@ -44,12 +44,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/update-automated-timer",
-          label: "Update automated timer",
-          className: "api-method patch",
-        },
-        {
-          type: "doc",
           id: "api/add-automated-timer-by-id",
           label: "Add automated timer by Id",
           className: "api-method post",

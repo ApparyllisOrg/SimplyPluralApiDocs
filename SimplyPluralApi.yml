@@ -838,6 +838,8 @@ paths:
                 type: string
               example: "\"67e78b964cfb3eed32ef8848\""
         "404":
+          description: BAD REQUEST
+        "404":
           description: NOT FOUND
       tags:
         - Automated Timers
@@ -868,6 +870,8 @@ paths:
               schema:
                 type: string
               example: "\"67e78b964cfb3eed32ef8848\""
+        "404":
+          description: BAD REQUEST
         "404":
           description: NOT FOUND
       tags:

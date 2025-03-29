@@ -1621,7 +1621,7 @@ paths:
           name: id
           schema:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-            required: true
+          required: true
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId/description"
       responses:

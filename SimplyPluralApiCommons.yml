@@ -37,4 +37,4 @@ components:
         type: string
       name: objectId
       in: path
-      description: ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility).
+      description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).

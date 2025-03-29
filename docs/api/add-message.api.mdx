@@ -5,7 +5,7 @@ description: "Add a new message"
 sidebar_label: "Add message"
 hide_title: true
 hide_table_of_contents: true
-api: eJzVVE2P20YM/SvEnBJAtZwiJ92cpAEWQWKj66IIFnugRlyLyWhmOqR26y7034OR/L1O77kJGvKRj3x8z0bI9ol1a6q7Z7NY3azDd/KLXltT3d0P94VpSGziqBy8qcyiaQDB0xN0JIIbMoVR3Iip7sz7FtXcFyZiwo6UkoygnPMiamsK47EjUxluTGHEttShqZ5PvnQb87toYr8xwyEh1N/I6k1OO4VL9E/PiRpTaerpstflmAQ3HyA8gLYEE0oB2rKARQ81AUIX/CbkqLpXQCcBEKJD9jC1Aa9qtN+fMDXymw1dROWaHev29Qz+bslDLzlqtbxdQ0iATQOL1Q1YdE52tWIKkZJugQXC2B66WZ4cqzujN/zqnLJiMgMSfReabd7pJSEbvJLX/IQxOraYk8tvkgleEcPE0BRmV5FJ8utef9XzxYg+H4V5qSbbovfkXuYc57kLmTjuaoC0oXcNbAJouIb7lFgp/R9sR11NCbRFhacUlM4K/AxTyS/0CkN2joVs8I2AsLcEFINt4SGkCVe5I1HsYtmgnsCzV9pQmnQW3XYdfjq/rJ6zIbAAexjTro5hOOrZtqg7mFUQNcMwjBUlBi/T+n6fz1+WXn7Knb2dv3359GW5ho/Lv758GAt1pG1oshFk+GLyg8qUj2/KXLvc9VxWk9NQety7UZ+cqUyrGqUqS4w8wxgxbfNEZzZ0Zigugxp6vBZ3XxzM8zZrduJ1bqEHEWPkT7Td21dL2FA6+mEODon/Gy9hJJiv4c/jHf3xL3bR0Znu94M/kfXx116R5392epqfbP9EcewfRjnst3jLXd71yvUJXb5/c+lG66yPbAyJHihRFmITbN+RVxllH/vasQWMDOSbGNirzOBr6EerEspe5Vg0nwk6t48/xEJLiWC/iA1r29d5+uXisIxl2pRTp1Oji8hl7UJdJnKEQqUkm/ectZFCryQzFVOYrIiJxZvZ3AzDD2j4cRA=
+api: eJx9VMFu2zAM/RVBpw3I4nToKbds3YCiWFOs2WEYcpAtxlYrS5pIN8uC/PsoO07jJN1NFiny8fE9byVC0URDGzn9tZWzh9uFfwY3a6jii+VuOZIasIgmkPFOTuVMa6GEg7WoAVGVIEeSVImcLT9XiiS/CCqqGggitkVNehcUVxxJxwH+MprPEX43JoKWU4oNnDa61cKvBFUgfP4EBY34bFAUyokcGELtXekFZ+UNCWXR812wyjiBFI0rxbtcFc9rFTV+KHzN/U1uLA/6fsy9saigVnK6lbQJCVH3SO7SxAkYIH3yepMyTnEW3hE4SiEVgjWFSpCzJ0y4t+elO/zcNEQfIJIBTNGePz4OJ//2SuwQG7eulHNgz9/c3vRs7VM6tvY9BFa+sVowYeQv1V2zAiD+r2wNdQ6Rj4rEOnqCQYO3ajJPM7owobHWsPC80yjQuAIEBF9UYuVjV5cMVyZVh0wrOipvmPqSke7SloLdLPyb/AkGPyCBj6yO9tlFGrgmGbLpikmkfZkHj8SxXdsRg3fYre/jZHLeen6XkF1Prs9D9/OF+Dr/cX/TNmJ7VF4nX6Tyo84eU5m9XGWpd7bHnE1bpyDEl95NTeT1y4oo4DTLVDBjFqGKm8TomIXOAE6TNLxcyluODuZ/TJrt5hr+Ag4i5gJ3sGEsrZsrUJq3cPBzSvbR/G2d0A6Y3PD91Udf/vAuLQx03xN/JOvXq16Rw5u9niZH2z9SnHGrVg79Fh9NnXb9YJuorODB5OlPZpH0wQFWxQoiJCFqXzQ12xtb2YcmZ4MLnl6A08Gz/nAsfvqm/REhpD8RE0rJJsraPv+QKyouK/pFlIaqJk/sZ7PDMuaxzDqkHdBZMFlufZ5FsKAQMoxF2nPSRvQNAY4JeZKkiG6Kq/GEOf8HUoMDrg==
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -47,7 +47,7 @@ Add a new message
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}]}
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>

@@ -1794,7 +1794,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get specific board message"
-      description: "Get specific board message by id"
+      description: "Get specific board message by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
@@ -1848,7 +1848,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Delete board message"
-      description: "Delete a channel"
+      description: "Delete a board message"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:

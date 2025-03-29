@@ -5,7 +5,7 @@ description: "Add a new channel"
 sidebar_label: "Add channel"
 hide_title: true
 hide_table_of_contents: true
-api: eJxtU0Fu2zAQ/ArBUwuoklPkpJubtEAQIA4a91AUPlDk2mJCkSxJOVWN/L27lGW3cm8Sd7g7OzM88AiyDzoNvP5x4MvHu7V7AbvsU4sHm7dNwRVEGbRP2lle86VSTDALr0y2wlowvOBeBNFBghBzE004L7BDwS0W8E8r/A7ws9cBFK9T6GHe+E4xt2WpBeaaZ5CpwG8dmRSWNYAjO2d3jiGq6RMTJjo880Zoy2IK2u7Yu0bIl1cRVPwgXYfzdaMNLva+xNlRttAJXh94GjwxGi/xN9qQiEFMn5waCDHnKZ1NYBOVhPdGS0GUq+dIvA+XrUf+pEtwHkLSEKk6SnGYrX0zqshytZizG0W6vHV7/ptUO9sx3xBPdDJ0hJh0HIjnuSJ2ZBrRSOxYijxrEr2zcaT+cbG45LC6J37Xi+vL0sNqzb6svj3c5ukYjdYpyoSLWRaKRs2r/VVFhKoj86rOKYkQ9lOS+mAQ2KbkY11VwusSDRBhMEbHEk1GAnOQgv3/cJviFPQn8mvc69+4nwzEBvcwIJec5BaEgnDOMoFd0L9zCvKClISv5wx9/iU6b+Ds+WTF5OZf9mq7dXny0aEnjVcH9mj6IAxDfnz+Ttb0KrDAAmwhgJXAlJN9hwmNOQi+bzCjDJdgYJV3Ggsl++76/JYi0GNCXRIFRxgz4U9Y1mJbNum506ntGxKxWp40XYVdNTIdiS69rhrjmiqAARGhikGSXWRxcH2CWKaIm5Cx4xZX5QKl+wO1XY42
+api: eJx1VMtu2zAQ/BWCZ9eymyBpfHObFigCxEHjHIrEB4paW0woUiUpJ67gf+8uafndix7c5XJmdpYt9yAbp8KKj55bPn74ObVvYMZNKHFhtp71eAFeOlUHZQ0f8XFRMMEMvDNZCmNA8x538KcBH77aAqu08Vc5KPgouAZ6XFoTwAQKibrWSgqqlb16KthyL0uoBH2FVQ14hM1fQQasWztbgwsKPEWNqIDeh3i+JRQsRntdCR+cMgu+TuhPd93u/pids1DCHp2jGlgkqKBpCXPC5kBcjxGxQHDPBCOwTcjzGWnia2t8gv55MDjFMLnjB9oE+AiZ9MuzmuwIwYeo6ojmhV9dF1cXQubiAobXg+Imv/oi8+v5zQvnEd3l4PL03PvJlP2YPN3fRmoVhNJiq3htfdRcUOd5thxmxDbbyeLBLcH56JPGaUwqQ6j9KMtErfrYWeFWWivfl7ZCoMdJBSzP5c16Wwc+Eukk2KEPtypggTtYIRZFREoQBTj8S87glGyd+hvtFcmRxX7tzPm9k64zUydrZ5M9mZWZ23jypvWPCreu2INunNAM8fHjyZiWylOAOZiDAyOBFVY2FbbXR4fVTY7mZ0iCgSlqqzDQZ79tw6QwzAPgYKEugRwptO7yt7msxLKs03OhQtnkJGI23mo6cYssIU1Ax7XKcm3zzIEG4SHzTlK7qL3ONgF8P3hkQo1NLIb9AdEnN1TC7ElFg78zwwH1dmfjs/fDpnvR4LUW2Dw8Ibqj3fjtmS+HNA3ouPSKO9EbJbkSw22bI/wnp9drWsaWOrqx8HMpnBI59Qivq15nCjLpG1oFL4gE7dOUQFC6bpKVjm4icmzaMZYS6rCXu51Mcut2YB4mj1NMyje3XmULynXinW5EfI44ftgoUfR0XGu5FmbRiAXlpnPJqOLE52/R55sPYtOFzGoP2aHlexsC9CQ6Z7e0bZoiFLLLT6H/7tjOWcqm9s0Q9T+6eB6e
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"post"}
-  path={"/v1/chat/channel/:id"}
+  path={"/v1/chat/channel"}
   context={"endpoint"}
 >
   
@@ -47,7 +47,7 @@ Add a new channel
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+  parameters={undefined}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Add a new channel
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"text/csv":{"schema":{"type":"string"},"example":"\"67d63acba3e170d9b68cb7f9\""}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

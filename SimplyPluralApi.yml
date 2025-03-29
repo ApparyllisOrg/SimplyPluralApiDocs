@@ -1705,7 +1705,31 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/chat/channel/:id:
+  /v1/chat/channel:
+    post:
+      security:
+        - APITokenAuth: []
+      summary: "Add channel"
+      description: "Add a new channel"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatChannel"
+      tags:
+        - Chat Channels
+      responses:
+        "200":
+          description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67d63acba3e170d9b68cb7f9\""
+        "404":
+          description: NOT FOUND
+  /v1/chat/channel/{id}:
     get:
       security:
         - APITokenAuth: []
@@ -1718,13 +1742,17 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatChannelContainer"
         "404":
           description: NOT FOUND
     post:
       security:
         - APITokenAuth: []
-      summary: "Add channel"
-      description: "Add a new channel"
+      summary: "Add channel by Id"
+      description: "Add a new channel by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
@@ -1738,6 +1766,11 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67d63acba3e170d9b68cb7f9\""
         "404":
           description: NOT FOUND
     patch:
@@ -1786,6 +1819,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatChannelContainer"
         "404":
           description: NOT FOUND
 

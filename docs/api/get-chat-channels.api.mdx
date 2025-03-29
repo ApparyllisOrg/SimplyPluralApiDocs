@@ -5,7 +5,7 @@ description: "Get all chat channels"
 sidebar_label: "Get chat channels"
 hide_title: true
 hide_table_of_contents: true
-api: eJx9U01v2zAM/SuCzkGUDD3lFnRbMRRoCjQ9DEUOssxEQmVJ04exzPB/H2knRpN0u/iDfKTI9546nkCVaPKRr946vn7+sfXv4NYlawzs+t2M15BUNCEb7/iKP0Bm0lqmtMz0cA5s4jOe5SFhBb+n+P05juURUvAuAWY7/mWxoNdly80j72f8bnF3m3rabNn3zevTV94jpIGsfY3hA2Q8Mkgakot2KWga8WGaBLGFmIadSrSI0jmHtBJCBjOXIch4tNakufINHn4NqqH9DLebTWy9KA3NuNMlZx3PxwDYCxs8whFnMbSIBllDxD8nG8oS2EfzRw6L0nLG7f1QbrIlxItpgj2yZ1uitAwP4ddSbLVJlGAR9hDBKWC1V6UBlxPLGlgolTWK4SQMXB28wcSc/fSFKelYAmCS4XKZ+f2g6Qk/YZnGtuxMysFkXSpiQqwnYjbxIMZJx0HXwYjK+kpEsCATiBQVcU4iRV8ypHkmgUidcYvlfEHyB59yIx0xcKKInHbtsgsCOq68y7jt/2w5ipHhdxbBStQCzxrE7k7+eePtEoFUOL4m52ocifJdV+Emr9H2PYV/FYh0W/CzldHIiuTCq/LBnw/ftthL3hjifTDE6YO8eU45irfSlltvzPgAHp7k1E9Lum60G054xo+pf1ZMhhzRRMyu7/u/wpphkA==
+api: eJx1VMlu4zAM/RVB5yBOBz31FrQzRVBMU6DpYVD0IMtMrFaWNBIdNGPk34f0kj1AYDviIvK9RzYyga6jwY28e2/k9GW28F/gpjWWdPCx/RjJApKOJqDxTt7JR0ChrBW6VMgP58AmOZKoVoki5D2f3w/nFB4hBe8SkLWRPyYTfh2nnD9RvPYOwSFbVQjWaMXW7DOxSyOTLqFS/IWbABSkYlQbijMIVTo49/knaCRDiD5ARNNdDN8m4aFf7r0F5eSWUhTnNf2GlNQKxKzg3rqQhNG4FUccFHsctihhAEUYTGCX+/ArlTlVwXmiHkHRWi9UwN7nUQ/7f8IvBe6ruZSjnj2cp3hLEKlrijVJVD0K9GkcP5fRV5dSWZVwTk21pC3MpY74lLNUxlpDovOuSCIZp0FA8LocCuZUwg+5BP3aUnbo9XdbzzfT1WjQ8gELskdt5pb+mu2eqFPGQSSHLfvcTm7Pi32eL8Sv+dvzQ5umAiw9iUSuoOVP8XDIbH2TceLsYAoIvDXE1M5SHS15lYgh3WWZCmZMwlZxw+2PNeG4HZ06FbC+5Pcx2k3pK89BJ5zjWd0PRjBP0E4GN1KCKqjXUS8zyc4+mn8tuG1zhsHi8B6rV1MFuxEvto7KCrpEnq6ABfNBBhFhCRGYwcLruqKJSC2Foc5pgAVVIsAVwRsyjMUfXwutnEgAQglqDply3iW9/85XlJRWDKCsDJZ1zkhk0x0w87jKukq7QqfBZLn1eRaBxjpBlqJmzJmk6GuENEYmiNnpurgZT1i5wSeslNtPYrvhTrfbEQDNfv6vr8OODIRvzIIlwbUDx2Q3vX7e5fqG9x4Fdq/dxiypJLY3TU6dvEW73fLx3xoib2n6XKtoVM500YoeDSSz6L6IemJZawicdq1s3YniZKWypnayfvy5IF91pqOvVkf9B2cfTG5zkPtYUqO+BH6ywC+GNE2nUmps8O9MVyN2Ou68Gc8PGt///pNRXA==
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ Get all chat channels
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The channel itself","type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"},"uID":{"description":"User Id this message is in is from","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"long"}},"title":"chatChannelInfo"}},"title":"chatChannelContainer"}}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

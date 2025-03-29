@@ -96,16 +96,6 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
 
-    chatChannel:
-      type: object
-      properties:
-        name:
-          description: Channel name
-          type: string
-        desc:
-          description: Description of the channel
-          type: string
-
     chatCategory:
       type: object
       properties:
@@ -119,6 +109,45 @@ components:
           items:
             type: string
           description: "List of channel IDs this category contains"
+
+    chatChannel:
+      type: object
+      properties:
+        name:
+          description: Channel name
+          type: string
+        desc:
+          description: Description of the channel
+          type: string
+
+    chatChannelInfo:
+      type: object
+      properties:
+        name:
+          description: Channel name
+          type: string
+        desc:
+          description: Description of the channel
+          type: string
+        uID:
+          description: User Id this message is in is from
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
+
+    chatChannelContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Message Id
+          type: string
+        content:
+          description: The channel itself
+          $ref: "#/components/schemas/chatChannelInfo"
 
     commentsPost:
       type: object

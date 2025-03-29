@@ -5,7 +5,7 @@ description: "Get a specific channel"
 sidebar_label: "Get channel"
 hide_title: true
 hide_table_of_contents: true
-api: eJxtUk1v2zAM/SuCThvgWenQk29Bhw1FgaZAs8Mw5CDLjM1VljRRyuAF+e+j7CVFs50si0/k++BREpgcMU2y+X6U66f7rX8Bt85p4IvdaVfJDshEDAm9k438AkloQQEM7tEIM2jnwMpKBh31CAkizZ2wgIPmNpV0XOA/7Pgc4WfGCJ1sUsxw3f2+E34v0gDCtz/ApIrPSMJoJ1rguaN3vReMajPTsOT5LliNTlCK6HrxrtXm5ZeOHX0wfuT52KJlde9rnk1mgFHL5ijTFAqj5ZE8FZlJ94W5vBt0EneLLJK7wpiCdwRUHn5crcrnLevNgzxV8nZ1+2/pcbMVnzdfHz/xkEqyP4Nn6bKHNFtWXJbqcKPYx6T+mqma2SmCeDi7maNl4JBSoEYpHbDWgQ2frEWqWSjPvwZ1cPgfblddEn8udiyy3uZ+8YcbPMDEXOY0B9AdxNc8C9hH/K1nrUUfur2fn2OyBfGMY7CTeLI5ait4iLwOfFvi5YKIsIcIzoDovMkjuETzHoTcWt4zZiLAdcEjF2rxzed5KQjKVrC4VPZGW3vGX7Bi4LbibEqPachtcUKtL8ZsYq8WpgvRdUDVWt+qCBY0gaJoiuclp+hzAqoTsZKSzqLipl6x/j+KiyJl
+api: eJy1VU1v2zAM/SuCTiuQxe3QU25BuxVFsaZY08NQ5CDLTKxWllRJzpoZ/u8jZcdpPnocEDiyRVKP5HtUwwPI2qu44ZPnhk8fbuf2Fcy0jiV+WLSLES8gSK9cVNbwCb+ByAQLDqRaKslkKYwBzUfcCS8qiOBDiqTI2AkMM+IGN/BNFbj28FYrDwWfRF/DYfTbgtkliyUwm7+AjCNcq8CkMCwHPLeyZmUZWuU1wtDB4jenhTIsRK/Min3JhXz9I3wRvkpb4fkqVxqzOxvj2UGWUAk+aXjcOELUOfGW0oxiRcj5VSkiu+rSCnxBiIOzJkAgx2/n5/S3j3p2h8GlNRFMpF3hnFZS0G72EsikOT67S5AK560DH1V3ALyrEMMHu9xaDcLwdkQFPDr7J4QgVoA1wVAHae2B2nebY4n73jEVA+jlzv0TZF0XDwP1lWJp9wQCsj72ut69bRu+Y9JRjPr2+jjEUwBPTEgEqfoq4BK5gM+lt9WpUFqEOMOkUnPm6lRG9JWiVEprheqwpggsKCOBgbOy3AKmUMxuYzH8JShD9fqztU0Mw3cVNX3ARGNftVuztJ/tXWHrkNjg0YBMLs8vj7Hez+bsx+zp/jpFQfmVFjnCV5DaR+qb8Gx9kVHcrK9w1qiiJTWAX2/VWnuNlmWMLkyyTDg1Rg4Lv6EKjFFIWLpDowLWp+wWo2GiPBLlO+7sz5WB2xjgDjaIJU2LEkSB6Q7zgoytV39TfVOCiupF7n25HlXl9IY96NoLzfAQfjhQ5tQS3GAeluCBmlhYWVcoipC66OoctcoQCQNTOKtwY8x+2zoNnQA0dTC5SF0XWm/tB1tWYli2LcpKxbLOqRLZdCjMzK+yDmkHdOpUlmubZx5Q2QGy4CXVnBrlbR0hjHECjDh1p8viYnxO5HU2xEqYnRjTNN4JZy/1Zif+z4d234cI7zFLczTJjfrc9PR55usLmm5IoO6v95zgMMJelwiJjJomx0yevG5b+vxWg6cbBZdr4ZXIqV3Is0IFWiNHlzi9D8f/R8hffvUXxRn7v5fCyRJs+WmInGuha3rD5SuyNV1k7QKtesJSYt3GVEpw8YPL0U1A+hhkevN9jrbiSBOvSRP9gqKfhLMvjy02epJYT7o0Tae4th3su61PPQZN9plTBjiO/gGyTtDr
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"get"}
-  path={"/v1/chat/channel/:id"}
+  path={"/v1/chat/channel/{id}"}
   context={"endpoint"}
 >
   
@@ -62,7 +62,7 @@ Get a specific channel
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The channel itself","type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"},"uID":{"description":"User Id this message is in is from","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"long"}},"title":"chatChannelInfo"}},"title":"chatChannelContainer"}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

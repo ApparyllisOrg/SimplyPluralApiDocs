@@ -26,6 +26,8 @@ components:
           description: Whether the description supports markdown
         timestamp:
           description: Milliseconds since epoch for this timestamp/date
+        lastOperationTime:
+          description: Time in milliseconds since epoch of the last operation on this object
 
   parameters:
     objectId:

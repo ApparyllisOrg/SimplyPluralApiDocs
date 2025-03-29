@@ -1899,6 +1899,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
         "404":
           description: NOT FOUND
 
@@ -1913,6 +1919,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
         "404":
           description: NOT FOUND
 

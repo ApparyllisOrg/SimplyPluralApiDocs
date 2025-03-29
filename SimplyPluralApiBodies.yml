@@ -118,7 +118,7 @@ components:
         channels:
           items:
             type: string
-          description: "List of channel IDs this category contains"
+          description: "List of channel Ids this category contains"
 
     commentsPost:
       type: object

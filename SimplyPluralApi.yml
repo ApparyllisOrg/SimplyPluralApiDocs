@@ -1627,10 +1627,10 @@ paths:
         - APITokenAuth: []
       summary: "Get category"
       description: "Get a specific category"
-      tags:
-        - Chat Categories
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Chat Categories
       responses:
         "200":
           description: OK
@@ -1661,10 +1661,10 @@ paths:
         - APITokenAuth: []
       summary: "Update category"
       description: "Update a category"
-      tags:
-        - Chat Categories
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Chat Categories
       requestBody:
         required: true
         content:

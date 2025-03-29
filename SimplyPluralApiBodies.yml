@@ -54,6 +54,7 @@ components:
         read:
           description: Whether this message has been read, this must start as false
           type: boolean
+          example: false
         supportMarkdown:
           description: Whether this board message supports markdown
           type: boolean

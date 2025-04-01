@@ -828,7 +828,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedReminder"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimer"
       responses:
         "200":
           description: OK
@@ -861,7 +861,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedReminder"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimer"
       responses:
         "200":
           description: OK
@@ -895,7 +895,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedReminder"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimer"
       responses:
         "200":
           description: OK

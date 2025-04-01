@@ -72,7 +72,7 @@ components:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
 
-    automatedReminder:
+    automatedTimer:
       type: object
       properties:
         name:
@@ -88,7 +88,7 @@ components:
             2 -> Any front change"
           type: integer
         delayInHours:
-          description: Delay in hours since the action (front change)
+          description: 'Delay in hours since the action (eg: front change)'
           type: integer
 
     automatedTimerInfo:

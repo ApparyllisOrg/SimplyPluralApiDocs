@@ -257,6 +257,18 @@ components:
           description: Description of the channel
           type: string
 
+    chatChannelContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Message Id
+          type: string
+        content:
+          description: The message itself
+          $ref: "#/components/schemas/chatChannel"
+
     chatContainer:
       type: object
       properties:

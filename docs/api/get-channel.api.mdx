@@ -1,0 +1,69 @@
+---
+id: get-channel
+title: "Get channel"
+description: "Get a specific channel"
+sidebar_label: "Get channel"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VE1P4zAQ/SuWTyB1m7Li1FsFLEJoKVrKYYV6cJxpY+rYxna6dKP8951J0pR+HffSOvab7/em4gFk6VXc8PFbxSfPDzO7AjMpY44X83o+4BkE6ZWLyho+5vcQmWDBgVQLJZnMhTGg+YA74UUBEXxoPCkCO4FuBtzgA36pDM8ePkrlIePj6Es49P6QMbtgMQdm03eQcYBnFZgUhqWAcQtrlpYhKi0xDR0s3jktlGEhemWW7CIVcvVH+Cx8k7bA+CpVGqu7HGLsIHMoBB9XPG4cZdQa8ZrKjGJJmfObXER205YV+JwyDs6aAIEMv49G9Lef9fQRnUtrIphIr8I5raSg1+Q9EKQ6jt0WSI3z1oGPqg0AnyrE8AWXWqtBGF4PqIFHsX9CCGIJ2BN0dVDWXlL7ZjNscdGZqhhAL3bmZzJrp3joqOsUa15PZEDoY6vb3dd24DsmHQ4Hb1TUdIWY2AU8d3+DFSMfwCOAINej6+PwT9MZ+zF9fbptvCBrc4ut5UtoqibSjnmyvkrIb9IlllQqq4lE4NdbkpdeIzKP0YVxkginhjh64TdaqzBE/mEDDkEZrE/h5oNeiC/ElLbl+3LsKYEOHmGDuTQiy0FkWG4vMwJbr/42/GsKVGZhG/OuXS+qcHrDnnXphWYYhB/qcEaqwwfmYQEejASWWVkWyKXQTMuVKVKcYSYMTOaswoch+23LRqsBSKxYXKTpCq23+B7LcnTLtk1ZqpiXKXUimfSNmfpl0mbaJjpxKkm1TRMPKIgASfCSek6D8raMEIYonAGn6bRVXA1HREFnQyyE2XG4WWI7vu2VXu00c37XdXOI8BmTZv1QmGbOVUefN76+oqWABGr/OssxahhnnWNKBKqqFCt59bqu6fqjBE+LGI9r4ZVIaVzIs0wFOiNHF7j0Drfm15QvfnX79ZL93116sgVbfhoi51rokr7wuEK2Nvu/niOqIywV1j5MpAQXv5gcLVDSRy/T+7sZYsWRJlaNJroDeT+Zzr48trnRL4n1pElVtYqr6x7fPp216DXZVU4V4Dr6B1wZih4=
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get channel"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/chat/channel/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a specific channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"}},"title":"chatChannel"}},"title":"chatChannelContainer"}}}},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

@@ -1,0 +1,69 @@
+---
+id: add-channel
+title: "Add channel"
+description: "Add a new channel"
+sidebar_label: "Add channel"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1lE1T2zAQhv+KRuc0TgoDJbdQ6EyHGUIhHDqQgyxvYoEtuZIcSD35792V7Hz34g/tavXu7rNquANZW+VXfPTS8PHDz6l5Bz2ufY4Ls/WsxzNw0qrKK6P5iI+zjAmm4YPJXGgNBe9xC39qcP7aZBilCb/KQsZH3tbQ49JoD9qTSVRVoaSgWMmbo4ANdzKHUtCXX1WAR5j0DaTHuJU1FVivwJFVixLova/ne1TBgrXXhXDeKr3g66j+eNfN9o+ZOfM57KRzEAODeOULWkIf3x6I68EiFijuhWR41pocn1FNXGW0i9K/DgbHGiZ3fK82Hj59It3yZE22CcGnKKug5pVfXGYXZ0Km4gyGl4PsKr34JtPL+dUr50Hd+alzr8c37PH21/Pt05QHn/Njn/vJlP2YPN/fhPRL8LnBdvLKuNAXQXTwZDlMqCLJtnQO7BKsCyzVtkCn3PvKjZJEVKqP3Rd2VRTK9aUp8fBDpwyWp/xmvQ2lT1SYWNR9VjeVwgB3sEItihLJQWRg8S/Sw8nZWPU3IBiSIwwftwDfduXtgOtK36G00wql5yac3OLxpHDrij0UtRUFQ338cHqmuXJkYBbmYEFLYJmRdYkIuEBhVac4IAyTYKCzyig09NlvUzMpNHMAOHxYF0/UiqLo/De+LMewrKvnQvm8TqmIyXhT04ldJFFpFDquVJIWJk0sFCAcJM5Kahe115rag+t7h5lQY2MWw/6A0icaSqF3SkWXwxaGvdSbLeon75C2e2EIqkJg8/CEQEfT8vbCl0OaGCQuvsJOZCMnKtHcNCnKf7bFek3L2FJLtxp+LoVVIqUe4ZXW66AgSN8RFbxEorQvUxJB7kUdUTq4rYjYuGMsJVR+x3czvUTrZmAeJjhkPZ62N2NpMvK14oNuTXyOOH6YUKLAdFhreCH0ohYL8o3nEqjiiPP3wHn7Qdl0Jr3aUbaPfK9NgJ6UzsktTROnCAvZ+UfTf3ds5ix6U/tmqPofGEkpSg==
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add channel"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/chat/channel"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add a new channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"}},"title":"chatChannel"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"text/csv":{"schema":{"type":"string"},"example":"\"67d63acba3e170d9b68cb7f9\""}}},"400":{"description":"BAD REQUEST"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

@@ -1,0 +1,69 @@
+---
+id: update-channel
+title: "Update channel"
+description: "Update a channel"
+sidebar_label: "Update channel"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VcFu2zAM/RVBpxZI43ToKbes3bCiQFO06WEYcpBtNlajSJokp80M//tIyU5aJzvuksoiKT7yPbIN91DUToYdn/5q+OzhdmHWoGd1qPBi2S5HvARfOGmDNJpP+bMtRQAmWFEJrUHxEbfCiQ0EcD6+IcnNCnxgxDUa8EuWeHbwu5YOSj4Nrobhu7clMy8sVMBM/gpFGOFZelYIzXJKtzF6ZRh65XVgQnmDd1YJqZkPTuoVO8tFsX4TrvQXhdlgfplLhXWdjzG3LyrYCD5teNhZQpSCeEsFEjDw4aspd+QxxFkYHUAHMglrlSwEQc5ePeFujp9O+KkvzlhwQYIna2pFMyj7OnWRRetoiC416Tjq5vDVd+1Ax7BCvJFB0RX6hC4h3keLWBFpBCOwzuR57Im3RvsE/ctkcoxhfkf4riZXx6b7+YJ9nz/f38TsKI3KlEkTRRX1QuLi2fYyI0RZBz1rZNkSV+C2vZZqp9CzCsH6aZYJK8dIgXA7paQfI80IYehUwvaU33K0V/oTMZYq+6z3PYX4wB3sEEvUcgWiBHdQMzkbJ/9EHcQSSQuPBxV9excbq+DAek9Gz+cHgqV+MTFzx9GTxNAde1C1E4ohPj6clAXNBRqYgxdwoAtgpSnqDWrURynYOkeVMiyCgS6tkWgYs5+mjtPkgcYJ+xJIOkKp3n/vyyp8lvX9XMlQ1Tk1MZvtezp3qywhTUBnVma5MnnmQIHwkHlXEF3EsTN1AD8OHishYlMVl+MJlW+NDxuhP7SqWzAHPX+qvjmM46lV1PEX4D1kcTtQjqiPppPdL769REcSXvrTRU5xR6FGKsRDTk2TYxnPTrUtXSO1jjYkHrfCSZETV6jPUno6o7pfcCcNl9pHsGeP3Vo5Z/931Z1sQa9rTaLeClXTFx7XqPK4ntslenVCp8KS4TrBv1hQ+CHwaA3SdO3H/GG2uP6B3nm3TzempCAn3uifAP7GzCb2KA5hvGu4EnpVixX5pkdpssTRYK7jYHYHgnqyts8z2hdKv7QxToY0TRr7tt37J9M/I/aLoWsjNQJR/wX27IC3
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update channel"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/chat/channel/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"}},"title":"chatChannel"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

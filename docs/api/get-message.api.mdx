@@ -1,0 +1,69 @@
+---
+id: get-message
+title: "Get message"
+description: "Get a specific message"
+sidebar_label: "Get message"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtUk2P0zAQ/SvWnEAKSRftKbcKBFqttF1pywGhHhxnmgzr2MZjF5Wq/51xwhZt4RTH82bmffgEjCZHSkdov51g/Xi39c/o1jmNcrE77yrokU2kkMg7aOEzJqUVBzS0J6MmZNYDQgVJDywt8GHUCaQt6KgnTBh5nkylOWgZW4GTgvxRL+eIPzJF7KFNMeP1trte+b1KIyrffUeTKjkTK6Od6lB4TN4NXgmqy0LLspe7YDU5xSmSG9SbTpvnnzr2/M74SfZTR1bUvq1lN5sRJw3tCdIxFEZLE5yL7IgcvGPkUn+/WpXPa3KbezhXcLu6/bf0sNmqT5svDx9lVgViw+hFIQyYoFpcaKE53DRGzGr+eNi0syGM8fBiWo5WgGNKgdum0YFqHcTXo7XEteiR/degHg//w+2qS9BPRfUi63XcFxtkwD0ehcsc2oi6x/g3tgL2kX7pWWvRR27v53ZKtiCeaAr2qB5tjtoqWQLXuW5LilJQEfcY0RlUvTd5Qpd4jjvkzsrzEiYKXR88SaFWX32es2cs4Yu4VJ6HtvYFf8GqUcaqF1MGSmPuihPN+mLMJg7NwnQhug7UdNZ3TUSLmrHhaIrnJafoc0KuE4uSks6i4qZeif7fsVkfMQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get message"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/chat/message/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a specific message
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

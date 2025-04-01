@@ -1,0 +1,69 @@
+---
+id: get-category
+title: "Get category"
+description: "Get a specific category"
+sidebar_label: "Get category"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VU1v2zAM/SuCThuQxe3QU25Buw3FtqZY08NQ5CDbTKxVllRJzpoZ/u8j5Y98ON1tQJHKEkk9Pj5SNfeQVU6GHZ891Xx+f7s0z6DnVShwY9WsJjwHnzlpgzSaz/gXCEwwbyGTa5mxTATYGLfjE26FEyUEcD6GkmRtBcaZcI0H+CVzXDt4qaSDnM+Cq+A0/G3OzJqFAphJf0EWJriWHq/RLAW8uDR6YxhapRXiUN7gnlVCauaDk3rD3qUie/4tXO4/ZKbE+2UqFab3fop3+6yAUvBZzcPOEqLWiTeUZxAbQs6vCxHYdZuXBM9XhNlboz1+oOvHiwv6d4x78RXDZ0YH0IFOhbVKIjl4mvzyZFKPb29TJOqcseCCbC+AV+mDP7BLjVEgNG8mROHo7u/gvdgAsoKhThI7AnXstkSSy85VBg9qvXd/A1lbx9NAHVc7Fo/PQCDzsdvN/quv+YGaxnkUQmtQEYcMUPozZTxV0zckkmJ3vsiQ7/XUQSZ2UD2efKvbmzHKRw+O9BbdBro8Q8Xh79qZ8hxYJXxYIHFRAEt5jjXapSilVEpiExqN4LzUGTCwJit6TigUM30shn8RylCh7m5loo7xWwZFG5hzGG1ct+mCwxM6u7q4GiO7WyzZ58Xj3U10x5YuDKqObyAKgjp6xpPtZUIBk57JpJZ5Qy0GbtuPgMopNC1CsH6WJMLKKbaFcDtKeIrdiUydGuWwPWe3mgxz6oG6qJXj8bQa1IABvgJpKI6gAkSO+Q5DiIyxsf9EOmOGUq9NdO+IepClVTt2ryonFMNL+KmullQBPGAO1uCAapabrCqxz3wsmq1SbH+GSBjo3BqJB1P201RxknmgUaY6cQqlevvBlhUYlvWkbGQoqpSYSOYDMQu3SVqkLdC5lUmqTJo4wGHhIfEuI86pUs5UAfwUh8qEU3XaLC6nF6RVa3wohd73d5zxB614lHu9Hyj/eAu6SgR4DUkcz7G/qNJ1p6Anvr3kk1al+G/vOsMRh+UuEBVZ1XWKyTw61TS0/VKBo6cKl1vhpEipYii1XHpao07X+CqcPiuHoN/96B6g9+z/PjZnOeglqinVrVAVfeHyGQUbH8hmhVadZimx9mCeZWDDgcvofaEWGVr1y6cl2opRWzzHtugWFP0snOMO6bHRL/XrWZe6bpuuaQb79uhNj6Etu8wpAxxJfwEWWPFI
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get category"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/chat/category/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a specific category
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"items":{"type":"string"},"description":"List of channel Ids this category contains"},"uID":{"description":"User Id this message is in is from","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"long"}},"title":"chat"}},"title":"chatContainer"}}}},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

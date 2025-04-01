@@ -1,0 +1,69 @@
+---
+id: update-category
+title: "Update category"
+description: "Update a category"
+sidebar_label: "Update category"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VcFS2zAQ/RWNTjATYuhwyi0N7ZShAwyEQ4fJQbaXWCBLqiQHUo//vbuyHQcnPfaSSNrV6u3bt+uae8gqJ8OWz55rPr+/Xpo30PMqFHiwalYTnoPPnLRBGs1n/MnmIgATLMO/tXFbPuFWOFFCAOdjEEl+VmCECddowJ3Mce3gdyUd5HwWXAXjwNc5My8sFMBM+gpZmOBaenxGs5TeK41eG4ZeaRWYUN7gmVVCauaDk3rNTlKRvb0Ll/uzzJT4vkylwsROp/i2zwooBZ/VPGwtIWov8YYyJGDgw1eTb8ljjDMzOoAOZBLWKomZI+Tk1RPu+jB0i594ccaCCxI8WVsq6lHai45GFs2TMbyWpcNrV8Oup22vIAdBskJoDcrvoRTOCfKVAUp/hJhxfX5KH+ipLhRWwvcV6jIgnrAeHklFCDIoCofuoc8RDdEk1iQUvkAT62zEUayEt0b7lrAv5+eHid/dELTL88tD0+3dkn2/e7q9igBQkIXJWyVmRVQpaZonm4uEQCU97qSWeUMSAbfpJVw5ha5FCNbPkkRYOcXKC7dVSvopqgsxjJ1y2BzzW012HfZIQmlT+9xnQ02svIFYFMqnAJGDG5qInJGpP1F+MUeS4MMg3m8forQKBrH1xexVNOwHQTz3h6uG3n0xEU9XvUeJAbfsXlVOKIao+VgWS5IAGpiDF3CgM2C5yaoSG8ZHWdoqxZZhmBoDnVsj0TBlv0wVW9sD9bbqtCWU6v13vqzAsKxneS1DUaVEbTLfMX3n1kmLtAU6tzJJlUkTBwqEh8S7jIpIpXemCuCnwWMmVO42i4vpOcnKGh9KofcI7MbdXm99Sr8ehsPRydjVNcBHSOKwoleibupOj898c9HWgybG3tUZzkwUT4GQyKuuU8zkyammoWOsuaORjcuNcFKkVC4Ubi49rVH3Lzgjx0N2H+7JQzfmTtn/Hb1HOegFrynVjVAV7XD5hvKPn4uG5Nh1ACXWGhYt/LMlXR8uHoxlarvdALifLxc/0Dvt5ntpcrrkxDt9lPA3vmwiR7E741nNldDrSqzJtw1KLScOOvYtdmy3IKhHc/vcvH2i9Euj5OiVum7nQdPs/FvTP2/sJkZHIxGBqP8CUEe04w==
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update category"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/chat/category/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a category
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"type":"array","items":{"type":"string"},"description":"List of channel Ids this category contains"}},"title":"chatCategory"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

@@ -1,0 +1,69 @@
+---
+id: delete-message
+title: "Delete message"
+description: "Delete a message"
+sidebar_label: "Delete message"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtUk1v2zAM/SuCTivgWenQk2/BigFFgaZAs8Mw5CDLjK1WljRSyuAF+e+j7CVDs50si4/k+9BREpiMNk2y+X6U6+eHbXgDv85p4IvdaVfJDsigjckGLxt5Dw4SCC1GINI9yEom3ROD5edBJ8kNUaMeGYQ0z7SlLWoeWEnPBf6zHZ8RfmSL0MkmYYbrPQ+dCHuRBhChfQWTKj5bEkZ70c7rg++DYFSbk9COAt9Fp60XlND6XnxotXn7qbGjjyaMvN+21rHOm5p3kxlg1LI5yjTFwmhpkqciGIFi8ARU6p9Wq/J5T27zKE+VvFvd/Vt62mzFl83Xp3ueVUm2YQiskEHFNlktRjRSHW6VYb/UHxtVM3tCgIezbxkdA4eUIjVK6WhrHdnayTlLNUtiCtegDg7/w+2qS8ovRfii7H3WFyd4wCNMzGXObQDdAf5NroAD2l96llskWr8Pc7tNriBe7BjdJJ5dRu0EL5HX0W5LkFwQCHtA8AZEF0wewSeaE4+5ddYIZiLAdzFYLtTiW8hz/AQlfxaXygvRzp3xF6wYeKw4m9LbNOS2OKHWF2M22KuF6UJ0Ha1qXWgVclCaQBGa4nnJCUNOQHUiVlLSWVTc1ivW/xswpB4x
+sidebar_class_name: "delete api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete message"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/chat/message/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a message
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

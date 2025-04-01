@@ -83,8 +83,8 @@ components:
           type: string
         type:
           description: "When this reminder should trigger.
-            0 -> Member front change
-            1 -> Custom front change
+            0 -> Member front change,
+            1 -> Custom front change,
             2 -> Any front change"
           type: integer
         delayInHours:

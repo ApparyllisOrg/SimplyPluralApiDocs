@@ -13,6 +13,66 @@ paths:
 
 components:
   schemas:
+
+    analyticsIdValuePair:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the member
+        value:
+          type: long
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+
+    analytics:
+      type: object
+      properties:
+        timings:
+          description: Groups of fronters based on timings
+          type: object
+          properties:
+            morningFronters:
+              type: array
+              items:
+                type: string
+            dayFronters:
+              type: array
+              items:
+                type: string
+            eveningFronters:
+              type: array
+              items:
+                type: string
+            nightFronters:
+              type: array
+              items:
+                type: string
+        values:
+          description: Values for the timeframe
+          type: object
+          properties:
+            sums:
+              type: array
+              items:
+                $ref: "#/components/schemas/analyticsIdValuePair"
+            averages:
+              type: array
+              items:
+                $ref: "#/components/schemas/analyticsIdValuePair"
+            maxes:
+              type: array              
+              items:
+                $ref: "#/components/schemas/analyticsIdValuePair"
+            mins:
+              type: array
+              items:
+                $ref: "#/components/schemas/analyticsIdValuePair"
+            nums:
+              type: array
+              items:
+                $ref: "#/components/schemas/analyticsIdValuePair"
+
     automatedReminder:
       type: object
       properties:

@@ -1,7 +1,7 @@
 ---
 id: get-specific-board-message
 title: "Get specific board message"
-description: "Get specific board message by id"
+description: "Get specific board message by Id"
 sidebar_label: "Get specific board message"
 hide_title: true
 hide_table_of_contents: true
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"get"}
-  path={"/v1/board/:id"}
+  path={"/v1/board/{id}"}
   context={"endpoint"}
 >
   
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Get specific board message by id
+Get specific board message by Id
 
 <Heading
   id={"request"}
@@ -62,7 +62,7 @@ Get specific board message by id
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":null,"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"title":{"description":"The title of the message","type":"string"},"message":{"description":"The contents of the message","type":"string"},"writtenBy":{"description":"Id of the member that sent the message","type":"string"},"writtenFor":{"description":"Id of the member that recieved the message","type":"string"},"writtenAt":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"read":{"description":"Whether this message has been read, this must start as false","type":"boolean"},"supportMarkdown":{"description":"Whether this board message supports markdown","type":"boolean"},"uid":{"description":"The user associated with the message","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"string"}},"title":"boardMessage"}}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

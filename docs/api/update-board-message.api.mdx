@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"patch"}
-  path={"/v1/board/:id"}
+  path={"/v1/board/{id}"}
   context={"endpoint"}
 >
   
@@ -54,7 +54,7 @@ Update a board message for a member
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"read":{"description":"Whether this message is read or not","type":"boolean"}},"title":"boardMessagePatch"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"read":{"description":"Whether this message has been read","type":"boolean"}},"title":"boardMessagePatch"}}}}}
 >
   
 </RequestSchema>

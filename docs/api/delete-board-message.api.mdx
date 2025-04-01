@@ -1,7 +1,7 @@
 ---
 id: delete-board-message
 title: "Delete board message"
-description: "Delete a channel"
+description: "Delete a board message"
 sidebar_label: "Delete board message"
 hide_title: true
 hide_table_of_contents: true
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"delete"}
-  path={"/v1/board/:id"}
+  path={"/v1/board/{id}"}
   context={"endpoint"}
 >
   
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Delete a channel
+Delete a board message
 
 <Heading
   id={"request"}

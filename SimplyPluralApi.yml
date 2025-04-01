@@ -20,7 +20,7 @@ tags:
     description: Everything related to board messages
     x-displayName: Board Messages
 
-  - name: Chat
+  - name: Chat Messages
     description: Everything related to chat messages
     x-displayName: Chat Messages
 
@@ -339,7 +339,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/notesPost"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/notes"
       parameters:
         - in: path
           name: docId
@@ -585,7 +585,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/commentsPost"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/comments"
       tags:
         - Comments
       responses:
@@ -1587,9 +1587,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePost"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessage"
       tags:
-        - Chat
+        - Chat Messages
       responses:
         "200":
           description: OK
@@ -1611,7 +1611,7 @@ paths:
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
-        - Chat
+        - Chat Messages
       responses:
         "200":
           description: OK
@@ -1633,9 +1633,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePost"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessage"
       tags:
-        - Chat
+        - Chat Messages
       responses:
         "200":
           description: OK
@@ -1660,7 +1660,7 @@ paths:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePatch"
       tags:
-        - Chat
+        - Chat Messages
       responses:
         "200":
           description: OK
@@ -1672,7 +1672,7 @@ paths:
       summary: "Delete message"
       description: "Delete a message"
       tags:
-        - Chat
+        - Chat Messages
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       responses:
@@ -1703,7 +1703,7 @@ paths:
             minimum: 1
             maximum: 100
       tags:
-        - Chat
+        - Chat Messages
       responses:
         "200":
           description: OK
@@ -1761,7 +1761,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatContainer"
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatCategoryContainer"
         "404":
           description: NOT FOUND
     post:
@@ -1842,7 +1842,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatContainer"
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatCategoryContainer"
         "404":
           description: NOT FOUND
 
@@ -1985,7 +1985,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessagePost"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessage"
       tags:
         - Board Messages
       responses:
@@ -2026,7 +2026,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessagePost"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessage"
       tags:
         - Board Messages
       responses:

@@ -19,7 +19,7 @@ components:
         systemId:
           description: The system Id
         color:
-          description: Color of the object (\#ffffff, \#ffffffff or ffffff)
+          description: Color of the object in a hex format (eg \#ffffff, \#ffffffff or ffffff)
         private:
           description: Whether this object is private
         preventTrusted:
@@ -27,7 +27,7 @@ components:
         supportDescMarkdown:
           description: Whether the description supports markdown
         timestamp:
-          description: Milliseconds since epoch for this timestamp/date
+          description: Time in Milliseconds since epoch
         lastOperationTime:
           description: Time in milliseconds since epoch of the last update on this object
 

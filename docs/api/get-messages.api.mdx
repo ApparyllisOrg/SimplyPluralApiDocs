@@ -1,0 +1,69 @@
+---
+id: get-messages
+title: "Get messages"
+description: "Get messages of a specific channel"
+sidebar_label: "Get messages"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtkkFrGzEQhf+KmPNiOSGnvZmWlhCIDXYOJfgga8eroVpJ1YwMjtn/XrSL3cbtSSA9ab73ni7AaEsmOUP7foHV5nkXf2JYFXHQvu/HfQMdss2UhGKAFr6jqAGZTY+s4lEZxQktHckq60wI6KGBZLIZUDDz9CrVi8mIgwaCGRBaoA4aYOtwMNBeQM6p7rJkCj2MDWT8VShjB63kgvcQ20mnqKsE4vA6WklU/d+AxxwHqCbE9JUFvjgjsK/vc4qBkev0x+WyLp9nrF8qx9Py6d+j1/VOfVu/vX6FcWxgQHGxgxZ6lMl7jQ706UFbZ0RfWXQ7e8Z8uuZSsocWnEjiVmuTaGFSMvnsPfHCVvLmXtTh6X+6fXPrcVtDnX19bvOWskn0gmdo5l4cmg7zn2aqOGb6MJPZapDCMU7XSXxVbGlI/qw2vmTj1WrzDPf97BxxPVAZj5gxWFRdtGXAIDz1lcrBk1UmkcLQpUhBeKF+xKKsCYoRlVGeWKYf5v1Vf9MqhxnVNZSexJVDTUKvbsGsc69n0hl0lUgffDzojB4No+Zsa+a1qByLIC+EoYHazuziYbGEcfwNPN8UZA==
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get messages"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/chat/messages/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get messages of a specific channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"type":"string"},"required":true,"description":"String id of the channel to get messages from"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

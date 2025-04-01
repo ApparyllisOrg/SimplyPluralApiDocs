@@ -1,0 +1,69 @@
+---
+id: get-automated-timer
+title: "Get automated timer"
+description: "Get an Automated Timer by id"
+sidebar_label: "Get automated timer"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVF1r2zAU/SviPm0g4nT0yW+BbaUUmrKmDyP4QbFvYlFZUqXrMM/ov49rJ16TpWyMviS2db/OOfeoh4hlGzR1kK97WDzcrtwz2kVLNeTrIhUSKoxl0J60s5DDDZJQVixaco0irMRKNxjEphO6AgmkdhHyNZydRygkeBVUg8Rv3EtzOa+oBglWNQg5VK685SqxrLFRkPdAneeDSEHbHSQJAV9aHbCCnEKL59M9DnHithJuK6jG8zkhyYuNYxcJm3fuPRYF5jBg9M5GjFz303zOf6fZyzvucD2//vPofrkSX5dP958hJQkNUu0qyGGHBHLEkUO2v8qIEWbqiDjrj6hS1g/MJoaHYX9UoA0GcqiJfMyzTHk9U96r0Bmj46x0zcDWaVCF+0txhZz26JH5G4GebtNEqPL6DjuQoxA1qgrDbyk42AX9Uw3oGbG2WzekazIc8agbbzrxYNqgjFg83MK5FKtaRz4QAbcY0JYoKle2DVqKgzS+3RhdCuW1QFt5py3FmfjuWlEqKyKiUMLoSCylMuYYP8WKGgOKIyk7TXW7YSayxUTMMuyycdJx0IXX2ca4TRbQoIqYxVAy56xccC1hnFEECazOiOJqNued8C5SoywzcKBo8OC02IPs5xT0UDpLaOkfLDuqQviDMm+Uttx0UL0/bNca9lcceGg0tQYJ+Svn5KN9Cwm1i8Rpfb9REZ+CSYk/v7QY+J4pJOxV0GrDcq57qHTk5wryrTLx3FivoXz4drDgR/FXq7+B7LiEljdwr0zLbyDhGbvpBuK9f5+hDnfAf80yUZuK176/+bIaRTjz1PPgqcMD03qx+qm9jq34l0FfTOn70bEpTfHj0ZsZk6fHaAZbpJR+AaTjL/Q=
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get automated timer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/timer/automated/{systemId}/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get an Automated Timer by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Automated Timer"},{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

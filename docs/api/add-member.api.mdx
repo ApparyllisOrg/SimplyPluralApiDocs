@@ -1,0 +1,69 @@
+---
+id: add-member
+title: "Add member"
+description: "Add a member by (optionally) an Id"
+sidebar_label: "Add member"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVl1v2zYU/SsX3EtSqFEydC9689oVMLImQeJgGFw/0NK1xZoiWZJy6wr678MlJdmOlHZ5cCjyfpLnHLJhDvPaCn9g2bJhs4f5Qu9QzWpfsmy5alcJK9DlVhgvtGIZmxUFcKiwWqOF9QEudFjhUh4ugSuYFyxhnm8dy5bsUzBzbJUwi19rdP5PXRxY1oRPYbFgmbc1JizXyqPytMSNkSLnFDX94ihpw1xeYsVp5A8GWcb0+gvmniXMWG3QeoGOVhWvkP6f13zHKwS9AV9iVznVGAM5b4Xasjb2Ofb9cPz6dYhcS23HMd7TdO8dK4eLz59/24S/BIbhZgPaQhxdTiUwVitdKzfO8dCt/LpIs5sXE/6ytlzeCg/zD+cxEvjjrUTv0UIXZCIo33PP7bOV48jPj3/DRtsQMZpNdyb23E8c3j8l+hLJXbh+84SD3n4ItdZaIlcxFu5R+YWtnceJXikkRYzrsLECVeGAW4TONczqChyiUNuYu8sIA/TGiV1tjLaeMPOJ212hv6mfNYRwsgKds4Oqd/1Jb+6j1crfaS82E2AYUmhqaIOWulEeFNl33IK85GqLbjKLUBs9DjtXGz1q/xUmvjkh6wCbV8MBKm8PCYgi3eEBSu6o9or7vCRR6abDkdC21Q5t55nAnssaCRK0Ej96WLVtmzAvvKQqOkbESYvOaOVirb9fX4+bvb+ljXh3/W5CT+4X8PH++e4Do1CGW14RoFyQUEEWhvuSJZ0csULnQRZHKnaE/0s9PE/4FOxgXrxgN8lzhb7UBeXULhwDpc5Yur9Jo1XahPwtFYB239dZE1dZ6b1xWZpyI664MdwepBTuKtcVa5OXRgXup+xWyXCJPFGHcVPPr5KhZW7ELR5YEvepRF4Elep2ioy1FT8CQsPu0g3weLw7/vrOKyPxqPXn4Dr97sT4OHEUz5O5IIbH7xMdO3XstCmezUt5ibOT3D9zOOdsXOqJ9uYEDSf867H7JCojDxBFGmYP8xGZFiRRs4c5BL6jyhEKndcV5Q2QMfVaihy4EYCqMFoo767gX11DzhUJHXCQwnmCGJeytx9soUSL0ENhK3xZr+n809kAh3u7TWOlsdCZEela6nVqUSJ3mDqbE9IIm1bXHt2VJ/0hTMYubq6ug8hp5yuuTk6Znh3DlXbWeXN8O/zPx0kEosfvPjWSiyB4dby5InmWbH/DEjbkyyKBVwkriWPZkjXNmjt8trJtafprjZYeUKuE7bkVfE2HtmxYIRyNC5ZtuHQvaX1a+cVjJwCX8BrZX6m855UiUgX5YxljCdvhYZCedtUmPdeorrj2PmZ/u6AIR9/R++tMZR7unxYsYevuHVfpgnws/8aS8Btyx20PMhDmGia52tZ8S7YxJqGcj6RhF6ShG1Clk92dq0TfKv2SZk26NE0UnrYd7OPSqx6DNEVr2uxV27b/AT7T3lA=
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add member"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/member/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add a member by (optionally) an Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the member"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the member","type":"string"},"desc":{"description":"Description of the member","type":"string"},"color":{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"},"pronouns":{"description":"Pronouns of the member","type":"string"},"pkId":{"description":"PluralKit ID of the member, 5-letter string","type":"string"},"avatarUrl":{"description":"URL for the avatar","type":"string"},"private":{"description":"Whether this object is private","type":"boolean"},"preventTrusted":{"description":"Wheter trusted friends are prevented from seeing this private object","type":"boolean"},"supportDescMarkdown":{"description":"Whether the description supports markdown","type":"boolean"},"preventsFrontNotifs":{"description":"Whether to prefer front notification changes","type":"boolean"},"info":{"description":"Info object","type":"object","properties":{"*":{"type":"string","description":"Info object entry, id/key has to match an id/key from the user object, value is the value string"}}}},"title":"member"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

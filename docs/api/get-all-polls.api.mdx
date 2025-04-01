@@ -1,0 +1,69 @@
+---
+id: get-all-polls
+title: "Get all polls"
+description: "Get polls from a system"
+sidebar_label: "Get all polls"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1v2zAM/SsCTxsgxOnQk2/BPoqgQBOs6WEIfFBsJhYqS6pEB/MM//eBduIladrDtkuihI8i+R6fWoiY10FTA+m6hdlyvnLPaGc1lZCusy6TUGDMg/aknYUU7pCEd8ZEsQ2uEkrEJhJWIIHULkK6hiVHIZPgVVAVEobY36053SsqQYJVFUIKQ+68AAkxL7FSkLZAje9jFLTdQSch4EutAxaQUqjxsqHHHifmhXBbQSUeG+rk1ZKFy/9LPT3W++yqCi2JwuU1H4BJCxi9sxEjV/g0nfLX+T2Le651O719HXpYrMS3xdPDF+g6CRVS6QpIYYcEchgnhWR/k/Q6JO2RxY7HwrA/El4HAymURD6mSaK8nijvVWiM0XGSu4Gic1CB+2u4TI5r8si8DWOdL8tIpPL6HhuQA/slqgLDH/4Z7IL+pfpZeT5tt65P12QY8agrbxqxNHVQRsyWc7iUYFXqyAERcIsBbY4j+bGXxNcbo3OhvBZoC++0pTgRP1wtcmVFRBRKGB2JJVTGHPEjVpQYUBxJ2Wkq6w0zkcxGYhZhlwydDo3OvE42xm2SgAZVxCSGnDlnnYKrCeOEIkhgdYYpbiZT3gDvIlXKMgMHithifVe9kS6GbyF3lnjN3vXiIAXhT0q8UdpypV7q9rBAa9jf8DYdaqSjFTMJpYvEiLbdqIhPwXQd//1SY+BnIpOwV0GrDcu1bqHQkc8FpFtl4qVhThv+8P1grY/iLdu+0ftxtywv1l6Zmn+BhGdsTt8R3uh/aecdV/9VY8Nr02WnNr77ugIJ6pVpnnvTHA7M69Wrz/1zrMOfPPvVlLYdLNl1I34IvZkxmnZA86RZ13W/AbRsGkI=
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all polls"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/polls/{systemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get polls from a system
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"},{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String id of the Comment document"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

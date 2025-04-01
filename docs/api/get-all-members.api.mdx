@@ -1,0 +1,69 @@
+---
+id: get-all-members
+title: "Get all members"
+description: "Get members from a system by Id"
+sidebar_label: "Get all members"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU8tu2zAQ/BViTy1AWE6Rk24G2gZG0DhonENh6EBJa4sIRTLkyqgq6N+L1auJkwC92JI4y92Z2ekgYtEETS2khw4299u9e0K7aaiC9JD1mYQSYxG0J+0spHCDJGqscwxRHIOrhRKxjYS1yFuxLUECqVOE9AA/RhRkErwKqkbiN+6i+SKvqAIJVtUIKYx3DPWxqLBWkHZArR/OKGh7gl5CwOdGBywhpdDg5WgPA05sS+GOgiqcBgMmETB6ZyNGvvfLes1/r6t3t9zhen399uhutxffd493X6HvJdRIlSshhRMSyJFHCsn5Kpl0SbqZTc90MJxn4k0wkEJF5GOaJMrrlfJehdYYHVeFq6GXl6ASz+/hMrkY98B6jcRe27cIqLy+xRbkKHyFqsTwT3oGu6D/qIEtM9T26IZyTYYRD7r2phX3pgnKiM39Fi6l31c68oEIeMSAtkBRuqKp0VIcrPBNbnQhlNcCbemdthRX4pdrRKGsiIhCCaMjsXXKmBm/YEWFAcUsyklT1eSsRLJZhNmFUzJOOg668TrJjcuTgAZVxCSGgjVnp4JrCOOKIkhgd0YWV6s174B3kWplWYFJIl56nmoy+JJ+B4WzhJb+Lx+jKYS/KfFGacs9B9O7aZkOcL4CXrS5W7rEI5NQuUiM6bpcRXwMpu/583ODgUOcSTiroFXO1h06KHXk5xLSozLxMjQvR//0c4rXZ/FRlD6Yft4zy0t2VqbhN5DwhO3LbPfZy/jcfNuDBPVmVZ+GVZ0emMG7t7/e2rkV/3KG3i3pujEIfb/gx6MPK5aojGgmm/V9/xflLMYb
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all members"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/members/{systemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get members from a system by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

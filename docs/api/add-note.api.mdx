@@ -1,0 +1,69 @@
+---
+id: add-note
+title: "Add note"
+description: "Add a note by (optionally) an Id"
+sidebar_label: "Add note"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVU2P2zYQ/SvE9LILqJa3yEk3N2kBI0hsZDcoCscHShxbzFIkQ1LeuIL+ezCkJMdrBagPNj2c73lv2IHHqnUynKHYdbDarp/MM+pVG2oodvt+n4FAXzlpgzQaClgJwTjTJiArz+zORDlX6nzPuGZrARk4/NaiD38acYaii3+lQwFFcC1mUBkdUAe64tYqWXFykX/15L8DX9XYcDqFs0UowJRfsQqQgXXGogsSPd1SCvR7nd5HSizgd9If7H1wUh+hzyDIoOZseIPMHFioMRY2Z1oZZdyt6VsSj7YpUXb35ctvh/jJ2HQ8HJhxLJ3u5wI02JQ4E2EtRvdJg4Va+qH/qIw+ehbMxWFpjEKuyaPgcw36IJWSHiujhWde6goZWlPV7GAG30E26ANvbB49TK6lDnhER659a61x4R366gN3z8K86NtI/9QY6pgwsp9u2GDsWTOa9pfZxLH6rfEB+p7kljveYEDnI0AlebY81JCB5g1ZCFNF2N0A59Lc1xC8TvQx6rFLpyMICPqBHylsRJWHPTny1mifEPjHcnlb9eY9BXyzfDODs80T+3vz+eO7WHCDoTaCqqFis1RUAfnpIaf4eRfr6qkwdKex/tYpKKAOwfoiz7mVC24td2ca6qIyDfTZayWBpzm9fTZR/5E6l2q6XgBTK7mV7/EMWep/jVygu0yAlI2T/0Uix+KIzJ8ua+Cv77yxiXqJtuNsLnOfBAPTLoKRGcPoIqqXPaVyMDHFwcOjbKw6s61qHVdstV3D60E/EbxX2zVzeECHhH1hqrZBHXwcvG1LJSvGrWSohTVSB79g/5qWVVwzj8g4U9IHAgpXatSfdFmNDtnY+KMMdVtSt/PV1PyNO+Yp05Toysq8VKbMHSrkHnPvKpor4cCZNqBfBA8ZEAJSFQ+LJUGMYNPwyLtxDEKM++uq7u6ycv/P+h5GTks0t4rLuEwipLoBpDs4PdD0U6wiEXCfQU1ILnbQdSX3+NmpvifxtxYdPS/7DE7cSV7SuHYdCOnpLKA4cOVf0/LnrO8+DQS+Z/Nk/UXWI3o1QffEVUv/IINnPE+Lo9/32YhoyirdvU2xf38iDxfbmweLaDQxebt5fIIMyuHha4wgG8df6FHkLyl2ankkW5R1oLg+tvxIusknMYjfEPA5EnA4UKaz1V1zcSyVvmkzzJp0XaJ330/66eqXFtMCSNrU7H3f9z8ATtfXaA==
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add note"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/note/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add a note by (optionally) an Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the note"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"note":{"description":"Note text","type":"string"},"title":{"description":"Name of the note","type":"string"},"color":{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"},"member":{"description":"Id of the member this note belongs to","type":"boolean"},"date":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"supportDescMarkdown":{"description":"Whether the description supports markdown"}},"title":"notesPost"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

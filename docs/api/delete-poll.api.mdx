@@ -1,0 +1,69 @@
+---
+id: delete-poll
+title: "Delete poll"
+description: "Delete a Poll by Id"
+sidebar_label: "Delete poll"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1U1tv2jAU/ivWedoki9CpT3lDK5NQp4IGfZhQHpzkQKw6tusLWhb5v08ngayl5SUJ+LN9vlsPHqvoZOgg3/ew2Kx25gX1IoYG8n2RCg41+spJG6TRkMMDKgzIBNsYpVjZsVUNHKxwosWAzg/HSEJaERrgoEWLkENtqgHpqwZbAXkPobO04IOT+giJg8PXKB3WkAcX8fri7YBjq5qZAwsNsu+mbVEHoBkdemu0R08Hf5vP6fV++/qRrrif339celrv2I/189MDpMQhiCORAOLnoeDQYmhMTRQG6gNbUgey011mjVJZP5BLxA7d6SJCdApyaEKwPs8yYeVMWCtcp5T0s8q0kPg1qMbTZ7iCTy5tSb6R5nuvJj2FlY/YAR9NaFDU6P7bQGDj5F8xcCe+Uh/MsF0GRYitbK3q2EZFJxRbbFZw7cSukZ4WmMMDOtQVstpUkczwgzM2lkpWTFjJUNfWSB38jP02kVVCM48UHyV9ICeFUhf8hGUNOmQXUY4yNLEkJbLFJMzaHbNx0nHQhZVZqUyZOVQoPGbeVaQ5eeRMDOhnwQMHcmdkcTebUyKs8aEVmhQ4S3ROODl7Tb2HyuhAobtVhLMJAf+EzCohNd0xmNyfY7OH0x1laDw+H3tRcGiMD7Ta96Xw+OxUSvT3a0RH3Sw4nISToiST9j3U0tN3DflBKH/dlreDfvl17tVXdrNDNwa/REpTnk5CRfoFHF6wmyqdivSmIw/Ln8vdEjiID6l8GVJ5/iAKn57+PqCXq+hJdfl0S9+PmU9pwo9LN3dMrRjRRLZIKf0DoZ60yg==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete poll"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/poll/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a Poll by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Comment"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

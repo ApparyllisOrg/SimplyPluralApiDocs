@@ -1,0 +1,69 @@
+---
+id: delete-member
+title: "Delete member"
+description: "Delete a member by Id"
+sidebar_label: "Delete member"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9U8Fu2zAM/RWBpw0Q4nToybcA7YCgW1Os2WEIfJBtJhYqS6pEB/MM/ftA28natN0lscPH8L3HxwEiVl3Q1EO+G2D1sN66J7SrjhrId0UqJNQYq6A9aWchhxs0SCiUaLEtMYiyF+saJASM3tmIEfIBviyX/PW6c3MHScL18vpt6X6zFV83P+9vICUJpA4R8h18HydEKCR4FVSLxG9MU3OTV9SABKtahBxqV408YtVgq3gE9Z4LkYK2Bx4d8LnTAWvIKXR4KexxxIl1LdxeUIOzQGALWqTG1TxlVA9yGp5DdrzKJlw2jAwSU8BwPDHtgoEcGiIf8yxTXi+U9yr0xui4qFwLSV6Cajy+hyvkeVWPrHFy+vXCzqKV13fYg5ycalDVGP55xWAX9B81SmfLtd27sV2TYcSjbr3pxYPpgjJi9bCGS7u2jY5cEAH3GNBWKGpXdS1aiqN9viuNroTyWqCtvdOW4kL8cp2olBUROUNGR2K7lTEn/BkrGgwoTqYcNDVdyU5kq7Mxm3DIJqYT0ZXXWWlcmQU0qCJmMVTsOW8puI4wLiiCBN7OpOJqseRkeBepVZYdmC2aYz5n4EL8AJWzhJb+cw/zIgh/U+aN0pbnjIse5vDs4HgFnK15RD5FuJDQuEhcH4ZSRfwZTEr883OHgc+0kHBUQauSV7UboNaRn2vI98rEy2C/JPvpx3wCn8VHcf+A+SlXlkN1VKbjN5DwhP35+FKRXpzKze232+0tSFBvovk0RnN+YAXv/vvrlJ5G8SffzLstwzAFP6Uzfip92HE+jQnNYouU0l/52bja
+sidebar_class_name: "delete api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete member"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/member/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a member by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the member"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

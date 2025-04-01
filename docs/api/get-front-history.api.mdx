@@ -1,0 +1,69 @@
+---
+id: get-front-history
+title: "Get front history"
+description: "Get Front History from a system between 2 timestamps"
+sidebar_label: "Get front history"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVMtu2zAQ/BViTy1AWE6Qk24G2qRGgDhonENh6EBJa4sIRTLkyq0q6N+LlWzFdpJTL3pxltyZnVEHEYsmaGoh3XSweFyu3QvaRUMVpJuszySUGIugPWlnIYU7JHEbnCXxQ0dyoRXb4GqhRGwjYS1ypN+IVlwL0jVGUrWPIIHULkK6gbNSyCR4FVSNhCEODWg+wyuqQIJVNUIK48bLEiTEosJaQdoBtX5Yo6DtDnoJAV8bHbCElEKDl10/DTixLIXbCqrw0C0wv4DROxsx8r7X8znfzqtX93zCzfzm/dLDai1uV88P36DvJdRIlSshhR0SyJFHCsn+Ktky7wPtpDtS6pkThv2RfRMMpFAR+ZgmifJ6prxXoTVGx1nhaujlJajE/Ue4TE6DfWLRRnbn451UVF7fYwtyVL9CVWJ405/BLui/aqDMNLXduqFck2HEk669acWjaYIyYvG4hEv915WOvCACbjGgLVCUrmhqtBSHefgmN7oQymuBtvROW4oz8cs1olBWREShhNGReH7KmCN+wooKA4qjKDtNVZOzEsliEmYVdsnY6djowuskNy5PAhpUEZMYCtacxxVcQxhnxNbl6YwsrmZzNoJ3kWplWYGDRByKYcKiOjj7QoAOCmcJLf1HgsZZEf6hxBulLbcyeKE7GG0D+yuQcGo1kJBO+ckkVC4SA7suVxGfg+l7/vzaYOAfQCZhr4JWOY9100GpIz+XkG6ViZepOiX15echf1/FZ1n7hMLRg5ab3SvT8BtIeMH2NPx9dpqvu+9rkKDe2fhlsPHhgRl8uPu5o49H8ZXz9WFJ140h6fsJPy59WjHFaEQz2azv+38tGt44
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get front history"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/frontHistory/{systemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Front History from a system between 2 timestamps
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

@@ -1,0 +1,69 @@
+---
+id: update-note
+title: "Update note"
+description: "Update a note by Id"
+sidebar_label: "Update note"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1VU1v2zgQ/SvE7KUFtJaz6Ek3b7qLNYo2RuNgsUh9oKixxYYiWZJy6hX034sh9RHHjg82Tc4MZ+a9N+zAo2idDCcoHjtYbdZb84R61YYaisddv8ugQi+ctEEaDQU82IoHZJxpE5CVJ7auIAOHP1r04U9TnaDo4l/psIIiuBYzEEYH1IGOuLVKCk7R8u+eQnbgRY0Np1U4WYQCTPkdRYAMrDMWXZDo6ZSupN/zjL5QIgF/kv3g74OT+gB9BkEGdc2HN8jMnoUaYyHXXIVRxl263tL26JsSZe++ffttHz8Zm5b7PTOOpdX7axc02JR45YZ1NYZPFizU0g/9RmX0wbNg5oClMQq5pogEzWW8z1Ip6VEYXXnmpRbI0BpRs70ZYgfZoA+8sXmMMIWWOuABHYX2rbXGhY/oxWfunirzrC9v+rfGUMeEkb04YYOzZ83o2s/YRFj9hgdRQ9/TgeWONxjQ+UhKSaEtDzVkoHlDLpURkXcXzJm7+5qD55neRzs2tzqygOju0FujfWLcH8vlZZV3nyj+h+WHK7y627K/7x6+fEwF8gNVEBnqYUeIh9pUqRpB5cSqCsiPNzklkHexsJ4qQ3ccG9A6BQXUIVhf5Dm3csGt5e5EsC6EaaDPXhtVeLxmt8smvd9T61KV56qfesmt/IQnyBIANfIK3QwBGRsn/49SjuWSnL/Og+Cvn7yxSXxJuCM4M/LTxqC1eWPUxoBd5PWyp1T2JqY4RLiXjVUntlGt44qtNmt4jfSWCL7arJnDPTok9ldGtA3q4CPyti2VFIxbyVBX1kgd/IL9Z1omuGYeadgp6QMxhSs12k+2rEaHbGz8QYa6Lanb+Wpq/p075CnTlOjKyrxUpswdKuQec+8E4Uo8cKYN6BfBQwbEgFTFzWJJpLPGh4ZH5Q0wDPN4GGJnpXfz3H1jbA9A0/DMreIyDpFIpG6g5iMcbwjzFL5IuttlUBsf6LTrSu7xwam+p+0fLTp6SXYZHLmTvCSQHjuopKd1BcWeK/9ajS8Tffd10O17dl2jb2Q9clYTYY9ctfQPMnjC0zQv+l2fjTymrNLZbbr79y1FmH0vHqr+pYA3q+3tP5BBObx4janIyfFneg35c7rcxAKjxuJeB4rrQ8sPZJuCknD4he6eou6GBaV6tbxzCY610jcNhKsuXZdU3feTfTp602PSfbKmbu/6vv8F8snQ3g==
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update note"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/note/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a note by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the note"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"note":{"description":"Note text","type":"string"},"title":{"description":"Name of the note","type":"string"},"color":{"description":"Color of the object (\\#ffffff, \\#ffffffff or ffffff)","type":"string"},"member":{"description":"Id of the member this note belongs to","type":"boolean"},"date":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"supportDescMarkdown":{"description":"Whether the description supports markdown"}},"title":"notesPatch"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

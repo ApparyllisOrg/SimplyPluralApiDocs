@@ -1,0 +1,69 @@
+---
+id: update-comment
+title: "Update comment"
+description: "Update a Comment by Id"
+sidebar_label: "Update comment"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1VE1v2zAM/SsCTxugxe3Qk29Zt2HBsDVoUwxDkQNts7FW2dIkOW1m6L8PlO2kTdqLYZvffO+xB09l51TYQX7Xw3y5WJkHauddqCG/W8e1hIp86ZQNyrSQw62tMJBAcWmahtogip1YVCDBosOGAjmfMil2thhqkNBiQ5BDZcrk6cuaGoS8h7CzbPDBqXYDUYKjv51yVEEeXEfHtW+Sn1hUwtyLUNPUA3CbHEo+fDLVjlMfZypNG9g17wGt1apETpr98Zy5P+3JFH+oDDyXM5ZcUOSTlZ5SjpeNTbtga9aQ97ghkKfj+c5a436ge6jMY3ua51dNoSYnQq28KMekQ1Dwopni9pkLYzRhCzFKCCpo/jeG+SWGsoYYY1qrt6b1wwgfz85OK1995/4uzi5OTT+vVuLr1e3Pz0MZ3DDA08ge1hIaCrWpBrzLOnGB6QPZ9jwb28n6hH5k+MltJ5Z0TkMOdQjW51mGVs3QWnQ7rZWflaaBKI+dKtq+5reWeybfMJbDrC/5vAcXrfpOO5ADS2vCityBp+xsnPqXGJKGZpZcH/j15Qkby8ue+DBBfIowky9ynXuT3EeQblRj9U4sdedQi/lyAcdcXzEF5suFcHRPjtqSRGXKLu08cd92hValQKsEtZU1qg1+Jn6bTpTYCk+sUa18YK2g1pP/3lfU5EhMW92oUHcFrzKb7zd75TbZ0OnQ6NyqrNCmyBxpQk+ZdyWDxjg70wXys+BBAsM7THE+O2NeWeNDg4nw447HMzKy43j6/iDXtw/OiGXSnNWoWq6UuNKPBLyD7TlIOBTJhxO0llAbH9ih7wv0dOt0jPz7b0eOL+FawhadwoLRuuuhUp7fK8jvUfvjw/S83XfX4+F5L948V2/0PpGzZWZuUXf8BRIeaLe/nnEd5URYbmywXQ7lP6w4wyH25NDF52JdzleX30BCMV7MxlQc5PARZHqm4ibNmMSU/vWgsd10fOByGJKyQvBEYA9JYOMLt/rqeC+1Ns3KT1b+qyF9P8g3xr3/YHozYi/wwZu3vY4x/gc5B2YR
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update comment"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/comment/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a Comment by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Comment"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"text":{"description":"Comment text/message","type":"string"},"supporMarkdown":{"description":"Whether this comment supports markdown","type":"boolean"}},"title":"commentsPatch"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

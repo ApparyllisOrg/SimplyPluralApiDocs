@@ -1,0 +1,69 @@
+---
+id: remove-friend
+title: "Remove friend"
+description: "Remove a friend by username (or userId)"
+sidebar_label: "Remove friend"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVMtu2zAQ/BViTwlAWE6Rk24GkgBBijhInENh6EBLa4sIRTJ8qFUF/XuxejV2nEN7sSVxVrszs6MWPObRydBAum1h9XS/MW+oVzGUkG6zLuNQoM+dtEEaDSk8Y2VqZILtnURdsF3DokenRYXswrj+5r64BA5WOFFhQOf7V0uqtiKUwIHQkMJUCBx8XmIlIG0hNJbOfHBSH6Dj4PA9SocFpMFFPJ3n9UxzZvYslDiN2JjIfgodWDCsQIUBgXgFcaDJ4K5HeciolbdGe/Q0yLflkv6O260faKTr5fXno8f1ht2tXx9voOs4VBhKU0AKY0c+cE8hqa+SYTCfuF7MpJ2E6EgJdPWkWXQKUihDsD5NEmHlQlgrXKOU9IvcVNDxU1CB9TlcxmejX0jqgeKx3bP2wsoHbIAPnpUoCnR/XSOwcfK36HkTV6n3pi+XQRHiRVZWNexJRScUWz3dw6lrm1J6OmAO9+hQ58gKk8cKdfC9dTbulMyZsJKhLqyROvgF+2Eiy4VmHmkDlfSBrBZKTfgZy0p0yCZRDjKUcUdKJKtZmLU7JMOkw6ArK5OdMrvEoULhMfEuJ83JMGdiQL8IHjiQOwOLq8WStsEaHyqhSYFRojEkg82n5FvIjQ6owz+labQm4K+QWCWkps699e24WVuor4DDuFtA20wvBw7pHLSMQ2l8IHDb7oTHV6e6jh6/R3T0Dcg41MJJsSMnty0U0tN1AeleKH8av49cLp7HoF6y/wvlFySnpdS0kbVQke6Awxs2H78hXfYxdTe33283t8BBfFrtt361xwuieLbB8ZZP3eiXMne2pG2H4HTdjB+OvqyYozWgiW/Wdd0fQubocA==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Remove friend"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/friends/remove/{username}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Remove a friend by username (or userId)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"username","schema":{"type":"string"},"required":true,"description":"Username (or userId) of the friend you want to delete"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

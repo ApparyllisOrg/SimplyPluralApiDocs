@@ -1,0 +1,69 @@
+---
+id: update-friend-settings
+title: "Update friend settings"
+description: "Update your settings for a friend by Id"
+sidebar_label: "Update friend settings"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU8Fu2zAM/RWBpw0Q4nToybdgQ7GgQBOs6WEIfJBtJhYqS6pEBfMM//tAO0nbtAW6S2JbjyLfe3w9RKxS0NRBvu1hsV5u3CPaRaIG8m0xFBJqjFXQnrSzkMODrxWh6FwKIiKRtvsodi4IJXZBo61F2YllDRJI7SPkW7gZP0coJHgVVIuEIY7dNF/oFTUgwaoWIYcUMYzVsWqwVZD3QJ3nk0hB2z0MEgI+JR2whpxCwssB70ecWNbC7QQ1eBqLbxaqqlyyBMwrYPTORozc5Nt8zn+vr1rdcrvr+fXbo7vVRtysHu5+wDBIaJEaV09kKmYzksohO1xlU/usn5gNTA3D4SRBCgZyaIh8zLNMeT1T3qvQGaPjrHItDPISVOPhPVwhz1bes3YTr9eGnsVUXt9iB3KyoEFVY3g2gcEu6L9qJMsEtd25sVyTYcS9br3pxNqkoIxYrJdwacOm0ZEPRMAdBrQVitpVqUVLcbTFp9LoSiivBdraO20pzsRvl0SlrIiIQgmjI7GNypgT/owVDQYUJ1H2mppUshLZ4izMKuyzadJp0IXXWWlcmQU0qCJmMVSsOdsUXCKMM4oggd2ZWFzN5rwC3kVqlWUFjhIdY3DcrVMQLlXooXKW0NL/BWfyiPAPZd4obXmEcQf642Jt4XAFEqY6kJAfY1NIaFwkBvR9qSI+BDMM/PkpYeCIFxIOKmhVso3bHmod+bmGfKdMvAzTy/m//DrG7qv4VMQ+4HFaQMvbd1Am8RtIeMTuOf5D8TJU68Xm+0+QoN7s8OO4w8cHpvPu7a/X+dSKfzlc75b0/ZSQYTjjp6MPK84ZmtBMthiG4R8xk9W/
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update friend settings"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/friend/{userId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update your settings for a friend by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"userId","schema":{"type":"string"},"required":true,"description":"String Id of the friend user account"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

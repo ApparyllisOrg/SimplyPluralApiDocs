@@ -1,0 +1,69 @@
+---
+id: add-poll
+title: "Add poll"
+description: "Add a Poll by (optionally) an Id"
+sidebar_label: "Add poll"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVsFu2zgQ/RWCpwRQo2TRk27eZhcwijZG43axcHwYSWOLDUWyJGXXK+jfiyEl2bHcbnqxRXLmcYbz5pEtd1g0VvgDz1Ytny3mS/2Matb4imerdbdOeImusMJ4oRXP+KwsGbCFlpLlB3alwzxIebhmoNi85Ak3YKFGj9YFTEFuBnzFE66gRp7xUhfB0hUV1sCzlvuDoQXnrVBb3iXc4rdGWCx55m2D51E8Bjs2L5neMF9hCIhTtOSHzv+pywPhnsMUWnlUnpbAGCkKIMT0qyPYdhqQzr9i4Skpqw1aL9DRasyjPYvqI9Q4BGQooGSaF3lMPe+Po/8DACn1fpY7D0JNgf6p0Fdoma+ECxAs2DsG0QNLttMe3RE511oiqBH6C3r9G7g79PoXkEXjvK5fgyccAxbNAx7bC18NE6Dcnvh0aQtU5VJcKscHIaVwWGhVOuaEKpCh0UXFNrrf2IsanYfapCV4JDDXGKOtp3p8APtc6v0vDxnZyQrrnR2rB9cu4bFD3BRlWSHrF2PNh5O4EpshbxpfH7MGa+HAEy481u71LJ1wqNBS2wsrXdclPBZzEu4XmmZaXSDnb4Ylyin6/H7gfY11jpbtqwmtTuOv676LX8K8iwtDmARwyT/MT5wfYhXp1JivwLM9uABRhpIo7d/EsiTsiR/QPXH6UDr+UyM8caYte+J9sz3x6+nu8ZC98JJm6SBdf/AetqSYfBHmgpY5o5WLp/bH7e2FkN9TOm9v314Qo4cl+/vh88d7Ttg1+kqXYUMXKkJ6nPF0d5dSCGkbJLkjTUa7G6S7sZJnvPLeuCxNwYgbMAbsgfrqptA175JzoxJ3l+zWyXjRPJLGxpxeXjcjb8CI9xgIRYlUCCXa4+VBxtqK/4Jyh+RIvT8ddf+v71AbiccOGM5+UN/j+KWYxiviRAX7O6PXsDga+3k1he/7aqz1euymVaT9qWlP4eNUZOXRuaMD2AQxHujyKGojD2whGwuSzRZzfn4zLklGZos5s7hBiyR6pS4a2svF1m1yKQoGRjBUpdFCeXfD/tUNK0Axh8iASeE89SNIOdiPtqxCi2wo91b4qsmpxulsLPmD3aYx0hjozIg0lzpPLUoEh6mzBbGJ2Gd149HdeOpz4l3M4u7mlohNZK1BnVSSnh+9+LzIuz3e7K95ovRE8/jdp0ZS8bskErntW2PFd3fUJ3GvLL5Y1gmvqH+yFW/bHBx+trLraPpbg5aeUFRxsAJyKteq5aVw9F3ybAPSnb9jTqO++tQ/Va7Z5dfNT6IeekZRw+xANjTiCX/Gw/jSClzq+4iiimvv4t5vloRw9J28i4jGo34sHh6XPOF5/76qdUk+FvY8Cb9h75M7L8y1XILaNrAl24hJfQuTtn8Obd9/UKQXs3upAEOq9Et6dNGlbaOodN1oH5d+6jHKTrSmw153XfcDUXfadA==
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add poll"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/poll/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add a Poll by (optionally) an Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the Poll"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Name of the poll","type":"string"},"desc":{"description":"Description of the poll","type":"string"},"allowAbstain":{"description":"Whether this poll allows abstained votes","type":"boolean"},"allowVeto":{"description":"Whether this poll allows veto votes","type":"boolean"},"custom":{"description":"Whether this poll is a custom vote with custom answers","type":"boolean"},"endTime":{"description":"Milliseconds since epoch for this timestamp/date"},"supportDescMarkdown":{"description":"Whether the description supports markdown"},"options":{"description":"The options of this poll (if custom poll)","type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"color":{"type":"string"}}}},"votes":{"description":"Votes on the poll","type":"array","items":{"type":"object","properties":{"id":{"description":"ID of the member who votes","type":"string"},"comment":{"description":"Comment on the vote","type":"string"},"vote":{"description":"Option name that was voted (if not-custom, \"yes\", \"no\", \"veto\" or \"abstain\")","type":"string"}}}}},"title":"polls"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

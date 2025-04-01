@@ -1,0 +1,69 @@
+---
+id: get-all-groups
+title: "Get all groups"
+description: "Get groups of a system by Id"
+sidebar_label: "Get all groups"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU8Fu2zAM/RWBpw0Q4nToybcAW4ugQFOs6WEIfJBtJhYqS6pEB/MM/ftAO/HatAV2sZ3oUeR7j2+AiFUXNPWQ7wZYPay37hntqqMG8l2RCgk1xipoT9pZyOEWSRyC63wUbi+UiH0kbEXZi3UNEkgdIuQ7uB0hUEjwKqgWCUMcO2i+xCtqQIJVLUIO0xVjeawabBXkA1DvxzMK2h4gSQj40umANeQUOrwc63HEiXXNU1GDp7mACQSM3tmIke/9tlzy62315o47XC+v3x/db7biZvN0/x1SktAiNa6GHA5IICceOWTHq2zSJBvOZBKzwXA88+6CgRwaIh/zLFNeL5T3KvTG6LioXAtJXoJqPH6EK+Ts2SPLNfF669ysn/L6DnuQk+4NqhrDP+UZ7IL+o0ayTFDbvRvLNRlGPOrWm148mC4oI1YPa7hUftvoyAci4B4D2gpF7aquRUtxdMJ3pdGVUF4LtLV32lJciF+uE5WyIiIKJYyONO6TMWf8jBUNBhRnUQ6amq5kJbLVLMwmHLJp0mnQlddZaVyZBTSoImYxVKw5GxVcRxgXFEECuzOxuFoseQW8i9QqywqcJOJ956kmfy/ZD1A5S2jpP5IxGUL4mzJvlLbcbzR8OO3RDo5XIGHulM/BKCQ0LhJDhqFUEZ+CSYn/fukwcHQLCUcVtCrZtd0AtY78XUO+VyZexuX12F9+noL1VXwWok+GP6+Y5f06KtPxL5DwjP3rVKfidXBuf2xBgnq3pc/jlp4+mMGHt79d2HMrfnJ8PiwZhikDKc346ejTijklE5rJFimlv8TDwps=
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all groups"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/groups/{systemId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get groups of a system by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"systemId","schema":{"type":"string"},"required":true,"description":"String Id of the system"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

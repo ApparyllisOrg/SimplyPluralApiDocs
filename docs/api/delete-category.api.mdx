@@ -1,0 +1,69 @@
+---
+id: delete-category
+title: "Delete category"
+description: "Delete a category"
+sidebar_label: "Delete category"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVk8Fq20AQhl9lmFMLquWUnHQzCQUTiA1xKSX4MFpNrGlWu9vdUYoa9O5lpdhJ3L5ATxLaf0bz//PtMyY2fRQdsLp/xtV2vfOP7Fa9tljd78d9gQ0nEyWoeIcVXrNlZSAwpHzwccAClQ4Jq3u8aknhav4unHBfYKBIHSvHNPWX3CKQtligo46xQmmwwGRa7gir5zdvOoR8njSKO+B4KvD1Dza6zmVv20X+2UvkBiuNPZ+PvZmKYH0N/gG0ZZi7FKCtJDDkoM6mOu8OPqvqXoFs8kAQLImDeQz4UJN5/EWxSZ+M7wKp1GJFh48L+Naygz5l1XZztwMfgZoGVts1GLI2vfwrRB846gCSwE/jkV3kEEXtO3vj/+4pwxM5Be8Sp7zRz8tlfpy5uMlOL5eXfx/dbnbwZfP19hrHscCOtfUNVthMCGIxb77C8umiNC1peUSyrGaoOD4dweujxQpb1ZCqsqQgCwqB4mCtpIXxHY7Fuajhp3/p9sXpytxlVmdr7y/OCV4KcsPDkdSWqeH4in4W+yi/afKbPYp78FP5Cwx30gU7wNb2kWyOHc8h2OX88z4iP3BkZxgab/qOnaYJitDXVgxQEGDXBC9O0wK++34iJHFGxErSDBFZe9SftNByZDiGchBt+zonUa5OwWzioZwnnQddBSlr6+sysmVKXKZocuZ5UdH3ymmhCQvM25ldXCyWOI5/AN2FkKs=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete category"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/chat/category/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a category
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

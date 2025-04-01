@@ -143,10 +143,10 @@ components:
           description: The message of the message
           type: string
         writtenBy:
-          description: ID of the member that wrote this message
+          description: Id of the member that wrote this message
           type: string
         writtenFor:
-          description: ID of the member that this message is for
+          description: Id of the member that this message is for
           type: string
         writtenAt:
           description:
@@ -178,6 +178,13 @@ components:
           description: The message itself
           $ref: "#/components/schemas/boardMessage"
 
+    boardMessagePatch:
+      type: object
+      properties:
+        read:
+          description: Whether this message is read or not
+          type: boolean
+
     boardMessagePost:
       type: object
       properties:
@@ -188,10 +195,10 @@ components:
           description: The message of the message
           type: string
         writtenBy:
-          description: ID of the member that wrote this message
+          description: Id of the member that wrote this message
           type: string
         writtenFor:
-          description: ID of the member that this message is for
+          description: Id of the member that this message is for
           type: string
         writtenAt:
           description:
@@ -202,13 +209,6 @@ components:
           type: boolean
         supportMarkdown:
           description: Whether this board message supports markdown
-          type: boolean
-
-    boardMessagePatch:
-      type: object
-      properties:
-        read:
-          description: Whether this message is read or not
           type: boolean
 
     chat:

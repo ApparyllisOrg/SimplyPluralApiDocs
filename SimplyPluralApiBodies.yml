@@ -137,23 +137,23 @@ components:
       type: object
       properties:
         title:
-          description: The title of the message
+          description: Title of the message
           type: string
         message:
-          description: The contents of the message
+          description: The message of the message
           type: string
         writtenBy:
-          description: Id of the member that sent the message
+          description: Id of the member that wrote this message
           type: string
         writtenFor:
-          description: Id of the member that recieved the message
+          description: Id of the member that this message is for
           type: string
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         read:
-          description: Whether this message has been read, this must start as false
+          description: Whether this message is read or not
           type: boolean
         supportMarkdown:
           description: Whether this board message supports markdown
@@ -182,35 +182,121 @@ components:
       type: object
       properties:
         read:
-          description: Whether this message has been read
+          description: Whether this message is read or not
           type: boolean
 
     boardMessagePost:
       type: object
       properties:
         title:
-          description: The title of the message
+          description: Title of the message
           type: string
         message:
-          description: The contents of the message
+          description: The message of the message
           type: string
         writtenBy:
-          description: Id of the member that sent the message
+          description: Id of the member that wrote this message
           type: string
         writtenFor:
-          description: Id of the member that recieved the message
+          description: Id of the member that this message is for
           type: string
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         read:
-          description: Whether this message has been read, this must start as false
+          description: Whether this message is read or not
           type: boolean
-          example: false
         supportMarkdown:
           description: Whether this board message supports markdown
           type: boolean
+
+    chat:
+      type: object
+      properties:
+        name:
+          description: Category name
+          type: string
+        desc:
+          description: Description of the category
+          type: string
+        channels:
+          items:
+            type: string
+          description: "List of channel Ids this category contains"
+        uID:
+          description: User Id this message is in is from
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
+
+    chatCategory:
+      type: object
+      properties:
+        name:
+          description: Category name
+          type: string
+        desc:
+          description: Description of the category
+          type: string
+        channels:
+          type: array
+          items:
+            type: string
+          description: "List of channel Ids this category contains"
+
+    chatChannel:
+      type: object
+      properties:
+        name:
+          description: Channel name
+          type: string
+        desc:
+          description: Description of the channel
+          type: string
+
+    chatChannelContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Message Id
+          type: string
+        content:
+          description: The message itself
+          $ref: "#/components/schemas/chatChannelInfo"
+
+    chatChannelInfo:
+      type: object
+      properties:
+        name:
+          description: Channel name
+          type: string
+        desc:
+          description: Description of the channel
+          type: string
+        uID:
+          description: User Id this message is in is from
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
+
+    chatContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Message Id
+          type: string
+        content:
+          description: The message itself
+          $ref: "#/components/schemas/chat"
 
     chatMessagePost:
       type: object
@@ -242,64 +328,6 @@ components:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
-
-    chat:
-      type: object
-      properties:
-        name:
-          description: Category name
-          type: string
-        desc:
-          description: Description of the category
-          type: string
-        channels:
-          items:
-            type: string
-          description: "List of channel Ids this category contains"
-        uID:
-          description: User Id this message is in is from
-          type: string
-        lastOperationTime:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: long
-
-    chatContainer:
-      type: object
-      properties:
-        exists:
-          type: boolean
-        id:
-          description: Message Id
-          type: string
-        content:
-          description: The message itself
-          $ref: "#/components/schemas/chat"
-
-    chatCategory:
-      type: object
-      properties:
-        name:
-          description: Category name
-          type: string
-        desc:
-          description: Description of the category
-          type: string
-        channels:
-          type: array
-          items:
-            type: string
-          description: "List of channel Ids this category contains"
-
-    chatChannel:
-      type: object
-      properties:
-        name:
-          description: Channel name
-          type: string
-        desc:
-          description: Description of the channel
-          type: string
 
     commentsPost:
       type: object

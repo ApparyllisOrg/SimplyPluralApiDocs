@@ -216,14 +216,20 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/add-channel",
+          label: "Add channel",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/get-channel",
           label: "Get channel",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/add-channel",
-          label: "Add channel",
+          id: "api/add-channel-by-id",
+          label: "Add channel by Id",
           className: "api-method post",
         },
         {

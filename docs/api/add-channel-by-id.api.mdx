@@ -1,0 +1,69 @@
+---
+id: add-channel-by-id
+title: "Add channel by Id"
+description: "Add a new channel by Id"
+sidebar_label: "Add channel by Id"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VcFS2zAQ/RWNTmUmxNAy0OYWCp1hOkMohEOncJClTayiSK4kB1KP/727sp1AkvbWS2JrV9Lbt++tax5AVl7HFR/9qPn45mrqnsCOq1jgwmPzOOAKgvS6jNpZPuJjpZhgFp6ZLIS1YFi+YleKD3gpvFhABB/SUZqyS4HnDLjFAL5pSvPwq9IeFB9FX8H28VeKuRmLBTCX/wQZB/isA5PCshzw4oWzc4f3sbyKTJjgcK00QlsWotd2zt7lQj49C6/CoXQLvF/n2mB5B0O8O8gCFoKPah5XJSFqN/GG6iRgEOK5UyvK2MYpnY1gI4VEWRotBUHOfgbCXe8e3eInXrwrwUcNgaItFfVW2Z87LlN0sI2uJWl318XmrWeta8ruGXhI1NHQEubE7kJcTxExp6YRjMi6UOCJk1A6G1ro74+OdjFMvvI33ER4iZkMy72cbAqCF7EoE5oHfnqmTj8ImYsPcHx2pD7lpx9lfjb79MB5Qney797z8QW7vfx2f3k35SnnZDfnejJlXyb31xepfNRm4RSJ0oXUF9LmiGfL44wYyTrqslqrhrQCftlrufIGM4sYyzDKMlHqIUpA+JUxOgxRZohgO0nBcl/e42BtuDtip2X2re3WdOEBX2GFWJKXChAK/MZNlOy8/p10mCokLd5uVHzZc9yrrue/19Orfmg7c+nmTiN3Greu2I2pvDAM8fFtp07JlxhgHmbgwUpgyslqgToISYpllaNLGBbBwKrSaQwM2XdXJTcHIDsjL5GkK4zp89e5rMBjWc/nXMeiyonEbLzmdOLnWYu0BToudZYbl2ceDIgAWfCS2kU99q6KEIYxYCXU2LaK4+ERlU+SWAj7iiqac9sT7g0B9Ub1/xiKXSeTK9KcotuSUupOgD/48pgshBJs/zr/jnBaoloKEism1XWOBd170zS0jE32NLLxcSm8Fjl1DZWqdKBnlPkMp+P2eH2N+d1tN+AO2P8dunsp6BVuSd5LYSp6w8cn1Hv6UDSPmNVJngprA59b+IdT2r7ZuDOQyY/tjrGUUMZXuesBRV5cz4SbCc6RAc+74b9winK9eKYvFv4mcC7RmByb1mpuhJ1XYk657b1kQ7Hj4qfk4u6Bqtlb/ltD91zQL5Wzd0tdtzOiadb5beivO9ZTpGPaEtNN8wdAy7j7
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add channel by Id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/chat/channel/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add a new channel by Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"}},"title":"chatChannel"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"text/csv":{"schema":{"type":"string"},"example":"\"67d63acba3e170d9b68cb7f9\""}}},"400":{"description":"BAD REQUEST"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

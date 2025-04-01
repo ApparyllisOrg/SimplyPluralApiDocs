@@ -5,7 +5,7 @@ description: "Add a new category"
 sidebar_label: "Add category"
 hide_title: true
 hide_table_of_contents: true
-api: eJxtU8Fu2zAM/RVBpw3I4nToybes2YCgQ1Os3WEocpAtJlYrS5oot8uC/vtIOU46pzdJpMjH9x73EqHuokk7WT7s5fx2ee+fwM271NDD+nU9kRqwjiYk450s5VxroYSDF1GrBFsfd3Iig4qqhQQRcxXDiUFRiYl0FKCb0XSO8LszEbQsU+xgXHmphd+I1IDw1SPUaUJng9TGiQqoZ+vd1gvKqroklEVPb8Eq4wSmaNxWfKhU/fSiosZPtW+pv6mMpck+Tqk31g20SpZ7mXaBEfWf5CuPyMAA0xevd5wxxll7l8AlDqkQrKHJCXLxiIx7f166x8+8RB8gJgPI0Z6K/WjsqwONIocnY3g9S+ffFqfbQNsbQc6K1I1yDmzGYRK0+A4TY0G+G0xc+/BXLBc4SHKAzMSQAEgsUk+TLJej9DQMRYEcUlt2hryikDjEmJRMPQbvsGfo82x2PunqmqFdzi7PQzere/Ft9fNmkQGQAxuv2XoeM/vswFIWzxcFYyoG2EWZ3YgQnwfHdtFSZpNSwLIoVDBTElrFnbUGp2QmQjBO0vD8Xt56ctyoO/ZFP9j/e3VkngpcA+uVN6YBpSGedoaTiae/2W15Qnbcj5NXv/5RbbBw8tYg5WCa0/2k/8PwuH7lvhuf8Ry0uzNUcCdubReVFYRajk1xzwaggIiwgQiuBqF93bW0H5hdGLqKNkTQaAKcDt5QYCp++S5vMgKvsj04S1k75B9zRUNlxcDy1qSmq5jaYn5kehW3RY+0BzoPpqisr4oIFhRCgbFmEVn56LsEOE1Ik7Dc/RQX0xkR+g92PLvk
+api: eJx1lEtT2zAQgP+KRuc0JoWBNrfw6AxDh1AIh07IQbY3sUCWVEkOpJ789+7Kdh4kvSSWdrXPb7fmHrLKybDiw2nNRw+3E/MGelSFAi9m61mP5+AzJ22QRvMhH+U5E0zDO8tEgIVxK97jDv5U4MOlydFMHY/SQc6HwVXQ45nRAXQgkbBWSXyJxpJXTxZr7rMCSkFfYWUBfZj0FbKAdq0zFlyQ4EmqRQn0vx/QVRsGi+JeZ8MHJ/WCr5v4D59db0/MzFkoYDehAyNZIbQG5XeiFM4J0pUByt37fc9bjz+lD+SqNcVuc49upd/4ZVQnIbXna3wcZFBkDtVDlyMKokgs0OGUX6GItTKq0Yw64a3RvinY15OTw8THd3yvIwE+QpL55dFObHOBD1HaGNALP7/Iz09FlopTGFyc5N/T829ZejH//sJ5jO/smN/L0TV7vPn1fPM04VHn7FDnfjxhP8bP99exAiWEwiBE3BofaRAEJU+Wg4SKkuz0y4NbgvOR4cop1CpCsH6YJMLKPkIn3Eop6fuZKdH7Z6Uclsf0Zr3NdDxRZZqq7s/IFgcr7yDyQJkUIHJweGqg5aSMTfobyY/ZEf2P27m56erbcd7VvgN4e96yOO0uZ2vyOzcxnhacJ4kGV+xBVU4ohlHzz0ROiD4UMAdzcKAzYLnJqhLJ8HEibJXitDJMjYHOrZEo6LPfpkJmNfMAuApUi7VQqtPf6LICzbKuygsZiiql0iajTaXHbpE0kTaBjqxMUmXSxIEC4SHxLqMmUtedqQL4fvCYCbW7yWLQPyGgCJJS6J0C0qraYWQv93o7AsdXWtvVOB1W4VSSj0hN3YI45ctB0w2Cc/MUoSmIV5TXdYoZPDu1XtM19trRmsXPpXBSpNSmKbWupYXofUOGcKk1wX2ZUBSkrqqGsU/bk1BuXoyyDGzY0d3MNWG8GaWHMY5fj6ftpi5NTrpOvNMWx98hxw8TixRhj3c1V0IvKrEg3cYvESwOBuAtDkD7Qdl0Ir3aiWx/FnptAvRL6Rx9UtfNeGEhO/1G9N8XmwFstKl/M4z6H2NTXXY=
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"post"}
-  path={"/v1/chat/category/:id"}
+  path={"/v1/chat/category"}
   context={"endpoint"}
 >
   
@@ -47,14 +47,14 @@ Add a new category
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+  parameters={undefined}
 >
   
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"items":{"type":"string"},"description":"List of channel IDs this category contains"}},"title":"chatCategory"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"type":"array","items":{"type":"string"},"description":"List of channel Ids this category contains"}},"title":"chatCategory"}}}}}
 >
   
 </RequestSchema>
@@ -62,7 +62,7 @@ Add a new category
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"text/csv":{"schema":{"type":"string"},"example":"\"67d63acba3e170d9b68cb7f9\""}}},"400":{"description":"BAD REQUEST"},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

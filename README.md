@@ -4,9 +4,9 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 
 ## Installation
 
+Install yarn and npm on your device.
+
 ```console
-brew install npm # skip if you have node installed already
-corepack enabled
 yarn install
 ```
 
@@ -40,4 +40,4 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 ## Making Updates 
 
-Change the `SimplyPluralApi.yml` and `SimplyPluralApiBodies.yml` files instead, then run the [generator](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs?tab=readme-ov-file#generating-openapi-docs)
+Change the `SimplyPluralApi.yml` and `SimplyPluralApiBodies.yml` files instead, PRs should only contain non-generated files. Generating the docs as part of a PR will only introduce merge conflicts that can be avoided by just editing the `.yml` and docs files. Locally you may wish to run the [generator](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs?tab=readme-ov-file#generating-openapi-docs).

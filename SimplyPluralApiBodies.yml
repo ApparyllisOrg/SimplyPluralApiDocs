@@ -247,33 +247,6 @@ components:
             type: string
           description: "List of channel Ids this category contains"
 
-    chatMessage:
-      type: object
-      properties:
-        message:
-          description: Message
-          type: string
-        channel:
-          description: Id of the channel this message should go to
-          type: string
-        writer:
-          description: Id of the member that wrote this message
-          type: string
-        writtenAt:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
-        replyTo:
-          description: Message Id this message is in reply to
-          type: string
-        uid:
-          description: User Id this message is in is from
-          type: string
-        lastOperationTime:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: long
-
     chatChannel:
       type: object
       properties:

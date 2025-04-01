@@ -5,7 +5,7 @@ description: "Get analytics of authenticated user"
 sidebar_label: "Get analytics"
 hide_title: true
 hide_table_of_contents: true
-api: eJyNVE1r20AQ/SvLnFoQllNy0s3QJIRAHBrnUIwPY2lsbbPa3ezOmqpC/72MZBs7iUsvsvC8+XpvnjqIVKaguYVi2cHs6X7hXsnOEtdQLFf9KoOKYhm0Z+0sFHBHrNCiaVmXUbmNwsQ1WdYlMlUqRQqQAeM2QrGE2QEJqww8BmyIKcShl8WGoIBnxiAlK3VjK7XQDUXIQEuvt0ShhfcTnCewJChtFWQQ6C3pQBUUHBJlEMuaGoSiA2699HLrX1QyZOCD8xRYU5RolIrS+QSqLdOWAvQZkK0uBfteGAoUvbNxLPZtOpWf85nnD1Loenr9MfQ4X6jb+cvjd+j7DBri2lVQwJaGOVF0gHx3lQuz+ZF5yCBS2B24TMFAATWzj0Weo9cT9B5Da4yOk9I10GfvQRXtPsOtsuNFPAt941Lnd3HkAb1+oPYgV01YDervlRWwC/oPDpvKdtpu3JCu2Qza68abVj2ZFNCo2dP9B7EXtY4SUIE2FMiWpCpXpoYsR8U1KZ/WRpcKvVZkK++05ThRP11SJVoViRQqoyMPp2rMAX/EqpoCqQMpW811WgsT+exIzDxs83HScdCZ1/nauHUeyBBGymMohXNRKbjEFCcsAok64xZXk6no713kBq0wsKfozE3vl++gdJbJ8v/bbpSF6Tfn3qC20nWQvduf0hJ2V5DBHo+n9qxdZAF03RojvQTT9/L3aEI5skpHXBux1wZNpH9M++XH3olf1WW3fjrsK7UXvwk7NEkyhiPdYdAyzfCVOvHN3c1CFvtwp6/Dne5fZJtDyLYnpc9P9jCOPMVAn6Z03eiCvj/ix9DFjKNPRrQsvur7/i/5x+VV
+api: eJzlV01v2zgQ/SsETy1gWMmiJ98MtA2CYptg4yywKHygpbHFhiJZcmREK/i/7wwlWXbsNkEK7CU+xJb4Zvjmi3xpZYS8DhobOfvWyvnt9cI9gJ3XWNKL5W45kQXEPGiP2lk5k1eAQlllGtR5FG4tFEHB0pNCKEQdIciJRLWJZC/nA1KSI6+CqgAhxLSXpQdyGFEFXGj6PZGad/hRQ2jk033vGCaQcEJbcW/1Y3og68qLtQuVQvGu0sZoCsjZQqic4lJ5855cBfhR6wCFnGGoYSJjXkKl5KyV2Hgm4VbfIUdC+uA8BNQQeXXkNkK1RdhQkDv6TPZRgC2ej+ET0fqfIxh4nee/ZMfROxs79B8XF/x1zPrmC3klQkhV5lXlveFq02r2PTKkfTEdCljbTTzd5Cq42qd+WgfeKkSxUpEaylkxGE2ecV65YAn4uXdwwEaFoLgcGqE6fB8xkAGlgiqlmtcZwhZev6vVmxJfY8rGW2VqOJPLv9N7bilBo5mabM2T92wCY129hMRPrHVxSvTpBCyIz/VHLjMzq6BacSf2oRyYG3fG+M9xNqKI2uYgwLu87CPVcZynrKDTKGUYNZoUzHASXRcpP7dKhwRQWwhqA28v8Eo9vsWotX17Qdu3N9i7s5j+5Pxw8eH02Px6sxCfb+6/fuz6BLB0FLjcQMqIYkEks+1lxhInGz3SXQxhO4iaOhiClYg+zrJMeT2l61KFhgOc5q6SrBmOQQVsz+GWk700u+PbtavFsUAbK+r1F2gG9VGCKpIM68UJg13Q/6Y7O0Wn7dp193GXoDtdedOIW0OCwwja5EyBqQy0IAKsIQDXqHB5XZEoiKnmvl6RLBDERJDo8I50RpyKf1wtcmVFBBBKUHCYNKMxA36PFSW5FUNSNhrLesWZyOb7xNyETdYx7YjOvc5Wxq2yAAZILWQx5JxzrhLpCYQ4RS4QV6eL4nJ6wV3pXcRKJeXSp+hI1j4Nvh3lz0v1b1cWhEfMvFFUFdo1lb3tW+mb3F4SsMerQ51cEjsGtC1LoPtgdjt+3WlKbrJCR7UyLAbXykT4Bdt3f/W68b34LQF9Np4H6rhj/d5Pu0xd/iqWvyGRf8FxVOcjwyU/BM0U0386k2FsOMOd2TzPweOB1Yn0ZS/7k+Lq04JLeTKZD2ky+x/sfViyzYHv4yEdmPNfTuZZk7bt5p76Y8B3Sz+12J8MHZpztKQT8T8Ni9+w
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -47,7 +47,7 @@ Get analytics of authenticated user
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"Start and End Times","in":"query","description":"Start and End times in ","required":true,"schema":{"type":"object","properties":{"startTime":{"type":"integer"},"endTime":{"type":"integer"}}}}]}
+  parameters={[{"name":"startTime","in":"query","description":"Start time in Unix timestamp format (millisecond accuracy)","required":true,"schema":{"type":"object","properties":{"startTime":{"type":"integer"}}}},{"name":"endTime","in":"query","description":"End time in Unix timestamp format (millisecond accuracy)","required":true,"schema":{"type":"object","properties":{"endTime":{"type":"integer"}}}}]}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Get analytics of authenticated user
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"timings":{"description":"Groups of fronters based on timings","type":"object","properties":{"morningFronters":{"type":"array","items":{"type":"string"}},"dayFronters":{"type":"array","items":{"type":"string"}},"eveningFronters":{"type":"array","items":{"type":"string"}},"nightFronters":{"type":"array","items":{"type":"string"}}}},"values":{"description":"Values for the timeframe","type":"object","properties":{"sums":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"The ID of the member"},"value":{"type":"long","description":"Milliseconds since epoch for this timestamp/date"}},"title":"analyticsIdValuePair"}},"averages":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"The ID of the member"},"value":{"type":"long","description":"Milliseconds since epoch for this timestamp/date"}},"title":"analyticsIdValuePair"}},"maxes":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"The ID of the member"},"value":{"type":"long","description":"Milliseconds since epoch for this timestamp/date"}},"title":"analyticsIdValuePair"}},"mins":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"The ID of the member"},"value":{"type":"long","description":"Milliseconds since epoch for this timestamp/date"}},"title":"analyticsIdValuePair"}},"nums":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"The ID of the member"},"value":{"type":"long","description":"Milliseconds since epoch for this timestamp/date"}},"title":"analyticsIdValuePair"}}}}},"title":"analytics"}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

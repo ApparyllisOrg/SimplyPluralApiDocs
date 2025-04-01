@@ -7,7 +7,7 @@ slug: /getting-started/authentication
 
 ## Authentication
 
-To authenticate for API requests (not socket, for that see [sockets](/docs/getting-started/socket)), simply add your API token in full, without spaces or extra characters into the Authorization field
+You will need to generate an API key in the Simply Plural App. This can be found under Settings > Account > Tokens. To authenticate for API requests (not socket, for that see [sockets](/docs/getting-started/socket)), simply add your API token in full, without spaces or extra characters into the Authorization field
 
 ```js title="Authentication"
     {

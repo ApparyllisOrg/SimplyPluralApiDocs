@@ -5,7 +5,7 @@ description: "Get all unread board messages for this system"
 sidebar_label: "Get unread board messages"
 hide_title: true
 hide_table_of_contents: true
-api: eJydU8tu2zAQ/JUFz4ZlFzn55qJtUASNA8Q5FIEPlLSWiFAky4dQVdC/d1eSjcZ2L7nowR0uZ2aHvQhYJK9iJzavvdg+fd/bNzTbFGtaOAyHhSgxFF65qKwRG3GPEaTWkIxHWUJupS+hwRBkhQGO1kOsVYDQhYiNWIgoq0CdxOcR+GMGCurrMThrAv1sevFpteLX+7N2D2JYiLvV3XXpcbeHb7uXxy9iIEiDsbYlLVcY6Uwnmb3I2nU28ssmslQJ6Fv0YdSavCZQHaMLmyyTTi2lc9J3WquwLGxDZ1+CSmxv4Q6Ls4vPRY3NJOm9l72InUPqRQ0esCMuinXUxAs9/RnZcJXB1qs/ctTJ2pQ52nG7ipoRz6pxuoMnnbzUQIeIyxHteQBUAI9H9GgKhNIWqUETA00HwaVcqwKICaApnVVUWMJPm6CQBgIiSCBxEexxnPWMP2OhprZwMqVSsU45O5Ftz8bsfJVNTCeiW6eyXNs886hRBsyCL9hznpG3KWJYxkBKeDqTivVyxdN3NsRGGnZgtogTeDN9l0b0orAmkuqPxHYaVsTfMXNa0qyIyxiGfo7Xq2jXBBw70XuOGEWhJsZc7vuchL54PQy8/Cuh50tGn630SuY8Tbph/6T3/uueOsmrvLyNeZk/OLqnkuH1Vup0HZ2FGMHjk4N8c0vfT2kkhif8VPrvjnNeJzT7chiG4S/kfHZ7
+api: eJyVVdtu2zAM/RVBz0HcDn3qW3ZpUQxdBizDMAx9kG0mVitLmkQny4z++0jZuTvLFgSxI5KHt0OqlRGKJmhcy9sfrZx8fpi5F7CTBis6eHp9GskSYhG0R+2svJX3gEIZIxobQJUidyqUooYY1QKimLsgsNJRxHVEqOVIolpEQpJvk+JjrygJN0D0zkb6c9vKN1dX/Dj0Nf1IAIWzCBZZqrw3ulAszZ4jq7QyFhXUit9w7YGMVAhqTXaa/Me9c5c/Q4Ek8MF5CKg7x/BLR9zXy50zoKx8JYjyNKY+A/FQcnKdScSg7YIt9oI9NJtVsKmS0BjBzHfmZyJDjQYGkPhYuDnVeQs5FMpG9NdQLsOsiBuU0tv1KdBDubOvc+DOKxSr4BA6ElyGvXPhX3H3EYVOVPsL8GSgB4/aGE10d7YkgmpbgADvimrHWtTkAFXts1LhXtyaurqAwPjM+lPobxVQvOEkyDQjhG4d7tD2GBYb713ARxVeSreyF4APhk30tuRvYz3koRkiMVOgiQSrYnSFplxLsdJYXSKDURGnRNE0gjMq1hA9a8rcivpcsfvWMpRwGyxB35TidhaOfJPzfh5kqkI/hmcF72gQCdly0/gzkjdXN6fRfprOxN3066f3CaimWjsql1xAGkfFS1Bmy+ssQWfdziMJlW4JIaaV2QRDShWij7dZprwe05pSYc3pjwtXU92OlUpYDuk9jbbL+AtvtW4NHK7k3Zrz+iOkPcd5VBQX8DxYxU2RrOyC/p2Km3LTdu72tor8omtv1uKzaYIygpzI400/436QgEg8hwDcwdIVTU37LaYW+iandSwoEgG29I6mJI7Fd9eIQlkRAYQSlBxyy/nK6PW3uoKIDWJTlAXxr8m5EtlkW5hpWGRdpF2gE6+z3Lg8C0AEj5DFUHDNuUfBNQhxTMt8JLk7XRbX4ytmrncRa5UGrC8RX2SDl9hxIdrdVv//269rFsIvzLxRuhtJJkPb0+uHXF6TYkKiZ08xokJFEbO4bXNK9Gswr698/LOBwHc1vS5V0CrnbtJFPdpwgDn5QswgEhQFeCbyUpmm48zR/cmU25L+/sOMdNUJzV4SzfoXRt+I7HoP+5Bxoz4E/mX+D5q0bUdiSmyj34nOWmxp3mlzOZ9ouP8AleIMzw==
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ Get all unread board messages for this system
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"title":{"description":"Title of the message","type":"string"},"message":{"description":"The message of the message","type":"string"},"writtenBy":{"description":"Id of the member that wrote this message","type":"string"},"writtenFor":{"description":"Id of the member that this message is for","type":"string"},"writtenAt":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"read":{"description":"Whether this message is read or not","type":"boolean"},"supportMarkdown":{"description":"Whether this board message supports markdown","type":"boolean"},"uid":{"description":"The user associated with the message","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"string"}},"title":"boardMessage"}},"title":"boardMessageContatiner"}}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

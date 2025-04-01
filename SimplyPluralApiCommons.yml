@@ -16,8 +16,6 @@ components:
     commons:
       type: object
       properties:
-        systemId:
-          description: The system Id
         color:
           description: 'Color of the object in a hex format (eg: \#ffffff, \#ffffffff or ffffff)'
         private:
@@ -28,6 +26,8 @@ components:
           description: Whether the description supports markdown
         timestamp:
           description: Time in Milliseconds since epoch
+        uid:
+          description: The system Id
         lastOperationTime:
           description: Time in milliseconds since epoch of the last update on this object
 

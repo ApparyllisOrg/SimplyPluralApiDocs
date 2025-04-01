@@ -5,7 +5,7 @@ description: "Get all chat channels"
 sidebar_label: "Get chat channels"
 hide_title: true
 hide_table_of_contents: true
-api: eJx1VE1v2zAM/SuCzkGcDD31FqRbURRrCjQ9DEUOsszEamVJk+igmZH/PtJ2vpOLP0g+iuR7YiMT6Doa3Mj7j0ZOXp/m/gvcpMaSDIvtYiALSDqagMY7eS8fAYWyVuhSIT+cA5vkQKJaJULIKdunOzvBI6TgXQLyNvLHaMSv05SzZ8Jr7xAcsleFYI1W7M0+E4c0MukSKsVfuAlAIBWj2hDOIFTpyO7zT9BIjhB9gIimOxi+TcLjuNx7C8rJLaUoLmv6DSmpFYingnvrIAmjcStGHBV7CpuXIKoeajCBXR7gNypzqoLLRP0EReu9UgFHX6IeDn/CLwVSNT1FlzkoCRq0bGIu+wNv2afUsTIOIgVsOeZudHd5/stsLn7N3l8e2jQVYOlptnIFbduKNSWz9TjjxNmReBLENcTUSrCOlqJKxJDus0wFMyQ9qLix1qSh9hV1fx5UwPpa3GKwF/cby6eb96nED3oK5hlaQXEjJaiCeh307EgO9tH8a0XZNmfc0rfwflZvpgp2I15tHZUVdIg8vznz0iR2iAhLiOA0iMLruiIhpZaqUOeke0GVCHBF8IYcQ/HH10IrJxKAUIKaQ6aWr2Afv48VJaUVu6GsDJZ1zpPIJvvBzOIq6yrtCp0Ek+XW51kEug0JshQ1z5xJir5GSENkgpidrovxcMT6Cz5hpdxBwO1iOF8KJwNoDtfm9hbpyED4xixYEhyf1ZLd9Pr5kOsxrwsCdq/9oimpJPY3TU6dvEe73bL5bw2Rlxt9rlU0Kme6aLMNdiSz6L6IemJZawicdq1s3YnibBOxpvayfvw5p1h1oaOvVkf9B2ffudzmKPeppAZ9CfxkgV+FNE2nUmpsF9+5biL2Ou6ieZ4Lur7/AZ0RCo8=
+api: eJx1VE1v2zAM/SuCzkGcDj31FrRbERRrCjQ9DEUOsszEamRJk+igmZH/PtJ2vhMgsB2RjyL5HtnIBLqOBjfy4bOR47fJzK/AjWss6WC+nQ9kAUlHE9B4Jx/kM6BQ1gpdKuSHc2CTHEhUy0QI+cjnj7tzgkdIwbsEZG3kj9GIX6chpy+E194hOGSrCsEardiafSV2aWTSJVSKv3ATgEAqRrUhnEGo0tG5z79AIxlC9AEimu5i+DYJj/1y7y0oJ7cUorjM6TekpJYgJgXX1kESRuOWjDhK9hQ2K0FUPdRgArs4wG9k5lQFl4H6DorWeiUD9r5EPR3+Cb8QSNn0FF2LUU+eLkN8JIhUNWFNOpSShHH8XERfXQtlVcIpFdWSNjPXKuJTjlIZaw2JzrsiiWScBgHB63KXMIcSfhdL0K9NZd+9/m7r+Wa6Gg1aPmBB9l2buIW/ZXsk6pRxEMlhyz73o/vLZF+nM/Fr+vH61IapAEtPIpFLaPlTPBwyW99lHDg7mgJq3hpiamepjpa8SsSQHrJMBTMkYau44fKHmvq4HZw7FbC+5jcf7Kf0neegE87prB4GI5gXaCeDCylBFVTroJeZZGcfzb+2uW1xhpvF8L5X76YKdiPebB2VFXSJPF8BM+aDDCLCAiIwg4XXdUUTkVoKQ53TAAvKRIArgjdkGIo/vhZaOZEAhBJUHDLlvEt6/72vKCms2DVlabCsc+5ENt43ZhqXWZdpl+g4mCy3Ps8i0FgnyFLU3HMmKfoaIQ2RCWJ2uiruhiNWbvAJK+UOk9huuPPtdtKA5jD/t9dhRwbCN2bBkuDagWOym14/n3J9x3uPgN1rvzFLSontTZNTJR/Rbrd8/LeGyFuaPtcqGpUzXbSiBzuSWXQrop5Y1hoCh10rW3eiOFuprKm9rJ9/zshXXeho1eqo/+DoO5PbHMU+ldSgT4GfLPCrkKbpVEqF7fw7003EXsedN/dzTuP7Hz/WUWg=
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ Get all chat channels
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"}},"title":"chatChannel"}},"title":"chatChannelContainer"}}}}},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"name":{"description":"Channel name","type":"string"},"desc":{"description":"Description of the channel","type":"string"},"uID":{"description":"User Id this message is in is from","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"long"}},"title":"chatChannelInfo"}},"title":"chatChannelContainer"}}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

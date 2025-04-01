@@ -267,7 +267,24 @@ components:
           type: string
         content:
           description: The message itself
-          $ref: "#/components/schemas/chatChannel"
+          $ref: "#/components/schemas/chatChannelInfo"
+
+    chatChannelInfo:
+      type: object
+      properties:
+        name:
+          description: Channel name
+          type: string
+        desc:
+          description: Description of the channel
+          type: string
+        uID:
+          description: User Id this message is in is from
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
 
     chatContainer:
       type: object

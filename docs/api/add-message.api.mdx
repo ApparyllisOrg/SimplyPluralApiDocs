@@ -5,7 +5,7 @@ description: "Add a new message"
 sidebar_label: "Add message"
 hide_title: true
 hide_table_of_contents: true
-api: eJx9VMFu2zAM/RVBpw3I4nToKbds3YCiWFOs2WEYcpAtxlYrS5pIN8uC/PsoO07jJN1NFiny8fE9byVC0URDGzn9tZWzh9uFfwY3a6jii+VuOZIasIgmkPFOTuVMa6GEg7WoAVGVIEeSVImcLT9XiiS/CCqqGggitkVNehcUVxxJxwH+MprPEX43JoKWU4oNnDa61cKvBFUgfP4EBY34bFAUyokcGELtXekFZ+UNCWXR812wyjiBFI0rxbtcFc9rFTV+KHzN/U1uLA/6fsy9saigVnK6lbQJCVH3SO7SxAkYIH3yepMyTnEW3hE4SiEVgjWFSpCzJ0y4t+elO/zcNEQfIJIBTNGePz4OJ//2SuwQG7eulHNgz9/c3vRs7VM6tvY9BFa+sVowYeQv1V2zAiD+r2wNdQ6Rj4rEOnqCQYO3ajJPM7owobHWsPC80yjQuAIEBF9UYuVjV5cMVyZVh0wrOipvmPqSke7SloLdLPyb/AkGPyCBj6yO9tlFGrgmGbLpikmkfZkHj8SxXdsRg3fYre/jZHLeen6XkF1Prs9D9/OF+Dr/cX/TNmJ7VF4nX6Tyo84eU5m9XGWpd7bHnE1bpyDEl95NTeT1y4oo4DTLVDBjFqGKm8TomIXOAE6TNLxcyluODuZ/TJrt5hr+Ag4i5gJ3sGEsrZsrUJq3cPBzSvbR/G2d0A6Y3PD91Udf/vAuLQx03xN/JOvXq16Rw5u9niZH2z9SnHGrVg79Fh9NnXb9YJuorODB5OlPZpH0wQFWxQoiJCFqXzQ12xtb2YcmZ4MLnl6A08Gz/nAsfvqm/REhpD8RE0rJJsraPv+QKyouK/pFlIaqJk/sZ7PDMuaxzDqkHdBZMFlufZ5FsKAQMoxF2nPSRvQNAY4JeZKkiG6Kq/GEOf8HUoMDrg==
+api: eJx9VU1T2zAQ/SsandM4tB1oc0sLnWGYElrCoQM5yPImFsiSKsmhqSf/vbuynQ8IvWQ22tV+vH1PbngAWXsV13x83/DJzeXMPoGZ1LHEg/lmPuAFBOmVi8oaPuaTomCCGXhmFYQglsAH3MPvGkL8YgvM0qS/ykPBx9HXMODSmggmkks4p5UUlCt7DJSw4UGWUAmy4toBlrD5I8iIeZ23DnxUEMjb10PzsKXv20a6BCF6ZZZ8g6VLYQzo13cuz5ldsFgC60LQVqGfiYXS1rpgS8uiPZb3GRED/7+0FVQ5eDRFZM/eRjgo8FZOxGkSj0yotFa4KGuKwIIyEhg4K0u2sL7NGxVmjqJyWSHiXnqF0C+x0w1tyen1zL6JH8PmD0BAUxmWrh2FAXNGFTUdIYixS3NjQ0Rf8oolbu6ef0Uvn1MHwVkT2nW+H41etzK94gd8ifAnZjKsjvJkBx38wclTIw/89Kw4/SBkLj7Aydmo+JyffpL52eLzA+epqY/H6n6ZnLOfFz/uLm5nPMV8fB1zPZ2xb9O76/M0eQWxtEhx7mhe5KogxfBsdZIRGNlu0QH8CnxI+qo9cpGXMbowzjLh1BAVIfya1juUtsLiL4MKWB2Lmw+2yr0lYFpQD/W7RQoTXMEae1E0SAmiQEoMuBEVeSnYevU3yTINR9L8uRP1RQ/vngh79Pc0tjvq5XF40pF7tEfFvR0qs0jc7Cl1qyoi3o2uvdAMB+Mvn6IZkRUdSNEFeCBVFFbWFXInJA26OsfXhuH0DEzhLIohDNkvWzMpDAsA+JIhoJE0K7Tu47exrMS0rF/EUsWyzgn9bLJdxtQvs7bTttGJU1mubZ550CACZMFL2jPxwts6QhjGgJMQI9opToYjGp9oVIn0IPZrwZd2x6KD0ZudRo4+yN3ak3qcFrh1rJBo1XREveerk3Z3RN7+JpKqJDqju2lybP/O682GjpELnj4RaK6EVyKnHeH3YdCzidj9hBwb869ta+9m1ASF67rl4Iunn6je3phICS7uxW5lTzTfKu1miuoc8Lz7zFS2oFgvnukThL9jjoZNECUxpLOGa2GWdcvZti4xXLwSyFMSSGfQNL3LrPc6O9TKoBuAfmmco1eappUfAtnHt643b2wF2kbT+ubY9T+HGJ7X
 sidebar_class_name: "post api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"post"}
-  path={"/v1/chat/message/:id"}
+  path={"/v1/chat/message"}
   context={"endpoint"}
 >
   
@@ -47,7 +47,7 @@ Add a new message
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+  parameters={undefined}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Add a new message
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"text/csv":{"schema":{"type":"string"},"example":"\"67d63acba3e170d9b68cb7f9\""}}},"400":{"description":"BAD REQUEST"},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

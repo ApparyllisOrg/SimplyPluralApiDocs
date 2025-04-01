@@ -1576,28 +1576,56 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/chat/message/:id:
-    get:
-      security:
-        - APITokenAuth: []
-      summary: "Get message"
-      description: "Get a specific message"
-      tags:
-        - Chat
-      parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-      responses:
-        "200":
-          description: OK
-        "404":
-          description: NOT FOUND
+  /v1/chat/message:
     post:
       security:
         - APITokenAuth: []
       summary: "Add message"
       description: "Add a new message"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePost"
       tags:
         - Chat
+      responses:
+        "200":
+          description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67d63acba3e170d9b68cb7f9\""
+        "400":
+          description: BAD REQUEST
+        "404":
+          description: NOT FOUND
+  /v1/chat/message/{id}:
+    get:
+      security:
+        - APITokenAuth: []
+      summary: "Get message"
+      description: "Get a specific message"
+      parameters:
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Chat
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessageContainer"
+        "404":
+          description: NOT FOUND
+    post:
+      security:
+        - APITokenAuth: []
+      summary: "Add message by Id"
+      description: "Add a new message by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
@@ -1606,9 +1634,16 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePost"
+      tags:
+        - Chat
       responses:
         "200":
           description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67d63acba3e170d9b68cb7f9\""
         "404":
           description: NOT FOUND
     patch:
@@ -1616,8 +1651,6 @@ paths:
         - APITokenAuth: []
       summary: "Update message"
       description: "Update a message"
-      tags:
-        - Chat
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
@@ -1626,6 +1659,8 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessagePatch"
+      tags:
+        - Chat
       responses:
         "200":
           description: OK
@@ -1655,15 +1690,31 @@ paths:
       parameters:
         - in: path
           name: id
+          required: true
+          description: Id of the channel, this can be a mongo Id but also a plain string (backwards-compatibility).
           schema:
             type: string
+        - in: query
+          name: limit
           required: true
-          description: String id of the channel to get messages from
+          description: Amount of messages to fetch
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
       tags:
         - Chat
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessageContainer"
+        "400":
+          description: BAD REQUEST
         "404":
           description: NOT FOUND
 

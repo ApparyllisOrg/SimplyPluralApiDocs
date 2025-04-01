@@ -5,7 +5,7 @@ description: "Get all chat categories"
 sidebar_label: "Get chat categories"
 hide_title: true
 hide_table_of_contents: true
-api: eJx9U8tu2zAQ/BWCZ8N0ipx8M9I2KALEAeIcisAHilqbRCiSJVdCXUH/3l3Jdus47UUP7nA5OzPsZQHTZocHuXzt5erp2ya+QVi1aGlhO2xnsoZiskvoYpBLeQ8otPfCWI3CaIR9zA6KnEnU+0J75B1X7v5UqEWGkmIo9LPs5afFgl+XbdcPcpjJ28XtdelxvRFf1y+Pn+VAkAbQxpqW94B0aNJMVKruRjEjdcGoQO4gl3GyNnvCWcRUlkrp5OY6JZ0P3rsyN7Gh49+Daug+wm1nZ82ejYVmmupSuV7iIQH1ogYPcCAujkexoGvI9Bd0w1UGE9lfehyVx3NhF8ftDj0jnl2T/EE8+TZrL+gQ+d6QjXWFCyLDDjIEA6KOpm0gYBFoQaS28s4IYiIg1Ck6KszF99iSfUEUAKEFDYci7kZnj/gzVlhqK06i7B3atmIl1OoszDrv1cR0IrpKTlU+ViqDB11AlWxYc7YpxxahzJENYnemKW7mCw5AigUbHViBo0Sct+usXUjQSxMD0rz/j+dkCMJPVMlr8oPOGw3vjyl6ld0NAXkrvy4SbIkYI/q+onlesh8GXv7RQuabQ5+dzk5XbBpdm79yev9lQ930VSzexlgcPzihp1Lg9U779johMzmCxyfn9cMtfT+Fjhie8FPpnzvOsZzQLM12GIbf/aFmrA==
+api: eJx9VVFv4jAM/itRnivKTnviDW13E9rdmDT2cJp4SIuh2dIkl6RovYr/fnZaCqXsJAQl9ufYnz+7DfeQV06Gms/eGj5/XqzMB+h5FQo8WB/WCd+Az520QRrNZ/wBAhNKsbwQgeUiwM44CZ4nPIidRwy/I8vdyYIhHHhrtMc/s4Z/m07pZxh2+YgRcqMD6EBWYa2SGB6t6bsnl4b7vIBS0FOoLSBIOCdqxMkApT87N9k75AEN1hkLLsj2YviUPpz7ZcYoEJofMMRmnNMv8F7sgC02VF0L8cFJvSPEWbJD2KoAVnZQGTyo7Qn+RWZalDAO1HFYs2i+kgK5j2H3p3/MbFnAdLo+1VfrKITWoGIel0QOrzpd8ROJpNgdFhnyeI/0/UWM2BFSe8JWi/txlq8eHOJaWE+XZ1LT99aZ8lqySviwROKiMFbyGmt0SlFKqZREcRuNyXmpc2BgTV4cOaFQzBxjMfzEVPoOdXcrQzfj1UEGRQck/NHBXVsuOLQcyHg7vR2n9rRcsR/L16f7iC8hFAZlx3cQFSFo5Hi6v0kpYjqYLSRrD87HGa2cQr8iBOtnaSqsnOCwCFdTuZMceTskl04b2F/zWyf99L/QbLViHO6A07BZ+Qhx2qiUAsQGq0066XJyxmT/RjJjeVJvTYR3NL3I0qqaPavKCcXwEn6pqhXxjwbmYAsOqGMbk1clTpmPLbNVhkuBYSYM9MYaiYYJ+20q1J1mHoAJpjpp0o7q/HtfVmBYdiRlJ0NRZcREOu+JWbpd2mbaJjq3Ms2UyVIHuCo8pN7lxDm1yZkqgJ8EahB1p63iZjIlpVrjQyn0abrj5hxvzQEFzWmr/G/Rtg0J8BlSq1B2ccio4U2noje+v+FJK1X8GeziAhMjj6bJsJ5Xpw4HOv5TgaN3AD7uhZMio6bhCyA5tpqk94ECwF7nOVgKvBeqaqVxsaxJWb28H76v0FeM1PQR1dQ9UPSjSddnsYfCSroU6JtkfhXSNK1WsbCjf2v6EtGrufUmRtc4xv8AAAxzYg==
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ Get all chat categories
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"items":{"type":"string"},"description":"List of channel Ids this category contains"},"uID":{"description":"User Id this message is in is from","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"long"}},"title":"chat"}},"title":"chatContainer"}}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

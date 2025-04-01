@@ -44,8 +44,14 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/update-automated-timer",
-          label: "Update automated timer",
+          id: "api/add-automated-timer-by-id",
+          label: "Add automated timer by Id",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/update-automated-timer-by-id",
+          label: "Update automated timer by Id",
           className: "api-method patch",
         },
         {
@@ -72,14 +78,20 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/write-board-message",
+          label: "Write board message",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/get-specific-board-message",
           label: "Get specific board message",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/write-board-message",
-          label: "Write board message",
+          id: "api/write-board-message-by-id",
+          label: "Write board message by Id",
           className: "api-method post",
         },
         {
@@ -158,14 +170,20 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/add-category",
+          label: "Add category",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/get-category",
           label: "Get category",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/add-category",
-          label: "Add category",
+          id: "api/add-category-by-id",
+          label: "Add category by Id",
           className: "api-method post",
         },
         {

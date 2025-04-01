@@ -5,7 +5,7 @@ description: "Get all board messages for member"
 sidebar_label: "Get all board messages for member"
 hide_title: true
 hide_table_of_contents: true
-api: eJyNU8tu2zAQ/BWCZ8G0i5x8c9E2KILGAeIcisAHSlpbRCiS4UOIKujfu0vJRh2nQC62xJ1dzsyOBh6gSl7Fnq+fB755+LmzL2A2KTZ4sB/3Ba8hVF65qKzha34LkUmtWWmlr1kLIcgjBHawHl/aEjwveJTHgN38a8b8mjEcZ3kIzpqAL+uBf1ku6e9y/vaOjwW/Wd5cl+63O/Zj+3T/jY8IaSE2tsbjI0S800lizEW3EpmamNgIVWMxgO/AhywxeY24JkYX1kJIpxbSOel7rVVYVLbF69+Daug+wu2Ls3mPVQPtpOrSwoHH3gHOwgF30CMXRVIakHW2ysiWqgS2Xv2RWSrJU+Zgc7uKmhCPqnW6Zw86eakZXsLfb2bXqEAF5uEAHkwFrLZVasHEwGIDzKVSq4ohEwamdlZhYcF+28QqaVgAYJKhuMjsIa94xp+xrMGx7GTKUcUmleSE2JyN2fqjmJhORDdOiVLbUnjQIAOI4CvynNbkbYoQFjGgEtrOpGK1WFIAnA2xlYYcmC36TPAuDBl4ZU1E9Z9N7bSoCG9ROC1xT8gjB2GY0/XMuxUC8xBOCZw7MWOYhQYpE2YYSlT65PU40vFrAk8fFz520itZ0jrxy/onwbffdzhFXgXmJQdmfqDsnkqGzjup03V2Cp7B+ZeS/GHLMExxRIYn/FT6b8c5sBOazNmP4/gXkxJyFw==
+api: eJyNVd9v2zgM/lcEPQdxO+ypb9ndbSiGLgOW4XAY+kDbTKxVlnSinC5n5H8/UnZ+tS6WoEgdk/xEfvxI9Zqw6qJJO333o9eLr/cr/4Ru0aWGXzzuH2e6RqqiCcl4p+/0J0wKrFWlh1irFolgg6TWPvKPtsSoZzrBhjhaf8g+D6OPZqyIFLwj/nHX63c3N/LvEn/5mQEq7xK6JFYIwZoKxFr8JHHpNVUNtiBPaReQgyBG2HGcSdjS2Xtf/sQqsSFEHzAmMxyMvwylc7/Se4vg9J4h6tc5jRWo+1qKG0IoReM2EnGW7GXYqsEDQcokQrs+hb+RWTLJ4jRSNim/VukEO5XOwTQJMuZKV+A8syjY98PuNdJ9fYqXlvMjJEUMfCXoRx+vRY1YGdxifSXyYqIPD8ZawzL3riZFxlWoMPiqyaJNjSHmlpETtKGoIZ3BG2Zrw5Lei3JhQhl/N8h5jSiHXjdAqkR0SmJmo60jZihB5OnhaQFLZ8ecyY+6EHxMDxCfav/sfnPixRCqMZYPO0RPndBNKVy00RHDApGvDJNQq2eTmt+xboHSkvWb53PFLE5A81tlnGrf6sLYdIFS/oCl+C+XeByUF2fz4eOw6MzCOKNvGv5g5TOyk27KZ6bf37x/ne2X5Up9XH7/8mcGaplrz3TpDeZZBdmKutjeFhm6GIRaGNkLzN4WI+U12kXLfk1Kge6KAoKZ8xqDuBMG5pVvmbqXTjVup/weZ8cF/U223rAmLtf0aQ0G8xnzHpRSGlZfXscOpC9anH00/2V+c3nGrf3Z1tHfTBvsTn21XQSr+BD9cvuvpCVsYGmvMaI0sfZV1+adIl0MXcnrWnEmCl0dPE8QzdU/vlMVOF4RqEBxcUm6LtfI6H/0VaxtnqCRlA1LsCuFiWJxJGYZN8WQ6ZDoIpiitL4sIrLGCQuKlXAubYq+S0hzXvYzLd0Zqrid34h4g6fUQp6xkaJrLrcLQvrT9r/uZhwalfBXKoIFM0ykCKEf1fVDb2/ZMYNoUeAYyRpjLTScsvj0fcmVfo92v5fX/3YY5QLnxy1EA6W0k2/v2UEEIsonlgaroKowiJi3YLtBNC8uWNHcUfif/lqxL7zS2VPW2fgg6AeT251hX0puNqYg3zIAkyF9P6iYCzv4D6Y3I446H7yF00ce8P8B9KES9g==
 sidebar_class_name: "get api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ Get all board messages for member
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"exists":{"type":"boolean"},"id":{"description":"Message Id","type":"string"},"content":{"description":"The message itself","type":"object","properties":{"title":{"description":"The title of the message","type":"string"},"message":{"description":"The contents of the message","type":"string"},"writtenBy":{"description":"Id of the member that sent the message","type":"string"},"writtenFor":{"description":"Id of the member that recieved the message","type":"string"},"writtenAt":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"read":{"description":"Whether this message has been read, this must start as false","type":"boolean"},"supportMarkdown":{"description":"Whether this board message supports markdown","type":"boolean"},"uid":{"description":"The user associated with the message","type":"string"},"lastOperationTime":{"description":"Time in milliseconds since epoch of the last operation on this object","type":"string"}},"title":"boardMessage"}},"title":"boardMessageContatiner"}}}}},"404":{"description":"NOT FOUND"}}}
 >
   
 </StatusCodes>

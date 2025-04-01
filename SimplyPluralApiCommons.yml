@@ -16,6 +16,8 @@ components:
     commons:
       type: object
       properties:
+        systemId:
+          description: The system Id
         color:
           description: Color of the object (\#ffffff, \#ffffffff or ffffff)
         private:
@@ -29,11 +31,11 @@ components:
         lastOperationTime:
           description: Time in milliseconds since epoch of the last operation on this object
 
-  parameters:
-    objectId:
-      - in: path
-        name: id
-        required: true
-        description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
-        schema:
-          type: string
+  parameters:        
+      objectId:
+        - in: path
+          name: id
+          required: true
+          description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
+          schema:
+            type: string

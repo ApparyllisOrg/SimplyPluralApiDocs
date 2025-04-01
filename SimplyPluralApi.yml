@@ -792,7 +792,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get automated timer"
-      description: "Get an Automated Timer by id"
+      description: "Get an Automated Timer by Id"
       tags:
         - Automated Timers
       parameters:
@@ -811,14 +811,44 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimerContainer"
         "404":
           description: NOT FOUND
-  /v1/timer/automated/{docId}:
+  /v1/timer/automated:
     post:
       security:
         - APITokenAuth: []
       summary: "Add automated timer"
-      description: "Add an Automated Timer by (optionally) an Id"
+      description: "Add an Automated Timer"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedReminder"
+      responses:
+        "200":
+          description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67e78b964cfb3eed32ef8848\""
+        "400":
+          description: BAD REQUEST
+        "404":
+          description: NOT FOUND
+      tags:
+        - Automated Timers
+  /v1/timer/automated/{docId}:
+    post:
+      security:
+        - APITokenAuth: []
+      summary: "Add automated timer by Id"
+      description: "Add an Automated Timer by an Id"
       parameters:
         - in: path
           name: docId
@@ -832,18 +862,27 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedReminder"
-      tags:
-        - Automated Timers
       responses:
         "200":
           description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67e78b964cfb3eed32ef8848\""
+        "400":
+          description: BAD REQUEST
         "404":
           description: NOT FOUND
+        "500":
+          description: RECORD NOT ENTERED INTO DATABASE
+      tags:
+        - Automated Timers
     patch:
       security:
         - APITokenAuth: []
-      summary: "Update automated timer"
-      description: "Update an Automated Timer by Id"
+      summary: "Update automated timer by Id"
+      description: "Update an Automated Timer by an Id"
       parameters:
         - in: path
           name: docId
@@ -860,6 +899,8 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: BAD REQUEST
         "404":
           description: NOT FOUND
       tags:
@@ -883,13 +924,12 @@ paths:
           description: NOT FOUND
       tags:
         - Automated Timers
-
   /v1/timers/automated/{systemId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all automated timers"
-      description: "Get Automated Timers from a system"
+      description: "Get Automated Timers for a system"
       tags:
         - Automated Timers
       parameters:
@@ -902,6 +942,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimerContainer"
         "404":
           description: NOT FOUND
 

@@ -1,0 +1,69 @@
+---
+id: delete-board-message
+title: "Delete board message"
+description: "Delete a channel"
+sidebar_label: "Delete board message"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtUk1v2zAM/SuEThvg2enQk28ZigFFsaZAs8Mw5CDLjM1VljRRypAF+e+jbDRDup0si4/k+9BJMZocKR1V+/2k1k/3W/+Cbp3TKBe7865SQUc9YcLIM4ScauVO6pVyUpA/6uUc8WemiL1qU8xYqR7ZRAqJfGm478HvIY0IvvuBJlVyJgajHXQIGibvBg+C6nICbdnLXbCaHHCK5AZ412nz8kvHnj8YP8l+6sgK7fe17GYz4qRVe1LpGAqjpUmdC/9rIndoRYtMN6N2Dq10Jz0UaeqTl/HwBZn1gKx2RRMH71h+ZPTH1ap8rsdtHtS5Urer239Lj5stfN58fbwTGpUSB0cv5gioEFDV4mGrmsNN05XNTTv7yBgPr17naAUxphS4bRodqNZB4jhaS1yLDbL7LajHw/9wu+oS9HMxa5F0HffFPRnwgEfhMmc9ou4x/k27gH2k33rWWbSR2/u5nZItiGeagj3Ck81RW5Al6m0K2xK+FCDiHiM6g9B7kyd0iedXEnJnyYAwAXR98CSFGr75PD8ZxpKgiEvlVWlrX/EXLIwyFl5NGSiNuStONOuLMZs4NAvTheg6UNNZ3zVREtKMDUdTPC8BRZ8Tcp1YlJR0FhU39Ur0/wEkqB85
+sidebar_class_name: "delete api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete board message"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/board/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a channel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

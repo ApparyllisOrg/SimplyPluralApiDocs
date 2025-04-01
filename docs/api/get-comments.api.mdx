@@ -1,0 +1,69 @@
+---
+id: get-comments
+title: "Get comments"
+description: "Get comments from a document of type (groups, members, customFronts, etc.)"
+sidebar_label: "Get comments"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1v2zAM/SuCTi1gxMnQk2/B1hZFgaZY08NQ5CDbTCxEtlR9ZMsM//eRspM2aQoM2S6JZFLie4+ParmDIljptzx7afn08W6u19BMg6/ww6JbJLwEV1hpvNQNz/gteFbouobGO7a0umaClboI9IHpJfNbA+xiZXUwLmE11DlYXBTBeV3fWI3HEga+GF3yhHuxcliGfx0u5FjOCCtq8HgqIpJU1AiEk/AGA7jDcnclbl1RQS141nIqigHnrWxWvEu4hdcgLZQ88zbAMYenmMfuygi4gjcCWx3YT+kq5jVbHTPFi0/iidX/Ac6cJBuQDAX/UkFqjwVndOPAUeUv4zH9Hd4/uycMV+Orj6GH2ZzdzJ4fvvEOU1D2SiNIjtR50rPMeLqZpAOstCVqXdrGFnREGuxm16pgFaZX3huXpakwciQMdnOrlHSjYtDvMKmEzam8RbK35ROp2pM7NOdeZrzgHraIJbamAlGCfWsOJWsrf4vImFjKZqnjcekVZTzJ2qgte1TBCsWwCP/QoEo6CjALS7DQFG+OcbFrJuRKFgyRMGhKoyUGRuwHmqkQDXMAOCRILg6IUGqXv89lFV7LdqKspK9CTkqk070wM7tKe6Q90KmRaa50nlpQIBykzhakOXULrePBjXCeEk7d6VlMRmPygdHO16IhBQaJ3o/0MfeWF2g4jPz30e+b5+GXT40S2DvEFs3RDsZ74ZsJJg4VcZUNg5b1DwCapEIulNi2OUrwbFXX0efXAJbeM1xuhJUipz6jQUvpaI0OXwrljufwPdWL78PEXrJzH4tPKO5M25BjN0IF2uFyjRbePW00J2dhPf8lOQttjHaL9y/H7fUcw+LDhK7jhA4L6sXJmw+HdVeGfkmSk0fatp//rtvn96FPT+xfiD6biC66rvsDbRRoxA==
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get comments"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/comment/{type}/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get comments from a document of type (groups, members, customFronts, etc.)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the document you wish to get comments from"},{"in":"path","name":"type","schema":{"type":"string"},"required":true,"description":"Type of the comment (groups, members, customFronts, etc.)"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

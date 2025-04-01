@@ -1,0 +1,69 @@
+---
+id: update-category
+title: "Update category"
+description: "Update a category"
+sidebar_label: "Update category"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtU8Fu2zAM/RVBpw3I4nToybes2YCiQ1Os7WEocpBtNlYrS5pId/OC/vtIO046pydbIkU+vve40whlmyx1On/Y6eXN5V14Br9sqeaLzetmpivAMtlINnid6/tYGQJlVMmfbUidnmkyW+RsfVEbUhfDvQXU/DiaZBogSNjXt1IiGi4+054DfLIV/yf41doElc4ptTDteVmp8KioBhWKJyhpxv8WGYFXhUBpgt8GxVlFS8o4DHwXnbFeISXrt+pDYcrn3yZV+KkMDfe3hXU888c598ayhsbofKepi4JoeKRfZXgBBkhfQtVJxhRnGTyBJwmZGJ1lUhhy9oSCe3daesDPTWMKERIJSxwdqNhNxt4z2ak+PJvCG1g6fbY6nkba3mo1LVLWxntwPQ5L0OA7TEwF+W6RpPb+rbpc4SjJHrIQwwIgs8g9LTkpx+k0DsUBCSXAGDwONHxeLE7HWV9J//PF+Wnoen2nvq3vr1d9F7ZZHarBX6UYrPdZrrOXs0w6ZyO4LO89h5BeRl+2yXFmTRQxzzIT7ZzlNKlzzuKcLcMQpkkVvLyXt5kdNupW1B8m+3+vDvxygSsQVfq9qMFUkI6bIcm8SH97T/Ujiq9+HB359Y9pooOjg0bBRmscz0eVH8bLzav0fQw9nr1Ct5YLdurGtck4xaj1VPo7kZkDKsEjJPAlqCqUbcNbgL3XYlvwHigeTYGvYrAcmKufoe33FUEW1u39Y5wb8w+5quayamR5a6luC6E2Wx6YXqdtNiAdgC6jzQoXiiyBA4OQYSpFRFE+hZYA54Q8icg9THE2XzCh/wCtsLwe
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update category"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/chat/category/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a category
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"Category name","type":"string"},"desc":{"description":"Description of the category","type":"string"},"channels":{"items":{"type":"string"},"description":"List of channel IDs this category contains"}},"title":"chatCategory"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

@@ -1,0 +1,69 @@
+---
+id: get-friend-settings
+title: "Get friend settings"
+description: "Get a friend from a user (Typically your user)"
+sidebar_label: "Get friend settings"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1P4zAQ/SuWTyBVTbvilFulXRBComhbDivUg5tMEwvHNv6oNhvlv+9M0gRaygHEJbE945k378244R6y6GSoefrU8MXD7do8g17EUOLBpt1MeA4+c9IGaTRP+Q0EJtjOSdA5/kyFu+jBsYt1bWUmlKpZbaLrDi/5hAdReAzFr7srnmNEK5yoIIDzXVJJca3AjBOu0YA7unyb495nJVSCpw0PtSWLD07qgrcT7uAlSgc5T4OLcIpz1fmx25yZHQslMONkIfWA/BjtJcY7i6P3/mYkaA5SCzKfh+MOxwhrQ9G9NdqDp9w/ZjP6HWdY3hGKq9nVe9P9cs2ul4/3P3mLLkh6aRAmLyDwSV9rypP9POkTJk1PfJs0Q+UtlQ5uP4gVncIrZQjWp0kirJwKi3rWSkk/zUzVMXnslMP+nN9mMvbeirjtCzzuwJFsDHAHNWLpRCpB5OBeZSJn1Pdfx2lXqdQ7012XQZHHSlYWyX1Q0QnFMAk/lWldSk8G5mAHDnSGQpksVqCD72SzcatkxhAJQ2askWiYsj8mskxo5gFwErC4QDKjkoP/6MtKDMsGUgoZyrglJpLFSMzSFUmPtAe6sDLZKrNNHCgQHhLvMuKcFHMmBvDT4LESUqevYj6dUS9Y40MlNDFwoIjm9tBsHgL2X+FPKWh4ZnTAer805r1OAf6GxCqBMiGMrg+aQ5898f0cHfuYuEjHIU/HMcOeKBE6OTfNFit+dKpt6fglgqM3Cpd74aTYkqzYj7n0tMam3gnlT4fvbUkXvw9jesk++Th8UN3Qmpr6ci9UpB0un7FRxyeMxuF7MH7i2fgS4FGEdvP2qbj5tUYX8W4cn7txPCxIibPRjydzSEVfIubslabph71tR//e9OGN8TnovanYTdu2/wGNg1gw
+sidebar_class_name: "get api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get friend settings"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/friend/{userId}/{friendId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a friend from a user (Typically your user)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"userId","schema":{"type":"string"},"required":true,"description":"String Id of the origin friend (Typically you)"},{"in":"path","name":"friendId","schema":{"type":"string"},"required":true,"description":"String Id of the destination friend (Typically your friend)"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

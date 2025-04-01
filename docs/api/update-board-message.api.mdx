@@ -1,0 +1,69 @@
+---
+id: update-board-message
+title: "Update board message"
+description: "Update a board message for a member"
+sidebar_label: "Update board message"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtU81uGjEQfhXLp1aiLKly4kaUVoqiBtQQVVXFwesdWCdej+vx0lKUd++MF6gCPa3XMx5/f95rAtsnl3d6+mOvZ4u7Jb5AmPW55Y3V62qkGyCbXMwOg57qp9iYDMqoGk1qVAdEZgNqjYn3OuhqSHqko0mmgwyJylgnJ6PhmSMduMB/ruF1gp+9S9DoaU49nF911yhcq9yCwvoZbB7x2pGyJqhaEHQYNqi4q+6zMp6Q96I3LijKyYWNelcb+/KLYdIHix3f72rnmer7Md9NtoXO6Ole510URMMh/SqcBRhQvsFmJx3nOC2GDCFLycTonTUCuXomwb2/HD3gF10SRkjZAQ1jTSPft7S/tcCc00D2qC8vpVuxzAFl0mFyjejBBEbNWy77YY8pfxkOLky2LVdL3WzEDn1TnDs0kC50KWKgAdXHyeQS1Pxe84TryfVl6WG+VJ/nTw+3BQS73mIz2G3bEgWJkq62V1UBVk2L9QRpe4xHnzx3tDlHmlaViW7Mqpq0897RmJ3jq8+bGtj+r281OuX5UUwYGL1N9ckVHnAPO8ZS4tmyvCW7h4BKMyb3p1hbqIm9X/8F49Nv00UR/GikZONVpq2x3HKw49Fx204tfJ+MV4xFnwd9KU5zgS1eQ4JgQTVo+44jRiX/sa85ZIoBKwhNRMeFsfqOfXkMBPIaWIMs78V4f+w/9SrOE6ijdhuX274WwarZSb952lQD0gHoLLqq9lhXCThgBBUlK9aIjwn7DDTOxEzExIHF1XjCMv0FiQJ//w==
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update board message"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/board/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a board message for a member
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"read":{"description":"Whether this message is read or not","type":"boolean"}},"title":"boardMessagePatch"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

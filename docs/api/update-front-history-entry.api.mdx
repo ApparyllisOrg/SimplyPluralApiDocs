@@ -1,0 +1,69 @@
+---
+id: update-front-history-entry
+title: "Update front history entry"
+description: "Update a Front History entry by an Id"
+sidebar_label: "Update front history entry"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VU1v2zAM/SuCThuQxenQU25Zu6JFsaZoUgxDkYNsM7Fa2dIkOWtm+L+PlOyk+SgwDNjFkCWK5CPfoxruIKut9Bs+fmr45P5mrl+gmtS+wI1FuxjwHFxmpfFSV3zMH00uPDDBrqyuPLuWzmu7YVB5/KYbJip2k/MB92Ll0APfM+PozsLPGpz/onMM2YRfaSHnY29rGPAMzdEZHQljlMwEBU6eHUVvuMsKKAWt/MYA5qPTZ8g8BjRWG7BegqPTrMaA5cwLX4f/fRAX4ZS5cMz0kvkC2DJkGoBQ/tG981ZWK94OOo/Hvr4XgLctupCu81HsFcVbkb04rFj00Nloy0ooU7C7WKnWCkRFwZRcwz+Ewu1w85RLBGv9XJYn/H6TSknkga5yx5ysMmBgdFawpe6CebyHDkqTUPd3/iU2a4UY0D9U+X/03tXqyPnNZd++aEF13atzCNCxE5SuVhhO8xZdeukVRQl2PUHblo6MsKIED9YFVUiKZARKYsArQRh5rrNA8yM+7ghzyOz9xGfBDrXS548e65KY3waROKMrF7n8eTQ6Bj69pRjno/Pjo7vpnF1NH+8uA0zEUeg8AsgIQQAy5sn6LHkLPWkCppZAgV332Gur0Ljw3rhxkggjhyhLYTfU02GGgmgHh0Y5rE/ZLQbbWTOjqkVw+xNnW0Z0cAukw1D7AkQelNJVn4y1lb/DbAgoaT487CbL11dkk4LjSdD3Z6fn2JwouLh+o5TRG16PWspmqUOWHXdmEsNs2L2qrVAMsfDDPs+Jf3jALCzBArG/77QLfTd1ilOOIWCkaW40kt4N2Q9dswxnqQOatVhDTzwRSvX2W1uGEwFYX/uV9EWdUsGTybb+U7tKYqYx0YmRSap0mljA6eAgcTaj1hIlrK49uKF3iIRIEFGcDUdEN6OdL0UYxF0nuufgxDA6rESzG+1//4hEMnh49YlRQoZBFsjWdDR+4uszNNzT8ICPozyRcQVmTFZNkyLQR6valraRKJZePFyuhZUipW4i23PpaI1yWQrlDkX7FsKHh07eH9n7Un4HQc/xinJdC1XTHy5fkPH9aGkXaNjxnjKLZxcx/qc5edjdPXopSWxb4d9P5hfXaJ12T26pc7pkxS/cpG8IrgPIoMmw13AlqlUtVmQbnZLQxJFOX4JOuwWlehLevmR7rPSlAXLyStPEKdC2W/t49O6N7ZyI1lTtBWb9Bxy7FiY=
+sidebar_class_name: "patch api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update front history entry"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/frontHistory/{docId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a Front History entry by an Id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"docId","schema":{"type":"string"},"required":true,"description":"String Id of the document"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"customStatus":{"description":"Custom status of the front entry","type":"string"},"custom":{"description":"Whether this front history entry tracks a custom front or member","type":"boolean"},"live":{"description":"Whether this front history entry is live","type":"boolean"},"startTime":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"endTime":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"member":{"description":"ID of the member or custom front this entry belongs to"}},"title":"frontHistory"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

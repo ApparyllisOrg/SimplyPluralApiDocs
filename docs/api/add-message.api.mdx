@@ -1,0 +1,69 @@
+---
+id: add-message
+title: "Add message"
+description: "Add a new message"
+sidebar_label: "Add message"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9VMFu2zAM/RVBpw3I4nToKbds3YCiWFOs2WEYcpAtxlYrS5pIN8uC/PsoO07jJN1NFiny8fE9byVC0URDGzn9tZWzh9uFfwY3a6jii+VuOZIasIgmkPFOTuVMa6GEg7WoAVGVIEeSVImcLT9XiiS/CCqqGggitkVNehcUVxxJxwH+MprPEX43JoKWU4oNnDa61cKvBFUgfP4EBY34bFAUyokcGELtXekFZ+UNCWXR812wyjiBFI0rxbtcFc9rFTV+KHzN/U1uLA/6fsy9saigVnK6lbQJCVH3SO7SxAkYIH3yepMyTnEW3hE4SiEVgjWFSpCzJ0y4t+elO/zcNEQfIJIBTNGePz4OJ//2SuwQG7eulHNgz9/c3vRs7VM6tvY9BFa+sVowYeQv1V2zAiD+r2wNdQ6Rj4rEOnqCQYO3ajJPM7owobHWsPC80yjQuAIEBF9UYuVjV5cMVyZVh0wrOipvmPqSke7SloLdLPyb/AkGPyCBj6yO9tlFGrgmGbLpikmkfZkHj8SxXdsRg3fYre/jZHLeen6XkF1Prs9D9/OF+Dr/cX/TNmJ7VF4nX6Tyo84eU5m9XGWpd7bHnE1bpyDEl95NTeT1y4oo4DTLVDBjFqGKm8TomIXOAE6TNLxcyluODuZ/TJrt5hr+Ag4i5gJ3sGEsrZsrUJq3cPBzSvbR/G2d0A6Y3PD91Udf/vAuLQx03xN/JOvXq16Rw5u9niZH2z9SnHGrVg79Fh9NnXb9YJuorODB5OlPZpH0wQFWxQoiJCFqXzQ12xtb2YcmZ4MLnl6A08Gz/nAsfvqm/REhpD8RE0rJJsraPv+QKyouK/pFlIaqJk/sZ7PDMuaxzDqkHdBZMFlufZ5FsKAQMoxF2nPSRvQNAY4JeZKkiG6Kq/GEOf8HUoMDrg==
+sidebar_class_name: "post api-method"
+info_path: docs/api/simply-plural-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add message"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/chat/message/:id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Add a new message
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"message":{"description":"Message","type":"string"},"channel":{"description":"ID of the channel this message should go to","type":"string"},"writer":{"description":"ID of the member that wrote this message","type":"string"},"writtenAt":{"description":"Milliseconds since epoch for this timestamp/date","type":"integer"},"replyTo":{"description":"Message ID this message is in reply to","type":"string"}},"title":"chatMessagePost"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"},"404":{"description":"NOT FOUND"}}}
+>
+  
+</StatusCodes>
+

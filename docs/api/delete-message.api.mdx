@@ -5,7 +5,7 @@ description: "Delete a message"
 sidebar_label: "Delete message"
 hide_title: true
 hide_table_of_contents: true
-api: eJzVk8GK2zAQhl9l0KkF186WPfkWGgphYRNISiklB1me2OrKkqqRUtKQd+/I3mR3075AT1Gsf8bz//P5JAhVCjoeRf39JObr5dY9oZ2n2POD3XlXiBZJBe2jdlbUYoEGI4KEAYlkh6IQUXbEYvGpl1FwgZdBDiwKNPbUucxLblgIyxf8T7d8JtXjIEV9enWKR5/vKQZtO3G+FrjmB6q4zGWv2wX8mXTAVtQxJLwddTUWwXIBbg+xR5i6FHzWBEpaaEYjznYuq5oUQRpy/MwbqS1MY8C7RqqnXzK09EG5gV+tG204sfclfO3RQqKsWq82W3ABZNsCx8j9jaHnd/ngPIZ4BD67cTxpypycjuaNvfP/7ikDE5C8s4SUN/pxNss/Ny4estP72f3fV4+rLXxefXlciDNLGKPecRQsytiJYtp8LarDXaWYt+oZw6qemMJwuHCXgmFhH6Onuqqk16X0jObRGE0lm+YRbkUtHv6l2xXXr2STUZ2cvf1Wruxygwc8XkDtUbYYXsjPYhf0bznazRa13bux/JmFjR68OcLapCBNTl3cMrDN8ed1BNxjQKsQWqfSgDbSyIRPjdEKeBJA23qn+aKEby6NgBBmQthczAzxRi/6qxZ6bguXUDod+9TkJKr5NZhV6Kpp0mnQuddVY1xTBV6UJKwoqJx53lNwKSKVkdhJ3s7k4q6csf8/U/uLkw==
+api: eJxtUk1v2zAM/SuCTivgWenQk2/BigFFgaZAs8Mw5CDLjK1WljRSyuAF+e+j7CVDs50si4/k+9BREpiMNk2y+X6U6+eHbXgDv85p4IvdaVfJDsigjckGLxt5Dw4SCC1GINI9yEom3ROD5edBJ8kNUaMeGYQ0z7SlLWoeWEnPBf6zHZ8RfmSL0MkmYYbrPQ+dCHuRBhChfQWTKj5bEkZ70c7rg++DYFSbk9COAt9Fp60XlND6XnxotXn7qbGjjyaMvN+21rHOm5p3kxlg1LI5yjTFwmhpkqciGIFi8ARU6p9Wq/J5T27zKE+VvFvd/Vt62mzFl83Xp3ueVUm2YQiskEHFNlktRjRSHW6VYb/UHxtVM3tCgIezbxkdA4eUIjVK6WhrHdnayTlLNUtiCtegDg7/w+2qS8ovRfii7H3WFyd4wCNMzGXObQDdAf5NroAD2l96llskWr8Pc7tNriBe7BjdJJ5dRu0EL5HX0W5LkFwQCHtA8AZEF0wewSeaE4+5ddYIZiLAdzFYLtTiW8hz/AQlfxaXygvRzp3xF6wYeKw4m9LbNOS2OKHWF2M22KuF6UJ0Ha1qXWgVclCaQBGa4nnJCUNOQHUiVlLSWVTc1ivW/xswpB4x
 sidebar_class_name: "delete api-method"
 info_path: docs/api/simply-plural-api
 custom_edit_url: null
@@ -47,7 +47,7 @@ Delete a message
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"id","schema":{"schema":{"type":"string"},"name":"objectId","in":"path","required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.","title":"objectId"},"required":true,"description":"Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional."}]}
+  parameters={[{"in":"path","name":"id","required":true,"description":"Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).","schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>

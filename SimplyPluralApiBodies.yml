@@ -13,20 +13,6 @@ paths:
 
 components:
   schemas:
-    commons:
-      type: object
-      properties:
-        color:
-          description: Color of the object (\#ffffff, \#ffffffff or ffffff)
-        private:
-          description: Whether this object is private
-        preventTrusted:
-          description: Wheter trusted friends are prevented from seeing this private object
-        supportDescMarkdown:
-          description: Whether the description supports markdown
-        timestamp:
-          description: Milliseconds since epoch for this timestamp/date
-
     analyticsIdValuePair:
       type: object
       properties:
@@ -86,7 +72,6 @@ components:
               items:
                 $ref: "#/components/schemas/analyticsIdValuePair"
 
-
     automatedReminder:
       type: object
       properties:
@@ -106,6 +91,49 @@ components:
           description: Delay in hours since the action (front change)
           type: integer
 
+    automatedTimer:
+      type: object
+      properties:
+        name:
+          description: Name of the reminder
+          type: string
+        message:
+          description: Message of the reminder
+          type: string
+        action:
+          description: unknown # todo: what is this?
+          type: integer
+        delayInHours:
+          description: Delay in hours from action to reminder
+          type: integer
+        type:
+          description: "When this reminder should trigger.
+            0 -> Member front change,
+            1 -> Custom front change,
+            2 -> Any front change"
+          type: integer
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/systemId/description"
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
+
+    automatedTimerContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Reminder Id
+          type: string
+        content:
+          description: The reminder itself
+          $ref: "#/components/schemas/automatedTimer"
+
+          
     boardMessagePost:
       type: object
       properties:

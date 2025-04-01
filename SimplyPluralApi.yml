@@ -1835,12 +1835,34 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/board/:id:
+  # TODO: The below should exist but doesn't work?
+  /v1/board:
+    post:
+      security:
+        - APITokenAuth: []
+      summary: "Write board message"
+      description: "Write a new board message for a member"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessagePost"
+      tags:
+        - Board Messages
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: BAD REQEST
+        "404":
+          description: NOT FOUND
+  /v1/board/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get specific board message"
-      description: "Get specific board message by id"
+      description: "Get specific board message by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
@@ -1848,12 +1870,16 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
         "404":
           description: NOT FOUND
     post:
       security:
         - APITokenAuth: []
-      summary: "Write board message"
+      summary: "Write board message by Id"
       description: "Write a new board message for a member"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
@@ -1868,8 +1894,17 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            text/csv:
+              schema:
+                type: string
+              example: "\"67d63acba3e170d9b68cb7f9\""
+        "400":
+          description: BAD REQEST
         "404":
           description: NOT FOUND
+        "500":
+          description: RECORD NOT ENTERED INTO DATABASE
     patch:
       security:
         - APITokenAuth: []
@@ -1894,9 +1929,9 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Delete board message"
+      description: "Delete a board message"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
-      description: "Delete a channel"
       tags:
         - Board Messages
       responses:
@@ -1916,6 +1951,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
         "404":
           description: NOT FOUND
 
@@ -1930,6 +1971,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
         "404":
           description: NOT FOUND
 

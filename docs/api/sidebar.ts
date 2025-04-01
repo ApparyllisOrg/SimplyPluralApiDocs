@@ -78,14 +78,20 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/write-board-message",
+          label: "Write board message",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/get-specific-board-message",
           label: "Get specific board message",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/write-board-message",
-          label: "Write board message",
+          id: "api/write-board-message-by-id",
+          label: "Write board message by Id",
           className: "api-method post",
         },
         {

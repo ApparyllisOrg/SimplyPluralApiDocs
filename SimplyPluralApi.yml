@@ -1943,19 +1943,30 @@ paths:
       tags:
         - Analytics
       parameters:
-        - name: Start and End Times
+        - name: startTime
           in: query
-          description: 'Start and End times in '
+          description: 'Start time in Unix timestamp format (millisecond accuracy)'
           required: true
           schema:
             type: object
             properties:
               startTime:
                 type: integer
+        - name: endTime
+          in: query
+          description: 'End time in Unix timestamp format (millisecond accuracy)'
+          required: true
+          schema:
+            type: object
+            properties:
               endTime:
                 type: integer
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/analytics"
         "404":
           description: NOT FOUND

@@ -833,7 +833,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67e78b964cfb3eed32ef8848\""
@@ -866,7 +866,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67e78b964cfb3eed32ef8848\""
@@ -1594,7 +1594,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67d63acba3e170d9b68cb7f9\""
@@ -1640,7 +1640,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67d63acba3e170d9b68cb7f9\""
@@ -1736,7 +1736,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67d63acba3e170d9b68cb7f9\""
@@ -1783,7 +1783,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67d63acba3e170d9b68cb7f9\""
@@ -1864,7 +1864,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67d63acba3e170d9b68cb7f9\""
@@ -1910,7 +1910,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67d63acba3e170d9b68cb7f9\""
@@ -2033,7 +2033,7 @@ paths:
         "200":
           description: OK
           content:
-            text/csv:
+            text:
               schema:
                 type: string
               example: "\"67d63acba3e170d9b68cb7f9\""

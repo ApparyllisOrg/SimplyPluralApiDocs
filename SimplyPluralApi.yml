@@ -13,7 +13,7 @@ tags:
     x-displayName: Analytics
 
   - name: Automated Timers
-    description: Everything related to Automated Timers
+    description: Everything related to automated timers
     x-displayName: Automated Timers
 
   - name: Board Messages
@@ -33,11 +33,11 @@ tags:
     x-displayName: Chat Channels
 
   - name: Comments
-    description: Everything related to Comments
+    description: Everything related to comments
     x-displayName: Comments
 
   - name: Custom Fronts
-    description: Everything related to Custom Fronts
+    description: Everything related to custom fronts
     x-displayName: Custom Fronts
 
   - name: Friends
@@ -53,15 +53,15 @@ tags:
     x-displayName: Groups
 
   - name: Members
-    description: Everything related to Members
+    description: Everything related to members
     x-displayName: Members
 
   - name: Notes
-    description: Everything related to Notes
+    description: Everything related to notes
     x-displayName: Notes
 
   - name: Polls
-    description: Everything related to Polls
+    description: Everything related to polls
     x-displayName: Polls
 
   - name: PluralKit
@@ -69,7 +69,7 @@ tags:
     x-displayName: PluralKit
 
   - name: Repeated Timers
-    description: Everything related to Repeated Timers
+    description: Everything related to repeated timers
     x-displayName: Repeated Timers
 
   - name: User

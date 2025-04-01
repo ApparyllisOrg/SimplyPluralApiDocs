@@ -19,7 +19,7 @@ components:
         systemId:
           description: The system Id
         color:
-          description: Color of the object in a hex format (eg \#ffffff, \#ffffffff or ffffff)
+          description: 'Color of the object in a hex format (eg: \#ffffff, \#ffffffff or ffffff)'
         private:
           description: Whether this object is private
         preventTrusted:

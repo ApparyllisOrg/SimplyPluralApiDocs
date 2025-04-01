@@ -13,17 +13,6 @@ paths:
 
 components:
   schemas:
-    analyticsIdValuePair:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the member
-        value:
-          type: long
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-
     analytics:
       type: object
       properties:
@@ -71,6 +60,17 @@ components:
               type: array
               items:
                 $ref: "#/components/schemas/analyticsIdValuePair"
+
+    analyticsIdValuePair:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The Id of the member
+        value:
+          type: long
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
 
     automatedReminder:
       type: object
@@ -305,17 +305,17 @@ components:
           description: Message
           type: string
         channel:
-          description: ID of the channel this message should go to
+          description: Id of the channel this message should go to
           type: string
         writer:
-          description: ID of the member that wrote this message
+          description: Id of the member that wrote this message
           type: string
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         replyTo:
-          description: "Message ID this message is in reply to"
+          description: Message Id this message is in reply to
           type: string
         uid:
           description: User Id this message is in is from
@@ -337,26 +337,6 @@ components:
           description: The message itself
           $ref: "#/components/schemas/chatMessage"
 
-    chatMessagePost:
-      type: object
-      properties:
-        message:
-          description: Message
-          type: string
-        channel:
-          description: ID of the channel this message should go to
-          type: string
-        writer:
-          description: ID of the member that wrote this message
-          type: string
-        writtenAt:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
-        replyTo:
-          description: "Message ID this message is in reply to"
-          type: string
-
     chatMessagePatch:
       type: object
       properties:
@@ -367,6 +347,38 @@ components:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
+
+    chatMessagePost:
+      type: object
+      properties:
+        message:
+          description: Message
+          type: string
+        channel:
+          description: Id of the channel this message should go to
+          type: string
+        writer:
+          description: Id of the member that wrote this message
+          type: string
+        writtenAt:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        replyTo:
+          description: Message Id this message is in reply to
+          type: string
+
+    commentsPatch:
+      type: object
+      properties:
+        text:
+          description:
+            $ref: "#/components/schemas/commentsPost/properties/text/description"
+          type: string
+        supporMarkdown:
+          description:
+            $ref: "#/components/schemas/commentsPost/properties/supporMarkdown/description"
+          type: boolean
 
     commentsPost:
       type: object
@@ -387,18 +399,6 @@ components:
         collection:
           description: Id of the collection this comments belongs to (Only accepted collection is "frontHistory")
           type: string
-
-    commentsPatch:
-      type: object
-      properties:
-        text:
-          description:
-            $ref: "#/components/schemas/commentsPost/properties/text/description"
-          type: string
-        supporMarkdown:
-          description:
-            $ref: "#/components/schemas/commentsPost/properties/supporMarkdown/description"
-          type: boolean
 
     customFront:
       type: object
@@ -458,14 +458,14 @@ components:
           description: Emoji of the group
           type: string
         parent:
-          description: Parent group ID, if no parent use "root".
+          description: Parent group Id, if no parent use "root".
           type: string
         members:
           description: Members of this group
           type: array
           items:
-            type: "string"
-            description: "ID of the member"
+            type: string
+            description: Id of the member
 
     member:
       type: object
@@ -484,7 +484,7 @@ components:
           description: Pronouns of the member
           type: string
         pkId:
-          description: PluralKit ID of the member, 5-letter string
+          description: PluralKit Id of the member, 5-letter string
           type: string
         avatarUrl:
           description: URL for the avatar
@@ -512,30 +512,6 @@ components:
               type: string
               description: Info object entry, id/key has to match an id/key from the user object, value is the value string
 
-    notesPost:
-      type: object
-      properties:
-        note:
-          description: Note text
-          type: string
-        title:
-          description: Name of the note
-          type: string
-        color:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
-          type: string
-        member:
-          description: Id of the member this note belongs to
-          type: boolean
-        date:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
-        supportDescMarkdown:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
-
     notesPatch:
       type: object
       properties:
@@ -554,6 +530,30 @@ components:
         member:
           description:
             $ref: "#/components/schemas/notesPost/properties/member/description"
+          type: boolean
+        date:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        supportDescMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+
+    notesPost:
+      type: object
+      properties:
+        note:
+          description: Note text
+          type: string
+        title:
+          description: Name of the note
+          type: string
+        color:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
+          type: string
+        member:
+          description: Id of the member this note belongs to
           type: boolean
         date:
           description:
@@ -584,7 +584,7 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         member:
-          description: ID of the member or custom front this entry belongs to
+          description: Id of the member or custom front this entry belongs to
 
     repeatedReminder:
       type: object
@@ -658,7 +658,7 @@ components:
             type: object
             properties:
               id:
-                description: ID of the member who votes
+                description: Id of the member who votes
                 type: string
               comment:
                 description: Comment on the vote

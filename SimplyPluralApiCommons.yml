@@ -27,7 +27,7 @@ components:
         timestamp:
           description: Time in Milliseconds since epoch
         uid:
-          description: The system Id
+          description: The user Id of the system
         lastOperationTime:
           description: Time in milliseconds since epoch of the last update on this object
 

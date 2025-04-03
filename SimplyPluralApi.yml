@@ -787,27 +787,16 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/timer/automated/{systemId}/{docId}:
+  /v1/timer/automated/{systemId}/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get automated timer"
       description: "Get an Automated Timer by Id"
+      parameters:
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
       tags:
         - Automated Timers
-      parameters:
-        - in: path
-          name: docId
-          schema:
-            type: string
-          required: true
-          description: String Id of the Automated Timer
-        - in: path
-          name: systemId
-          schema:
-            type: string
-          required: true
-          description: String Id of the system
       responses:
         "200":
           description: OK
@@ -817,20 +806,14 @@ paths:
                 $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimerContainer"
         "404":
           description: NOT FOUND
-
-  /v1/timer/automated/{docId}:
+  /v1/timer/automated/{id}:
     post:
       security:
         - APITokenAuth: []
       summary: "Add automated timer"
       description: "Add an Automated Timer"
       parameters:
-        - in: path
-          name: docId
-          schema:
-            type: string
-          required: false
-          description: String Id of the Automated Timer
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectIdOptional"
       requestBody:
         required: true
         content:
@@ -859,12 +842,7 @@ paths:
       summary: "Update automated timer by Id"
       description: "Update an Automated Timer by an Id"
       parameters:
-        - in: path
-          name: docId
-          schema:
-            type: string
-          required: true
-          description: String Id of the Automated Timer
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
         required: true
         content:
@@ -886,12 +864,7 @@ paths:
       summary: "Delete automated timer"
       description: "Delete an Automated Timer by Id"
       parameters:
-        - in: path
-          name: docId
-          schema:
-            type: string
-          required: true
-          description: String Id of the timer
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
         - Automated Timers
       responses:
@@ -899,6 +872,7 @@ paths:
           description: OK
         "404":
           description: NOT FOUND
+
   /v1/timers/automated/{systemId}:
     get:
       security:
@@ -906,12 +880,7 @@ paths:
       summary: "Get all automated timers"
       description: "Get Automated Timers for a system"
       parameters:
-        - in: path
-          name: systemId
-          schema:
-            type: string
-          required: true
-          description: String Id of the system
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
       tags:
         - Automated Timers
       responses:

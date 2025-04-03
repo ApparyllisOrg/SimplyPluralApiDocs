@@ -32,6 +32,13 @@ components:
           description: Time in milliseconds since epoch of the last update on this object
 
   parameters:
+    objectId:
+      - in: path
+        name: id
+        required: true
+        description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
+        schema:
+          type: string
     objectIdOptional:
       - in: path
         name: id
@@ -39,7 +46,20 @@ components:
         description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
         schema:
           type: string
-    objectId:
+    systemId:
+      - in: path
+        name: systemId
+        required: true
+        description: The user Id of the system
+        schema:
+          type: string
+    systemIdAndObjectId:
+      - in: path
+        name: systemId
+        required: true
+        description: The user Id of the system
+        schema:
+          type: string
       - in: path
         name: id
         required: true

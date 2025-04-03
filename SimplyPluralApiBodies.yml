@@ -246,7 +246,7 @@ components:
           description: Message Id
           type: string
         content:
-          description: The message itself
+          description: The message content
           $ref: "#/components/schemas/boardMessageInfo"
 
     boardMessagePatch:
@@ -278,10 +278,10 @@ components:
         exists:
           type: boolean
         id:
-          description: Message Id
+          description: Catagory Id
           type: string
         content:
-          description: The message itself
+          description: The catagory information
           $ref: "#/components/schemas/chatCategoryInfo"
 
     chatCategoryInfo:
@@ -326,10 +326,10 @@ components:
         exists:
           type: boolean
         id:
-          description: Message Id
+          description: Channel Id
           type: string
         content:
-          description: The message itself
+          description: The channel content
           $ref: "#/components/schemas/chatChannelInfo"
 
     chatChannelInfo:
@@ -378,10 +378,10 @@ components:
         exists:
           type: boolean
         id:
-          description: Message Id this message is in reply to
+          description: The message Id
           type: string
         content:
-          description: The message itself
+          description: The message content
           $ref: "#/components/schemas/chatMessageInfo"
 
     chatMessageInfo:

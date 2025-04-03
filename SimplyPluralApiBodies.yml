@@ -10,7 +10,7 @@ components:
       type: object
       properties:
         timings:
-          description: Groups of fronters based on timings
+          description: Groups of member and/or custom front ids based on timings when they fronted
           type: object
           properties:
             morningFronters:
@@ -36,25 +36,25 @@ components:
             sums:
               type: array
               items:
-                $ref: "#/components/schemas/analyticsIdValuePair"
+                $ref: "#/components/schemas/analyticsSums"
             averages:
               type: array
               items:
-                $ref: "#/components/schemas/analyticsIdValuePair"
+                $ref: "#/components/schemas/analyticsAverages"
             maxes:
               type: array              
               items:
-                $ref: "#/components/schemas/analyticsIdValuePair"
+                $ref: "#/components/schemas/analyticsMaxes"
             mins:
               type: array
               items:
-                $ref: "#/components/schemas/analyticsIdValuePair"
+                $ref: "#/components/schemas/analyticsMins"
             nums:
               type: array
               items:
-                $ref: "#/components/schemas/analyticsIdValuePair"
+                $ref: "#/components/schemas/analyticsNums"
 
-    analyticsIdValuePair:
+    analyticsSums:
       type: object
       properties:
         id:
@@ -62,8 +62,51 @@ components:
           description: The Id of the member
         value:
           type: long
+          description: Total length they fronted
+
+    analyticsAverages:
+      type: object
+      properties:
+        id:
+          type: string
           description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+            $ref: "#/components/schemas/analyticsSums/properties/id/description"
+        value:
+          type: long
+          description: Average length they fronted
+
+    analyticsMaxes:
+      type: object
+      properties:
+        id:
+          type: string
+          description:
+            $ref: "#/components/schemas/analyticsSums/properties/id/description"
+        value:
+          type: long
+          description: Maximum length they fronted
+
+    analyticsMins:
+      type: object
+      properties:
+        id:
+          type: string
+          description:
+            $ref: "#/components/schemas/analyticsSums/properties/id/description"
+        value:
+          type: long
+          description: Minimum length they fronted
+
+    analyticsNums:
+      type: object
+      properties:
+        id:
+          type: string
+          description:
+            $ref: "#/components/schemas/automatedTimer/properties/type/description"
+        value:
+          type: long
+          description: Amount of times they fronted
 
     automatedTimer:
       type: object
@@ -124,7 +167,7 @@ components:
           description: Reminder Id
           type: string
         content:
-          description: The reminder itself
+          description: The reminder content
           $ref: "#/components/schemas/automatedTimerInfo"
 
     boardMessage:
@@ -223,7 +266,7 @@ components:
           description: Description of the category
           type: string
         channels:
-          description: List of channel Ids this category contains
+          description: Ordered list of unique channel Ids this category contains
           type: array
           items:
             type: string
@@ -253,7 +296,7 @@ components:
           type: string
         channels:
           description:
-            $ref: "#/components/schemas/chatCategory/properties/desc/description"
+            $ref: "#/components/schemas/chatCategory/properties/channels/description"
           type: array
           items:
             type: string

@@ -840,7 +840,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Update automated timer by Id"
-      description: "Update an Automated Timer by an Id"
+      description: "Update an Automated Timer by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:

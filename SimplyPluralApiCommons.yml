@@ -43,7 +43,7 @@ components:
       - in: path
         name: id
         required: false
-        description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
+        description: Optional Id of the object. If supplied, this must be a mongodb objectID format. If not supplied, the API will generate the id for you.
         schema:
           type: string
     systemId:

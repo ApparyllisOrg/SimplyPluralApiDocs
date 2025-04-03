@@ -139,7 +139,8 @@ components:
             $ref: "#/components/schemas/automatedTimer/properties/message/description"
           type: string
         action:
-          description: unknown # todo: what is this?
+          description:
+            $ref: "#/components/schemas/automatedTimer/properties/type/description"
           type: integer
         delayInHours:
           description:

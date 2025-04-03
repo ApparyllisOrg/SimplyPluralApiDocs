@@ -817,44 +817,19 @@ paths:
                 $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimerContainer"
         "404":
           description: NOT FOUND
-  /v1/timer/automated:
+
+  /v1/timer/automated/{docId}:
     post:
       security:
         - APITokenAuth: []
       summary: "Add automated timer"
       description: "Add an Automated Timer"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimer"
-      responses:
-        "200":
-          description: OK
-          content:
-            text:
-              schema:
-                type: string
-              example: "\"67e78b964cfb3eed32ef8848\""
-        "400":
-          description: BAD REQUEST
-        "404":
-          description: NOT FOUND
-      tags:
-        - Automated Timers
-  /v1/timer/automated/{docId}:
-    post:
-      security:
-        - APITokenAuth: []
-      summary: "Add automated timer by Id"
-      description: "Add an Automated Timer by an Id"
       parameters:
         - in: path
           name: docId
           schema:
             type: string
-          required: true
+          required: false
           description: String Id of the Automated Timer
       requestBody:
         required: true
@@ -862,6 +837,8 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimer"
+      tags:
+        - Automated Timers
       responses:
         "200":
           description: OK
@@ -876,8 +853,6 @@ paths:
           description: NOT FOUND
         "500":
           description: RECORD NOT ENTERED INTO DATABASE
-      tags:
-        - Automated Timers
     patch:
       security:
         - APITokenAuth: []
@@ -896,6 +871,8 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/automatedTimer"
+      tags:
+        - Automated Timers
       responses:
         "200":
           description: OK
@@ -903,8 +880,6 @@ paths:
           description: BAD REQUEST
         "404":
           description: NOT FOUND
-      tags:
-        - Automated Timers
     delete:
       security:
         - APITokenAuth: []
@@ -917,21 +892,19 @@ paths:
             type: string
           required: true
           description: String Id of the timer
+      tags:
+        - Automated Timers
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
-      tags:
-        - Automated Timers
   /v1/timers/automated/{systemId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all automated timers"
       description: "Get Automated Timers for a system"
-      tags:
-        - Automated Timers
       parameters:
         - in: path
           name: systemId
@@ -939,6 +912,8 @@ paths:
             type: string
           required: true
           description: String Id of the system
+      tags:
+        - Automated Timers
       responses:
         "200":
           description: OK
@@ -1576,32 +1551,6 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/chat/message:
-    post:
-      security:
-        - APITokenAuth: []
-      summary: "Add message"
-      description: "Add a new message"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatMessage"
-      tags:
-        - Chat Messages
-      responses:
-        "200":
-          description: OK
-          content:
-            text:
-              schema:
-                type: string
-              example: "\"67d63acba3e170d9b68cb7f9\""
-        "400":
-          description: BAD REQUEST
-        "404":
-          description: NOT FOUND
   /v1/chat/message/{id}:
     get:
       security:
@@ -1624,10 +1573,10 @@ paths:
     post:
       security:
         - APITokenAuth: []
-      summary: "Add message by Id"
-      description: "Add a new message by Id"
+      summary: "Add message"
+      description: "Add a new message"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectIdOptional"
       requestBody:
         required: true
         content:
@@ -1671,10 +1620,10 @@ paths:
         - APITokenAuth: []
       summary: "Delete message"
       description: "Delete a message"
-      tags:
-        - Chat Messages
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Chat Messages
       responses:
         "200":
           description: OK
@@ -1718,33 +1667,6 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/chat/category:
-    post:
-      security:
-        - APITokenAuth: []
-      summary: "Add category"
-      description: "Add a new category"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatCategory"
-      tags:
-        - Chat Categories
-      responses:
-        "200":
-          description: OK
-          content:
-            text:
-              schema:
-                type: string
-              example: "\"67d63acba3e170d9b68cb7f9\""
-        "400":
-          description: BAD REQUEST
-        "404":
-          description: NOT FOUND
-
   /v1/chat/category/{id}:
     get:
       security:
@@ -1767,10 +1689,10 @@ paths:
     post:
       security:
         - APITokenAuth: []
-      summary: "Add category by Id"
-      description: "Add a new category by Id"
+      summary: "Add category"
+      description: "Add a new category"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectIdOptional"
       requestBody:
         required: true
         content:
@@ -1846,32 +1768,6 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/chat/channel:
-    post:
-      security:
-        - APITokenAuth: []
-      summary: "Add channel"
-      description: "Add a new channel"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/chatChannel"
-      tags:
-        - Chat Channels
-      responses:
-        "200":
-          description: OK
-          content:
-            text:
-              schema:
-                type: string
-              example: "\"67d63acba3e170d9b68cb7f9\""
-        "400":
-          description: BAD REQUEST
-        "404":
-          description: NOT FOUND
   /v1/chat/channel/{id}:
     get:
       security:
@@ -1894,10 +1790,10 @@ paths:
     post:
       security:
         - APITokenAuth: []
-      summary: "Add channel by Id"
-      description: "Add a new channel by Id"
+      summary: "Add channel"
+      description: "Add a new channel"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectIdOptional"
       requestBody:
         required: true
         content:
@@ -1973,28 +1869,6 @@ paths:
         "404":
           description: NOT FOUND
 
-  # todo: The below should exist but doesn't work?
-  /v1/board:
-    post:
-      security:
-        - APITokenAuth: []
-      summary: "Write board message"
-      description: "Write a new board message for a member"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessage"
-      tags:
-        - Board Messages
-      responses:
-        "200":
-          description: OK
-        "400":
-          description: BAD REQEST
-        "404":
-          description: NOT FOUND
   /v1/board/{id}:
     get:
       security:
@@ -2017,10 +1891,10 @@ paths:
     post:
       security:
         - APITokenAuth: []
-      summary: "Write board message by Id"
+      summary: "Write board message"
       description: "Write a new board message for a member"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectIdOptional"
       requestBody:
         required: true
         content:
@@ -2124,8 +1998,6 @@ paths:
         - APITokenAuth: []
       summary: "Get analytics"
       description: "Get analytics of authenticated user"
-      tags:
-        - Analytics
       parameters:
         - name: startTime
           in: query
@@ -2145,6 +2017,8 @@ paths:
             properties:
               endTime:
                 type: integer
+      tags:
+        - Analytics
       responses:
         "200":
           description: OK

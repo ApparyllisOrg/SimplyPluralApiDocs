@@ -1962,7 +1962,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get analytics"
-      description: "Get analytics of authenticated user"
+      description: "Get analytics of the authenticated user"
       parameters:
         - name: startTime
           in: query

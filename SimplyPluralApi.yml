@@ -213,9 +213,9 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Add group"
-      description: "Add a group by (optionally) an Id"
+      description: "Add a group"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectIdOptional"
       requestBody:
         required: true
         content:
@@ -234,29 +234,33 @@ paths:
         - APITokenAuth: []
       summary: "Update group"
       description: "Update a group by Id"
+      parameters:
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groups"
+      tags:
+        - Groups
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
-      tags:
-        - Groups
     delete:
       summary: "Delete group"
       description: "Delete a group by Id"
+      parameters:
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Groups
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
-      tags:
-        - Groups
 
   /v1/groups/{systemId}:
     get:
@@ -264,10 +268,10 @@ paths:
         - APITokenAuth: []
       summary: "Get all groups"
       description: "Get groups of a system by Id"
-      tags:
-        - Groups
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+      tags:
+        - Groups
       responses:
         "200":
           description: OK
@@ -294,9 +298,9 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Add note"
-      description: "Add a note by (optionally) an Id"
+      description: "Add a note"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectIdOptional"
       requestBody:
         required: true
         content:

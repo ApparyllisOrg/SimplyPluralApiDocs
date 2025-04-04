@@ -4,30 +4,111 @@ info:
   description: This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts
   version: "1.0"
 
-paths:
-  /somePath:
-    get:
-      responses:
-        200:
-          description: ok
-
 components:
   schemas:
-    commons:
+    analytics:
       type: object
       properties:
-        color:
-          description: Color of the object (\#ffffff, \#ffffffff or ffffff)
-        private:
-          description: Whether this object is private
-        preventTrusted:
-          description: Wheter trusted friends are prevented from seeing this private object
-        supportDescMarkdown:
-          description: Whether the description supports markdown
-        timestamp:
-          description: Milliseconds since epoch for this timestamp/date
+        timings:
+          description: Groups of member and/or custom front ids based on timings when they fronted
+          type: object
+          properties:
+            morningFronters:
+              type: array
+              items:
+                type: string
+            dayFronters:
+              type: array
+              items:
+                type: string
+            eveningFronters:
+              type: array
+              items:
+                type: string
+            nightFronters:
+              type: array
+              items:
+                type: string
+        values:
+          description: Values for the timeframe
+          type: object
+          properties:
+            sums:
+              type: array
+              items:
+                $ref: "#/components/schemas/analyticsSums"
+            averages:
+              type: array
+              items:
+                $ref: "#/components/schemas/analyticsAverages"
+            maxes:
+              type: array              
+              items:
+                $ref: "#/components/schemas/analyticsMaxes"
+            mins:
+              type: array
+              items:
+                $ref: "#/components/schemas/analyticsMins"
+            nums:
+              type: array
+              items:
+                $ref: "#/components/schemas/analyticsNums"
 
-    automatedReminder:
+    analyticsSums:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The Id of the member
+        value:
+          type: long
+          description: Total length they fronted
+
+    analyticsAverages:
+      type: object
+      properties:
+        id:
+          type: string
+          description:
+            $ref: "#/components/schemas/analyticsSums/properties/id/description"
+        value:
+          type: long
+          description: Average length they fronted
+
+    analyticsMaxes:
+      type: object
+      properties:
+        id:
+          type: string
+          description:
+            $ref: "#/components/schemas/analyticsSums/properties/id/description"
+        value:
+          type: long
+          description: Maximum length they fronted
+
+    analyticsMins:
+      type: object
+      properties:
+        id:
+          type: string
+          description:
+            $ref: "#/components/schemas/analyticsSums/properties/id/description"
+        value:
+          type: long
+          description: Minimum length they fronted
+
+    analyticsNums:
+      type: object
+      properties:
+        id:
+          type: string
+          description:
+            $ref: "#/components/schemas/automatedTimer/properties/type/description"
+        value:
+          type: long
+          description: Amount of times they fronted
+
+    automatedTimer:
       type: object
       properties:
         name:
@@ -38,15 +119,59 @@ components:
           type: string
         type:
           description: "When this reminder should trigger.
-            0 -> Member front change
-            1 -> Custom front change
+            0 -> Member front change,
+            1 -> Custom front change,
             2 -> Any front change"
           type: integer
         delayInHours:
-          description: Delay in hours since the action (front change)
+          description: 'Delay in hours since the action (eg: front change)'
           type: integer
 
-    boardMessagePost:
+    automatedTimerInfo:
+      type: object
+      properties:
+        name:
+          description:
+            $ref: "#/components/schemas/automatedTimer/properties/name/description"
+          type: string
+        message:
+          description:
+            $ref: "#/components/schemas/automatedTimer/properties/message/description"
+          type: string
+        action:
+          description:
+            $ref: "#/components/schemas/automatedTimer/properties/type/description"
+          type: integer
+        delayInHours:
+          description:
+            $ref: "#/components/schemas/automatedTimer/properties/delayInHours/description"
+          type: integer
+        type:
+          description:
+            $ref: "#/components/schemas/automatedTimer/properties/type/description"
+          type: integer
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
+
+    automatedTimerContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Reminder Id
+          type: string
+        content:
+          description: The reminder content
+          $ref: "#/components/schemas/automatedTimerInfo"
+
+    boardMessage:
       type: object
       properties:
         title:
@@ -56,10 +181,10 @@ components:
           description: The message of the message
           type: string
         writtenBy:
-          description: ID of the member that wrote this message
+          description: Id of the member that wrote this message
           type: string
         writtenFor:
-          description: ID of the member that this message is for
+          description: Id of the member that this message is for
           type: string
         writtenAt:
           description:
@@ -72,32 +197,224 @@ components:
           description: Whether this board message supports markdown
           type: boolean
 
+    boardMessageInfo:
+      type: object
+      properties:
+        title:
+          description:
+            $ref: "#/components/schemas/boardMessage/properties/title/description"
+          type: string
+        message:
+          description:
+            $ref: "#/components/schemas/boardMessage/properties/message/description"
+          type: string
+        writtenBy:
+          description:
+            $ref: "#/components/schemas/boardMessage/properties/writtenBy/description"
+          type: string
+        writtenFor:
+          description:
+            $ref: "#/components/schemas/boardMessage/properties/writtenFor/description"
+          type: string
+        writtenAt:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        read:
+          description:
+            $ref: "#/components/schemas/boardMessage/properties/read/description"
+          type: boolean
+        supportMarkdown:
+          description:
+            $ref: "#/components/schemas/boardMessage/properties/supportMarkdown/description"
+          type: boolean
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: string
+
+    boardMessageContatiner:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Message Id
+          type: string
+        content:
+          description: The message content
+          $ref: "#/components/schemas/boardMessageInfo"
+
     boardMessagePatch:
       type: object
       properties:
         read:
-          description: Whether this message is read or not
+          description:
+            $ref: "#/components/schemas/boardMessage/properties/read/description"
           type: boolean
 
-    chatMessagePost:
+    chatCategory:
+      type: object
+      properties:
+        name:
+          description: Category name
+          type: string
+        desc:
+          description: Description of the category
+          type: string
+        channels:
+          description: Ordered list of unique channel Ids this category contains
+          type: array
+          items:
+            type: string
+
+    chatCategoryContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Catagory Id
+          type: string
+        content:
+          description: The catagory information
+          $ref: "#/components/schemas/chatCategoryInfo"
+
+    chatCategoryInfo:
+      type: object
+      properties:
+        name:
+          description:
+            $ref: "#/components/schemas/chatCategory/properties/name/description"
+          type: string
+        desc:
+          description:
+            $ref: "#/components/schemas/chatCategory/properties/desc/description"
+          type: string
+        channels:
+          description:
+            $ref: "#/components/schemas/chatCategory/properties/channels/description"
+          type: array
+          items:
+            type: string
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
+
+    chatChannel:
+      type: object
+      properties:
+        name:
+          description: Channel name
+          type: string
+        desc:
+          description: Description of the channel
+          type: string
+
+    chatChannelContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Channel Id
+          type: string
+        content:
+          description: The channel content
+          $ref: "#/components/schemas/chatChannelInfo"
+
+    chatChannelInfo:
+      type: object
+      properties:
+        name:
+          description:
+            $ref: "#/components/schemas/chatChannel/properties/name/description"
+          type: string
+        desc:
+          description:
+            $ref: "#/components/schemas/chatChannel/properties/desc/description"
+          type: string
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
+
+    chatMessage:
       type: object
       properties:
         message:
           description: Message
           type: string
         channel:
-          description: ID of the channel this message should go to
+          description: Id of the channel this message should go to
           type: string
         writer:
-          description: ID of the member that wrote this message
+          description: Id of the member that wrote this message
           type: string
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         replyTo:
-          description: "Message ID this message is in reply to"
+          description: Message Id this message is in reply to
           type: string
+
+    chatMessageContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: The message Id
+          type: string
+        content:
+          description: The message content
+          $ref: "#/components/schemas/chatMessageInfo"
+
+    chatMessageInfo:
+      type: object
+      properties:
+        message:
+          description:
+            $ref: "#/components/schemas/chatMessage/properties/message/description"
+          type: string
+        channel:
+          description:
+            $ref: "#/components/schemas/chatMessage/properties/channel/description"
+          type: string
+        writer:
+          description:
+            $ref: "#/components/schemas/chatMessage/properties/writer/description"
+          type: string
+        writtenAt:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type: integer
+        replyTo:
+          description:
+            $ref: "#/components/schemas/chatMessage/properties/replyTo/description"
+          type: string
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
 
     chatMessagePatch:
       type: object
@@ -110,31 +427,7 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
 
-    chatChannel:
-      type: object
-      properties:
-        name:
-          description: Channel name
-          type: string
-        desc:
-          description: Description of the channel
-          type: string
-
-    chatCategory:
-      type: object
-      properties:
-        name:
-          description: Category name
-          type: string
-        desc:
-          description: Description of the category
-          type: string
-        channels:
-          items:
-            type: string
-          description: "List of channel IDs this category contains"
-
-    commentsPost:
+    comments:
       type: object
       properties:
         time:
@@ -159,11 +452,11 @@ components:
       properties:
         text:
           description:
-            $ref: "#/components/schemas/commentsPost/properties/text/description"
+            $ref: "#/components/schemas/comments/properties/text/description"
           type: string
         supporMarkdown:
           description:
-            $ref: "#/components/schemas/commentsPost/properties/supporMarkdown/description"
+            $ref: "#/components/schemas/comments/properties/supporMarkdown/description"
           type: boolean
 
     customFront:
@@ -224,14 +517,14 @@ components:
           description: Emoji of the group
           type: string
         parent:
-          description: Parent group ID, if no parent use "root".
+          description: Parent group Id, if no parent use "root".
           type: string
         members:
           description: Members of this group
           type: array
           items:
-            type: "string"
-            description: "ID of the member"
+            type: string
+            description: Id of the member
 
     member:
       type: object
@@ -250,7 +543,7 @@ components:
           description: Pronouns of the member
           type: string
         pkId:
-          description: PluralKit ID of the member, 5-letter string
+          description: PluralKit Id of the member, 5-letter string
           type: string
         avatarUrl:
           description: URL for the avatar
@@ -278,7 +571,7 @@ components:
               type: string
               description: Info object entry, id/key has to match an id/key from the user object, value is the value string
 
-    notesPost:
+    notes:
       type: object
       properties:
         note:
@@ -307,11 +600,11 @@ components:
       properties:
         note:
           description:
-            $ref: "#/components/schemas/notesPost/properties/note/description"
+            $ref: "#/components/schemas/notes/properties/note/description"
           type: string
         title:
           description:
-            $ref: "#/components/schemas/notesPost/properties/title/description"
+            $ref: "#/components/schemas/notes/properties/title/description"
           type: string
         color:
           description:
@@ -319,7 +612,7 @@ components:
           type: string
         member:
           description:
-            $ref: "#/components/schemas/notesPost/properties/member/description"
+            $ref: "#/components/schemas/notes/properties/member/description"
           type: boolean
         date:
           description:
@@ -350,7 +643,7 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
           type: integer
         member:
-          description: ID of the member or custom front this entry belongs to
+          description: Id of the member or custom front this entry belongs to
 
     repeatedReminder:
       type: object
@@ -424,7 +717,7 @@ components:
             type: object
             properties:
               id:
-                description: ID of the member who votes
+                description: Id of the member who votes
                 type: string
               comment:
                 description: Comment on the vote

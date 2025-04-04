@@ -17,7 +17,7 @@ components:
       type: object
       properties:
         color:
-          description: Color of the object (\#ffffff, \#ffffffff or ffffff)
+          description: 'Color of the object in a hex format (eg: \#ffffff, \#ffffffff or ffffff)'
         private:
           description: Whether this object is private
         preventTrusted:
@@ -25,13 +25,44 @@ components:
         supportDescMarkdown:
           description: Whether the description supports markdown
         timestamp:
-          description: Milliseconds since epoch for this timestamp/date
+          description: Time in Milliseconds since epoch
+        uid:
+          description: The user Id of the system
+        lastOperationTime:
+          description: Time in milliseconds since epoch of the last update on this object
 
   parameters:
     objectId:
-      schema:
-        type: string
-      name: objectId
-      in: path
-      required: true
-      description: Object ID of the object, this can be a mongo ID but also a plain string (backwards-compatibility). When using POST or add API calls, this property is optional.
+      - in: path
+        name: id
+        required: true
+        description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
+        schema:
+          type: string
+    objectIdOptional:
+      - in: path
+        name: id
+        required: false
+        description: Optional Id of the object. If supplied, this must be a mongodb objectID format. If not supplied, the API will generate the id for you.
+        schema:
+          type: string
+    systemId:
+      - in: path
+        name: systemId
+        required: true
+        description: The user Id of the system
+        schema:
+          type: string
+    systemIdAndObjectId:
+      - in: path
+        name: systemId
+        required: true
+        description: The user Id of the system
+        schema:
+          type: string
+      - in: path
+        name: id
+        required: true
+        description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
+        schema:
+          type: string

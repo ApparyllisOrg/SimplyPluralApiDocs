@@ -834,8 +834,6 @@ paths:
           description: BAD REQUEST
         "404":
           description: NOT FOUND
-        "500":
-          description: RECORD NOT ENTERED INTO DATABASE
     patch:
       security:
         - APITokenAuth: []
@@ -1884,8 +1882,6 @@ paths:
           description: BAD REQEST
         "404":
           description: NOT FOUND
-        "500":
-          description: RECORD NOT ENTERED INTO DATABASE
     patch:
       security:
         - APITokenAuth: []

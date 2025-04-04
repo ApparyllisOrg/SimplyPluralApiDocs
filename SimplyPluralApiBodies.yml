@@ -281,7 +281,7 @@ components:
           description: Catagory Id
           type: string
         content:
-          description: The catagory information
+          description: The category content
           $ref: "#/components/schemas/chatCategoryInfo"
 
     chatCategoryInfo:
@@ -543,7 +543,7 @@ components:
           description: Pronouns of the member
           type: string
         pkId:
-          description: PluralKit Id of the member, 5-letter string
+          description: PluralKit Id of the member, 5 or 6 letter string
           type: string
         avatarUrl:
           description: URL for the avatar

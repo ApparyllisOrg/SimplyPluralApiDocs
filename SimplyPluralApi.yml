@@ -456,8 +456,6 @@ paths:
         - APITokenAuth: []
       summary: "Get comments"
       description: "Get comments from a document of a particular type (groups, members, customFronts, etc.)"
-      tags:
-        - Comments
       parameters:
         - in: path
           name: id
@@ -472,6 +470,8 @@ paths:
             type: string
           required: true
           description: 'Type of the comment [groups, members, customFronts]'
+      tags:
+        - Comments
       responses:
         "200":
           description: OK
@@ -525,13 +525,13 @@ paths:
       description: "Delete a Comment by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Comments
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
-      tags:
-        - Comments
 
   /v1/comments/{systemId}/{id}:
     get:
@@ -598,13 +598,13 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/polls"
+      tags:
+        - Polls
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
-      tags:
-        - Polls
     delete:
       security:
         - APITokenAuth: []
@@ -612,13 +612,13 @@ paths:
       description: "Delete a Poll by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Polls
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
-      tags:
-        - Polls
 
   /v1/polls/{systemId}:
     get:
@@ -791,13 +791,13 @@ paths:
           application/json:
             schema:
               $ref: "./SimplyPluralApiBodies.yml#/components/schemas/repeatedReminder"
+      tags:
+        - Repeated Timers
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
-      tags:
-        - Repeated Timers
     delete:
       security:
         - APITokenAuth: []
@@ -805,13 +805,13 @@ paths:
       description: "Delete an Repeated Timer by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Repeated Timers
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
-      tags:
-        - Repeated Timers
 
   /v1/timers/repeated/{systemId}:
     get:
@@ -978,10 +978,10 @@ paths:
         - APITokenAuth: []
       summary: "Update user"
       description: "Update a user (your own)"
-      tags:
-        - Users
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Users
       responses:
         "200":
           description: OK
@@ -993,10 +993,10 @@ paths:
         - APITokenAuth: []
       summary: "Set username"
       description: "Set username for user"
-      tags:
-        - Users
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      tags:
+        - Users
       responses:
         "200":
           description: OK

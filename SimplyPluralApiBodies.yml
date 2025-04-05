@@ -194,7 +194,7 @@ components:
           type:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         read:
-          description: Whether this message is read or not
+          description: Whether this message is read
           type: boolean
         supportMarkdown:
           description: Whether this board message supports markdown

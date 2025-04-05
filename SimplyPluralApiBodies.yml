@@ -725,3 +725,60 @@ components:
               vote:
                 description: Option name that was voted (if not-custom, "yes", "no", "veto" or "abstain")
                 type: string
+
+
+    userContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: The user Id
+          type: string
+        content:
+          description: The user content
+          $ref: "#/components/schemas/userInfo"
+
+    userInfo:
+      type: object
+      properties:
+        uid:
+          type: string
+        feilds:
+          type: array
+          items:
+            $ref: "./SimplyPluralApiBodies.yml#/components/schemas/userFeild"
+        isAsystem:
+          type: boolean
+        lastOperationTime:
+          type: long
+        username:
+          type: string
+        avatarUrl:
+          type: string
+        color:
+          type: string
+        desc:
+          type: string
+        supportDescMarkdown:
+          type: boolean
+        frame:
+          type: object
+          properties:
+            # todo: what are they
+
+    userFeild:
+      type: object
+      properties:
+        name:
+          type: string
+        order:
+          type: integer
+        private:
+          type: boolean
+        preventTrusted:
+          type: boolean
+        type:
+          type: integer
+        supportMarkdown:
+          type: boolean

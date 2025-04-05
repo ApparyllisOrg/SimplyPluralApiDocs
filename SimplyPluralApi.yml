@@ -951,10 +951,14 @@ paths:
       summary: "Get your authenticated user Id"
       description: "Get the user Id associated with the authentication token"
       tags:
-        - Users
+        - User
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/userContainer"
         "404":
           description: NOT FOUND
 
@@ -967,10 +971,14 @@ paths:
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
-        - Users
+        - User
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/userContainer"
         "404":
           description: NOT FOUND
     patch:
@@ -981,7 +989,7 @@ paths:
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
-        - Users
+        - User
       responses:
         "200":
           description: OK
@@ -996,7 +1004,7 @@ paths:
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
-        - Users
+        - User
       responses:
         "200":
           description: OK
@@ -1010,7 +1018,7 @@ paths:
       summary: "Generate report"
       description: "Generate a user report for the authenticated user"
       tags:
-        - Users
+        - User
       responses:
         "200":
           description: OK
@@ -1026,7 +1034,7 @@ paths:
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
       tags:
-        - Users
+        - User
       responses:
         "200":
           description: OK
@@ -1042,7 +1050,7 @@ paths:
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
       tags:
-        - Users
+        - User
       responses:
         "200":
           description: OK

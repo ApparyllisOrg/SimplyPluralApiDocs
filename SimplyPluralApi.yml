@@ -833,7 +833,7 @@ paths:
     get:
       security:
         - APITokenAuth: []
-      summary: "Get current fronters (self)"
+      summary: "Get current fronters for oneself"
       description: "Get fronters from the currently authenticated system"
       tags:
         - Front History
@@ -977,7 +977,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Update user"
-      description: "Update a user (your own)"
+      description: "Update a your user"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
@@ -1080,7 +1080,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get sent friend requests"
-      description: "Get outgoing friend requests of the autheticated user"
+      description: "Get outgoing friend requests of the authenticated user"
       tags:
         - Friends
       responses:
@@ -1092,8 +1092,8 @@ paths:
     get:
       security:
         - APITokenAuth: []
-      summary: "Get current fronters of system (text-format)"
-      description: "Get front values (text-format) of all the authenticated user's friends"
+      summary: "Get current fronters of system"
+      description: "Get front values of all the authenticated user's friends"
       tags:
         - Friends
       responses:
@@ -1223,7 +1223,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get current fronters of system"
-      description: "Get the current fronters (in text form) of a friend"
+      description: "Get the current fronters of a friend"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/friendId"
       tags:

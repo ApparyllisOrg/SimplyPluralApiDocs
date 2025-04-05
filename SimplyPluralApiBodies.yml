@@ -165,7 +165,8 @@ components:
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
@@ -190,7 +191,8 @@ components:
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         read:
           description: Whether this message is read or not
           type: boolean
@@ -232,7 +234,8 @@ components:
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         read:
           description:
             $ref: "#/components/schemas/boardMessage/properties/read/description"
@@ -244,7 +247,8 @@ components:
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
@@ -306,7 +310,8 @@ components:
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
@@ -349,7 +354,8 @@ components:
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
@@ -406,7 +412,8 @@ components:
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         replyTo:
           description:
             $ref: "#/components/schemas/chatMessage/properties/replyTo/description"
@@ -414,7 +421,8 @@ components:
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
@@ -438,7 +446,8 @@ components:
         time:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         text:
           description: Comment text/message
           type: string
@@ -479,19 +488,23 @@ components:
         color:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/type"
         private:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
         preventTrusted:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
 
     groups:
       type: object
@@ -505,19 +518,23 @@ components:
         color:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/type"
         private:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
         preventTrusted:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
         emoji:
           description: Emoji of the group
           type: string
@@ -543,7 +560,8 @@ components:
         color:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/type"
         pronouns:
           description: Pronouns of the member
           type: string
@@ -556,15 +574,18 @@ components:
         private:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
         preventTrusted:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
         preventsFrontNotifs:
           description: Whether to prefer front notification changes
           type: boolean
@@ -588,17 +609,21 @@ components:
         color:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/type"
         member:
           description: Id of the member this note belongs to
           type: boolean
         date:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
 
     notesPatch:
       type: object
@@ -614,7 +639,8 @@ components:
         color:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/type"
         member:
           description:
             $ref: "#/components/schemas/notes/properties/member/description"
@@ -622,10 +648,13 @@ components:
         date:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
 
     frontHistory:
       type: object
@@ -642,11 +671,13 @@ components:
         startTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         endTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         member:
           description: Id of the member or custom front this entry belongs to
 
@@ -698,19 +729,19 @@ components:
       properties:
         name:
           description:
-            $ref: "#/components/schemas/repeatedTimer/name/description"
+            $ref: "#/components/schemas/repeatedTimer/properties/name/description"
           type: string
         message:
           description:
-            $ref: "#/components/schemas/repeatedTimer/message/description"
+            $ref: "#/components/schemas/repeatedTimer/properties/message/description"
           type: string
         dayInterval:
           description:
-            $ref: "#/components/schemas/repeatedTimer/dayInterval/description"
+            $ref: "#/components/schemas/repeatedTimer/properties/dayInterval/description"
           type: integer
         time:
           description:
-            $ref: "#/components/schemas/repeatedTimer/time/description"
+            $ref: "#/components/schemas/repeatedTimer/properties/time/description"
           type: object
           properties:
             hour:
@@ -719,7 +750,7 @@ components:
               type: integer
         startTime:
           description:
-            $ref: "#/components/schemas/repeatedTimer/startTime/description"
+            $ref: "#/components/schemas/repeatedTimer/properties/startTime/description"
           type: object
           properties:
             year:
@@ -731,7 +762,8 @@ components:
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
@@ -759,9 +791,13 @@ components:
         endTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
         options:
           description: The options of this poll (if custom poll)
           type: array
@@ -788,7 +824,6 @@ components:
                 description: Option name that was voted (if not-custom, "yes", "no", "veto" or "abstain")
                 type: string
 
-
     userContainer:
       type: object
       properties:
@@ -808,7 +843,8 @@ components:
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
         fields:
           description: This is only for users who use 1.10 or older
           type: array
@@ -828,13 +864,15 @@ components:
         color:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/type"
         desc:
           type: string
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
-          type: boolean
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
         frame:
           description: Subscriber settings for setting the frame around an avatar
           type: object

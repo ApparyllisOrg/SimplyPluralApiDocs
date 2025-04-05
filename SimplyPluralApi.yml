@@ -1022,6 +1022,8 @@ paths:
       responses:
         "200":
           description: OK
+        "403":
+          description: BAD REQUEST # todo: indicate this is due to no more generations left
         "404":
           description: NOT FOUND
 

@@ -127,6 +127,18 @@ components:
           description: 'Delay in hours since the action (eg: front change)'
           type: integer
 
+    automatedTimerContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Reminder Id
+          type: string
+        content:
+          description: The reminder content
+          $ref: "#/components/schemas/automatedTimerInfo"
+
     automatedTimerInfo:
       type: object
       properties:
@@ -159,18 +171,6 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
           type: long
 
-    automatedTimerContainer:
-      type: object
-      properties:
-        exists:
-          type: boolean
-        id:
-          description: Reminder Id
-          type: string
-        content:
-          description: The reminder content
-          $ref: "#/components/schemas/automatedTimerInfo"
-
     boardMessage:
       type: object
       properties:
@@ -196,6 +196,18 @@ components:
         supportMarkdown:
           description: Whether this board message supports markdown
           type: boolean
+
+    boardMessageContatiner:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: Message Id
+          type: string
+        content:
+          description: The message content
+          $ref: "#/components/schemas/boardMessageInfo"
 
     boardMessageInfo:
       type: object
@@ -236,18 +248,6 @@ components:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
           type: string
-
-    boardMessageContatiner:
-      type: object
-      properties:
-        exists:
-          type: boolean
-        id:
-          description: Message Id
-          type: string
-        content:
-          description: The message content
-          $ref: "#/components/schemas/boardMessageInfo"
 
     boardMessagePatch:
       type: object

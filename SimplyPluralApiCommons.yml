@@ -4,13 +4,6 @@ info:
   description: This API reference documents the public api endpoints. You can see a list of all public endpoints here https://github.com/ApparyllisOrg/SimplyPluralApi/blob/release/src/api/v1/routes.ts
   version: "1.0"
 
-paths:
-  /somePath:
-    get:
-      responses:
-        200:
-          description: ok
-
 components:
   schemas:
     commons:
@@ -18,20 +11,34 @@ components:
       properties:
         color:
           description: 'Color of the object in a hex format (eg: \#ffffff, \#ffffffff or ffffff)'
+          type: string
         private:
           description: Whether this object is private
+          type: boolean
         preventTrusted:
-          description: Wheter trusted friends are prevented from seeing this private object
+          description: Whether trusted friends are prevented from seeing this private object
+          type: boolean
         supportDescMarkdown:
           description: Whether the description supports markdown
+          type: boolean
         timestamp:
           description: Time in Milliseconds since epoch
+          type: long
         uid:
           description: The user Id of the system
+          type: string
         lastOperationTime:
           description: Time in milliseconds since epoch of the last update on this object
+          type: integer
 
   parameters:
+    friendId:
+      - in: path
+        name: friendId
+        required: true
+        description: User Id of the friend
+        schema:
+          type: string
     objectId:
       - in: path
         name: id
@@ -64,5 +71,12 @@ components:
         name: id
         required: true
         description: Id of the object, this can be a mongo Id but also a plain string (backwards-compatibility).
+        schema:
+          type: string
+    username:
+      - in: path
+        name: Username
+        required: true
+        description: Username or user Id
         schema:
           type: string

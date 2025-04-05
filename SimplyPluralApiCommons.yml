@@ -29,14 +29,14 @@ components:
           type: string
         lastOperationTime:
           description: Time in milliseconds since epoch of the last update on this object
-          type: long
+          type: integer
 
   parameters:
     friendId:
       - in: path
         name: friendId
         required: true
-        description: Username or user Id or system ID of the friend
+        description: User Id of the friend
         schema:
           type: string
     objectId:
@@ -77,6 +77,6 @@ components:
       - in: path
         name: Username
         required: true
-        description: Username or user Id or system ID
+        description: Username or user Id
         schema:
           type: string

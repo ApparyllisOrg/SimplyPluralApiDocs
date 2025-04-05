@@ -169,7 +169,8 @@ components:
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: long
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
 
     boardMessage:
       type: object
@@ -247,7 +248,8 @@ components:
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: string
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
 
     boardMessagePatch:
       type: object
@@ -308,7 +310,8 @@ components:
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: long
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
 
     chatChannel:
       type: object
@@ -350,7 +353,8 @@ components:
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: long
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
 
     chatMessage:
       type: object
@@ -414,7 +418,8 @@ components:
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: long
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
 
     chatMessagePatch:
       type: object
@@ -730,7 +735,8 @@ components:
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: long
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
 
     polls:
       type: object
@@ -803,16 +809,18 @@ components:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
           type: string
-        feilds:
+        fields:
+          description: This is only for users who use 1.10 or older
           type: array
           items:
-            $ref: "#/components/schemas/userFeild"
+            $ref: "#/components/schemas/userField"
         isAsystem:
           type: boolean
         lastOperationTime:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
-          type: long
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
         username:
           type: string
         avatarUrl:
@@ -828,11 +836,23 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
           type: boolean
         frame:
+          description: Subscriber settings for setting the frame around an avatar
           type: object
           properties:
-            # todo: what are they
+            bgShape:
+              description: Background shape
+              type: string
+            bgClip: 
+              description: Background clip
+              type: string
+            bgStartColor:
+              description: Background start color
+              type: string
+            bgEndColor:
+              description: Background end color
+              type: string
 
-    userFeild:
+    userField:
       type: object
       properties:
         name:

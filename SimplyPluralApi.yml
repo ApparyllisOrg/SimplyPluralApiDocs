@@ -469,7 +469,7 @@ paths:
           schema:
             type: string
           required: true
-          description: 'Type of the comment [groups, members, customFronts]'
+          description: 'Type of the comment [Only supported type is frontHistory]'
       tags:
         - Comments
       responses:
@@ -843,7 +843,7 @@ paths:
     get:
       security:
         - APITokenAuth: []
-      summary: "Get current fronters for oneself"
+      summary: "Get your current fronters"
       description: "Get fronters from the currently authenticated system"
       tags:
         - Front History
@@ -1065,7 +1065,7 @@ paths:
               schema:
                 # todo
         "403":
-          description: BAD REQUEST # todo: indicate this is due to no more generations left
+          description: FORBIDDEN # todo: indicate this is due to no more generations left
         "404":
           description: NOT FOUND
 
@@ -1162,7 +1162,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Add friend"
-      description: "Add a friend by username or userId/systemId"
+      description: "Add a friend by username or thier user Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/username"
       tags:
@@ -1177,7 +1177,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Respond to friend request"
-      description: "Respond to a friend request by username or userId/systemId"
+      description: "Respond to a friend request by username or thier user Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/username"
       tags:
@@ -1207,7 +1207,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Remove friend"
-      description: "Remove a friend by username or userId/systemId"
+      description: "Remove a friend by username or thier user Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/username"
       tags:
@@ -1247,13 +1247,13 @@ paths:
           schema:
             type: string
           required: true
-          description: The Id of the origin friend (Typically you). This can be a mongo Id but also a plain string (backwards-compatibility).
+          description: The Id of the origin friend (Typically you). This is a plain string.
         - in: path
           name: friendId
           schema:
             type: string
           required: true
-          description: The Id of the destination friend (Typically your friend). This can be a mongo Id but also a plain string (backwards-compatibility).
+          description: The Id of the destination friend (Typically your friend). This is a plain string.
       responses:
         "200":
           description: OK

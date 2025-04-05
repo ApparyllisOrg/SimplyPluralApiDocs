@@ -554,7 +554,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get poll"
-      description: "Get a Poll by id"
+      description: "Get a Poll by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
       tags:
@@ -747,7 +747,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get repeated timer"
-      description: "Get an Repeated Timer by id"
+      description: "Get a Repeated Timer by Id"
       tags:
         - Repeated Timers
       parameters:
@@ -766,7 +766,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Add repeated timer"
-      description: "Add an Repeated Timer"
+      description: "Add a Repeated Timer"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectIdOptional"
       requestBody:
@@ -786,7 +786,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Update repeated timer"
-      description: "Update an Repeated Timer by Id"
+      description: "Update a Repeated Timer by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       requestBody:
@@ -806,7 +806,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Delete repeated timer"
-      description: "Delete an Repeated Timer by Id"
+      description: "Delete a Repeated Timer by Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
       tags:
@@ -893,7 +893,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Update front history entry"
-      description: "Update a Front History entry by an Id"
+      description: "Update a Front History entry by Id"
       tags:
         - Front History
       requestBody:
@@ -913,7 +913,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Delete front history entry"
-      description: "Delete a Front History Entry by an Id"
+      description: "Delete a Front History Entry by Id"
       tags:
         - Front History
       parameters:

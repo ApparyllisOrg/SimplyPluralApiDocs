@@ -11,18 +11,25 @@ components:
       properties:
         color:
           description: 'Color of the object in a hex format (eg: \#ffffff, \#ffffffff or ffffff)'
+          type: string
         private:
           description: Whether this object is private
+          type: boolean
         preventTrusted:
-          description: Wheter trusted friends are prevented from seeing this private object
+          description: Whether trusted friends are prevented from seeing this private object
+          type: boolean
         supportDescMarkdown:
           description: Whether the description supports markdown
+          type: boolean
         timestamp:
           description: Time in Milliseconds since epoch
+          type: long
         uid:
           description: The user Id of the system
+          type: string
         lastOperationTime:
           description: Time in milliseconds since epoch of the last update on this object
+          type: long
 
   parameters:
     friendId:

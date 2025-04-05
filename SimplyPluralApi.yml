@@ -755,6 +755,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/repeatedTimerContainer"
         "404":
           description: NOT FOUND
   /v1/timer/repeated/{id}:
@@ -770,7 +774,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/repeatedReminder"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/repeatedTimer"
       tags:
         - Repeated Timers
       responses:
@@ -790,7 +794,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/repeatedReminder"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/repeatedTimer"
       tags:
         - Repeated Timers
       responses:
@@ -826,6 +830,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/repeatedTimerContainer"
         "404":
           description: NOT FOUND
 

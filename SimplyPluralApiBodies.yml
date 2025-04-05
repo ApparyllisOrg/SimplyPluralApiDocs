@@ -645,7 +645,7 @@ components:
         member:
           description: Id of the member or custom front this entry belongs to
 
-    repeatedReminder:
+    repeatedTimer:
       type: object
       properties:
         name:
@@ -675,6 +675,62 @@ components:
               type: integer
             day:
               type: integer
+
+    repeatedTimerContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: The timer Id
+          type: string
+        content:
+          description: The timer content
+          $ref: "#/components/schemas/repeatedTimerInfo"
+
+    repeatedTimerInfo:
+      type: object
+      properties:
+        name:
+          description:
+            $ref: "#/components/schemas/repeatedTimer/name/description"
+          type: string
+        message:
+          description:
+            $ref: "#/components/schemas/repeatedTimer/message/description"
+          type: string
+        dayInterval:
+          description:
+            $ref: "#/components/schemas/repeatedTimer/dayInterval/description"
+          type: integer
+        time:
+          description:
+            $ref: "#/components/schemas/repeatedTimer/time/description"
+          type: object
+          properties:
+            hour:
+              type: integer
+            minute:
+              type: integer
+        startTime:
+          description:
+            $ref: "#/components/schemas/repeatedTimer/startTime/description"
+          type: object
+          properties:
+            year:
+              type: integer
+            month:
+              type: integer
+            day:
+              type: integer
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
+          type: string
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type: long
 
     polls:
       type: object
@@ -733,7 +789,8 @@ components:
         exists:
           type: boolean
         id:
-          description: The user Id
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
           type: string
         content:
           description: The user content
@@ -743,24 +800,32 @@ components:
       type: object
       properties:
         uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
           type: string
         feilds:
           type: array
           items:
-            $ref: "./SimplyPluralApiBodies.yml#/components/schemas/userFeild"
+            $ref: "#/components/schemas/userFeild"
         isAsystem:
           type: boolean
         lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
           type: long
         username:
           type: string
         avatarUrl:
           type: string
         color:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
           type: string
         desc:
           type: string
         supportDescMarkdown:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
           type: boolean
         frame:
           type: object

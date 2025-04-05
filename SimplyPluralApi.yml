@@ -988,11 +988,22 @@ paths:
       description: "Update a your user"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              # todo
       tags:
         - User
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                # todo: confirm
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/userContainer"
         "404":
           description: NOT FOUND
   /v1/user/username/{id}:
@@ -1003,11 +1014,22 @@ paths:
       description: "Set username for user"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/objectId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              # todo
       tags:
         - User
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                # todo: confirm
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/userContainer"
         "404":
           description: NOT FOUND
 
@@ -1017,11 +1039,21 @@ paths:
         - APITokenAuth: []
       summary: "Generate report"
       description: "Generate a user report for the authenticated user"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              # todo
       tags:
         - User
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                # todo
         "403":
           description: BAD REQUEST # todo: indicate this is due to no more generations left
         "404":
@@ -1040,6 +1072,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                # todo
         "404":
           description: NOT FOUND
 
